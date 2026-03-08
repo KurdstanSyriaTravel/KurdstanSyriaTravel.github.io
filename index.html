@@ -11,6 +11,44 @@
         h1 { color: #0056b3; }
         p { font-size: 1.2rem; line-height: 1.6; }
         .footer-link { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #ff0000; color: white; text-decoration: none; border-radius: 5px; }
+        
+        /* قسم الأعلام المتحركة */
+        .flag-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            position: relative;
+            height: 100px; /* Adjust height as needed */
+        }
+
+        .flag {
+            position: absolute;
+            max-width: 150px; /* Adjust width as needed */
+            opacity: 0; /* Initially hidden */
+            animation: flagAnimation 6s linear infinite; /* Animation configuration */
+        }
+
+        .flag.syria {
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 0s; /* No delay for Syria */
+        }
+
+        .flag.kurdistan {
+            left: 50%;
+            transform: translateX(-50%);
+            animation-delay: 3s; /* Delay for Kurdistan for alternating effect */
+        }
+
+        /* تعريف حركة الأعلام */
+        @keyframes flagAnimation {
+            0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            5% { opacity: 1; transform: translateX(-50%) translateY(0); }
+            45% { opacity: 1; transform: translateX(-50%) translateY(0); }
+            50% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+            100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+        }
     </style>
 </head>
 <body>
@@ -19,6 +57,12 @@
 
     <div class="container">
         <h1>أهلاً بكم في موقعنا السياحي</h1>
+        
+        <div class="flag-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Flag_of_Syria.svg" alt="علم سوريا" class="flag syria">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kurdistan.svg" alt="علم كردستان" class="flag kurdistan">
+        </div>
+        
         <p>استكشف أجمل المناطق الطبيعية والمعالم السياحية في كردستان وسوريا.</p>
         <hr>
         <p>الموقع قيد التطوير لإضافة المزيد من التفاصيل قريباً.</p>
