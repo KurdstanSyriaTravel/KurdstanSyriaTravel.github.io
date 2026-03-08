@@ -6,48 +6,38 @@
     <title>Tourist Channel</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f8f9fa; text-align: center; overflow-x: hidden; }
-        .header-image { width: 100%; max-height: 350px; object-fit: cover; border-bottom: 4px solid #28a745; }
-        .hero-section { display: flex; justify-content: center; align-items: center; padding: 20px; max-width: 1100px; margin: auto; gap: 20px; }
+        .header-img { width: 100%; max-height: 350px; object-fit: cover; border-bottom: 4px solid #28a745; }
+        .hero { display: flex; justify-content: center; align-items: center; padding: 20px; max-width: 1100px; margin: auto; gap: 20px; }
+        .f-box { width: 130px; height: 86px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); border-radius: 4px; overflow: hidden; position: relative; }
+        .wave { width: 100%; height: 100%; animation: w-act 5s ease-in-out infinite; transform-origin: center left; }
+        @keyframes w-act { 0%, 100% { transform: perspective(600px) rotateY(0deg); } 50% { transform: perspective(600px) rotateY(10deg); } }
+        .f-svg { width: 100%; height: 100%; display: block; }
         
-        .flag-box { width: 130px; height: 86px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); border-radius: 4px; overflow: hidden; position: relative; }
-        .ocean-wave { width: 100%; height: 100%; animation: wave-motion 5s ease-in-out infinite; transform-origin: center left; }
-        
-        @keyframes wave-motion {
-            0%, 100% { transform: perspective(600px) rotateY(0deg); }
-            50% { transform: perspective(600px) rotateY(10deg) scale(1.02); }
-        }
+        .ticker { background: #28a745; color: white; padding: 12px 0; overflow: hidden; white-space: nowrap; width: 100%; direction: ltr; }
+        .t-text { display: inline-block; animation: s-right 25s linear infinite; font-size: 1.1rem; font-weight: bold; }
+        @keyframes s-right { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 
-        .flag-svg { width: 100%; height: 100%; display: block; }
-        
-        .news-ticker { background: #28a745; color: white; padding: 12px 0; overflow: hidden; white-space: nowrap; font-weight: bold; width: 100%; border-y: 2px solid #1e7e34; }
-        .ticker-text { display: inline-block; animation: scroll-left 20s linear infinite; font-size: 1.1rem; }
-        @keyframes scroll-left { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-
-        .container { padding: 20px; max-width: 900px; margin: auto; }
-        h1 { color: #0056b3; font-size: 1.7rem; margin: 0; flex: 1; }
-
-        .btn-youtube { display: inline-block; background: #FF0000; color: #FFFFFF; padding: 16px 45px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 30px; font-size: 1.2rem; transition: 0.3s; border: none; cursor: pointer; }
-        .btn-youtube:hover { background: #CC0000; transform: scale(1.05); box-shadow: 0 5px 15px rgba(255,0,0,0.4); }
-
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 30px; }
-        .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .btn-yt { display: inline-block; background: #FF0000; color: #fff; padding: 16px 45px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 30px; transition: 0.3s; }
+        .btn-yt:hover { background: #CC0000; transform: scale(1.05); }
+        .gal { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 30px; padding: 0 20px; }
+        .gal img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; }
     </style>
 </head>
 <body>
 
-    <img src="images/cover.jpg" class="header-image">
+    <img src="images/cover.jpg" class="header-img">
 
-    <div class="hero-section">
-        <div class="flag-box">
-            <div class="ocean-wave">
-                <svg viewBox="0 0 6 4" class="flag-svg">
+    <div class="hero">
+        <div class="f-box">
+            <div class="wave">
+                <svg viewBox="0 0 6 4" class="f-svg">
                     <rect width="6" height="1.33" fill="#007A3D"/>
-                    <rect y="1.33" width="6" height="1.34" fill="#FFFFFF"/>
-                    <rect y="2.67" width="6" height="1.33" fill="#000000"/>
+                    <rect y="1.33" width="6" height="1.34" fill="#FFF"/>
+                    <rect y="2.67" width="6" height="1.33" fill="#000"/>
                     <g fill="#CE1126">
-                        <path id="star" d="M1,2l.06.18h.19l-.15.11.06.18-.15-.12-.15.12.06-.18-.15-.11h.19z" transform="translate(-0.1, 0)"/>
-                        <use href="#star" x="1.5"/>
-                        <use href="#star" x="3"/>
+                        <path id="st" d="M1,2l.06.18h.19l-.15.11.06.18-.15-.12-.15.12.06-.18-.15-.11h.19z" transform="translate(0.2, 0)"/>
+                        <use href="#st" x="2"/>
+                        <use href="#st" x="3.5"/>
                     </g>
                 </svg>
             </div>
@@ -55,37 +45,30 @@
 
         <h1>أهلاً بكم في موقعنا السياحي</h1>
 
-        <div class="flag-box">
-            <div class="ocean-wave" style="animation-delay: 2s;">
-                <svg viewBox="0 0 744 496" class="flag-svg">
-                    <rect width="744" height="165" fill="#E31E26"/>
-                    <rect y="165" width="744" height="166" fill="#FFFFFF"/>
-                    <rect y="331" width="744" height="165" fill="#278E43"/>
-                    <g transform="translate(372,248)">
-                        <circle r="60" fill="#F8E71C"/>
-                        <path d="M0,-85 L10,-30 L-10,-30 Z" fill="#F8E71C" id="r"/>
-                        <use href="#r" transform="rotate(17)"/><use href="#r" transform="rotate(34)"/><use href="#r" transform="rotate(51)"/><use href="#r" transform="rotate(68)"/><use href="#r" transform="rotate(85)"/><use href="#r" transform="rotate(102)"/><use href="#r" transform="rotate(119)"/><use href="#r" transform="rotate(136)"/><use href="#r" transform="rotate(153)"/><use href="#r" transform="rotate(170)"/><use href="#r" transform="rotate(187)"/><use href="#r" transform="rotate(204)"/><use href="#r" transform="rotate(221)"/><use href="#r" transform="rotate(238)"/><use href="#r" transform="rotate(255)"/><use href="#r" transform="rotate(272)"/><use href="#r" transform="rotate(289)"/><use href="#r" transform="rotate(306)"/><use href="#r" transform="rotate(323)"/><use href="#r" transform="rotate(340)"/>
-                    </g>
+        <div class="f-box">
+            <div class="wave" style="animation-delay: 2s;">
+                <svg viewBox="0 0 744 496" class="f-svg">
+                    <rect width="744" height="165" fill="#E31E26"/><rect y="165" width="744" height="166" fill="#FFF"/><rect y="331" width="744" height="165" fill="#278E43"/>
+                    <g transform="translate(372,248)"><circle r="60" fill="#F8E71C"/><path d="M0,-85 L10,-30 L-10,-30 Z" fill="#F8E71C" id="r"/>
+                    <use href="#r" transform="rotate(17)"/><use href="#r" transform="rotate(34)"/><use href="#r" transform="rotate(51)"/><use href="#r" transform="rotate(68)"/><use href="#r" transform="rotate(85)"/><use href="#r" transform="rotate(102)"/><use href="#r" transform="rotate(119)"/><use href="#r" transform="rotate(136)"/><use href="#r" transform="rotate(153)"/><use href="#r" transform="rotate(170)"/><use href="#r" transform="rotate(187)"/><use href="#r" transform="rotate(204)"/><use href="#r" transform="rotate(221)"/><use href="#r" transform="rotate(238)"/><use href="#r" transform="rotate(255)"/><use href="#r" transform="rotate(272)"/><use href="#r" transform="rotate(289)"/><use href="#r" transform="rotate(306)"/><use href="#r" transform="rotate(323)"/><use href="#r" transform="rotate(340)"/></g>
                 </svg>
             </div>
         </div>
     </div>
 
-    <div class="news-ticker">
-        <div class="ticker-text">
-            نمو قطاع السياحة بنسبة 25% سنوياً • عدد زوار إقليم كردستان تجاوز 7 ملايين زائر • أهلاً بكم في رحاب الطبيعة • 
+    <div class="ticker">
+        <div class="t-text">
+             إحصائيات 2026: ارتفاع عدد السياح إلى 10 ملايين زائر • نسبة النمو السياحي في كردستان وصلت لـ 30% • رحلاتنا مستمرة لعام 2026 • 
         </div>
     </div>
 
-    <div class="container">
-        <div class="gallery">
-            <img src="images/pic1.jpg">
-            <img src="images/pic2.jpg">
-            <img src="images/pic3.jpg">
-        </div>
-
-        <a href="https://youtube.com/@syriatourism1980?si=3Y1e213xlnIfOS-f" class="btn-youtube" target="_blank">SUBSCRIBE</a>
+    <div class="gal">
+        <img src="images/pic1.jpg">
+        <img src="images/pic2.jpg">
+        <img src="images/pic3.jpg">
     </div>
+
+    <a href="https://youtube.com/@syriatourism1980?si=3Y1e213xlnIfOS-f" class="btn-yt" target="_blank">SUBSCRIBE</a>
 
 </body>
 </html>
