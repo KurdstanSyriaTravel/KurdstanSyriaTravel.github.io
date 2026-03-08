@@ -7,48 +7,26 @@
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f0f2f5; color: #333; text-align: center; }
         .header-image { width: 100%; max-height: 400px; object-fit: cover; border-bottom: 5px solid #28a745; }
-        .container { padding: 20px; max-width: 900px; margin: auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); min-height: 300px; }
-        h1 { color: #0056b3; }
-        p { font-size: 1.2rem; line-height: 1.6; }
-        .footer-link { display: inline-block; margin-top: 20px; padding: 10px 20px; background: #ff0000; color: white; text-decoration: none; border-radius: 5px; }
+        .container { padding: 20px; max-width: 900px; margin: auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 10px; }
         
-        /* قسم الأعلام المتحركة */
-        .flag-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-            position: relative;
-            height: 100px; /* Adjust height as needed */
+        /* تصميم الأعلام وحركتها */
+        .flags-section { display: flex; justify-content: center; gap: 40px; margin: 40px 0; flex-wrap: wrap; }
+        .flag-wrapper { width: 200px; /* حجم العلم كبير */ filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2)); }
+        
+        /* كود حركة الرفرفة البطيئة */
+        .wave-effect {
+            animation: flagWave 4s ease-in-out infinite;
+            transform-origin: left center;
+        }
+        .delay { animation-delay: 2s; }
+
+        @keyframes flagWave {
+            0%, 100% { transform: scaleY(1) skewY(0deg); }
+            50% { transform: scaleY(1.05) skewY(3deg); }
         }
 
-        .flag {
-            position: absolute;
-            max-width: 150px; /* Adjust width as needed */
-            opacity: 0; /* Initially hidden */
-            animation: flagAnimation 6s linear infinite; /* Animation configuration */
-        }
-
-        .flag.syria {
-            left: 50%;
-            transform: translateX(-50%);
-            animation-delay: 0s; /* No delay for Syria */
-        }
-
-        .flag.kurdistan {
-            left: 50%;
-            transform: translateX(-50%);
-            animation-delay: 3s; /* Delay for Kurdistan for alternating effect */
-        }
-
-        /* تعريف حركة الأعلام */
-        @keyframes flagAnimation {
-            0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
-            5% { opacity: 1; transform: translateX(-50%) translateY(0); }
-            45% { opacity: 1; transform: translateX(-50%) translateY(0); }
-            50% { opacity: 0; transform: translateX(-50%) translateY(20px); }
-            100% { opacity: 0; transform: translateX(-50%) translateY(20px); }
-        }
+        .btn-yt { display: inline-block; background: #ff0000; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.2rem; transition: 0.3s; }
+        .btn-yt:hover { background: #cc0000; transform: scale(1.05); }
     </style>
 </head>
 <body>
@@ -57,17 +35,45 @@
 
     <div class="container">
         <h1>أهلاً بكم في موقعنا السياحي</h1>
-        
-        <div class="flag-container">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Flag_of_Syria.svg" alt="علم سوريا" class="flag syria">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kurdistan.svg" alt="علم كردستان" class="flag kurdistan">
+
+        <div class="flags-section">
+            <div class="flag-wrapper wave-effect">
+                <svg viewBox="0 0 6 4">
+                    <rect width="6" height="4" fill="#000"/>
+                    <rect width="6" height="2.66" fill="#fff"/>
+                    <rect width="6" height="1.33" fill="#BB0000"/>
+                    <g fill="#007A3D">
+                        <path id="s" d="M2,2.15l.38,1.17l-.99-.72h1.22l-.99,.72"/>
+                        <use href="#s" x="2"/>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="flag-wrapper wave-effect delay">
+                <svg viewBox="0 0 744 496">
+                    <rect width="744" height="165" fill="#E31E26"/>
+                    <rect y="165" width="744" height="166" fill="#FFF"/>
+                    <rect y="331" width="744" height="165" fill="#278E43"/>
+                    <g transform="translate(372,248) scale(1.1)">
+                        <circle r="64" fill="#F8E71C"/>
+                        <path id="ray" d="M0,-88 L12,-30 L-12,-30 Z" fill="#F8E71C"/>
+                        <script>
+                            const g = document.currentScript.parentElement;
+                            for(let i=1; i<21; i++) {
+                                let use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+                                use.setAttributeNS("http://www.w3.org/2000/svg", "href", "#ray");
+                                use.setAttribute("transform", `rotate(${i*17.14})`);
+                                g.appendChild(use);
+                            }
+                        </script>
+                    </g>
+                </svg>
+            </div>
         </div>
-        
+
         <p>استكشف أجمل المناطق الطبيعية والمعالم السياحية في كردستان وسوريا.</p>
         <hr>
-        <p>الموقع قيد التطوير لإضافة المزيد من التفاصيل قريباً.</p>
-        
-        <a href="https://youtube.com/@syriatour" class="footer-link" target="_blank">تابعنا على يوتيوب</a>
+        <a href="https://youtube.com/@syriatour" class="btn-yt">تابعنا على يوتيوب</a>
     </div>
 
 </body>
