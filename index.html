@@ -18,27 +18,23 @@
             margin: auto;
         }
 
-        /* تنسيق العلم المستطيل الصافي */
-        .flag-box {
-            width: 90px; 
-            height: 60px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 3px;
-            overflow: hidden;
-            animation: wave-motion 3.5s ease-in-out infinite;
+        /* تصميم العلم المستطيل الخفاق */
+        .flag-container {
+            width: 110px; /* حجم كبير وواضح */
+            height: 70px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            animation: wave-effect 4s ease-in-out infinite;
         }
 
-        .flag-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-        /* حركة الرفرفة الهادئة */
-        @keyframes wave-motion {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(2deg); }
+        /* حركة الرفرفة البطيئة لليمين واليسار */
+        @keyframes wave-effect {
+            0%, 100% { transform: scale(1) rotate(0deg) skewX(0deg); }
+            50% { transform: scale(1.05) rotate(3deg) skewX(-2deg); }
         }
 
-        .container { padding: 20px; max-width: 800px; margin: 10px auto; background: white; border-radius: 15px; }
-        h1 { color: #0056b3; font-size: 1.3rem; flex: 1; margin: 0 10px; }
-        .btn-yt { display: inline-block; background: #ff0000; color: white; padding: 12px 25px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 15px; }
+        .container { padding: 25px; max-width: 800px; margin: 15px auto; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        h1 { color: #0056b3; font-size: 1.4rem; flex: 1; margin: 0 10px; line-height: 1.3; }
+        .btn-yt { display: inline-block; background: #ff0000; color: white; padding: 14px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 20px; transition: 0.3s; }
     </style>
 </head>
 <body>
@@ -46,21 +42,48 @@
     <img src="images/cover.jpg" class="header-image">
 
     <div class="hero-section">
-        <div class="flag-box">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Flag_of_Syria.svg" class="flag-img">
+        <div class="flag-container">
+            <svg viewBox="0 0 6 4">
+                <rect width="6" height="4" fill="#000"/>
+                <rect width="6" height="2.66" fill="#fff"/>
+                <rect width="6" height="1.33" fill="#BB0000"/>
+                <g fill="#007A3D">
+                    <path id="s" d="M2,2.15l.38,1.17l-.99-.72h1.22l-.99,.72"/>
+                    <use href="#s" x="2"/>
+                </g>
+            </svg>
         </div>
         
         <h1>أهلاً بكم في موقعنا السياحي</h1>
         
-        <div class="flag-box" style="animation-delay: 1.7s;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kurdistan.svg" class="flag-img">
+        <div class="flag-container" style="animation-delay: 2s;">
+            <svg viewBox="0 0 744 496">
+                <rect width="744" height="165" fill="#E31E26"/>
+                <rect y="165" width="744" height="166" fill="#FFF"/>
+                <rect y="331" width="744" height="165" fill="#278E43"/>
+                <g transform="translate(372,248)">
+                    <circle r="60" fill="#F8E71C"/>
+                    <path d="M0,-85 L10,-30 L-10,-30 Z" fill="#F8E71C" id="ray"/>
+                    <use href="#ray" transform="rotate(17)"/> <use href="#ray" transform="rotate(34)"/>
+                    <use href="#ray" transform="rotate(51)"/> <use href="#ray" transform="rotate(68)"/>
+                    <use href="#ray" transform="rotate(85)"/> <use href="#ray" transform="rotate(102)"/>
+                    <use href="#ray" transform="rotate(119)"/> <use href="#ray" transform="rotate(136)"/>
+                    <use href="#ray" transform="rotate(153)"/> <use href="#ray" transform="rotate(170)"/>
+                    <use href="#ray" transform="rotate(187)"/> <use href="#ray" transform="rotate(204)"/>
+                    <use href="#ray" transform="rotate(221)"/> <use href="#ray" transform="rotate(238)"/>
+                    <use href="#ray" transform="rotate(255)"/> <use href="#ray" transform="rotate(272)"/>
+                    <use href="#ray" transform="rotate(289)"/> <use href="#ray" transform="rotate(306)"/>
+                    <use href="#ray" transform="rotate(323)"/> <use href="#ray" transform="rotate(340)"/>
+                </g>
+            </svg>
         </div>
     </div>
 
     <div class="container">
         <p>استكشف أجمل المناطق الطبيعية والمعالم السياحية في كردستان وسوريا.</p>
-        <hr style="border: 0; border-top: 1px solid #eee;">
-        <a href="https://youtube.com/@syriatourism1980?si=3Y1e213xlnIfOS-f" class="btn-yt">اشترك في قناتنا على يوتيوب</a>
+        <a href="https://youtube.com/@syriatourism1980?si=3Y1e213xlnIfOS-f" class="btn-yt" target="_blank">
+            اشترك في قناتنا على يوتيوب
+        </a>
     </div>
 
 </body>
