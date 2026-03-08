@@ -7,25 +7,43 @@
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f0f2f5; color: #333; text-align: center; }
         .header-image { width: 100%; max-height: 400px; object-fit: cover; border-bottom: 5px solid #28a745; }
-        .container { padding: 20px; max-width: 900px; margin: auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 10px; }
+        .container { padding: 20px; max-width: 900px; margin: auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); border-radius: 10px; padding-bottom: 40px; }
+        h1 { color: #0056b3; margin-bottom: 30px; }
         
-        /* تصميم الأعلام وحركتها */
-        .flags-section { display: flex; justify-content: center; gap: 40px; margin: 40px 0; flex-wrap: wrap; }
-        .flag-wrapper { width: 200px; /* حجم العلم كبير */ filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2)); }
+        /* قسم الأعلام - تصحيح وتكبير وتأثير واقعي */
+        .flags-section { display: flex; justify-content: center; gap: 50px; margin: 40px 0; flex-wrap: wrap; align-items: center; }
         
-        /* كود حركة الرفرفة البطيئة */
+        .flag-wrapper { 
+            width: 280px; /* حجم كبير جداً وواضح */
+            height: auto;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)); /* ظل ليعطي عمق */
+            position: relative;
+        }
+
+        .flag-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px; /* زوايا منحنية قليلاً */
+        }
+        
+        /* كود حركة الرفرفة الواقعية والبطيئة */
         .wave-effect {
-            animation: flagWave 4s ease-in-out infinite;
+            animation: realisticWave 5s ease-in-out infinite;
             transform-origin: left center;
         }
-        .delay { animation-delay: 2s; }
+        
+        /* تأخير بسيط لعلم كردستان لتبدو الحركة طبيعية */
+        .kurdistan-delay { animation-delay: 2.5s; }
 
-        @keyframes flagWave {
-            0%, 100% { transform: scaleY(1) skewY(0deg); }
-            50% { transform: scaleY(1.05) skewY(3deg); }
+        @keyframes realisticWave {
+            0%, 100% { transform: scaleY(1) skewY(0deg) rotate(0deg); }
+            20% { transform: scaleY(1.02) skewY(1deg) rotate(0.5deg); }
+            50% { transform: scaleY(1.05) skewY(2deg) rotate(-0.5deg); }
+            80% { transform: scaleY(1.02) skewY(1deg) rotate(0.5deg); }
         }
 
-        .btn-yt { display: inline-block; background: #ff0000; color: white; padding: 15px 30px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.2rem; transition: 0.3s; }
+        .btn-yt { display: inline-block; background: #ff0000; color: white; padding: 15px 35px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.3rem; transition: 0.3s; margin-top: 30px; }
         .btn-yt:hover { background: #cc0000; transform: scale(1.05); }
     </style>
 </head>
@@ -38,41 +56,18 @@
 
         <div class="flags-section">
             <div class="flag-wrapper wave-effect">
-                <svg viewBox="0 0 6 4">
-                    <rect width="6" height="4" fill="#000"/>
-                    <rect width="6" height="2.66" fill="#fff"/>
-                    <rect width="6" height="1.33" fill="#BB0000"/>
-                    <g fill="#007A3D">
-                        <path id="s" d="M2,2.15l.38,1.17l-.99-.72h1.22l-.99,.72"/>
-                        <use href="#s" x="2"/>
-                    </g>
-                </svg>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Flag_of_Syria.svg" alt="علم سوريا الحقيقي" class="flag-img">
             </div>
 
-            <div class="flag-wrapper wave-effect delay">
-                <svg viewBox="0 0 744 496">
-                    <rect width="744" height="165" fill="#E31E26"/>
-                    <rect y="165" width="744" height="166" fill="#FFF"/>
-                    <rect y="331" width="744" height="165" fill="#278E43"/>
-                    <g transform="translate(372,248) scale(1.1)">
-                        <circle r="64" fill="#F8E71C"/>
-                        <path id="ray" d="M0,-88 L12,-30 L-12,-30 Z" fill="#F8E71C"/>
-                        <script>
-                            const g = document.currentScript.parentElement;
-                            for(let i=1; i<21; i++) {
-                                let use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-                                use.setAttributeNS("http://www.w3.org/2000/svg", "href", "#ray");
-                                use.setAttribute("transform", `rotate(${i*17.14})`);
-                                g.appendChild(use);
-                            }
-                        </script>
-                    </g>
-                </svg>
+            <div class="flag-wrapper wave-effect kurdistan-delay">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kurdistan.svg" alt="علم كردستان الحقيقي" class="flag-img">
             </div>
         </div>
 
-        <p>استكشف أجمل المناطق الطبيعية والمعالم السياحية في كردستان وسوريا.</p>
-        <hr>
+        <p style="font-size: 1.3rem; line-height: 1.8; max-width: 700px; margin: auto;">
+            استكشف أجمل المناطق الطبيعية والمعالم السياحية في كردستان وسوريا.
+        </p>
+        <hr style="margin: 30px auto; width: 50%;">
         <a href="https://youtube.com/@syriatour" class="btn-yt">تابعنا على يوتيوب</a>
     </div>
 
