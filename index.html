@@ -8,39 +8,37 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; text-align: center; }
         .header-image { width: 100%; max-height: 350px; object-fit: cover; border-bottom: 4px solid #28a745; }
         
-        /* القسم العلوي للأعلام والعنوان */
+        /* القسم العلوي: علم | عنوان | علم */
         .hero-section { 
             display: flex; 
             justify-content: space-around; 
             align-items: center; 
-            padding: 25px 10px;
+            padding: 20px 10px;
             max-width: 1000px;
             margin: auto;
-            flex-wrap: nowrap; /* لضمان بقائهم بجانب بعضهم */
         }
 
-        /* تنسيق الأعلام المستطيلة */
+        /* تنسيق العلم المستطيل الصافي */
         .flag-box {
-            width: 85px; /* حجم أنيق ومتناسق */
-            height: 55px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            border-radius: 2px;
+            width: 90px; 
+            height: 60px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 3px;
             overflow: hidden;
-            animation: gentle-wave 4s ease-in-out infinite;
+            animation: wave-motion 3.5s ease-in-out infinite;
         }
 
-        .flag-img { width: 100%; height: 100%; object-fit: cover; border: none; }
+        .flag-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-        /* حركة الرفرفة الهادئة (خفاقة) */
-        @keyframes gentle-wave {
+        /* حركة الرفرفة الهادئة */
+        @keyframes wave-motion {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(3deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
         }
 
-        .container { padding: 20px; max-width: 800px; margin: 10px auto; background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h1 { color: #0056b3; font-size: 1.4rem; margin: 0 10px; flex: 1; line-height: 1.4; }
-        p { font-size: 1.1rem; color: #555; }
-        .btn-yt { display: inline-block; background: #ff0000; color: white; padding: 12px 25px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 15px; transition: 0.3s; }
+        .container { padding: 20px; max-width: 800px; margin: 10px auto; background: white; border-radius: 15px; }
+        h1 { color: #0056b3; font-size: 1.3rem; flex: 1; margin: 0 10px; }
+        .btn-yt { display: inline-block; background: #ff0000; color: white; padding: 12px 25px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 15px; }
     </style>
 </head>
 <body>
@@ -54,15 +52,15 @@
         
         <h1>أهلاً بكم في موقعنا السياحي</h1>
         
-        <div class="flag-box" style="animation-delay: 2s;">
+        <div class="flag-box" style="animation-delay: 1.7s;">
             <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Flag_of_Kurdistan.svg" class="flag-img">
         </div>
     </div>
 
     <div class="container">
         <p>استكشف أجمل المناطق الطبيعية والمعالم السياحية في كردستان وسوريا.</p>
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-        <a href="https://youtube.com/@syriatour" class="btn-yt" target="_blank">اشترك في قناتنا على يوتيوب</a>
+        <hr style="border: 0; border-top: 1px solid #eee;">
+        <a href="https://youtube.com/@syriatour" class="btn-yt">اشترك في قناتنا على يوتيوب</a>
     </div>
 
 </body>
