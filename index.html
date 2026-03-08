@@ -3,40 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قناة السياحة في كردستان وسوريا</title>
+    <title>Tourist Channel</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f8f9fa; text-align: center; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f8f9fa; text-align: center; }
         .header-image { width: 100%; max-height: 350px; object-fit: cover; border-bottom: 4px solid #28a745; }
+        .hero-section { display: flex; justify-content: center; align-items: center; padding: 30px 10px; max-width: 1000px; margin: auto; gap: 20px; }
         
-        .hero-section { 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            padding: 30px 10px;
-            max-width: 1000px;
-            margin: auto;
-            gap: 20px;
-        }
-
-        /* حاوية العلم المستطيل */
-        .flag-box {
-            width: 130px; 
-            height: 85px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-            border-radius: 4px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* حركة موج البحر الانسيابية */
-        .ocean-wave {
-            width: 100%;
-            height: 100%;
-            animation: flag-wave-motion 5s ease-in-out infinite;
-            transform-origin: center left;
-        }
-
-        @keyframes flag-wave-motion {
+        .flag-box { width: 130px; height: 85px; box-shadow: 0 8px 25px rgba(0,0,0,0.2); border-radius: 4px; overflow: hidden; position: relative; }
+        .ocean-wave { width: 100%; height: 100%; animation: wave-motion 5s ease-in-out infinite; transform-origin: center left; }
+        
+        @keyframes wave-motion {
             0%, 100% { transform: perspective(600px) rotateY(0deg) scale(1); }
             25% { transform: perspective(600px) rotateY(12deg) skewY(2deg); }
             50% { transform: perspective(600px) rotateY(0deg) scale(1.04); }
@@ -44,22 +20,10 @@
         }
 
         .flag-svg { width: 100%; height: 100%; display: block; }
-
         .container { padding: 25px; max-width: 900px; margin: 15px auto; background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
         h1 { color: #0056b3; font-size: 1.8rem; margin: 0; }
         
-        .btn-yt { 
-            display: inline-block; 
-            background: #ff0000; 
-            color: white; 
-            padding: 15px 40px; 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: bold; 
-            margin-top: 30px; 
-            transition: 0.3s; 
-            font-size: 1.1rem;
-        }
+        .btn-yt { display: inline-block; background: #ff0000; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 30px; transition: 0.3s; font-size: 1.1rem; }
         .btn-yt:hover { background: #cc0000; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255,0,0,0.3); }
     </style>
 </head>
@@ -77,23 +41,17 @@
                     <g transform="translate(372,248)">
                         <circle r="60" fill="#F8E71C"/>
                         <path d="M0,-85 L10,-30 L-10,-30 Z" fill="#F8E71C" id="ray"/>
-                        <g id="rays">
-                            <use href="#ray" transform="rotate(17.14)"/><use href="#ray" transform="rotate(34.28)"/><use href="#ray" transform="rotate(51.42)"/><use href="#ray" transform="rotate(68.56)"/><use href="#ray" transform="rotate(85.70)"/><use href="#ray" transform="rotate(102.84)"/><use href="#ray" transform="rotate(119.98)"/><use href="#ray" transform="rotate(137.12)"/><use href="#ray" transform="rotate(154.26)"/><use href="#ray" transform="rotate(171.40)"/><use href="#ray" transform="rotate(188.54)"/><use href="#ray" transform="rotate(205.68)"/><use href="#ray" transform="rotate(222.82)"/><use href="#ray" transform="rotate(239.96)"/><use href="#ray" transform="rotate(257.10)"/><use href="#ray" transform="rotate(274.24)"/><use href="#ray" transform="rotate(291.38)"/><use href="#ray" transform="rotate(308.52)"/><use href="#ray" transform="rotate(325.66)"/><use href="#ray" transform="rotate(342.80)"/>
-                        </g>
+                        <use href="#ray" transform="rotate(17.14)"/><use href="#ray" transform="rotate(34.28)"/><use href="#ray" transform="rotate(51.42)"/><use href="#ray" transform="rotate(68.56)"/><use href="#ray" transform="rotate(85.7)"/><use href="#ray" transform="rotate(102.84)"/><use href="#ray" transform="rotate(119.98)"/><use href="#ray" transform="rotate(137.12)"/><use href="#ray" transform="rotate(154.26)"/><use href="#ray" transform="rotate(171.4)"/><use href="#ray" transform="rotate(188.54)"/><use href="#ray" transform="rotate(205.68)"/><use href="#ray" transform="rotate(222.82)"/><use href="#ray" transform="rotate(239.96)"/><use href="#ray" transform="rotate(257.1)"/><use href="#ray" transform="rotate(274.24)"/><use href="#ray" transform="rotate(291.38)"/><use href="#ray" transform="rotate(308.52)"/><use href="#ray" transform="rotate(325.66)"/><use href="#ray" transform="rotate(342.8)"/>
                     </g>
                 </svg>
             </div>
         </div>
-
         <h1>أهلاً بكم في موقعنا السياحي</h1>
     </div>
 
     <div class="container">
         <p>اكتشف سحر الطبيعة وعراقة التاريخ في رحلاتنا السياحية المميزة.</p>
-        
-        <a href="https://youtube.com/@syriatourism1980?si=3Y1e213xlnIfOS-f" class="btn-yt" target="_blank">
-            اشترك في قناتنا على يوتيوب
-        </a>
+        <a href="https://youtube.com/@syriatourism1980?si=3Y1e213xlnIfOS-f" class="btn-yt" target="_blank">اشترك في قناتنا على يوتيوب</a>
     </div>
 
 </body>
