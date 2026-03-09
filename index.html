@@ -3,10 +3,39 @@
             <div class="wave">
                 <svg viewBox="0 0 600 400" class="f-svg">
                     <rect width="60" height="133" fill="#007A3D"/>
+                    <rect y="133" width="600" height="134" fill="#FFF"/                   <rect y="267" width="600" height="133" fill="#000"/>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f8f9fa; text-align: center; overflow-x: hidden; }
+        .header-img { width: 100%; max-height: 350px; object-fit: cover; border-bottom: 4px solid #28a745; }
+        .hero { display: flex; justify-content: center; align-items: center; padding: 15px; max-width: 1000px; margin: auto; gap: 15px; }
+        
+        /* تثبيت حجم العلم ليطابق المخطط القديم */
+        .f-box { width: 110px; height: 73px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; flex-shrink: 0; }
+        .wave { width: 100%; height: 100%; animation: w-act 5s ease-in-out infinite; transform-origin: center left; }
+        @keyframes w-act { 0%, 100% { transform: perspective(600px) rotateY(0deg); } 50% { transform: perspective(600px) rotateY(12deg); } }
+        .f-svg { width: 100%; height: 100%; display: block; object-fit: cover; }
+        
+        h1 { color: #0056b3; font-size: 1.6rem; margin: 0; line-height: 1.4; }
+        .ticker { background: #28a745; color: white; padding: 12px 0; overflow: hidden; white-space: nowrap; width: 100%; direction: ltr; }
+        .t-text { display: inline-block; animation: s-right 25s linear infinite; font-size: 1.1rem; font-weight: bold; }
+        @keyframes s-right { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+
+        .btn-yt { display: inline-block; background: #FF0000; color: #fff; padding: 14px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 25px; transition: 0.3s; }
+        .btn-yt:hover { background: #CC0000; transform: scale(1.05); }
+        .gal { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 30px; padding: 0 20px; }
+        .gal img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; }
+    </style>
+                    <g transform="translate(372,248)">
+                        <circle r="60" fill="#F8E71C"/>
+    <div class="hero">
+        <div class="f-box">
+            <div class="wave">
+                <svg viewBox="0 0 600 400" class="f-svg">
+                    <rect width="600" height="133" fill="#007A3D"/>
                     <rect y="133" width="600" height="134" fill="#FFF"/>
                     <rect y="267" width="600" height="133" fill="#000"/>
                     <g fill="#CE1126">
-                        <path id="st" d="M0,-35 L9,-11 L35,-11 L14,5 L22,30 L0,14 L-22,30 L-14,5 L-35,-11 L-9,-11 Z" transform="translate(150, 200)"/>
+                        <path id="st" d="M0,-32 L8,-10 L32,-10 L13,5 L20,28 L0,13 L-20,28 L-13,5 L-32,-10 L-8,-10 Z" transform="translate(150, 200)"/>
                         <use href="#st" x="150"/>
                         <use href="#st" x="300"/>
                     </g>
@@ -19,14 +48,9 @@
         <div class="f-box">
             <div class="wave" style="animation-delay: 2s;">
                 <svg viewBox="0 0 744 496" class="f-svg">
-                    <rect width="744" height="165" fill="#E31E26"/>
-                    <rect y="165" width="744" height="166" fill="#FFF"/>
-                    <rect y="331" width="744" height="165" fill="#278E43"/>
-                    <g transform="translate(372,248)">
-                        <circle r="60" fill="#F8E71C"/>
-                        <path d="M0,-85 L10,-30 L-10,-30 Z" fill="#F8E71C" id="r"/>
-                        <use href="#r" transform="rotate(17)"/><use href="#r" transform="rotate(34)"/><use href="#r" transform="rotate(51)"/><use href="#r" transform="rotate(68)"/><use href="#r" transform="rotate(85)"/><use href="#r" transform="rotate(102)"/><use href="#r" transform="rotate(119)"/><use href="#r" transform="rotate(136)"/><use href="#r" transform="rotate(153)"/><use href="#r" transform="rotate(170)"/><use href="#r" transform="rotate(187)"/><use href="#r" transform="rotate(204)"/><use href="#r" transform="rotate(221)"/><use href="#r" transform="rotate(238)"/><use href="#r" transform="rotate(255)"/><use href="#r" transform="rotate(272)"/><use href="#r" transform="rotate(289)"/><use href="#r" transform="rotate(306)"/><use href="#r" transform="rotate(323)"/><use href="#r" transform="rotate(340)"/>
-                    </g>
+                    <rect width="744" height="165" fill="#E31E26"/><rect y="165" width="744" height="166" fill="#FFF"/><rect y="331" width="744" height="165" fill="#278E43"/>
+                    <g transform="translate(372,248)"><circle r="60" fill="#F8E71C"/><path d="M0,-85 L10,-30 L-10,-30 Z" fill="#F8E71C" id="r"/>
+                    <use href="#r" transform="rotate(17)"/><use href="#r" transform="rotate(34)"/><use href="#r" transform="rotate(51)"/><use href="#r" transform="rotate(68)"/><use href="#r" transform="rotate(85)"/><use href="#r" transform="rotate(102)"/><use href="#r" transform="rotate(119)"/><use href="#r" transform="rotate(136)"/><use href="#r" transform="rotate(153)"/><use href="#r" transform="rotate(170)"/><use href="#r" transform="rotate(187)"/><use href="#r" transform="rotate(204)"/><use href="#r" transform="rotate(221)"/><use href="#r" transform="rotate(238)"/><use href="#r" transform="rotate(255)"/><use href="#r" transform="rotate(272)"/><use href="#r" transform="rotate(289)"/><use href="#r" transform="rotate(306)"/><use href="#r" transform="rotate(323)"/><use href="#r" transform="rotate(340)"/></g>
                 </svg>
             </div>
         </div>
