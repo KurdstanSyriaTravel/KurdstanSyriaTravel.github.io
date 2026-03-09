@@ -1,32 +1,43 @@
-    <div class="hero">
-        <div class="f-box">
-            <div class="wave">
-                <svg viewBox="0 0 600 400" class="f-svg">
-                    <rect width="60" height="133" fill="#007A3D"/>
-                    <rect y="133" width="600" height="134" fill="#FFF"/                   <rect y="267" width="600" height="133" fill="#000"/>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourist Channel</title>
     <style>
+        /* التنسيق العام للموقع */
         body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f8f9fa; text-align: center; overflow-x: hidden; }
+        
+        /* صورة الغلاف في الأعلى */
         .header-img { width: 100%; max-height: 350px; object-fit: cover; border-bottom: 4px solid #28a745; }
-        .hero { display: flex; justify-content: center; align-items: center; padding: 15px; max-width: 1000px; margin: auto; gap: 15px; }
         
-        /* تثبيت حجم العلم ليطابق المخطط القديم */
-        .f-box { width: 110px; height: 73px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; flex-shrink: 0; }
+        /* قسم الأعلام والعنوان (مرتب في سطر واحد) */
+        .hero { display: flex; justify-content: center; align-items: center; padding: 20px 10px; max-width: 1000px; margin: auto; gap: 15px; }
+        .f-box { width: 100px; height: 66px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; flex-shrink: 0; }
         .wave { width: 100%; height: 100%; animation: w-act 5s ease-in-out infinite; transform-origin: center left; }
-        @keyframes w-act { 0%, 100% { transform: perspective(600px) rotateY(0deg); } 50% { transform: perspective(600px) rotateY(12deg); } }
-        .f-svg { width: 100%; height: 100%; display: block; object-fit: cover; }
+        @keyframes w-act { 0%, 100% { transform: perspective(600px) rotateY(0deg); } 50% { transform: perspective(600px) rotateY(10deg); } }
+        .f-svg { width: 100%; height: 100%; display: block; }
         
-        h1 { color: #0056b3; font-size: 1.6rem; margin: 0; line-height: 1.4; }
-        .ticker { background: #28a745; color: white; padding: 12px 0; overflow: hidden; white-space: nowrap; width: 100%; direction: ltr; }
+        h1 { color: #0056b3; font-size: 1.6rem; margin: 0; line-height: 1.2; }
+        
+        /* الشريط الأخضر المتحرك لعام 2026 */
+        .ticker { background: #28a745; color: white; padding: 12px 0; overflow: hidden; white-space: nowrap; width: 100%; direction: ltr; margin-bottom: 20px; }
         .t-text { display: inline-block; animation: s-right 25s linear infinite; font-size: 1.1rem; font-weight: bold; }
         @keyframes s-right { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 
-        .btn-yt { display: inline-block; background: #FF0000; color: #fff; padding: 14px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 25px; transition: 0.3s; }
-        .btn-yt:hover { background: #CC0000; transform: scale(1.05); }
-        .gal { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 30px; padding: 0 20px; }
-        .gal img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; }
+        /* حاوية الصور والزر */
+        .container { padding: 10px 20px; max-width: 900px; margin: auto; }
+        .gal { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 30px; }
+        .gal img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; background: #eee; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        
+        .btn-yt { display: inline-block; background: #FF0000; color: #fff; padding: 15px 45px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; font-size: 1.1rem; }
+        .btn-yt:hover { background: #CC0000; transform: scale(1.05); box-shadow: 0 5px 15px rgba(255,0,0,0.3); }
     </style>
-                    <g transform="translate(372,248)">
-                        <circle r="60" fill="#F8E71C"/>
+</head>
+<body>
+
+    <img src="images/cover.jpg" class="header-img">
+
     <div class="hero">
         <div class="f-box">
             <div class="wave">
@@ -35,7 +46,7 @@
                     <rect y="133" width="600" height="134" fill="#FFF"/>
                     <rect y="267" width="600" height="133" fill="#000"/>
                     <g fill="#CE1126">
-                        <path id="st" d="M0,-32 L8,-10 L32,-10 L13,5 L20,28 L0,13 L-20,28 L-13,5 L-32,-10 L-8,-10 Z" transform="translate(150, 200)"/>
+                        <path id="st" d="M0,-30 L8,-10 L32,-10 L13,5 L20,28 L0,13 L-20,28 L-13,5 L-32,-10 L-8,-10 Z" transform="translate(150, 200)"/>
                         <use href="#st" x="150"/>
                         <use href="#st" x="300"/>
                     </g>
@@ -55,3 +66,22 @@
             </div>
         </div>
     </div>
+
+    <div class="ticker">
+        <div class="t-text">
+             إحصائيات 2026: ارتفاع عدد السياح في كردستان إلى 10 ملايين زائر • نمو السياحة بنسبة 30% • رحلاتنا مستمرة لعام 2026 • 
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="gal">
+            <img src="images/pic1.jpg" alt="Nature">
+            <img src="images/pic2.jpg" alt="History">
+            <img src="images/pic3.jpg" alt="Trips">
+        </div>
+
+        <a href="https://youtube.com/@syriatourism1980?si=3Y1e213xlnIfOS-f" class="btn-yt" target="_blank">SUBSCRIBE</a>
+    </div>
+
+</body>
+</html>
