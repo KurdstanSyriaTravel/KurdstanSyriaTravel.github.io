@@ -19,11 +19,14 @@
         .container { padding: 10px 20px; max-width: 900px; margin: auto; }
         .gal { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 30px; }
         .gal img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; background: #eee; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .btn-yt { display: inline-block; background: #FF0000; color: #fff; padding: 15px 45px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; font-size: 1.1rem; margin-bottom: 10px; }
-        .btn-yt:hover { background: #CC0000; transform: scale(1.05); box-shadow: 0 5px 15px rgba(255,0,0,0.3); }
-        .btn-wa { display: inline-block; background: #25D366; color: #fff; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; font-size: 1.1rem; margin-top: 10px; }
-        .btn-wa:hover { background: #128C7E; transform: scale(1.05); box-shadow: 0 5px 15px rgba(37,211,102,0.3); }
-        .contact-box { margin-top: 20px; border-top: 1px solid #ddd; padding-top: 20px; margin-bottom: 40px; }
+        .btn { display: inline-block; width: 85%; max-width: 320px; padding: 14px 0; margin: 8px 0; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; font-size: 1.1rem; color: #fff; border: none; }
+        .btn:hover { transform: scale(1.03); opacity: 0.9; }
+        .btn-yt { background: #FF0000; }
+        .btn-wa { background: #25D366; }
+        .btn-fb { background: #1877F2; }
+        .btn-tk { background: #000000; }
+        .btn-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .contact-box { margin-top: 30px; border-top: 2px solid #eee; padding-top: 20px; margin-bottom: 50px; }
     </style>
 </head>
 <body>
@@ -34,26 +37,17 @@
         <div class="f-box">
             <div class="wave">
                 <svg viewBox="0 0 600 400" class="f-svg">
-                    <rect width="600" height="133" fill="#007A3D"/>
-                    <rect y="133" width="600" height="134" fill="#FFF"/>
-                    <rect y="267" width="600" height="133" fill="#000"/>
-                    <g fill="#CE1126">
-                        <path id="st" d="M0,-30 L8,-10 L32,-10 L13,5 L20,28 L0,13 L-20,28 L-13,5 L-32,-10 L-8,-10 Z" transform="translate(150, 200)"/>
-                        <use href="#st" x="150"/>
-                        <use href="#st" x="300"/>
-                    </g>
+                    <rect width="600" height="133" fill="#007A3D"/><rect y="133" width="600" height="134" fill="#FFF"/><rect y="267" width="600" height="133" fill="#000"/>
+                    <g fill="#CE1126"><path id="st" d="M0,-30 L8,-10 L32,-10 L13,5 L20,28 L0,13 L-20,28 L-13,5 L-32,-10 L-8,-10 Z" transform="translate(150, 200)"/><use href="#st" x="150"/><use href="#st" x="300"/></g>
                 </svg>
             </div>
         </div>
-
         <h1>أهلاً بكم في موقعنا السياحي</h1>
-
         <div class="f-box">
             <div class="wave" style="animation-delay: 2s;">
                 <svg viewBox="0 0 744 496" class="f-svg">
                     <rect width="744" height="165" fill="#E31E26"/><rect y="165" width="744" height="166" fill="#FFF"/><rect y="331" width="744" height="165" fill="#278E43"/>
-                    <g transform="translate(372,248)"><circle r="60" fill="#F8E71C"/><path d="M0,-85 L10,-30 L-10,-30 Z" fill="#F8E71C" id="r"/>
-                    <use href="#r" transform="rotate(17)"/><use href="#r" transform="rotate(34)"/><use href="#r" transform="rotate(51)"/><use href="#r" transform="rotate(68)"/><use href="#r" transform="rotate(85)"/><use href="#r" transform="rotate(102)"/><use href="#r" transform="rotate(119)"/><use href="#r" transform="rotate(136)"/><use href="#r" transform="rotate(153)"/><use href="#r" transform="rotate(170)"/><use href="#r" transform="rotate(187)"/><use href="#r" transform="rotate(204)"/><use href="#r" transform="rotate(221)"/><use href="#r" transform="rotate(238)"/><use href="#r" transform="rotate(255)"/><use href="#r" transform="rotate(272)"/><use href="#r" transform="rotate(289)"/><use href="#r" transform="rotate(306)"/><use href="#r" transform="rotate(323)"/><use href="#r" transform="rotate(340)"/></g>
+                    <g transform="translate(372,248)"><circle r="60" fill="#F8E71C"/><path d="M0,-85 L10,-30 L-10,-30 Z" fill="#F8E71C" id="r"/><use href="#r" transform="rotate(17)"/><use href="#r" transform="rotate(34)"/><use href="#r" transform="rotate(51)"/><use href="#r" transform="rotate(68)"/><use href="#r" transform="rotate(85)"/><use href="#r" transform="rotate(102)"/><use href="#r" transform="rotate(119)"/><use href="#r" transform="rotate(136)"/><use href="#r" transform="rotate(153)"/><use href="#r" transform="rotate(170)"/><use href="#r" transform="rotate(187)"/><use href="#r" transform="rotate(204)"/><use href="#r" transform="rotate(221)"/><use href="#r" transform="rotate(238)"/><use href="#r" transform="rotate(255)"/><use href="#r" transform="rotate(272)"/><use href="#r" transform="rotate(289)"/><use href="#r" transform="rotate(306)"/><use href="#r" transform="rotate(323)"/><use href="#r" transform="rotate(340)"/></g>
                 </svg>
             </div>
         </div>
@@ -73,10 +67,12 @@
         </div>
 
         <div class="contact-box">
-            <a href="https://youtube.com/@syriatourism1980?si=3Y1e213xlnIfOS-f" class="btn-yt" target="_blank">YouTube SUBSCRIBE</a>
-            <br>
-            <a href="https://wa.me/9647502061184" class="btn-wa" target="_blank">تواصل معنا عبر WhatsApp</a>
-            <p style="color: #666; margin-top: 15px; font-size: 0.9rem;">نحن متاحون للرد على استفساراتكم لعام 2026</p>
+            <a href="https://youtube.com/@syriatourism1980" class="btn btn-yt" target="_blank">YouTube SUBSCRIBE</a><br>
+            <a href="https://wa.me/9647502061184" class="btn btn-wa" target="_blank">WhatsApp تواصل معنا</a><br>
+            <a href="https://www.facebook.com/share/1GGXK5ZT5J/?mibextid=wwXIfr" class="btn btn-fb" target="_blank">Facebook تابعنا</a><br>
+            <a href="https://www.tiktok.com/@moradalmdar1239" class="btn btn-tk" target="_blank">TikTok تابعنا</a><br>
+            <a href="https://www.instagram.com/tourism_video?igsh=MWViNjVnMGF1NXJhOQ%3D%3D&utm_source=qr" class="btn btn-ig" target="_blank">Instagram تابعنا</a>
+            <p style="color: #666; margin-top: 20px; font-size: 0.9rem;">تواصلوا معنا عبر منصاتنا الرسمية لعام 2026</p>
         </div>
     </div>
 
