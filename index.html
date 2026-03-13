@@ -3,37 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tourist Channel</title>
+    <title>Kurdstan Syria Travel | بوابة السياحة والجمال</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; background: #f8f9fa; text-align: center; overflow-x: hidden; }
-        .header-img { width: 100%; max-height: 350px; object-fit: cover; border-bottom: 4px solid #28a745; }
-        .hero { display: flex; justify-content: center; align-items: center; padding: 20px 10px; max-width: 1000px; margin: auto; gap: 15px; }
-        .f-box { width: 100px; height: 66px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); border-radius: 4px; overflow: hidden; flex-shrink: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #fdfdfd; text-align: center; overflow-x: hidden; color: #333; }
+        
+        /* Hero Section */
+        .hero-wrapper {
+            position: relative;
+            height: 450px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-bottom: 5px solid #1a742c;
+        }
+        #hero-video {
+            position: absolute;
+            top: 50%; left: 50%;
+            min-width: 100%; min-height: 100%;
+            width: auto; height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+            z-index: -1;
+        }
+        .hero-text-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .hero-text-content p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Flags & Identity */
+        .identity-row { display: flex; justify-content: center; align-items: center; padding: 30px 10px; max-width: 1100px; margin: auto; gap: 25px; }
+        .f-box { width: 110px; height: 73px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-radius: 6px; overflow: hidden; flex-shrink: 0; }
         .wave { width: 100%; height: 100%; animation: w-act 5s ease-in-out infinite; transform-origin: center left; }
-        @keyframes w-act { 0%, 100% { transform: perspective(600px) rotateY(0deg); } 50% { transform: perspective(600px) rotateY(10deg); } }
+        @keyframes w-act { 0%, 100% { transform: perspective(800px) rotateY(0deg); } 50% { transform: perspective(800px) rotateY(12deg); } }
         .f-svg { width: 100%; height: 100%; display: block; }
-        h1 { color: #0056b3; font-size: 1.6rem; margin: 0; line-height: 1.2; }
-        .ticker { background: #28a745; color: white; padding: 12px 0; overflow: hidden; white-space: nowrap; width: 100%; direction: ltr; margin-bottom: 20px; }
-        .t-text { display: inline-block; animation: s-right 25s linear infinite; font-size: 1.1rem; font-weight: bold; }
+        .brand-title { color: #004a99; font-size: 1.8rem; font-weight: bold; margin: 0; }
+
+        /* Ticker */
+        .ticker { background: #28a745; color: white; padding: 14px 0; overflow: hidden; white-space: nowrap; width: 100%; direction: ltr; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .t-text { display: inline-block; animation: s-right 30s linear infinite; font-size: 1rem; font-weight: 500; letter-spacing: 0.5px; }
         @keyframes s-right { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
-        .container { padding: 10px 20px; max-width: 900px; margin: auto; }
-        .gal { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 30px; }
-        .gal img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; background: #eee; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .btn { display: inline-block; width: 85%; max-width: 320px; padding: 14px 0; margin: 8px 0; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; font-size: 1.1rem; color: #fff; border: none; }
-        .btn:hover { transform: scale(1.03); opacity: 0.9; }
-        .btn-yt { background: #FF0000; }
+        
+        /* Gallery */
+        .container { padding: 40px 20px; max-width: 1100px; margin: auto; }
+        .section-label { font-size: 1.5rem; color: #444; margin-bottom: 25px; font-weight: bold; position: relative; display: inline-block; }
+        .section-label::after { content: ''; width: 50%; height: 3px; background: #28a745; position: absolute; bottom: -8px; right: 25%; }
+        .gal { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; }
+        .gal img { width: 100%; height: 250px; object-fit: cover; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.08); transition: transform 0.4s; }
+        .gal img:hover { transform: translateY(-10px); }
+        
+        /* Buttons */
+        .social-grid { margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .btn { display: flex; align-items: center; justify-content: center; padding: 15px; text-decoration: none; border-radius: 12px; font-weight: 600; transition: 0.3s; font-size: 1rem; color: #fff; }
+        .btn:hover { filter: brightness(1.1); transform: scale(1.02); }
+        .btn-yt { background: #e62117; }
         .btn-wa { background: #25D366; }
         .btn-fb { background: #1877F2; }
-        .btn-tk { background: #000000; }
+        .btn-tk { background: #000; }
         .btn-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-        .contact-box { margin-top: 30px; border-top: 2px solid #eee; padding-top: 20px; margin-bottom: 50px; }
+        .footer-note { color: #888; margin-top: 40px; font-size: 0.85rem; border-top: 1px solid #eee; padding-top: 20px; }
     </style>
 </head>
 <body>
 
-    <img src="images/cover.jpg" class="header-img">
+    <div class="hero-wrapper">
+        <video autoplay muted loop playsinline id="hero-video">
+            <source src="images/hero.mp4" type="video/mp4">
+            <img src="images/cover.jpg" alt="Kurdstan Syria Nature">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-text-content">
+            <h1>استكشف آفاق الجمال الطبيعي</h1>
+            <p>وجهتكم الرائدة لاكتشاف كنوز كردستان وسوريا السياحية</p>
+        </div>
+    </div>
 
-    <div class="hero">
+    <div class="identity-row">
         <div class="f-box">
             <div class="wave">
                 <svg viewBox="0 0 600 400" class="f-svg">
@@ -42,7 +102,7 @@
                 </svg>
             </div>
         </div>
-        <h1>أهلاً بكم في موقعنا السياحي</h1>
+        <div class="brand-title">المنصة السياحية الرسمية</div>
         <div class="f-box">
             <div class="wave" style="animation-delay: 2s;">
                 <svg viewBox="0 0 744 496" class="f-svg">
@@ -55,24 +115,29 @@
 
     <div class="ticker">
         <div class="t-text">
-             إحصائيات 2026: ارتفاع عدد السياح في كردستان إلى 10 ملايين زائر • نمو السياحة بنسبة 30% • رحلاتنا مستمرة لعام 2026 • 
+            رؤية 2026: طفرة سياحية كبرى في المنطقة • أكثر من 10 ملايين زائر يختارون كردستان • رحلاتنا الاستكشافية مستمرة معكم • 
         </div>
     </div>
 
     <div class="container">
+        <h2 class="section-label">وجهات مختارة</h2>
         <div class="gal">
-            <img src="images/pic1.jpg" alt="Nature">
-            <img src="images/pic2.jpg" alt="History">
-            <img src="images/pic3.jpg" alt="Trips">
+            <img src="images/pic1.jpg" alt="طبيعة خلابة">
+            <img src="images/pic2.jpg" alt="تراث تاريخي">
+            <img src="images/pic3.jpg" alt="رحلات استكشافية">
         </div>
 
-        <div class="contact-box">
-            <a href="https://youtube.com/@syriatourism1980" class="btn btn-yt" target="_blank">YouTube SUBSCRIBE</a><br>
-            <a href="https://wa.me/9647502061184" class="btn btn-wa" target="_blank">WhatsApp تواصل معنا</a><br>
-            <a href="https://www.facebook.com/share/1GGXK5ZT5J/?mibextid=wwXIfr" class="btn btn-fb" target="_blank">Facebook تابعنا</a><br>
-            <a href="https://www.tiktok.com/@moradalmdar1239" class="btn btn-tk" target="_blank">TikTok تابعنا</a><br>
-            <a href="https://www.instagram.com/tourism_video?igsh=MWViNjVnMGF1NXJhOQ%3D%3D&utm_source=qr" class="btn btn-ig" target="_blank">Instagram تابعنا</a>
-            <p style="color: #666; margin-top: 20px; font-size: 0.9rem;">تواصلوا معنا عبر منصاتنا الرسمية لعام 2026</p>
+        <h2 class="section-label" style="margin-top: 50px;">قنوات التواصل الرسمية</h2>
+        <div class="social-grid">
+            <a href="https://youtube.com/@syriatourism1980" class="btn btn-yt" target="_blank">YouTube Channel</a>
+            <a href="https://wa.me/9647502061184" class="btn btn-wa" target="_blank">WhatsApp Support</a>
+            <a href="https://www.facebook.com/share/1GGXK5ZT5J/?mibextid=wwXIfr" class="btn btn-fb" target="_blank">Facebook Community</a>
+            <a href="https://www.tiktok.com/@moradalmdar1239" class="btn btn-tk" target="_blank">TikTok Official</a>
+            <a href="https://www.instagram.com/tourism_video?igsh=MWViNjVnMGF1NXJhOQ%3D%3D&utm_source=qr" class="btn btn-ig" target="_blank">Instagram Profile</a>
+        </div>
+        
+        <div class="footer-note">
+            <p>© 2026 Kurdstan Syria Travel. جميع الحقوق محفوظة لخدمات السياحة والرحلات.</p>
         </div>
     </div>
 
