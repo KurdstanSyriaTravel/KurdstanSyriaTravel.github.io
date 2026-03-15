@@ -5,18 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurdstan Syria Travel | بوابة السياحة والجمال</title>
     
-    <meta name="description" content="اكتشف أفضل الرحلات السياحية في كردستان وسوريا لعام 2026. حجز فنادق، جولات سياحية ومغامرات طبيعية في جبال كردستان والمعالم التاريخية السورية.">
-    <meta name="keywords" content="سياحة، كردستان، سوريا، رحلات 2026، حجز رحلات، جبال كردستان، سياحة دمشق، Kurdstan Syria Travel">
-    <link rel="canonical" href="https://kurdstansyriatravel.github.io/">
-
     <style>
         body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; background: #fdfdfd; text-align: center; overflow-x: hidden; color: #333; }
         
-        /* القسم الرئيسي وإزالة الخط السفلي المسبب للفراغ */
         .hero-wrapper {
             position: relative; height: 450px; width: 100%; overflow: hidden;
             display: flex; align-items: center; justify-content: center;
-            color: white; border-bottom: none; /* إزالة الخط السفلي */
+            color: white; 
         }
         #hero-video {
             position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
@@ -24,74 +19,61 @@
             z-index: -2; object-fit: cover;
         }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)); z-index: -1; }
-        .hero-text-content h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        .hero-text-content p { font-size: 1.2rem; opacity: 0.9; }
-
-        /* قسم الأعلام والتخلص النهائي من البياض */
+        
+        /* حل مشكلة البياض نهائياً */
         .identity-row { 
             display: flex; justify-content: center; align-items: center; 
-            padding: 15px 25px; gap: 30px; background: #fdfdfd; 
-            margin-top: -15px; /* سحب القسم للأعلى ليتداخل مع الفيديو ويخفي البياض */
-            z-index: 10;
+            padding: 20px; gap: 25px; background: #fdfdfd; 
+            margin-top: -5px; /* يغلق أي فجوة مع الفيديو */
             position: relative;
-            box-shadow: 0 -10px 20px rgba(0,0,0,0.1); /* إضافة ظل خفيف للدمج */
-            border-radius: 20px 20px 0 0;
-        }
-        
-        /* تأثير الرفرفة المتموجة الحقيقية 3D (بدون صور سوداء) */
-        .waving-flag {
-            width: 110px; 
-            height: 70px; 
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transform-origin: left center; /* نقطة ارتكاز الحركة من جهة السارية */
-            animation: flap 1.5s ease-in-out infinite alternate; /* تفعيل الرفرفة */
+            z-index: 5;
         }
 
-        .waving-flag img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 5px;
-            display: block;
+        /* كود الرفرفة الاحترافي */
+        @keyframes flagWave {
+            0% { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
+            25% { transform: perspective(1000px) rotateY(10deg) rotateX(2deg) skewY(-1deg); }
+            50% { transform: perspective(1000px) rotateY(0deg) rotateX(-2deg); }
+            75% { transform: perspective(1000px) rotateY(-10deg) rotateX(2deg) skewY(1deg); }
+            100% { transform: perspective(1000px) rotateY(0deg) rotateX(0deg); }
         }
 
-        /* كود الحركة (يجعل العلم يتموج لليمين واليسار مثل الـ GIF) */
-        @keyframes flap {
-            0% { transform: perspective(400px) rotateY(15deg) skewY(-3deg); }
-            100% { transform: perspective(400px) rotateY(-20deg) skewY(3deg); }
+        .flag-box {
+            width: 100px;
+            height: 65px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            animation: flagWave 3s ease-in-out infinite;
+            transform-style: preserve-3d;
         }
 
-        /* روابط التنقل */
-        .nav-links { margin: 25px 0; }
+        .flag-box svg { width: 100%; height: 100%; display: block; }
+
+        .nav-links { margin: 20px 0; }
         .nav-btn { 
             text-decoration: none; background: #28a745; color: white; 
-            padding: 12px 35px; border-radius: 30px; font-weight: bold; 
-            transition: 0.3s; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
-            display: inline-block;
+            padding: 12px 30px; border-radius: 30px; font-weight: bold; 
+            transition: 0.3s; display: inline-block;
         }
         .nav-btn:hover { background: #1a742c; transform: scale(1.05); }
 
-        .container { padding: 40px 20px; max-width: 1100px; margin: auto; }
-        .section-label { font-size: 1.8rem; color: #444; margin: 40px 0 25px; font-weight: bold; position: relative; display: inline-block; }
-        .section-label::after { content: ''; width: 60px; height: 3px; background: #28a745; position: absolute; bottom: -10px; right: 50%; transform: translateX(50%); }
-        
-        .destination-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
-        .card { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.08); transition: 0.4s; cursor: pointer; height: 350px; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        .card img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
-        .card:hover img { transform: scale(1.1); }
-        .card-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; text-align: right; box-sizing: border-box; }
-        .card-info h3 { margin: 0; font-size: 1.4rem; }
-        
         .ticker { background: #28a745; color: white; padding: 12px 0; overflow: hidden; white-space: nowrap; direction: ltr; }
         .t-text { display: inline-block; animation: s-right 25s linear infinite; font-weight: 500; }
         @keyframes s-right { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
-        
-        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 30px; }
-        .btn { padding: 15px; text-decoration: none; border-radius: 12px; color: #fff; font-weight: 600; transition: 0.3s; text-align: center; }
+
+        .container { padding: 40px 20px; max-width: 1100px; margin: auto; }
+        .section-label { font-size: 1.8rem; color: #444; margin: 40px 0 25px; font-weight: bold; display: inline-block; position: relative; }
+        .section-label::after { content: ''; width: 50px; height: 3px; background: #28a745; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); }
+
+        .destination-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { border-radius: 15px; overflow: hidden; height: 300px; position: relative; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 100%; object-fit: cover; }
+        .card-info { position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 15px; text-align: right; box-sizing: border-box; }
+
+        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 30px; }
+        .btn { padding: 12px; text-decoration: none; border-radius: 10px; color: #fff; font-weight: bold; font-size: 0.9rem; }
         .btn-yt { background: #e62117; } .btn-wa { background: #25D366; } .btn-fb { background: #1877F2; } .btn-tk { background: #000; } .btn-ig { background: linear-gradient(45deg, #f09433, #bc1888); }
-        .btn:hover { opacity: 0.8; transform: translateY(-3px); }
     </style>
 </head>
 <body>
@@ -108,14 +90,36 @@
     </div>
 
     <div class="identity-row">
-        <div class="waving-flag" title="علم كردستان يرفرف">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Flag_of_Kurdistan.svg" alt="علم كردستان">
+        <div class="flag-box">
+            <svg viewBox="0 0 744 496">
+                <rect width="744" height="165" fill="#E31E26"/>
+                <rect y="165" width="744" height="166" fill="#FFF"/>
+                <rect y="331" width="744" height="165" fill="#278E43"/>
+                <g transform="translate(372,248)">
+                    <circle r="65" fill="#F8E71C"/>
+                    <path d="M0,-85 L10,-30 L-10,-30 Z" fill="#F8E71C" id="sun-ray"/>
+                    <script>
+                        for(let i=1; i<21; i++) {
+                            document.write('<use href="#sun-ray" transform="rotate('+(i*18)+')"/>');
+                        }
+                    </script>
+                </g>
+            </svg>
         </div>
-        
-        <h2 style="color: #004a99; font-size: 1.4rem; margin: 0;">المنصة السياحية الرسمية</h2>
-        
-        <div class="waving-flag" title="علم الثورة السورية يرفرف">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Flag_of_the_Syrian_revolution.svg" alt="علم الثورة السورية">
+
+        <h2 style="color: #004a99; font-size: 1.3rem; margin: 0;">المنصة السياحية الرسمية</h2>
+
+        <div class="flag-box">
+            <svg viewBox="0 0 600 400">
+                <rect width="600" height="133.3" fill="#1a742c"/>
+                <rect y="133.3" width="600" height="133.4" fill="#FFF"/>
+                <rect y="266.7" width="600" height="133.3" fill="#000"/>
+                <g fill="#CE1126" transform="translate(120, 200)">
+                    <path id="star" d="M0,-25 L7, -8 L25, -8 L11, 4 L16, 22 L0, 12 L-16, 22 L-11, 4 L-25, -8 L-7, -8 Z"/>
+                    <use href="#star" x="180"/>
+                    <use href="#star" x="360"/>
+                </g>
+            </svg>
         </div>
     </div>
 
@@ -124,35 +128,25 @@
     </div>
 
     <div class="ticker">
-        <div class="t-text">رؤية 2026: طفرة سياحية كبرى في المنطقة • أكثر من 10 ملايين زائر يختارون وجهاتنا • رحلاتنا مستمرة معكم •</div>
+        <div class="t-text">رؤية 2026: طفرة سياحية كبرى في المنطقة • رحلاتنا مستمرة معكم • حجز فنادق وجولات سياحية •</div>
     </div>
 
     <div class="container">
         <h2 class="section-label">وجهات مختارة</h2>
         <div class="destination-grid">
-            <div class="card">
-                <img src="images/pic1.jpg" alt="سياحة الطبيعة">
-                <div class="card-info"><h3>سحر الطبيعة</h3><p>جمال الجبال والمساحات الخضراء.</p></div>
-            </div>
-            <div class="card">
-                <img src="images/pic2.jpg" alt="سياحة تاريخية">
-                <div class="card-info"><h3>إرث وتاريخ</h3><p>عبق الماضي في أعرق المعالم.</p></div>
-            </div>
-            <div class="card">
-                <img src="images/pic3.jpg" alt="مغامرات 2026">
-                <div class="card-info"><h3>مغامرات 2026</h3><p>رحلات استكشافية متكاملة.</p></div>
-            </div>
+            <div class="card"><img src="images/pic1.jpg"><div class="card-info"><h3>سحر الطبيعة</h3></div></div>
+            <div class="card"><img src="images/pic2.jpg"><div class="card-info"><h3>إرث وتاريخ</h3></div></div>
+            <div class="card"><img src="images/pic3.jpg"><div class="card-info"><h3>مغامرات 2026</h3></div></div>
         </div>
 
-        <h2 class="section-label">تواصلوا معنا</h2>
         <div class="social-grid">
-            <a href="https://youtube.com/@syriatourism1980" class="btn btn-yt" target="_blank">YouTube</a>
-            <a href="https://wa.me/9647502061184" class="btn btn-wa" target="_blank">WhatsApp</a>
-            <a href="https://www.facebook.com/share/1GGXK5ZT5J/?mibextid=wwXIfr" class="btn btn-fb" target="_blank">Facebook</a>
-            <a href="https://www.tiktok.com/@moradalmdar1239" class="btn btn-tk" target="_blank">TikTok</a>
-            <a href="https://www.instagram.com/tourism_video?igsh=MWViNjVnMGF1NXJhOQ%3D%3D" class="btn btn-ig" target="_blank">Instagram</a>
+            <a href="https://youtube.com/@syriatourism1980" class="btn btn-yt">YouTube</a>
+            <a href="https://wa.me/9647502061184" class="btn btn-wa">WhatsApp</a>
+            <a href="https://www.facebook.com/share/1GGXK5ZT5J/" class="btn btn-fb">Facebook</a>
+            <a href="https://www.tiktok.com/@moradalmdar1239" class="btn btn-tk">TikTok</a>
+            <a href="https://www.instagram.com/tourism_video" class="btn btn-ig">Instagram</a>
         </div>
-        <p style="color: #888; margin-top: 40px; font-size: 0.8rem;">© 2026 Kurdstan Syria Travel. جميع الحقوق محفوظة.</p>
+        <p style="color: #888; margin-top: 30px; font-size: 0.8rem;">© 2026 Kurdstan Syria Travel.</p>
     </div>
 
 </body>
