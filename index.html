@@ -5,16 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurdstan Syria Travel | بوابة السياحة والجمال</title>
     
-    <meta name="description" content="اكتشف أفضل الرحلات السياحية في كردستان وسوريا لعام 2026. حجز فنادق، جولات سياحية ومغامرات طبيعية في جبال كردستان والمعالم التاريخية السورية.">
-    <meta name="keywords" content="سياحة، كردستان، سوريا، رحلات 2026، حجز رحلات، جبال كردستان، سياحة دمشق، Kurdstan Syria Travel">
-    <link rel="canonical" href="https://kurdstansyriatravel.github.io/">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
-
     <style>
         body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; background: #fdfdfd; text-align: center; overflow-x: hidden; color: #333; }
         
-        /* القسم الرئيسي */
         .hero-wrapper {
             position: relative; height: 450px; width: 100%; overflow: hidden;
             display: flex; align-items: center; justify-content: center;
@@ -29,51 +22,50 @@
         .hero-text-content h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
         .hero-text-content p { font-size: 1.2rem; opacity: 0.9; }
 
-        /* تعديل قسم الأعلام لتأثير PIXI.js وإزالة البياض */
+        /* إزالة الفراغ الأبيض تماماً وتحسين مظهر الأعلام */
         .identity-row { 
             display: flex; justify-content: center; align-items: center; 
             padding: 10px 25px; gap: 20px; background: #fdfdfd; 
-            margin-top: -5px; /* لإغلاق الفجوة تماماً */
-            z-index: 10;
+            margin-top: -2px; /* تم إغلاق الفجوة */
         }
         
-        /* حاوية العلم المرفرف باستخدام PIXI */
-        .pixi-flag-container {
-            width: 100px; height: 60px; /* الحجم الأنسب */
-            border-radius: 5px; 
-            overflow: hidden; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+        .flag-container {
+            width: 110px; /* حجم متناسق */
+            height: auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        /* روابط التنقل */
+        .flag-container img {
+            width: 100%;
+            display: block;
+        }
+
         .nav-links { margin: 25px 0; }
         .nav-btn { 
             text-decoration: none; background: #28a745; color: white; 
-            padding: 12px 30px; border-radius: 30px; font-weight: bold; 
-            transition: 0.3s; box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+            padding: 12px 35px; border-radius: 30px; font-weight: bold; 
+            transition: 0.3s; display: inline-block;
         }
         .nav-btn:hover { background: #1a742c; transform: scale(1.05); }
+
+        .ticker { background: #28a745; color: white; padding: 12px 0; overflow: hidden; white-space: nowrap; direction: ltr; }
+        .t-text { display: inline-block; animation: s-right 25s linear infinite; font-weight: 500; }
+        @keyframes s-right { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 
         .container { padding: 40px 20px; max-width: 1100px; margin: auto; }
         .section-label { font-size: 1.8rem; color: #444; margin: 40px 0 25px; font-weight: bold; position: relative; display: inline-block; }
         .section-label::after { content: ''; width: 60px; height: 3px; background: #28a745; position: absolute; bottom: -10px; right: 50%; transform: translateX(50%); }
-        
+
         .destination-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
-        .card { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.08); transition: 0.4s; cursor: pointer; height: 350px; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        .card img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
-        .card:hover img { transform: scale(1.1); }
-        .card-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; text-align: right; box-sizing: border-box; }
-        .card-info h3 { margin: 0; font-size: 1.4rem; }
-        
-        .ticker { background: #28a745; color: white; padding: 12px 0; overflow: hidden; white-space: nowrap; direction: ltr; }
-        .t-text { display: inline-block; animation: s-right 25s linear infinite; font-weight: 500; }
-        @keyframes s-right { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
-        
-        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 30px; }
-        .btn { padding: 15px; text-decoration: none; border-radius: 12px; color: #fff; font-weight: 600; transition: 0.3s; text-align: center; }
+        .card { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.08); transition: 0.4s; height: 350px; }
+        .card img { width: 100%; height: 100%; object-fit: cover; }
+        .card-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: rgba(0,0,0,0.7); color: white; text-align: right; }
+
+        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 30px; }
+        .btn { padding: 12px; text-decoration: none; border-radius: 10px; color: #fff; font-weight: 600; font-size: 0.9rem; }
         .btn-yt { background: #e62117; } .btn-wa { background: #25D366; } .btn-fb { background: #1877F2; } .btn-tk { background: #000; } .btn-ig { background: linear-gradient(45deg, #f09433, #bc1888); }
-        .btn:hover { opacity: 0.8; transform: translateY(-3px); }
     </style>
 </head>
 <body>
@@ -81,7 +73,6 @@
     <div class="hero-wrapper">
         <video autoplay muted loop playsinline id="hero-video">
             <source src="images/hero.mp4" type="video/mp4">
-            <img src="images/cover.jpg" alt="Kurdstan Syria Travel Cover">
         </video>
         <div class="hero-overlay"></div>
         <div class="hero-text-content">
@@ -91,49 +82,16 @@
     </div>
 
     <div class="identity-row">
-        <div id="syria_flag" class="pixi-flag-container" title="علم سوريا الجديد (الثلاث نجوم) - يرفرف"></div>
-        
-        <h2 style="color: #004a99; font-size: 1.4rem; margin: 0;">المنصة السياحية الرسمية</h2>
-        
-        <div id="kurdistan_flag" class="pixi-flag-container" title="علم كردستان - يرفرف"></div>
+        <div class="flag-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Flag_of_Kurdistan.svg" alt="علم كردستان">
+        </div>
+
+        <h2 style="color: #004a99; font-size: 1.3rem;">المنصة السياحية الرسمية</h2>
+
+        <div class="flag-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Flag_of_Syria_Official.svg" alt="علم سوريا">
+        </div>
     </div>
-
-    <script>
-        // دالة إنشاء العلم المرفرف باستخدام PIXI.js
-        function createWavingFlag(containerId, imageUrl) {
-            const container = document.getElementById(containerId);
-            const app = new PIXI.Application({ width: container.offsetWidth, height: container.offsetHeight, transparent: true });
-            container.appendChild(app.view);
-
-            PIXI.Assets.load(imageUrl).then((texture) => {
-                const flag = new PIXI.Sprite(texture);
-                flag.width = app.screen.width;
-                flag.height = app.screen.height;
-                app.stage.addChild(flag);
-
-                // تأثير الموجة
-                let time = 0;
-                app.ticker.add(() => {
-                    time += 0.05; // سرعة الرفرفة
-                    const mesh = flag.children[0]; // تأكيد الوصول للمش الصحيح
-                    if (mesh && mesh.geometry) {
-                         const points = mesh.geometry.getBuffer('aVertexPosition').data;
-                         for (let i = 0; i < points.length; i += 2) {
-                             const x = points[i];
-                             const y = points[i + 1];
-                             const waveX = Math.sin(time + x / 15) * 2; // شدة الموجة الأفقي
-                             points[i] = x + waveX;
-                         }
-                         mesh.geometry.getBuffer('aVertexPosition').update();
-                    }
-                });
-            });
-        }
-
-        // استدعاء الدالة للأعلام (تأكد من وجود ملفات الأعلام في مجلد images)
-        createWavingFlag('syria_flag', 'images/syria_flag.jpg'); // استبدل syria_flag.jpg باسم ملف العلم السوري
-        createWavingFlag('kurdistan_flag', 'images/kurdistan_flag.jpg'); // استبدل kurdistan_flag.jpg باسم ملف العلم الكردستاني
-    </script>
 
     <div class="nav-links">
         <a href="about.html" class="nav-btn">تعرف علينا (من نحن) ←</a>
@@ -147,28 +105,27 @@
         <h2 class="section-label">وجهات مختارة</h2>
         <div class="destination-grid">
             <div class="card">
-                <img src="images/pic1.jpg" alt="سياحة الطبيعة">
+                <img src="images/pic1.jpg">
                 <div class="card-info"><h3>سحر الطبيعة</h3><p>جمال الجبال والمساحات الخضراء.</p></div>
             </div>
             <div class="card">
-                <img src="images/pic2.jpg" alt="سياحة تاريخية">
+                <img src="images/pic2.jpg">
                 <div class="card-info"><h3>إرث وتاريخ</h3><p>عبق الماضي في أعرق المعالم.</p></div>
             </div>
             <div class="card">
-                <img src="images/pic3.jpg" alt="مغامرات 2026">
+                <img src="images/pic3.jpg">
                 <div class="card-info"><h3>مغامرات 2026</h3><p>رحلات استكشافية متكاملة.</p></div>
             </div>
         </div>
 
-        <h2 class="section-label">تواصلوا معنا</h2>
         <div class="social-grid">
-            <a href="https://youtube.com/@syriatourism1980" class="btn btn-yt" target="_blank">YouTube</a>
-            <a href="https://wa.me/9647502061184" class="btn btn-wa" target="_blank">WhatsApp</a>
-            <a href="https://www.facebook.com/share/1GGXK5ZT5J/?mibextid=wwXIfr" class="btn btn-fb" target="_blank">Facebook</a>
-            <a href="https://www.tiktok.com/@moradalmdar1239" class="btn btn-tk" target="_blank">TikTok</a>
-            <a href="https://www.instagram.com/tourism_video?igsh=MWViNjVnMGF1NXJhOQ%3D%3D" class="btn btn-ig" target="_blank">Instagram</a>
+            <a href="#" class="btn btn-yt">YouTube</a>
+            <a href="#" class="btn btn-wa">WhatsApp</a>
+            <a href="#" class="btn btn-fb">Facebook</a>
+            <a href="#" class="btn btn-tk">TikTok</a>
+            <a href="#" class="btn btn-ig">Instagram</a>
         </div>
-        <p style="color: #888; margin-top: 40px; font-size: 0.8rem;">© 2026 Kurdstan Syria Travel. جميع الحقوق محفوظة.</p>
+        <p style="color: #888; margin-top: 30px; font-size: 0.8rem;">© 2026 Kurdstan Syria Travel.</p>
     </div>
 
 </body>
