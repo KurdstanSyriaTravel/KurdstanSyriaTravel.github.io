@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurdstan Syria Travel</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; animation: none !important; transition: none !important; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #fff; text-align: center; color: #333; overflow-x: hidden; }       
         
         .hero-wrapper { position: relative; height: 100vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000; }
@@ -13,36 +13,37 @@
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.1); z-index: 2; }
         .hero-text-content { position: relative; z-index: 3; color: white; }
 
-        .identity-row { display: flex; justify-content: center; align-items: center; padding: 10px 0; gap: 20px; background: #fff; border: none; }
+        .identity-row { display: flex; justify-content: center; align-items: center; padding: 15px 0; gap: 20px; background: #fff; }
         .platform-title { color: #004a99; font-size: 1.1rem; font-weight: bold; line-height: 1.2; }
-        
         .flag-box { width: 90px; height: 60px; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         .flag-box svg { width: 100%; height: 100%; display: block; }
 
-        .nav-links { padding: 10px 0; background: #fff; }
+        .nav-links { padding: 10px 0; }
         .nav-btn { text-decoration: none; background: #28a745; color: white; padding: 10px 30px; border-radius: 25px; font-weight: bold; display: inline-block; }
         
         .ticker { background: #28a745; color: white; padding: 10px 0; overflow: hidden; white-space: nowrap; }
-        .t-text { display: inline-block; animation: s-right 25s linear infinite !important; font-size: 0.9rem; }
+        .t-text { display: inline-block; animation: s-right 25s linear infinite; font-size: 0.9rem; }
         @keyframes s-right { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        .container { width: 100%; padding: 0; }
-        .card { width: 100%; position: relative; background: #fff; margin-bottom: 5px; }
-        .card img { width: 100%; height: auto; display: block; filter: brightness(100%) !important; opacity: 1 !important; }
-        .card-info { position: absolute; bottom: 20px; width: 100%; text-align: center; color: #fff; text-shadow: 2px 2px 10px rgba(0,0,0,0.9); }
-        .card-info h3 { font-size: 1.4rem; }
-
-        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; padding: 20px; background: #fff; }
-        .btn { padding: 12px; text-decoration: none; border-radius: 10px; color: #fff; font-weight: bold; font-size: 0.85rem; text-align: center; }
+        .container { padding: 40px 15px; max-width: 1200px; margin: auto; }
+        .section-title { font-size: 2rem; color: #004a99; margin-bottom: 30px; position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 3px; background: #28a745; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .destination-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .card { position: relative; border-radius: 20px; overflow: hidden; height: 350px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.4s ease; }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; filter: brightness(100%) !important; }
+        .card:hover img { transform: scale(1.1); }
+        .card-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 30px 20px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white; text-align: right; }
+        
+        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; padding: 20px; }
+        .btn { padding: 12px; text-decoration: none; border-radius: 10px; color: #fff; font-weight: bold; font-size: 0.85rem; }
         .btn-yt { background: #e62117; } .btn-wa { background: #25D366; } .btn-fb { background: #1877F2; } .btn-tk { background: #000; } .btn-ig { background: linear-gradient(45deg, #f09433, #bc1888); }
     </style>
 </head>
 <body>
 
     <div class="hero-wrapper">
-        <video autoplay muted loop playsinline id="hero-video">
-            <source src="images/hero.mp4" type="video/mp4">
-        </video>
+        <video autoplay muted loop playsinline id="hero-video"><source src="images/hero.mp4" type="video/mp4"></video>
         <div class="hero-overlay"></div>
         <div class="hero-text-content">
             <h1>استكشف آفاق الجمال الطبيعي</h1>
@@ -53,41 +54,31 @@
     <div class="identity-row">
         <div class="flag-box">
             <svg viewBox="0 0 744 496">
-                <rect width="744" height="165.3" fill="#ED2024"/>
-                <rect y="165.3" width="744" height="165.4" fill="#FFF"/>
-                <rect y="330.7" width="744" height="165.3" fill="#278E43"/>
-                <g transform="translate(372,248)">
-                    <circle r="66" fill="#F8E71C"/>
-                    <path id="sun-ray" d="M0,-85 L10,-35 L-10,-35 Z" fill="#F8E71C"/>
-                    <use href="#sun-ray" transform="rotate(17.14)"/><use href="#sun-ray" transform="rotate(34.28)"/><use href="#sun-ray" transform="rotate(51.42)"/><use href="#sun-ray" transform="rotate(68.56)"/><use href="#sun-ray" transform="rotate(85.7)"/><use href="#sun-ray" transform="rotate(102.84)"/><use href="#sun-ray" transform="rotate(119.98)"/><use href="#sun-ray" transform="rotate(137.12)"/><use href="#sun-ray" transform="rotate(154.26)"/><use href="#sun-ray" transform="rotate(171.4)"/><use href="#sun-ray" transform="rotate(188.54)"/><use href="#sun-ray" transform="rotate(205.68)"/><use href="#sun-ray" transform="rotate(222.82)"/><use href="#sun-ray" transform="rotate(239.96)"/><use href="#sun-ray" transform="rotate(257.1)"/><use href="#sun-ray" transform="rotate(274.24)"/><use href="#sun-ray" transform="rotate(291.38)"/><use href="#sun-ray" transform="rotate(308.52)"/><use href="#sun-ray" transform="rotate(325.66)"/><use href="#sun-ray" transform="rotate(342.8)"/>
-                </g>
+                <rect width="744" height="165.3" fill="#ED2024"/><rect y="165.3" width="744" height="165.4" fill="#FFF"/><rect y="330.7" width="744" height="165.3" fill="#278E43"/>
+                <g transform="translate(372,248)"><circle r="66" fill="#F8E71C"/>
+                <path id="sun-ray" d="M0,-85 L10,-35 L-10,-35 Z" fill="#F8E71C"/>
+                <use href="#sun-ray" transform="rotate(17.14)"/><use href="#sun-ray" transform="rotate(34.28)"/><use href="#sun-ray" transform="rotate(51.42)"/><use href="#sun-ray" transform="rotate(68.56)"/><use href="#sun-ray" transform="rotate(85.7)"/><use href="#sun-ray" transform="rotate(102.84)"/><use href="#sun-ray" transform="rotate(119.98)"/><use href="#sun-ray" transform="rotate(137.12)"/><use href="#sun-ray" transform="rotate(154.26)"/><use href="#sun-ray" transform="rotate(171.4)"/><use href="#sun-ray" transform="rotate(188.54)"/><use href="#sun-ray" transform="rotate(205.68)"/><use href="#sun-ray" transform="rotate(222.82)"/><use href="#sun-ray" transform="rotate(239.96)"/><use href="#sun-ray" transform="rotate(257.1)"/><use href="#sun-ray" transform="rotate(274.24)"/><use href="#sun-ray" transform="rotate(291.38)"/><use href="#sun-ray" transform="rotate(308.52)"/><use href="#sun-ray" transform="rotate(325.66)"/><use href="#sun-ray" transform="rotate(342.8)"/></g>
             </svg>
         </div>
         <div class="platform-title">المنصة السياحية<br>الرسمية</div>
         <div class="flag-box">
             <svg viewBox="0 0 600 400">
-                <rect width="600" height="133.3" fill="#1a742c"/>
-                <rect y="133.3" width="600" height="133.4" fill="#FFF"/>
-                <rect y="266.7" width="600" height="133.3" fill="#000"/>
-                <g fill="#CE1126" transform="translate(120, 200)">
-                    <path id="star" d="M0,-25 L7, -8 L25, -8 L11, 4 L16, 22 L0, 12 L-16, 22 L-11, 4 L-25, -8 L-7, -8 Z"/>
-                    <use href="#star" x="180"/><use href="#star" x="360"/>
-                </g>
+                <rect width="600" height="133.3" fill="#1a742c"/><rect y="133.3" width="600" height="133.4" fill="#FFF"/><rect y="266.7" width="600" height="133.3" fill="#000"/>
+                <g fill="#CE1126" transform="translate(120, 200)"><path id="star" d="M0,-25 L7, -8 L25, -8 L11, 4 L16, 22 L0, 12 L-16, 22 L-11, 4 L-25, -8 L-7, -8 Z"/><use href="#star" x="180"/><use href="#star" x="360"/></g>
             </svg>
         </div>
     </div>
 
-    <div class="nav-links">
-        <a href="about.html" class="nav-btn">تعرف علينا (من نحن) ←</a>
-    </div>
-
-    <div class="ticker">
-        <div class="t-text">رؤية 2026: طفرة سياحية كبرى في المنطقة • حجز فنادق وجولات سياحية • رحلاتنا مستمرة معكم •</div>
-    </div>
+    <div class="nav-links"><a href="about.html" class="nav-btn">تعرف علينا (من نحن) ←</a></div>
+    <div class="ticker"><div class="t-text">رؤية 2026: طفرة سياحية كبرى في المنطقة • حجز فنادق وجولات سياحية • رحلاتنا مستمرة معكم •</div></div>
 
     <div class="container">
-        <div class="card"><img src="images/pic1.jpg"><div class="card-info"><h3>سحر الطبيعة</h3></div></div>
-        <div class="card"><img src="images/pic2.jpg"><div class="card-info"><h3>إرث وتاريخ</h3></div></div>
+        <h2 class="section-title">وجهات سياحية مختارة</h2>
+        <div class="destination-grid">
+            <div class="card"><img src="images/pic1.jpg"><div class="card-overlay"><h3>سحر الطبيعة</h3></div></div>
+            <div class="card"><img src="images/pic2.jpg"><div class="card-overlay"><h3>إرث وتاريخ</h3></div></div>
+            <div class="card"><img src="images/pic3.jpg"><div class="card-overlay"><h3>مغامرات 2026</h3></div></div>
+        </div>
     </div>
 
     <div class="social-grid">
