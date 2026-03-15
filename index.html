@@ -4,44 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurdstan Syria Travel</title>
-    .hero-wrapper {
-        position: relative;
-        height: 100vh;
-        width: 100%;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #000;
-    }
-
-    #hero-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 120%; /* جعل الفيديو أطول قليلاً ليتحرك بمرونة */
-        object-fit: cover;
-        z-index: 1;
-        will-change: transform;
-    }
-
-    @media (max-width: 768px) {
-        #hero-video { height: 100%; transform: none !important; }
-    }
-
     <style>
-        /* التنسيقات العامة */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #fff; text-align: center; color: #333; overflow-x: hidden; }       
         
-        /* الهيرو وفيديو الواجهة */
-        .hero-wrapper { position: relative; height: 100vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000; }
-        #hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+        /* تأثير Parallax المطور */
+        .hero-wrapper { 
+            position: relative; 
+            height: 100vh; 
+            width: 100%; 
+            overflow: hidden; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            background: #000; 
+        }
+        #hero-video { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 130%; /* جعل الفيديو أطول ليسمح بالحركة خلف النص */
+            object-fit: cover; 
+            z-index: 1; 
+            will-change: transform;
+        }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.1); z-index: 2; }
         .hero-text-content { position: relative; z-index: 3; color: white; }
 
-        /* منطقة الأعلام واللقب */
         .identity-row { display: flex; justify-content: center; align-items: center; padding: 15px 0; gap: 20px; background: #fff; }
         .platform-title { color: #004a99; font-size: 1.1rem; font-weight: bold; line-height: 1.2; }
         .flag-box { width: 90px; height: 60px; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
@@ -54,23 +44,21 @@
         .t-text { display: inline-block; animation: s-right 25s linear infinite; font-size: 0.9rem; }
         @keyframes s-right { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-        /* تنسيق شبكة الوجهات الاحترافي */
         .container { padding: 40px 15px; max-width: 1200px; margin: auto; }
-        .section-title { font-size: 2rem; color: #004a99; margin-bottom: 30px; position: relative; text-align: center; }
+        .section-title { font-size: 2rem; color: #004a99; margin-bottom: 30px; position: relative; }
         .section-title::after { content: ''; width: 60px; height: 3px; background: #28a745; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
         .destination-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; padding: 10px; }
         .card { position: relative; border-radius: 20px; overflow: hidden; height: 350px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.4s ease; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; filter: brightness(100%); }
         .card:hover img { transform: scale(1.1); }
-        .card img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; filter: brightness(100%) !important; }
         .card-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 30px 20px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white; text-align: right; }
-        .card-overlay h3 { margin: 0; font-size: 1.5rem; font-weight: bold; }
-        .card-overlay p { margin: 5px 0 0; font-size: 0.9rem; opacity: 0.9; }
 
-        /* أزرار التواصل الاجتماعي */
         .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; padding: 20px; }
         .btn { padding: 12px; text-decoration: none; border-radius: 10px; color: #fff; font-weight: bold; font-size: 0.85rem; display: block; }
         .btn-yt { background: #e62117; } .btn-wa { background: #25D366; } .btn-fb { background: #1877F2; } .btn-tk { background: #000; } .btn-ig { background: linear-gradient(45deg, #f09433, #bc1888); }
+
+        @media (max-width: 768px) { #hero-video { height: 100%; transform: none !important; } }
     </style>
 </head>
 <body>
@@ -108,27 +96,9 @@
     <div class="container">
         <h2 class="section-title">وجهات سياحية مختارة</h2>
         <div class="destination-grid">
-            <div class="card">
-                <img src="images/pic1.jpg">
-                <div class="card-overlay">
-                    <h3>سحر الطبيعة والشلالات</h3>
-                    <p>اكتشف جنة الأرض في قلب كردستان</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="images/pic2.jpg">
-                <div class="card-overlay">
-                    <h3>إرث وحضارة سوريا</h3>
-                    <p>رحلة عبر التاريخ والآثار العريقة</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="images/pic3.jpg">
-                <div class="card-overlay">
-                    <h3>مغامرات 2026</h3>
-                    <p>تجارب استثنائية لعشاق الطبيعة</p>
-                </div>
-            </div>
+            <div class="card"><img src="images/pic1.jpg"><div class="card-overlay"><h3>سحر الطبيعة والشلالات</h3><p>اكتشف جنة الأرض في قلب كردستان</p></div></div>
+            <div class="card"><img src="images/pic2.jpg"><div class="card-overlay"><h3>إرث وحضارة سوريا</h3><p>رحلة عبر التاريخ والآثار العريقة</p></div></div>
+            <div class="card"><img src="images/pic3.jpg"><div class="card-overlay"><h3>مغامرات 2026</h3><p>تجارب استثنائية لعشاق الطبيعة</p></div></div>
         </div>
     </div>
 
@@ -139,17 +109,15 @@
         <a href="https://www.tiktok.com/@moradalmdar1239" class="btn btn-tk">TikTok</a>
         <a href="https://www.instagram.com/tourism_video" class="btn btn-ig">Instagram</a>
     </div>
-<script>
-    window.addEventListener('scroll', function() {
-        var video = document.getElementById('hero-video');
-        var scrollPosition = window.pageYOffset;
-        
-        // تحريك الفيديو ببطء لأسفل لخلق تأثير البارالاكس
-        if (window.innerWidth > 768) {
-            video.style.transform = 'translateY(' + scrollPosition * 0.3 + 'px)';
-        }
-    });
-</script>
 
+    <script>
+        window.addEventListener('scroll', function() {
+            var video = document.getElementById('hero-video');
+            var scrollPosition = window.pageYOffset;
+            if (window.innerWidth > 768) {
+                video.style.transform = 'translateY(' + scrollPosition * 0.4 + 'px)';
+            }
+        });
+    </script>
 </body>
 </html>
