@@ -4,40 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurdstan Syria Travel | بوابة السياحة والجمال</title>
+    <meta name="description" content="اكتشف أفضل الرحلات السياحية في كردستان وسوريا لعام 2026. حجز فنادق، جولات سياحية ومغامرات طبيعية.">
+    <meta name="keywords" content="سياحة، كردستان، سوريا، رحلات 2026، سفر، جبال، معالم تاريخية">
+    
     <style>
         body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; background: #fdfdfd; text-align: center; overflow-x: hidden; color: #333; }
         
-        /* الفقرة 1: Hero Section */
         .hero-wrapper {
-            position: relative;
-            height: 450px;
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            border-bottom: 5px solid #1a742c;
+            position: relative; height: 450px; width: 100%; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            color: white; border-bottom: 5px solid #1a742c;
         }
         #hero-video {
-            position: absolute;
-            top: 50%; left: 50%;
-            min-width: 100%; min-height: 100%;
-            width: auto; height: auto;
-            transform: translate(-50%, -50%);
-            z-index: -2;
-            object-fit: cover;
+            position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
+            width: auto; height: auto; transform: translate(-50%, -50%);
+            z-index: -2; object-fit: cover;
         }
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
-            z-index: -1;
-        }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)); z-index: -1; }
         .hero-text-content h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
         .hero-text-content p { font-size: 1.2rem; opacity: 0.9; }
 
-        /* الفقرة 2: تصميم البطاقات */
+        /* تعديل الأعلام وإزالة البياض */
+        .identity-row { display: flex; justify-content: center; align-items: center; padding: 15px 25px; gap: 20px; background: #fdfdfd; margin-top: -2px; }
+        .f-box { width: 90px; height: 60px; border-radius: 5px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: flex; }
+        .f-box svg { display: block; width: 100%; height: 100%; }
+
+        /* روابط التنقل */
+        .nav-links { margin: 20px 0; }
+        .nav-btn { text-decoration: none; background: #28a745; color: white; padding: 10px 25px; border-radius: 25px; font-weight: bold; transition: 0.3s; }
+        .nav-btn:hover { background: #1a742c; }
+
         .container { padding: 40px 20px; max-width: 1100px; margin: auto; }
         .section-label { font-size: 1.8rem; color: #444; margin: 40px 0 25px; font-weight: bold; position: relative; display: inline-block; }
         .section-label::after { content: ''; width: 60px; height: 3px; background: #28a745; position: absolute; bottom: -10px; right: 50%; transform: translateX(50%); }
@@ -49,11 +45,7 @@
         .card:hover img { transform: scale(1.1); }
         .card-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; text-align: right; box-sizing: border-box; }
         .card-info h3 { margin: 0; font-size: 1.4rem; }
-        .card-info p { margin: 5px 0 0; font-size: 0.9rem; opacity: 0.9; }
-
-        /* التنسيقات الأخرى */
-        .identity-row { display: flex; justify-content: center; align-items: center; padding: 25px; gap: 20px; }
-        .f-box { width: 90px; height: 60px; border-radius: 5px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        
         .ticker { background: #28a745; color: white; padding: 12px 0; overflow: hidden; white-space: nowrap; direction: ltr; }
         .t-text { display: inline-block; animation: s-right 25s linear infinite; font-weight: 500; }
         @keyframes s-right { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
@@ -81,6 +73,10 @@
         <div class="f-box"><svg viewBox="0 0 600 400"><rect width="600" height="133" fill="#007A3D"/><rect y="133" width="600" height="134" fill="#FFF"/><rect y="267" width="600" height="133" fill="#000"/><g fill="#CE1126" transform="translate(150, 200)"><path id="st" d="M0,-30 L8,-10 L32,-10 L13,5 L20,28 L0,13 L-20,28 L-13,5 L-32,-10 L-8,-10 Z"/><use href="#st" x="150"/><use href="#st" x="300"/></g></svg></div>
         <h2 style="color: #004a99; font-size: 1.5rem;">المنصة السياحية الرسمية</h2>
         <div class="f-box"><svg viewBox="0 0 744 496"><rect width="744" height="165" fill="#E31E26"/><rect y="165" width="744" height="166" fill="#FFF"/><rect y="331" width="744" height="165" fill="#278E43"/><g transform="translate(372,248)"><circle r="60" fill="#F8E71C"/><path d="M0,-85 L10,-30 L-10,-30 Z" fill="#F8E71C" id="r"/><use href="#r" transform="rotate(17)"/><use href="#r" transform="rotate(34)"/><use href="#r" transform="rotate(51)"/><use href="#r" transform="rotate(68)"/><use href="#r" transform="rotate(85)"/><use href="#r" transform="rotate(102)"/><use href="#r" transform="rotate(119)"/><use href="#r" transform="rotate(136)"/><use href="#r" transform="rotate(153)"/><use href="#r" transform="rotate(170)"/><use href="#r" transform="rotate(187)"/><use href="#r" transform="rotate(204)"/><use href="#r" transform="rotate(221)"/><use href="#r" transform="rotate(238)"/><use href="#r" transform="rotate(255)"/><use href="#r" transform="rotate(272)"/><use href="#r" transform="rotate(289)"/><use href="#r" transform="rotate(306)"/><use href="#r" transform="rotate(323)"/><use href="#r" transform="rotate(340)"/></g></svg></div>
+    </div>
+
+    <div class="nav-links">
+        <a href="about.html" class="nav-btn">تعرف علينا (من نحن) ←</a>
     </div>
 
     <div class="ticker">
