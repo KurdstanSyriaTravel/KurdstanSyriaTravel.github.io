@@ -9,6 +9,8 @@
     <meta name="keywords" content="سياحة، كردستان، سوريا، رحلات 2026، حجز رحلات، جبال كردستان، سياحة دمشق، Kurdstan Syria Travel">
     <link rel="canonical" href="https://kurdstansyriatravel.github.io/">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
+
     <style>
         body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; background: #fdfdfd; text-align: center; overflow-x: hidden; color: #333; }
         
@@ -27,26 +29,21 @@
         .hero-text-content h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
         .hero-text-content p { font-size: 1.2rem; opacity: 0.9; }
 
-        /* تأثير رفرفة الأعلام */
-        @keyframes wave {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-5px) rotate(2deg); }
-            100% { transform: translateY(0) rotate(0deg); }
-        }
-
+        /* تعديل قسم الأعلام لتأثير PIXI.js وإزالة البياض */
         .identity-row { 
             display: flex; justify-content: center; align-items: center; 
             padding: 10px 25px; gap: 20px; background: #fdfdfd; 
             margin-top: -5px; /* لإغلاق الفجوة تماماً */
+            z-index: 10;
         }
         
-        .f-box { 
-            width: 90px; height: 60px; border-radius: 5px; 
-            overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-            display: flex; 
-            animation: wave 3s ease-in-out infinite; /* تطبيق الرفرفة */
+        /* حاوية العلم المرفرف باستخدام PIXI */
+        .pixi-flag-container {
+            width: 100px; height: 60px; /* الحجم الأنسب */
+            border-radius: 5px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
         }
-        .f-box svg { display: block; width: 100%; height: 100%; }
 
         /* روابط التنقل */
         .nav-links { margin: 25px 0; }
@@ -94,33 +91,49 @@
     </div>
 
     <div class="identity-row">
-        <div class="f-box" title="علم سوريا">
-            <svg viewBox="0 0 600 400">
-                <rect width="600" height="133" fill="#CE1126"/>
-                <rect y="133" width="600" height="134" fill="#FFF"/>
-                <rect y="267" width="600" height="133" fill="#000"/>
-                <g fill="#007A3D" transform="translate(200, 200)">
-                    <path id="st" d="M0,-30 L8,-10 L32,-10 L13,5 L20,28 L0,13 L-20,28 L-13,5 L-32,-10 L-8,-10 Z"/>
-                    <use href="#st" x="200"/>
-                </g>
-            </svg>
-        </div>
+        <div id="syria_flag" class="pixi-flag-container" title="علم سوريا الجديد (الثلاث نجوم) - يرفرف"></div>
         
         <h2 style="color: #004a99; font-size: 1.4rem; margin: 0;">المنصة السياحية الرسمية</h2>
         
-        <div class="f-box" title="علم كردستان">
-            <svg viewBox="0 0 744 496">
-                <rect width="744" height="165" fill="#E31E26"/>
-                <rect y="165" width="744" height="166" fill="#FFF"/>
-                <rect y="331" width="744" height="165" fill="#278E43"/>
-                <g transform="translate(372,248)">
-                    <circle r="60" fill="#F8E71C"/>
-                    <path d="M0,-85 L10,-30 L-10,-30 Z" fill="#F8E71C" id="r"/>
-                    <use href="#r" transform="rotate(17)"/><use href="#r" transform="rotate(34)"/><use href="#r" transform="rotate(51)"/><use href="#r" transform="rotate(68)"/><use href="#r" transform="rotate(85)"/><use href="#r" transform="rotate(102)"/><use href="#r" transform="rotate(119)"/><use href="#r" transform="rotate(136)"/><use href="#r" transform="rotate(153)"/><use href="#r" transform="rotate(170)"/><use href="#r" transform="rotate(187)"/><use href="#r" transform="rotate(204)"/><use href="#r" transform="rotate(221)"/><use href="#r" transform="rotate(238)"/><use href="#r" transform="rotate(255)"/><use href="#r" transform="rotate(272)"/><use href="#r" transform="rotate(289)"/><use href="#r" transform="rotate(306)"/><use href="#r" transform="rotate(323)"/><use href="#r" transform="rotate(340)"/>
-                </g>
-            </svg>
-        </div>
+        <div id="kurdistan_flag" class="pixi-flag-container" title="علم كردستان - يرفرف"></div>
     </div>
+
+    <script>
+        // دالة إنشاء العلم المرفرف باستخدام PIXI.js
+        function createWavingFlag(containerId, imageUrl) {
+            const container = document.getElementById(containerId);
+            const app = new PIXI.Application({ width: container.offsetWidth, height: container.offsetHeight, transparent: true });
+            container.appendChild(app.view);
+
+            PIXI.Assets.load(imageUrl).then((texture) => {
+                const flag = new PIXI.Sprite(texture);
+                flag.width = app.screen.width;
+                flag.height = app.screen.height;
+                app.stage.addChild(flag);
+
+                // تأثير الموجة
+                let time = 0;
+                app.ticker.add(() => {
+                    time += 0.05; // سرعة الرفرفة
+                    const mesh = flag.children[0]; // تأكيد الوصول للمش الصحيح
+                    if (mesh && mesh.geometry) {
+                         const points = mesh.geometry.getBuffer('aVertexPosition').data;
+                         for (let i = 0; i < points.length; i += 2) {
+                             const x = points[i];
+                             const y = points[i + 1];
+                             const waveX = Math.sin(time + x / 15) * 2; // شدة الموجة الأفقي
+                             points[i] = x + waveX;
+                         }
+                         mesh.geometry.getBuffer('aVertexPosition').update();
+                    }
+                });
+            });
+        }
+
+        // استدعاء الدالة للأعلام (تأكد من وجود ملفات الأعلام في مجلد images)
+        createWavingFlag('syria_flag', 'images/syria_flag.jpg'); // استبدل syria_flag.jpg باسم ملف العلم السوري
+        createWavingFlag('kurdistan_flag', 'images/kurdistan_flag.jpg'); // استبدل kurdistan_flag.jpg باسم ملف العلم الكردستاني
+    </script>
 
     <div class="nav-links">
         <a href="about.html" class="nav-btn">تعرف علينا (من نحن) ←</a>
