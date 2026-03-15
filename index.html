@@ -139,6 +139,17 @@
         <a href="https://www.tiktok.com/@moradalmdar1239" class="btn btn-tk">TikTok</a>
         <a href="https://www.instagram.com/tourism_video" class="btn btn-ig">Instagram</a>
     </div>
+<script>
+    window.addEventListener('scroll', function() {
+        var video = document.getElementById('hero-video');
+        var scrollPosition = window.pageYOffset;
+        
+        // تحريك الفيديو ببطء لأسفل لخلق تأثير البارالاكس
+        if (window.innerWidth > 768) {
+            video.style.transform = 'translateY(' + scrollPosition * 0.3 + 'px)';
+        }
+    });
+</script>
 
 </body>
 </html>
