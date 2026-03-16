@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# إشارة إلى خريطة الموقع لمساعدة جوجل على الفهرسة
+Sitemap: https://yourdomain.com/sitemap.xml
