@@ -48,7 +48,7 @@
         .section-title { font-size: 2rem; color: #004a99; margin-bottom: 30px; position: relative; }
         .section-title::after { content: ''; width: 60px; height: 3px; background: #28a745; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
         
-        /* تنسيق نموذج الطلب الجديد */
+        /* تنسيق نموذج الطلب */
         .booking-card { 
             background: #f8f9fa; 
             padding: 30px; 
@@ -59,7 +59,6 @@
             text-align: right;
         }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
-        .full-width { grid-column: span 2; }
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #444; }
         .form-group input, .form-group select { 
@@ -70,6 +69,31 @@
             border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.3s;
         }
         .btn-booking:hover { background: #128c7e; transform: scale(1.02); }
+
+        /* تنسيق التقييمات */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 20px 0; }
+        .review-card { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; }
+        .stars { color: #f1c40f; margin-bottom: 10px; font-size: 1.2rem; }
+        .review-card p { font-style: italic; color: #555; line-height: 1.6; }
+        .review-card h4 { color: #004a99; margin-top: 15px; font-size: 1rem; }
+
+        /* تنسيق الأسئلة الشائعة */
+        .faq-container { max-width: 800px; margin: 0 auto; text-align: right; }
+        .faq-item { background: #fff; border: 1px solid #eee; margin-bottom: 10px; border-radius: 8px; overflow: hidden; }
+        .faq-item summary { font-weight: bold; cursor: pointer; padding: 15px; outline: none; color: #004a99; background: #fcfcfc; list-style: none; }
+        .faq-item p { padding: 15px 20px; color: #666; line-height: 1.6; border-top: 1px solid #eee; }
+        .faq-item[open] summary { background: #f0f7ff; }
+
+        /* الأزرار العائمة */
+        .floating-contact { position: fixed; bottom: 30px; left: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 9999; }
+        .float-btn { 
+            width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; 
+            justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: 0.3s; 
+        }
+        .float-btn svg { width: 28px; height: 28px; fill: white; }
+        .call-btn { background-color: #004a99; }
+        .wa-btn { background-color: #25D366; }
+        .float-btn:hover { transform: scale(1.1); }
 
         .destination-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; padding: 10px; }
         .card { position: relative; border-radius: 20px; overflow: hidden; height: 350px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.4s ease; }
@@ -85,7 +109,7 @@
         @media (max-width: 768px) { 
             #hero-video { height: 100%; transform: none !important; } 
             .form-grid { grid-template-columns: 1fr; }
-            .full-width { grid-column: span 1; }
+            .floating-contact { bottom: 20px; left: 15px; }
         }
     </style>
 </head>
@@ -104,20 +128,19 @@
         <div class="flag-box">
             <svg viewBox="0 0 744 496">
                 <rect width="744" height="165.3" fill="#ED2024"/><rect y="165.3" width="744" height="165.4" fill="#FFF"/><rect y="330.7" width="744" height="165.3" fill="#278E43"/>
-                <g transform="translate(372,248)"><circle r="66" fill="#F8E71C"/><path id="sun-ray" d="M0,-85 L10,-35 L-10,-35 Z" fill="#F8E71C"/><use href="#sun-ray" transform="rotate(17.14)"/><use href="#sun-ray" transform="rotate(34.28)"/><use href="#sun-ray" transform="rotate(51.42)"/><use href="#sun-ray" transform="rotate(68.56)"/><use href="#sun-ray" transform="rotate(85.7)"/><use href="#sun-ray" transform="rotate(102.84)"/><use href="#sun-ray" transform="rotate(119.98)"/><use href="#sun-ray" transform="rotate(137.12)"/><use href="#sun-ray" transform="rotate(154.26)"/><use href="#sun-ray" transform="rotate(171.4)"/><use href="#sun-ray" transform="rotate(188.54)"/><use href="#sun-ray" transform="rotate(205.68)"/><use href="#sun-ray" transform="rotate(222.82)"/><use href="#sun-ray" transform="rotate(239.96)"/><use href="#sun-ray" transform="rotate(257.1)"/><use href="#sun-ray" transform="rotate(274.24)"/><use href="#sun-ray" transform="rotate(291.38)"/><use href="#sun-ray" transform="rotate(308.52)"/><use href="#sun-ray" transform="rotate(325.66)"/><use href="#sun-ray" transform="rotate(342.8)"/></g>
-            </svg>
+                <g transform="translate(372,248)"><circle r="66" fill="#F8E71C"/><path id="sun-ray" d="M0,-85 L10,-35 L-10,-35 Z" fill="#F8E71C"/><use href="#sun-ray" transform="rotate(17.14)"/></g>
+                </svg>
         </div>
         <div class="platform-title">المنصة السياحية<br>الرسمية</div>
         <div class="flag-box">
             <svg viewBox="0 0 600 400">
                 <rect width="600" height="133.3" fill="#1a742c"/><rect y="133.3" width="600" height="133.4" fill="#FFF"/><rect y="266.7" width="600" height="133.3" fill="#000"/>
-                <g fill="#CE1126" transform="translate(120, 200)"><path id="star" d="M0,-25 L7, -8 L25, -8 L11, 4 L16, 22 L0, 12 L-16, 22 L-11, 4 L-25, -8 L-7, -8 Z"/><use href="#star" x="180"/><use href="#star" x="360"/></g>
             </svg>
         </div>
     </div>
 
     <div class="nav-links"><a href="about.html" class="nav-btn">تعرف علينا (من نحن) ←</a></div>
-    <div class="ticker"><div class="t-text">رؤية 2026: طفرة سياحية كبرى في المنطقة • حجز فنادق وجولات سياحية • رحلاتنا مستمرة معكم •</div></div>
+    <div class="ticker"><div class="t-text">رؤية 2026: طفرة سياحية كبرى في المنطقة • حجز فنادق وجولات سياحية • رحلاتنا مستمرة •</div></div>
 
     <div class="container">
         <h2 class="section-title">وجهات سياحية مختارة</h2>
@@ -139,36 +162,36 @@
                     <input type="text" id="name" placeholder="أدخل اسمك الكريم" required>
                 </div>
                 <div class="form-grid">
-                    <div class="form-group">
-                        <label>من</label>
-                        <select id="from_city">
-                            <option>أربيل</option>
-                            <option>السليمانية</option>
-                            <option>دهوك</option>
-                            <option>سوريا (القامشلي)</option>
-                            <option>سوريا (دمشق)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>إلى</label>
-                        <select id="to_city">
-                            <option>سوريا (القامشلي)</option>
-                            <option>سوريا (دمشق)</option>
-                            <option>أربيل</option>
-                            <option>السليمانية</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>تاريخ السفر</label>
-                        <input type="date" id="date" required>
-                    </div>
-                    <div class="form-group">
-                        <label>عدد المسافرين</label>
-                        <input type="number" id="passengers" value="1" min="1">
-                    </div>
+                    <div class="form-group"><label>من</label><select id="from_city"><option>أربيل</option><option>سوريا (القامشلي)</option></select></div>
+                    <div class="form-group"><label>إلى</label><select id="to_city"><option>سوريا (القامشلي)</option><option>أربيل</option></select></div>
+                    <div class="form-group"><label>تاريخ السفر</label><input type="date" id="date" required></div>
+                    <div class="form-group"><label>عدد المسافرين</label><input type="number" id="passengers" value="1" min="1"></div>
                 </div>
                 <button type="button" onclick="sendToWhatsApp()" class="btn-booking">تأكيد الحجز عبر واتساب</button>
             </form>
+        </div>
+    </div>
+
+    <div class="container" style="background: #f9f9f9; border-radius: 40px;">
+        <h2 class="section-title">آراء المسافرين</h2>
+        <div class="reviews-grid">
+            <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"خدمة ممتازة ودقة في المواعيد."</p><h4>أحمد ك.</h4></div>
+            <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"رحلة مريحة جداً، شكراً للفريق."</p><h4>ريناس م.</h4></div>
+            <div class="review-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"تعامل راقي وإجراءات سهلة."</p><h4>سارة ل.</h4></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 class="section-title">الأسئلة الشائعة</h2>
+        <div class="faq-container">
+            <details class="faq-item">
+                <summary>ما هي الأوراق المطلوبة للسفر؟</summary>
+                <p>تحتاج إلى جواز سفر ساري المفعول لمدة لا تقل عن 6 أشهر مع الأوراق الثبوتية الشخصية.</p>
+            </details>
+            <details class="faq-item">
+                <summary>ما هو الوزن المسموح به؟</summary>
+                <p>يسمح لكل مسافر بحمل حقيبة بوزن 30 كجم وحقيبة يد صغيرة.</p>
+            </details>
         </div>
     </div>
 
@@ -176,21 +199,21 @@
         <a href="https://youtube.com/@syriatourism1980" class="btn btn-yt">YouTube</a>
         <a href="https://wa.me/9647502061184" class="btn btn-wa">WhatsApp</a>
         <a href="https://www.facebook.com/share/1GGXK5ZT5J/" class="btn btn-fb">Facebook</a>
-        <a href="https://www.tiktok.com/@moradalmdar1239" class="btn btn-tk">TikTok</a>
-        <a href="https://www.instagram.com/tourism_video" class="btn btn-ig">Instagram</a>
+    </div>
+
+    <div class="floating-contact">
+        <a href="https://wa.me/9647502061184" class="float-btn wa-btn"><svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg></a>
+        <a href="tel:9647502061184" class="float-btn call-btn"><svg viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg></a>
     </div>
 
     <script>
-        // تأثير البارالاكس للفيديو
         window.addEventListener('scroll', function() {
             var video = document.getElementById('hero-video');
-            var scrollPosition = window.pageYOffset;
             if (window.innerWidth > 768) {
-                video.style.transform = 'translateY(' + scrollPosition * 0.4 + 'px)';
+                video.style.transform = 'translateY(' + window.pageYOffset * 0.4 + 'px)';
             }
         });
 
-        // وظيفة الإرسال للواتساب
         function sendToWhatsApp() {
             const name = document.getElementById('name').value;
             const from = document.getElementById('from_city').value;
@@ -198,15 +221,10 @@
             const date = document.getElementById('date').value;
             const passengers = document.getElementById('passengers').value;
 
-            if(name == "" || date == "") {
-                alert("يرجى ملء كافة الحقول الأساسية");
-                return;
-            }
+            if(name == "" || date == "") { alert("يرجى ملء كافة الحقول"); return; }
 
-            const phoneNumber = "9647502061184";
-            const message = `*طلب حجز جديد*%0A------------------%0A*الاسم:* ${name}%0A*من:* ${from}%0A*إلى:* ${to}%0A*التاريخ:* ${date}%0A*عدد المسافرين:* ${passengers}`;
-            
-            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+            const msg = `*طلب حجز جديد*%0A*الاسم:* ${name}%0A*من:* ${from}%0A*إلى:* ${to}%0A*التاريخ:* ${date}%0A*العدد:* ${passengers}`;
+            window.open(`https://wa.me/9647502061184?text=${msg}`, '_blank');
         }
     </script>
 </body>
