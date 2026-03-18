@@ -22,14 +22,14 @@
         .flag-box { width: 90px; height: 60px; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #eee; }
         .flag-box svg { width: 100%; height: 100%; display: block; }
 
-        /* قسم المحتوى عن سوريا */
-        .syria-info-section { max-width: 1000px; margin: 40px auto; padding: 30px; background: #fdfdfd; border-radius: 20px; text-align: right; line-height: 1.9; border-right: 6px solid #CE1126; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .syria-info-section h2 { color: #004a99; margin-bottom: 15px; font-size: 1.8rem; }
-        .syria-info-section p { font-size: 1.15rem; color: #444; margin-bottom: 15px; }
+        /* قسم المحتوى النصي عن سوريا - مهم جداً لأدسنس */
+        .syria-content { max-width: 900px; margin: 40px auto; padding: 25px; background: #fdfdfd; border-radius: 20px; text-align: right; line-height: 1.8; border-right: 6px solid #278E43; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .syria-content h2 { color: #004a99; margin-bottom: 15px; }
+        .syria-content p { color: #444; font-size: 1.1rem; margin-bottom: 10px; }
 
         .reviews-container { background: #f9f9f9; padding: 40px 20px; border-radius: 30px; margin: 20px auto; max-width: 1000px; }
         .review-item { background: #fff; padding: 20px; border-radius: 15px; margin-bottom: 15px; text-align: right; border-right: 5px solid #28a745; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .stars { color: #ffc107; font-size: 1.2rem; display: block; }
+        .stars { color: #ffc107; font-size: 1.2rem; margin-bottom: 5px; display: block; }
 
         .nav-btn { text-decoration: none; background: linear-gradient(135deg, #28a745 0%, #208638 100%); color: white; padding: 12px 35px; border-radius: 25px; font-weight: bold; display: inline-block; transition: 0.3s; margin: 20px 0; }
         
@@ -45,6 +45,8 @@
         .btn-maps { background: #4285F4; grid-column: span 2; padding: 15px; }
 
         footer { background: #f1f1f1; padding: 30px; margin-top: 40px; }
+        .footer-links { margin-top: 15px; }
+        .footer-links a { color: #004a99; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -59,33 +61,46 @@
     </div>
 
     <div class="identity-row">
-        <div class="flag-box"><svg viewBox="0 0 744 496"><rect width="744" height="165.3" fill="#ED2024"/><rect y="165.3" width="744" height="165.4" fill="#FFF"/><rect y="330.7" width="744" height="165.3" fill="#278E43"/><g transform="translate(372,248)"><circle r="66" fill="#F8E71C"/><path id="ray" d="M0,-85 L10,-35 L-10,-35 Z" fill="#F8E71C"/><use href="#ray" transform="rotate(17)"/><use href="#ray" transform="rotate(34)"/><use href="#ray" transform="rotate(51)"/><use href="#ray" transform="rotate(68)"/><use href="#ray" transform="rotate(85)"/><use href="#ray" transform="rotate(102)"/><use href="#ray" transform="rotate(119)"/><use href="#ray" transform="rotate(136)"/><use href="#ray" transform="rotate(153)"/><use href="#ray" transform="rotate(170)"/><use href="#ray" transform="rotate(187)"/><use href="#ray" transform="rotate(204)"/><use href="#ray" transform="rotate(221)"/><use href="#ray" transform="rotate(238)"/><use href="#ray" transform="rotate(255)"/><use href="#ray" transform="rotate(272)"/><use href="#ray" transform="rotate(289)"/><use href="#ray" transform="rotate(306)"/><use href="#ray" transform="rotate(323)"/><use href="#ray" transform="rotate(340)"/></g></svg></div>
-        <div class="platform-title">المنصة السياحية الرسمية لعام 2026</div>
+        <div class="flag-box">
+            <svg viewBox="0 0 744 496"><rect width="744" height="165.3" fill="#ED2024"/><rect y="165.3" width="744" height="165.4" fill="#FFF"/><rect y="330.7" width="744" height="165.3" fill="#278E43"/><g transform="translate(372,248)"><circle r="66" fill="#F8E71C"/><path id="ray" d="M0,-85 L10,-35 L-10,-35 Z" fill="#F8E71C"/><use href="#ray" transform="rotate(17)"/><use href="#ray" transform="rotate(34)"/><use href="#ray" transform="rotate(51)"/><use href="#ray" transform="rotate(68)"/><use href="#ray" transform="rotate(85)"/><use href="#ray" transform="rotate(102)"/><use href="#ray" transform="rotate(119)"/><use href="#ray" transform="rotate(136)"/><use href="#ray" transform="rotate(153)"/><use href="#ray" transform="rotate(170)"/><use href="#ray" transform="rotate(187)"/><use href="#ray" transform="rotate(204)"/><use href="#ray" transform="rotate(221)"/><use href="#ray" transform="rotate(238)"/><use href="#ray" transform="rotate(255)"/><use href="#ray" transform="rotate(272)"/><use href="#ray" transform="rotate(289)"/><use href="#ray" transform="rotate(306)"/><use href="#ray" transform="rotate(323)"/><use href="#ray" transform="rotate(340)"/></g></svg>
+        </div>
+        <div class="platform-title">المنصة السياحية<br>الرسمية لعام 2026</div>
         
         <div class="flag-box">
             <svg viewBox="0 0 600 400">
-                <rect width="600" height="133.3" fill="#CE1126"/> <rect y="133.3" width="600" height="133.4" fill="#FFF"/>
+                <rect width="600" height="133.3" fill="#278E43"/> 
+                <rect y="133.3" width="600" height="133.4" fill="#FFF"/>
                 <rect y="266.7" width="600" height="133.3" fill="#000"/>
-                <g fill="#007A3D" transform="translate(200, 200)"> <path id="star" d="M0,-20 L5,-6 L20,-6 L8,4 L13,18 L0,10 L-13,18 L-8,4 L-20,-6 L-5,-6 Z"/>
-                    <use href="#star" x="200"/>
+                <g fill="#CE1126" transform="translate(150, 200)"> 
+                    <path id="star" d="M0,-20 L5,-6 L20,-6 L8,4 L13,18 L0,10 L-13,18 L-8,4 L-20,-6 L-5,-6 Z"/>
+                    <use href="#star" x="150"/>
+                    <use href="#star" x="300"/>
                 </g>
             </svg>
         </div>
     </div>
 
-    <div class="syria-info-section">
-        <h2>سوريا: وجهة الحضارة والجمال في 2026</h2>
-        <p>تعتبر سوريا كنزاً سياحياً لا ينضب، فهي تجمع بين التاريخ الضارب في القدم والطبيعة الخلابة. من شوارع <strong>دمشق القديمة</strong> التي تفوح برائحة الياسمين، إلى سواحل <strong>اللاذقية</strong> وطرطوس الساحرة، نوفر لكم رؤية شاملة وتغطية ميدانية لأجمل المواقع.</p>
-        <p>نركز في منصتنا على تقديم معلومات دقيقة حول المعالم الأثرية مثل <strong>الجامع الأموي</strong>، قلعة حلب، وتدمر، مع تقديم نصائح ذهبية للمسافرين لضمان رحلة ممتعة وآمنة بإشراف خبراء محليين يعرفون خبايا الأرض.</p>
+    <div class="syria-content">
+        <h2>استكشف جمال سوريا وعراقتها في 2026</h2>
+        <p>نحن في <strong>Kurdstan Syria Travel</strong> نؤمن بأن سوريا هي مهد الحضارات. من خلال خبرتنا الميدانية كمرشدين محليين، نوثق لكم أجمل الرحلات السياحية في دمشق وحلب واللاذقية.</p>
+        <p>نقدم لكم معلومات دقيقة عن المواقع الأثرية، وأفضل أماكن الإقامة، وتجربة الطعام السوري الأصيل، لضمان رحلة آمنة وممتعة تعكس التطور السياحي الذي تشهده المنطقة في عام 2026.</p>
     </div>
 
     <div class="nav-links"><a href="about.html" class="nav-btn">تعرف علينا (من نحن) ←</a></div>
 
     <div class="container">
-        <h2 style="color:#004a99; margin-bottom:20px;">صدى خبرتنا وشهادات الزوار</h2>
+        <h2 style="color:#004a99; margin-bottom:20px;">تقييمات الزوار عبر السنوات</h2>
         <div class="reviews-container">
-            <div class="review-item"><span class="stars">★★★★★</span><strong>زائر من أربيل</strong><p>تعامل راقي جداً وخبرة واسعة في الطرق والمعالم السياحية. شكراً محمد الكردي.</p></div>
-            <div class="review-item"><span class="stars">★★★★★</span><strong>سياحة عائلية (دمشق)</strong><p>أفضل تنظيم للرحلات في سوريا، دقة في المواعيد وأمان تام. ننصح بالتعامل معه دائماً.</p></div>
+            <div class="review-item">
+                <span class="stars">★★★★★</span>
+                <strong>زائر من أربيل</strong>
+                <p>تعامل راقي جداً وخبرة واسعة في الطرق والمعالم السياحية. شكراً محمد الكردي.</p>
+            </div>
+            <div class="review-item">
+                <span class="stars">★★★★★</span>
+                <strong>سياحة عائلية (دمشق)</strong>
+                <p>أفضل تنظيم للرحلات في سوريا، دقة في المواعيد وأمان تام. ننصح بالتعامل معه دائماً.</p>
+            </div>
         </div>
     </div>
 
@@ -104,10 +119,17 @@
         <a href="https://youtube.com/@syriatourism1980" class="btn btn-yt" target="_blank">YouTube</a>
         <a href="https://www.facebook.com/mohammad.kurdi.54" class="btn btn-fb" target="_blank">Facebook</a>
         <a href="https://www.tiktok.com/@syria.tourism" class="btn btn-tk" target="_blank">TikTok</a>
+        <a href="https://www.instagram.com/syria.tourism" class="btn btn-ig" target="_blank">Instagram</a>
     </div>
 
     <footer>
         <p>© 2026 جميع الحقوق محفوظة - Kurdstan Syria Travel</p>
+        <p>بإدارة محمد الكردي - خبير سياحي معتمد</p>
+        <div class="footer-links">
+            <a href="privacy.html">سياسة الخصوصية</a> | 
+            <a href="about.html">من نحن</a> | 
+            <a href="index.html">الرئيسية</a>
+        </div>
     </footer>
 
 </body>
