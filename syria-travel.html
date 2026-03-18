@@ -12,7 +12,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #fff; line-height: 1.8; color: #333; text-align: right; }
         
-        /* الهيدر الاحترافي */
+        /* الهيدر الاحترافي يستخدم الصورة رقم 2 */
         .header-syria { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/2.jpg'); background-size: cover; background-position: center; height: 400px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
         
         .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
@@ -22,12 +22,13 @@
         
         .highlight-box { background: #f0f7ff; padding: 30px; border-radius: 20px; border-right: 5px solid #004a99; margin: 40px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         
-        /* شبكة الصور الـ 16 */
+        /* شبكة الصور المعدلة لعرض الصور نقية */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin: 30px 0; }
         .gallery-item { border-radius: 15px; overflow: hidden; height: 200px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.4s; position: relative; }
-        .gallery-item:hover { transform: translateY(-5px); }
+        .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-        .gallery-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: white; font-size: 0.95rem; text-align: right; }
+        
+        /* تم إزالة .gallery-overlay من هنا لجعل الصور نقية */
 
         .btn-wa { display: inline-block; background: #25D366; color: white; text-decoration: none; padding: 15px 40px; border-radius: 50px; font-weight: bold; font-size: 1.2rem; margin: 30px 0; transition: 0.3s; }
         .btn-wa:hover { background: #1ebe57; transform: scale(1.05); }
@@ -54,14 +55,14 @@
         </p>
 
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="images/1.jpg" alt="دمشق"><div class="gallery-overlay">الجامع الأموي الكبير</div></div>
-            <div class="gallery-item"><img src="images/2.jpg" alt="سوق دمشق"><div class="gallery-overlay">سوق الحميدية العريق</div></div>
-            <div class="gallery-item"><img src="images/3.jpg" alt="حارات قديمة"><div class="gallery-overlay">أزقة دمشق القديمة</div></div>
-            <div class="gallery-item"><img src="images/4.jpg" alt="جبل قاسيون"><div class="gallery-overlay">إطلالة دمشق من قاسيون</div></div>
-            <div class="gallery-item"><img src="images/5.jpg" alt="ساحة المرجة"><div class="gallery-overlay">ساحة المرجة بوسط العاصمة</div></div>
-            <div class="gallery-item"><img src="images/6.jpg" alt="قلعة حلب"><div class="gallery-overlay">عظمة قلعة حلب</div></div>
-            <div class="gallery-item"><img src="images/7.jpg" alt="آثار تدمر"><div class="gallery-overlay">عروس الصحراء تدمر</div></div>
-            <div class="gallery-item"><img src="images/8.jpg" alt="بصرى الشام"><div class="gallery-overlay">مسرح بصرى الشام</div></div>
+            <div class="gallery-item"><img src="images/1.jpg" alt="طبيعة سوريا"></div>
+            <div class="gallery-item"><img src="images/2.jpg" alt="معالم سوريا"></div>
+            <div class="gallery-item"><img src="images/3.jpg" alt="تراث سوريا"></div>
+            <div class="gallery-item"><img src="images/4.jpg" alt="جبال سوريا"></div>
+            <div class="gallery-item"><img src="images/5.jpg" alt="سواحل سوريا"></div>
+            <div class="gallery-item"><img src="images/6.jpg" alt="آثار سوريا"></div>
+            <div class="gallery-item"><img src="images/7.jpg" alt="دمشق القديمة"></div>
+            <div class="gallery-item"><img src="images/8.jpg" alt="ريف سوريا"></div>
         </div>
 
         <div class="highlight-box">
@@ -77,14 +78,14 @@
         </p>
 
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="images/9.jpg" alt="معلولا"><div class="gallery-overlay">معلولا الصامدة</div></div>
-            <div class="gallery-item"><img src="images/10.jpg" alt="قلعة الحصن"><div class="gallery-overlay">قلعة الحصن الشامخة</div></div>
-            <div class="gallery-item"><img src="images/11.jpg" alt="الساحل السوري"><div class="gallery-overlay">شواطئ اللاذقية</div></div>
-            <div class="gallery-item"><img src="images/12.jpg" alt="ريف سوريا"><div class="gallery-overlay">جمال الريف السوري</div></div>
-            <div class="gallery-item"><img src="images/13.jpg" alt="تراث"><div class="gallery-overlay">الحرف اليدوية السورية</div></div>
-            <div class="gallery-item"><img src="images/14.jpg" alt="مطاعم دمشق"><div class="gallery-overlay">الجلسات الدمشقية</div></div>
-            <div class="gallery-item"><img src="images/15.jpg" alt="طبيعة سوريا"><div class="gallery-overlay">جبال الساحل الخضراء</div></div>
-            <div class="gallery-item"><img src="images/16.jpg" alt="دمشق ليلاً"><div class="gallery-overlay">أنوار دمشق الساحرة</div></div>
+            <div class="gallery-item"><img src="images/9.jpg" alt="تاريخ سوريا"></div>
+            <div class="gallery-item"><img src="images/10.jpg" alt="قلاع سوريا"></div>
+            <div class="gallery-item"><img src="images/11.jpg" alt="بحر سوريا"></div>
+            <div class="gallery-item"><img src="images/12.jpg" alt="لقطة ميدانية"></div>
+            <div class="gallery-item"><img src="images/13.jpg" alt="صور مرشد محلي"></div>
+            <div class="gallery-item"><img src="images/14.jpg" alt="توثيق جوجل"></div>
+            <div class="gallery-item"><img src="images/15.jpg" alt="جمال الريف"></div>
+            <div class="gallery-item"><img src="images/16.jpg" alt="سوريا ليلاً"></div>
         </div>
 
         <div style="text-align: center; margin-top: 50px;">
