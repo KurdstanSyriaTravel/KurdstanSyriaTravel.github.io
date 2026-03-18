@@ -8,11 +8,12 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489"
      crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/luminous-basic.min.css">
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #fff; line-height: 1.8; color: #333; text-align: right; }
         
-        /* الهيدر الاحترافي يستخدم الصورة رقم 2 */
         .header-syria { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/2.jpg'); background-size: cover; background-position: center; height: 400px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
         
         .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
@@ -22,14 +23,12 @@
         
         .highlight-box { background: #f0f7ff; padding: 30px; border-radius: 20px; border-right: 5px solid #004a99; margin: 40px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         
-        /* شبكة الصور المعدلة لعرض الصور نقية */
+        /* شبكة الصور - جعلنا العناصر روابط <a> */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin: 30px 0; }
-        .gallery-item { border-radius: 15px; overflow: hidden; height: 200px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.4s; position: relative; }
+        .gallery-item { display: block; border-radius: 15px; overflow: hidden; height: 200px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.4s; position: relative; cursor: zoom-in; /* شكل الماوس مكبر */ }
         .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* تم إزالة .gallery-overlay من هنا لجعل الصور نقية */
-
         .btn-wa { display: inline-block; background: #25D366; color: white; text-decoration: none; padding: 15px 40px; border-radius: 50px; font-weight: bold; font-size: 1.2rem; margin: 30px 0; transition: 0.3s; }
         .btn-wa:hover { background: #1ebe57; transform: scale(1.05); }
         
@@ -51,41 +50,38 @@
         
         <h2>سحر الطبيعة والتنوع الجغرافي في سوريا</h2>
         <p>
-            تعد سوريا واحدة من أجمل الوجهات الطبيعية في الشرق الأوسط، حيث يجتمع فيها البحر والجبل والبادية في تناغم فريد. بصفتي مرشد محلي خبير، قمت بتوثيق جمال الساحل السوري حيث تلتقي غابات الصنوبر بمياه البحر الأبيض المتوسط الفيروزية، بالإضافة إلى جبال القلمون وبلودان التي تكتسي بالبياض شتاءً وبالخضرة اليانعة صيفاً. هذا التنوع يجعل من سوريا مقصداً لعشاق التصوير والطبيعة البكر.
+            تعد سوريا واحدة من أجمل الوجهات الطبيعية في الشرق الأوسط، حيث يجتمع فيها البحر والجبل والبادية في تناغم فريد. بصفتي مرشد محلي خبير، قمت بتوثيق جمال الساحل السوري حيث تلتقي غابات الصنوبر بمياه البحر الأبيض المتوسط الفيروزية.
         </p>
 
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="images/1.jpg" alt="طبيعة سوريا"></div>
-            <div class="gallery-item"><img src="images/2.jpg" alt="معالم سوريا"></div>
-            <div class="gallery-item"><img src="images/3.jpg" alt="تراث سوريا"></div>
-            <div class="gallery-item"><img src="images/4.jpg" alt="جبال سوريا"></div>
-            <div class="gallery-item"><img src="images/5.jpg" alt="سواحل سوريا"></div>
-            <div class="gallery-item"><img src="images/6.jpg" alt="آثار سوريا"></div>
-            <div class="gallery-item"><img src="images/7.jpg" alt="دمشق القديمة"></div>
-            <div class="gallery-item"><img src="images/8.jpg" alt="ريف سوريا"></div>
+            <a href="images/1.jpg" class="gallery-item luminous"><img src="images/1.jpg" alt="طبيعة سوريا"></a>
+            <a href="images/2.jpg" class="gallery-item luminous"><img src="images/2.jpg" alt="معالم سوريا"></a>
+            <a href="images/3.jpg" class="gallery-item luminous"><img src="images/3.jpg" alt="تراث سوريا"></a>
+            <a href="images/4.jpg" class="gallery-item luminous"><img src="images/4.jpg" alt="جبال سوريا"></a>
+            <a href="images/5.jpg" class="gallery-item luminous"><img src="images/5.jpg" alt="سواحل سوريا"></a>
+            <a href="images/6.jpg" class="gallery-item luminous"><img src="images/6.jpg" alt="آثار سوريا"></a>
+            <a href="images/7.jpg" class="gallery-item luminous"><img src="images/7.jpg" alt="دمشق القديمة"></a>
+            <a href="images/8.jpg" class="gallery-item luminous"><img src="images/8.jpg" alt="ريف سوريا"></a>
         </div>
 
         <div class="highlight-box">
             <h2>دمشق: قلب الياسمين النابض</h2>
             <p>
-                لا يمكن وصف جمال سوريا دون الحديث عن دمشق، أقدم عاصمة مأهولة في التاريخ. هنا، يمتزج عبق التاريخ برائحة الياسمين الدمشقي في كل حارة. البيوت الدمشقية القديمة بطرازها المعماري الفريد ونوافذها المطلة على البحرات الداخلية تمثل لوحة هندسية لا مثيل لها. نحن في <strong>Kurdstan Syria Travel</strong> نحرص على إظهار هذا الجانب التراثي لزوارنا من خلال لقطاتنا الواقعية.
+                لا يمكن وصف جمال سوريا دون الحديث عن دمشق، أقدم عاصمة مأهولة في التاريخ. هنا، يمتزج عبق التاريخ برائحة الياسمين الدمشقي في كل حارة. البيوت الدمشقية القديمة بطرازها المعماري الفريد.
             </p>
         </div>
 
-        <h2>كنوز مخفية بين الجبال والساحل</h2>
-        <p>
-            بعيداً عن المدن الكبرى، تحتضن سوريا قرىً تاريخية مثل "معلولا" و"صيدنايا" حيث تنحت البيوت في الصخور، وقلاعاً شامخة مثل "قلعة الحصن" التي تعد من أجمل القلاع القروسطية في العالم. وفي الساحل، تبرز اللاذقية وطرطوس بمناظرهما الخلابة وغاباتهما الكثيفة التي تعانق البحر، مما يوفر تجربة سياحية تجمع بين الاسترخاء والاستكشاف التاريخي.
-        </p>
-
+        <h2>المزيد من ذاكرة الرحلات السورية (انقر للتكبير)</h2>
+        
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="images/9.jpg" alt="تاريخ سوريا"></div>
-            <div class="gallery-item"><img src="images/10.jpg" alt="قلاع سوريا"></div>
-            <div class="gallery-item"><img src="images/11.jpg" alt="بحر سوريا"></div>
-            <div class="gallery-item"><img src="images/12.jpg" alt="لقطة ميدانية"></div>
-            <div class="gallery-item"><img src="images/13.jpg" alt="صور مرشد محلي"></div>
-            <div class="gallery-item"><img src="images/14.jpg" alt="توثيق جوجل"></div>
-            <div class="gallery-item"><img src="images/15.jpg" alt="جمال الريف"></div>
-            <div class="gallery-item"><img src="images/16.jpg" alt="سوريا ليلاً"></div>
+            <a href="images/9.jpg" class="gallery-item luminous"><img src="images/9.jpg" alt="تاريخ سوريا"></a>
+            <a href="images/10.jpg" class="gallery-item luminous"><img src="images/10.jpg" alt="قلاع سوريا"></a>
+            <a href="images/11.jpg" class="gallery-item luminous"><img src="images/11.jpg" alt="بحر سوريا"></a>
+            <a href="images/12.jpg" class="gallery-item luminous"><img src="images/12.jpg" alt="لقطة ميدانية"></a>
+            <a href="images/13.jpg" class="gallery-item luminous"><img src="images/13.jpg" alt="صور مرشد محلي"></a>
+            <a href="images/14.jpg" class="gallery-item luminous"><img src="images/14.jpg" alt="توثيق جوجل"></a>
+            <a href="images/15.jpg" class="gallery-item luminous"><img src="images/15.jpg" alt="جمال الريف"></a>
+            <a href="images/16.jpg" class="gallery-item luminous"><img src="images/16.jpg" alt="سوريا ليلاً"></a>
         </div>
 
         <div style="text-align: center; margin-top: 50px;">
@@ -100,6 +96,13 @@
         <p>© 2026 Kurdstan Syria Travel - جميع الحقوق محفوظة</p>
         <p>إشراف وتوثيق: محمد الكردي | مرشد محلي معتمد Level 9</p>
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/luminous-lightbox/2.3.2/luminous.min.js"></script>
+    
+    <script>
+        // هذا الكود يبحث عن أي رابط يحمل كلاس 'luminous' ويجعله قابلاً للتكبير
+        new LuminousGallery(document.querySelectorAll('.luminous'));
+    </script>
 
 </body>
 </html>
