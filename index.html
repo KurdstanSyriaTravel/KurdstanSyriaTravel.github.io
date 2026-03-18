@@ -3,98 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurdstan Syria Travel | الموقع الرسمي 2026</title>
+    <title>Kurdstan Syria Travel | 2026</title>
     
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489" crossorigin="anonymous"></script>
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #fff; line-height: 1.6; color: #333; text-align: right; padding-bottom: 80px; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #fff; line-height: 1.6; color: #333; text-align: right; padding-bottom: 100px; }
         
-        .container { max-width: 600px; margin: auto; padding: 20px; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
         
-        header { text-align: center; padding: 30px 0; }
-        header h1 { color: #004a99; font-size: 1.8rem; margin-bottom: 5px; }
-        header p { color: #666; font-size: 1rem; }
+        /* قسم الهيدر */
+        header { text-align: center; padding: 40px 0; border-bottom: 2px solid #eee; }
+        header h1 { color: #004a99; font-size: 2.2rem; }
+        header p { color: #666; font-size: 1.1rem; }
 
-        /* قسم أربيل وكردستان */
-        .erbil-info { margin: 30px 0; border-top: 3px solid #28a745; padding-top: 20px; }
-        .erbil-info h2 { color: #004a99; font-size: 1.6rem; margin-bottom: 15px; }
-        .erbil-info p { font-size: 1.05rem; color: #444; margin-bottom: 20px; text-align: justify; }
-
-        /* معرض الصور */
-        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 30px; }
-        .gallery-item { border-radius: 12px; overflow: hidden; height: 160px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        /* قسم أربيل (جديد - مستوحى من صورتك) */
+        .erbil-section { margin: 40px 0; border-top: 4px solid #28a745; padding-top: 20px; }
+        .erbil-section h2 { color: #004a99; font-size: 2rem; margin-bottom: 15px; }
+        .erbil-section p { font-size: 1.05rem; color: #555; text-align: justify; margin-bottom: 25px; }
+        
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0; }
+        .gallery-item { border-radius: 15px; overflow: hidden; height: 180px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* شبكة أزرار التواصل الاجتماعي */
-        .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 30px 0; }
-        .btn-social { display: flex; align-items: center; justify-content: center; padding: 15px; border-radius: 12px; color: white; text-decoration: none; font-weight: bold; font-size: 0.95rem; transition: 0.3s; text-align: center; }
-        .btn-social:hover { opacity: 0.8; transform: translateY(-2px); }
+        /* أزرار التواصل (مرتبة كما في صورتك) */
+        .social-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 40px 0; }
+        .btn-social { display: block; padding: 15px; text-align: center; color: white; text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 1rem; transition: 0.3s; }
+        .btn-social:hover { opacity: 0.8; transform: translateY(-3px); }
+        
+        .btn-yt { background-color: #e62117; } /* YouTube */
+        .btn-gmaps { background-color: #4285F4; text-align: right; } /* Google Maps */
+        .btn-fb { background-color: #3b5998; } /* Facebook */
+        .btn-wa { background-color: #25D366; } /* WhatsApp */
+        .btn-tk { background-color: #000000; grid-column: 2; text-align: center; } /* TikTok في العمود الثاني */
 
-        /* ألوان الأزرار */
-        .yt { background-color: #ff0000; }
-        .ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-        .fb { background-color: #1877f2; }
-        .wa { background-color: #25d366; }
-        .tk { background-color: #000; }
-        .gm { background-color: #4285f4; font-size: 0.8rem; line-height: 1.3; }
-
-        /* التذييل السفلي */
-        footer { background: #f9f9f9; padding: 25px; text-align: center; border-top: 1px solid #eee; margin-top: 40px; }
-        .footer-links { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-        .footer-links a { color: #004a99; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
-
-        /* الأزرار العائمة */
-        .float-btns { position: fixed; bottom: 100px; right: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 1000; }
-        .f-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        .f-wa { background-color: #25d366; }
-        .f-call { background-color: #004a99; }
+        /* التذييل (Footer) */
+        footer { position: fixed; bottom: 0; left: 0; width: 100%; background: #f9f9f9; padding: 20px; border-top: 1px solid #eee; text-align: center; font-size: 0.9rem; color: #777; z-index: 100; }
+        footer p { margin-bottom: 10px; }
+        .footer-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .footer-links a { text-decoration: none; color: #004a99; font-weight: bold; }
+        
+        /* أزرار عائمة (واتساب واتصال) */
+        .floating-btn { position: fixed; z-index: 200; border-radius: 50%; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: 0.3s; }
+        .floating-btn:hover { transform: scale(1.1); }
+        .float-wa { bottom: 90px; right: 20px; background: #25D366; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; }
+        .float-call { bottom: 160px; right: 20px; background: #004a99; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; }
+        .floating-btn img { width: 30px; height: 30px; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
+    <header>
+        <div class="container">
             <h1>Kurdstan Syria Travel</h1>
-            <p>قناة السياحة في كردستان وسوريا</p>
-        </header>
+            <p>وجهتكم السياحية المعتمدة في كردستان وسوريا لعام 2026</p>
+        </div>
+    </header>
 
-        <section class="erbil-info">
+    <div class="container">
+        
+        <div class="erbil-section">
             <h2>أربيل: حكاية التاريخ وجمال الحاضر</h2>
             <p>
-                تعتبر مدينة أربيل واحدة من أقدم المدن المأهولة في العالم. تتوسطها قلعة أربيل التاريخية، التي تقف بشموخ كشاهد على حضارات تعاقبت على أرض كردستان.
+                تعتبر مدينة أربيل واحدة من أقدم المدن المأهولة في العالم. تتوسطها قلعة أربيل التاريخية، التي تقف بشموخ كشاهد على حضارات تعاقبت على أرض كردستان. نحن نوفر لكم رحلات استكشافية موثقة بعدسة خبير محلي.
             </p>
             <h3>معرض صور أربيل وكردستان</h3>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="images/k1.jpg" alt="طبيعة أربيل"></div>
-                <div class="gallery-item"><img src="images/k2.jpg" alt="كردستان العراق"></div>
+                <div class="gallery-item"><img src="images/k1.jpg" alt="طبيعة كردستان"></div>
+                <div class="gallery-item"><img src="images/k2.jpg" alt="أربيل"></div>
             </div>
-        </section>
-
-        <div class="social-grid">
-            <a href="https://youtube.com/@kurdstansyriatravel" class="btn-social yt">YouTube</a>
-            <a href="https://instagram.com/kurdstansyriatravel" class="btn-social ig">Instagram</a>
-            <a href="https://facebook.com/kurdstansyriatravel" class="btn-social fb">Facebook</a>
-            <a href="https://wa.me/9647502061184" class="btn-social wa">WhatsApp</a>
-            <a href="https://tiktok.com/@kurdstansyriatravel" class="btn-social tk">TikTok</a>
-            <a href="https://google.com/maps/..." class="btn-social gm">⭐ تقييماتي وصوري على<br>Google Maps (Level 9)</a>
         </div>
+
+        <div class="social-buttons">
+            <a href="https://youtube.com/@kurdstansyriatravel" class="btn-social btn-yt">YouTube</a>
+            <a href="https://maps.app.goo.gl/..." class="btn-social btn-gmaps">⭐ تقييماتي وصوري على<br>Google Maps (Level 9)</a>
+            <a href="https://facebook.com/kurdstansyriatravel" class="btn-social btn-fb">Facebook</a>
+            <a href="https://wa.me/9647502061184" class="btn-social btn-wa">WhatsApp</a>
+            <a href="https://tiktok.com/@kurdstansyriatravel" class="btn-social btn-tk">TikTok</a>
+        </div>
+
     </div>
 
-    <div class="float-btns">
-        <a href="tel:+9647502061184" class="f-btn f-call">📞</a>
-        <a href="https://wa.me/9647502061184" class="f-btn f-wa">💬</a>
-    </div>
+    <a href="https://wa.me/9647502061184" class="floating-btn float-wa"><img src="images/wa-icon.png" alt="واتساب"></a>
+    <a href="tel:+9647502061184" class="floating-btn float-call"><img src="images/call-icon.png" alt="اتصال"></a>
 
     <footer>
         <p>© 2026 جميع الحقوق محفوظة لشركة Kurdstan Syria Travel</p>
         <div class="footer-links">
-            <a href="index.html">الرئيسية</a> | 
-            <a href="syria-travel.html">رحلات سوريا</a> | 
-            <a href="about.html">من نحن</a> | 
-            <a href="privacy.html">الخصوصية</a>
+            <a href="index.html">الرئيسية</a> |
+            <a href="syria-travel.html">رحلات سوريا</a> |
+            <a href="about.html">من نحن</a> |
+            <a href="privacy.html">سياسة الخصوصية</a>
         </div>
     </footer>
 
