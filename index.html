@@ -3,218 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurdstan Syria Travel | حجز رحلات أربيل، سوريا، ووجهات دولية 2026</title>
-    
-    <meta name="description" content="المنصة الرسمية لشركة Kurdstan Syria Travel. حجز رحلات سياحية وفنادق لعام 2026 بإدارة مرشد محلي معتمد من جوجل المستوى 9.">
-    <meta name="keywords" content="سياحة، سفر، كردستان، سوريا، أربيل، دمشق، مرشد محلي جوجل، حجز طيران، رحلات 2026">
-    <meta name="author" content="Kurdstan Syria Travel">
-
-    <meta property="og:title" content="Kurdstan Syria Travel | بوابتكم للسفر لعام 2026">
-    <meta property="og:description" content="استكشف أجمل الوجهات السياحية مع خبير محلي معتمد.">
-    <meta property="og:image" content="images/pic1.jpg">
-    <meta property="og:type" content="website">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Kurdstan Syria Travel",
-      "url": "https://KurdstanSyriaTravel.github.io",
-      "jobTitle": "Google Local Guide Level 9"
-    }
-    </script>
-
+    <title>Kurdstan Syria Travel | بوابة السياحة والجمال</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #fff; text-align: center; color: #333; overflow-x: hidden; }       
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; background: #fdfdfd; text-align: center; overflow-x: hidden; color: #333; }
         
-        /* Hero Section */
-        .hero-wrapper { position: relative; height: 100vh; width: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000; }
-        #hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 130%; object-fit: cover; z-index: 1; will-change: transform; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); z-index: 2; }
-        .hero-text-content { position: relative; z-index: 3; color: white; text-shadow: 0 2px 15px rgba(0,0,0,0.5); }
+        /* الفقرة 1: Hero Section */
+        .hero-wrapper {
+            position: relative;
+            height: 450px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-bottom: 5px solid #1a742c;
+        }
+        #hero-video {
+            position: absolute;
+            top: 50%; left: 50%;
+            min-width: 100%; min-height: 100%;
+            width: auto; height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+            z-index: -1;
+        }
+        .hero-text-content h1 { font-size: 2.5rem; margin-bottom: 10px; text-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        .hero-text-content p { font-size: 1.2rem; opacity: 0.9; }
 
-        /* Flags & Title */
-        .identity-row { display: flex; justify-content: center; align-items: center; padding: 20px 0; gap: 20px; background: #fff; }
-        .platform-title { color: #004a99; font-size: 1.1rem; font-weight: bold; line-height: 1.2; }
-        .flag-box { width: 90px; height: 60px; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #eee; }
-        .flag-box svg { width: 100%; height: 100%; display: block; }
-
-        .nav-links { padding: 10px 0; }
-        .nav-btn { text-decoration: none; background: #28a745; color: white; padding: 12px 35px; border-radius: 25px; font-weight: bold; display: inline-block; transition: 0.3s; }
+        /* الفقرة 2: تصميم البطاقات */
+        .container { padding: 40px 20px; max-width: 1100px; margin: auto; }
+        .section-label { font-size: 1.8rem; color: #444; margin: 40px 0 25px; font-weight: bold; position: relative; display: inline-block; }
+        .section-label::after { content: ''; width: 60px; height: 3px; background: #28a745; position: absolute; bottom: -10px; right: 50%; transform: translateX(50%); }
         
-        .ticker { background: #28a745; color: white; padding: 10px 0; overflow: hidden; white-space: nowrap; }
-        .t-text { display: inline-block; animation: s-right 30s linear infinite; font-size: 0.9rem; }
-        @keyframes s-right { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .destination-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
+        .card { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.08); transition: 0.4s; cursor: pointer; height: 350px; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        .card img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .card:hover img { transform: scale(1.1); }
+        .card-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.85)); color: white; text-align: right; box-sizing: border-box; }
+        .card-info h3 { margin: 0; font-size: 1.4rem; }
+        .card-info p { margin: 5px 0 0; font-size: 0.9rem; opacity: 0.9; }
 
-        /* Grid System */
-        .container { padding: 50px 15px; max-width: 1200px; margin: auto; }
-        .section-title { font-size: 2.2rem; color: #004a99; margin-bottom: 40px; position: relative; }
-        .section-title::after { content: ''; width: 70px; height: 4px; background: #28a745; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); }
-
-        .destination-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; padding: 20px 0; }
-        .card { position: relative; border-radius: 20px; overflow: hidden; height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: 0.5s ease; cursor: pointer; }
-        .card:hover { transform: translateY(-10px) scale(1.02); }
-        .card img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s ease; filter: brightness(90%); }
-        .card-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 40px 25px; background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, transparent 100%); color: white; text-align: right; }
+        /* التنسيقات الأخرى */
+        .identity-row { display: flex; justify-content: center; align-items: center; padding: 25px; gap: 20px; }
+        .f-box { width: 90px; height: 60px; border-radius: 5px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .ticker { background: #28a745; color: white; padding: 12px 0; overflow: hidden; white-space: nowrap; direction: ltr; }
+        .t-text { display: inline-block; animation: s-right 25s linear infinite; font-weight: 500; }
+        @keyframes s-right { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
         
-        .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; padding: 20px 0; }
-        .gallery-item { height: 200px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* Booking Form */
-        .booking-card { background: #f8f9fa; padding: 35px; border-radius: 25px; max-width: 750px; margin: 20px auto; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: right; }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #444; }
-        .form-group input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; font-family: inherit; font-size: 1rem; }
-        .btn-booking { width: 100%; padding: 16px; background: #25D366; color: white; border: none; border-radius: 12px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.3s; margin-top: 10px; }
-
-        /* Social Buttons */
-        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; padding: 30px 20px; }
-        .btn { padding: 14px; text-decoration: none; border-radius: 12px; color: #fff; font-weight: bold; font-size: 0.9rem; display: block; transition: 0.3s; }
+        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 30px; }
+        .btn { padding: 15px; text-decoration: none; border-radius: 12px; color: #fff; font-weight: 600; transition: 0.3s; }
         .btn-yt { background: #e62117; } .btn-wa { background: #25D366; } .btn-fb { background: #1877F2; } .btn-tk { background: #000; } .btn-ig { background: linear-gradient(45deg, #f09433, #bc1888); }
-        .btn-maps { background: #4285F4; grid-column: span 2; }
-
-        /* Floating Buttons */
-        .floating-contact { position: fixed; bottom: 30px; left: 25px; display: flex; flex-direction: column; gap: 15px; z-index: 9999; }
-        .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: 0.3s; }
-        .float-btn svg { width: 30px; height: 30px; fill: white; }
-        .call-btn { background-color: #004a99; } .wa-btn { background-color: #25D366; }
-
-        /* Footer */
-        footer { background: #f1f1f1; padding: 40px 20px; margin-top: 50px; border-top: 1px solid #ddd; }
-        .footer-links { margin-top: 15px; }
-        .footer-links a { color: #004a99; text-decoration: none; margin: 0 10px; font-weight: bold; }
-
-        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } .card { height: 320px; } .btn-maps { grid-column: span 1; } .image-gallery { grid-template-columns: 1fr 1fr; } }
     </style>
 </head>
 <body>
 
     <div class="hero-wrapper">
-        <video autoplay muted loop playsinline id="hero-video"><source src="images/hero.mp4" type="video/mp4"></video>
+        <video autoplay muted loop playsinline id="hero-video">
+            <source src="images/hero.mp4" type="video/mp4">
+            <img src="images/cover.jpg">
+        </video>
         <div class="hero-overlay"></div>
         <div class="hero-text-content">
-            <h1>شركة Kurdstan Syria Travel للسياحة 2026</h1>
-            <p>بإدارة خبير محلي معتمد (Level 9) على خرائط جوجل</p>
+            <h1>استكشف آفاق الجمال الطبيعي</h1>
+            <p>بوابتكم لاكتشاف كنوز كردستان وسوريا لعام 2026</p>
         </div>
     </div>
 
     <div class="identity-row">
-        <div class="flag-box">
-            <svg viewBox="0 0 744 496"><rect width="744" height="165.3" fill="#ED2024"/><rect y="165.3" width="744" height="165.4" fill="#FFF"/><rect y="330.7" width="744" height="165.3" fill="#278E43"/><g transform="translate(372,248)"><circle r="66" fill="#F8E71C"/><path id="ray" d="M0,-85 L10,-35 L-10,-35 Z" fill="#F8E71C"/><use href="#ray" transform="rotate(17)"/><use href="#ray" transform="rotate(34)"/><use href="#ray" transform="rotate(51)"/><use href="#ray" transform="rotate(68)"/><use href="#ray" transform="rotate(85)"/><use href="#ray" transform="rotate(102)"/><use href="#ray" transform="rotate(119)"/><use href="#ray" transform="rotate(136)"/><use href="#ray" transform="rotate(153)"/><use href="#ray" transform="rotate(170)"/><use href="#ray" transform="rotate(187)"/><use href="#ray" transform="rotate(204)"/><use href="#ray" transform="rotate(221)"/><use href="#ray" transform="rotate(238)"/><use href="#ray" transform="rotate(255)"/><use href="#ray" transform="rotate(272)"/><use href="#ray" transform="rotate(289)"/><use href="#ray" transform="rotate(306)"/><use href="#ray" transform="rotate(323)"/><use href="#ray" transform="rotate(340)"/></g></svg>
-        </div>
-        <div class="platform-title">المنصة السياحية<br>الرسمية لعام 2026</div>
-        <div class="flag-box">
-            <svg viewBox="0 0 600 400"><rect width="600" height="133.3" fill="#1a742c"/><rect y="133.3" width="600" height="133.4" fill="#FFF"/><rect y="266.7" width="600" height="133.3" fill="#000"/><g fill="#CE1126" transform="translate(150, 200)"><path id="s-star" d="M0,-20 L5.8,-4 L20,-4 L8.5,5 L13,20 L0,11 L-13,20 L-8.5,5 L-20,-4 L-5.8,-4 Z"/><use href="#s-star" x="150"/><use href="#s-star" x="300"/></g></svg>
-        </div>
+        <div class="f-box"><svg viewBox="0 0 600 400"><rect width="600" height="133" fill="#007A3D"/><rect y="133" width="600" height="134" fill="#FFF"/><rect y="267" width="600" height="133" fill="#000"/><g fill="#CE1126" transform="translate(150, 200)"><path id="st" d="M0,-30 L8,-10 L32,-10 L13,5 L20,28 L0,13 L-20,28 L-13,5 L-32,-10 L-8,-10 Z"/><use href="#st" x="150"/><use href="#st" x="300"/></g></svg></div>
+        <h2 style="color: #004a99; font-size: 1.5rem;">المنصة السياحية الرسمية</h2>
+        <div class="f-box"><svg viewBox="0 0 744 496"><rect width="744" height="165" fill="#E31E26"/><rect y="165" width="744" height="166" fill="#FFF"/><rect y="331" width="744" height="165" fill="#278E43"/><g transform="translate(372,248)"><circle r="60" fill="#F8E71C"/><path d="M0,-85 L10,-30 L-10,-30 Z" fill="#F8E71C" id="r"/><use href="#r" transform="rotate(17)"/><use href="#r" transform="rotate(34)"/><use href="#r" transform="rotate(51)"/><use href="#r" transform="rotate(68)"/><use href="#r" transform="rotate(85)"/><use href="#r" transform="rotate(102)"/><use href="#r" transform="rotate(119)"/><use href="#r" transform="rotate(136)"/><use href="#r" transform="rotate(153)"/><use href="#r" transform="rotate(170)"/><use href="#r" transform="rotate(187)"/><use href="#r" transform="rotate(204)"/><use href="#r" transform="rotate(221)"/><use href="#r" transform="rotate(238)"/><use href="#r" transform="rotate(255)"/><use href="#r" transform="rotate(272)"/><use href="#r" transform="rotate(289)"/><use href="#r" transform="rotate(306)"/><use href="#r" transform="rotate(323)"/><use href="#r" transform="rotate(340)"/></g></svg></div>
     </div>
 
-    <div class="nav-links"><a href="about.html" class="nav-btn">تعرف علينا (من نحن) ←</a></div>
-    <div class="ticker"><div class="t-text">سفر آمن إلى كافة الوجهات • خبرة ميدانية موثقة بآلاف التقييمات على جوجل ماب • رحلاتنا مستمرة معكم لعام 2026 •</div></div>
+    <div class="ticker">
+        <div class="t-text">رؤية 2026: طفرة سياحية كبرى في المنطقة • أكثر من 10 ملايين زائر يختارون وجهاتنا • رحلاتنا مستمرة معكم •</div>
+    </div>
 
     <div class="container">
-        <h2 class="section-title">وجهات سياحية مختارة</h2>
+        <h2 class="section-label">وجهات مختارة</h2>
         <div class="destination-grid">
-            
-            <a href="destinations.html" style="text-decoration: none; color: inherit;">
-                <div class="card">
-                    <img src="images/pic1.jpg">
-                    <div class="card-overlay">
-                        <h3>سحر الطبيعة</h3>
-                        <p>شلالات ومناطق كردستان</p>
-                    </div>
-                </div>
-            </a>
-            
-            <a href="syria-travel.html" style="text-decoration: none; color: inherit;">
-                <div class="card">
-                    <img src="images/pic2.jpg" alt="سياحة سوريا">
-                    <div class="card-overlay">
-                        <h3>عراقة التاريخ</h3>
-                        <p>دمشق والمعالم السورية</p>
-                    </div>
-                </div>
-            </a>
-
-            <div class="card"><img src="images/pic3.jpg"><div class="card-overlay"><h3>خدمات 2026</h3><p>جولات سياحية عالمية</p></div></div>
-        </div>
-    </div>
-
-    <div class="container" style="background: #fdfdfd; border-radius: 30px; margin-top: 20px; border: 1px solid #eee;">
-        <article style="text-align: right; line-height: 1.8; padding: 20px;">
-            <h2 class="section-title">أربيل: حكاية التاريخ وجمال الحاضر</h2>
-            <p style="font-size: 1.1rem; color: #555; margin-top: 20px;">
-                تعتبر مدينة <strong>أربيل</strong> واحدة من أقدم المدن المأهولة في العالم. تتوسطها <strong>قلعة أربيل</strong> التاريخية، التي تقف بشموخ كشاهد على حضارات تعاقبت على أرض كردستان.
-            </p>
-        </article>
-
-        <h3 style="color: #004a99; margin: 30px 0 15px;">معرض صور أربيل وكردستان</h3>
-        <div class="image-gallery">
-            <div class="gallery-item"><img src="images/gallery1.jpg" alt="سياحة كردستان"></div>
-            <div class="gallery-item"><img src="images/gallery2.jpg" alt="أربيل 2026"></div>
+            <div class="card">
+                <img src="images/pic1.jpg">
+                <div class="card-info"><h3>سحر الطبيعة</h3><p>جمال الجبال والمساحات الخضراء.</p></div>
             </div>
-    </div>
-
-    <div class="container">
-        <div class="booking-card">
-            <h3 style="margin-bottom: 20px; color: #004a99;">احجز رحلتك القادمة الآن</h3>
-            <form id="bookingForm">
-                <div class="form-group"><label>الاسم الكامل</label><input type="text" id="name" placeholder="الاسم كما في الجواز" required></div>
-                <div class="form-grid">
-                    <div class="form-group"><label>نقطة الانطلاق</label><input type="text" id="from_loc" placeholder="مثلاً: أربيل" required></div>
-                    <div class="form-group"><label>الوجهة</label><input type="text" id="to_loc" placeholder="مثلاً: دمشق" required></div>
-                    <div class="form-group"><label>التاريخ</label><input type="date" id="date" required></div>
-                    <div class="form-group"><label>العدد</label><input type="number" id="passengers" value="1" min="1"></div>
-                </div>
-                <button type="button" onclick="sendToWhatsApp()" class="btn-booking">تأكيد عبر واتساب</button>
-            </form>
+            <div class="card">
+                <img src="images/pic2.jpg">
+                <div class="card-info"><h3>إرث وتاريخ</h3><p>عبق الماضي في أعرق المعالم.</p></div>
+            </div>
+            <div class="card">
+                <img src="images/pic3.jpg">
+                <div class="card-info"><h3>مغامرات 2026</h3><p>رحلات استكشافية متكاملة.</p></div>
+            </div>
         </div>
-    </div>
 
-    <div class="social-grid">
-        <a href="https://maps.app.goo.gl/1b8FnfThddAVpnjr8?g_st=ic" class="btn btn-maps">⭐ تقييماتي وصوري على Google Maps (Level 9)</a>
-        <a href="https://youtube.com/@syriatourism1980" class="btn btn-yt">YouTube</a>
-        <a href="https://wa.me/9647502061184" class="btn btn-wa">WhatsApp</a>
-        <a href="https://www.facebook.com/share/1GGXK5ZT5J/" class="btn btn-fb">Facebook</a>
-        <a href="https://www.tiktok.com/@moradalmdar1239" class="btn btn-tk">TikTok</a>
-    </div>
-
-    <div class="floating-contact">
-        <a href="https://wa.me/9647502061184" class="float-btn wa-btn"><svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/></svg></a>
-        <a href="tel:9647502061184" class="float-btn call-btn"><svg viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg></a>
-    </div>
-
-    <footer>
-        <p>© 2026 جميع الحقوق محفوظة لشركة Kurdstan Syria Travel</p>
-        <div class="footer-links">
-            <a href="index.html">الرئيسية</a> |
-            <a href="syria-travel.html">رحلات سوريا</a> |
-            <a href="about.html">من نحن</a> |
-            <a href="privacy.html">سياسة الخصوصية</a>
+        <h2 class="section-label">تواصلوا معنا</h2>
+        <div class="social-grid">
+            <a href="https://youtube.com/@syriatourism1980" class="btn btn-yt" target="_blank">YouTube</a>
+            <a href="https://wa.me/9647502061184" class="btn btn-wa" target="_blank">WhatsApp</a>
+            <a href="https://www.facebook.com/share/1GGXK5ZT5J/?mibextid=wwXIfr" class="btn btn-fb" target="_blank">Facebook</a>
+            <a href="https://www.tiktok.com/@moradalmdar1239" class="btn btn-tk" target="_blank">TikTok</a>
+            <a href="https://www.instagram.com/tourism_video?igsh=MWViNjVnMGF1NXJhOQ%3D%3D" class="btn btn-ig" target="_blank">Instagram</a>
         </div>
-    </footer>
+        <p style="color: #888; margin-top: 40px; font-size: 0.8rem;">© 2026 Kurdstan Syria Travel. جميع الحقوق محفوظة.</p>
+    </div>
 
-    <script>
-        // Parallax Effect
-        window.addEventListener('scroll', function() {
-            var video = document.getElementById('hero-video');
-            if (window.innerWidth > 768) {
-                video.style.transform = 'translateY(' + window.pageYOffset * 0.3 + 'px)';
-            }
-        });
-
-        // WhatsApp Booking Logic
-        function sendToWhatsApp() {
-            const name = document.getElementById('name').value;
-            const from = document.getElementById('from_loc').value;
-            const to = document.getElementById('to_loc').value;
-            const date = document.getElementById('date').value;
-            const passengers = document.getElementById('passengers').value;
-            if(!name || !from || !to || !date) { alert("يرجى إكمال كافة البيانات"); return; }
-            const msg = `*طلب حجز جديد 2026*%0A*الاسم:* ${name}%0A*من:* ${from}%0A*إلى:* ${to}%0A*التاريخ:* ${date}%0A*العدد:* ${passengers}`;
-            window.open(`https://wa.me/9647502061184?text=${msg}`, '_blank');
-        }
-    </script>
 </body>
 </html>
