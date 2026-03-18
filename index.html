@@ -22,14 +22,14 @@
         .flag-box { width: 90px; height: 60px; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #eee; }
         .flag-box svg { width: 100%; height: 100%; display: block; }
 
-        /* قسم المحتوى النصي عن سوريا - مهم جداً لأدسنس */
+        /* قسم المحتوى النصي عن سوريا */
         .syria-content { max-width: 900px; margin: 40px auto; padding: 25px; background: #fdfdfd; border-radius: 20px; text-align: right; line-height: 1.8; border-right: 6px solid #278E43; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .syria-content h2 { color: #004a99; margin-bottom: 15px; }
         .syria-content p { color: #444; font-size: 1.1rem; margin-bottom: 10px; }
 
         .reviews-container { background: #f9f9f9; padding: 40px 20px; border-radius: 30px; margin: 20px auto; max-width: 1000px; }
         .review-item { background: #fff; padding: 20px; border-radius: 15px; margin-bottom: 15px; text-align: right; border-right: 5px solid #28a745; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .stars { color: #ffc107; font-size: 1.2rem; margin-bottom: 5px; display: block; }
+        .stars { color: #ffc107; font-size: 1.2rem; display: block; }
 
         .nav-btn { text-decoration: none; background: linear-gradient(135deg, #28a745 0%, #208638 100%); color: white; padding: 12px 35px; border-radius: 25px; font-weight: bold; display: inline-block; transition: 0.3s; margin: 20px 0; }
         
@@ -45,8 +45,8 @@
         .btn-maps { background: #4285F4; grid-column: span 2; padding: 15px; }
 
         footer { background: #f1f1f1; padding: 30px; margin-top: 40px; }
-        .footer-links { margin-top: 15px; }
-        .footer-links a { color: #004a99; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 0.9rem; }
+        .footer-links { margin-top: 15px; padding-top: 10px; border-top: 1px solid #ddd; }
+        .footer-links a { color: #004a99; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 0.95rem; }
     </style>
 </head>
 <body>
@@ -66,13 +66,9 @@
         </div>
         <div class="platform-title">المنصة السياحية<br>الرسمية لعام 2026</div>
         
-        <div class="flag-box">
+        <div class="flag-box" title="سوريا">
             <svg viewBox="0 0 600 400">
-                <rect width="600" height="133.3" fill="#278E43"/> 
-                <rect y="133.3" width="600" height="133.4" fill="#FFF"/>
-                <rect y="266.7" width="600" height="133.3" fill="#000"/>
-                <g fill="#CE1126" transform="translate(150, 200)"> 
-                    <path id="star" d="M0,-20 L5,-6 L20,-6 L8,4 L13,18 L0,10 L-13,18 L-8,4 L-20,-6 L-5,-6 Z"/>
+                <rect width="600" height="133.3" fill="#278E43"/> <rect y="133.3" width="600" height="133.4" fill="#FFF"/> <rect y="266.7" width="600" height="133.3" fill="#000"/> <g fill="#CE1126" transform="translate(150, 200)"> <path id="star" d="M0,-20 L5,-6 L20,-6 L8,4 L13,18 L0,10 L-13,18 L-8,4 L-20,-6 L-5,-6 Z"/>
                     <use href="#star" x="150"/>
                     <use href="#star" x="300"/>
                 </g>
@@ -82,8 +78,8 @@
 
     <div class="syria-content">
         <h2>استكشف جمال سوريا وعراقتها في 2026</h2>
-        <p>نحن في <strong>Kurdstan Syria Travel</strong> نؤمن بأن سوريا هي مهد الحضارات. من خلال خبرتنا الميدانية كمرشدين محليين، نوثق لكم أجمل الرحلات السياحية في دمشق وحلب واللاذقية.</p>
-        <p>نقدم لكم معلومات دقيقة عن المواقع الأثرية، وأفضل أماكن الإقامة، وتجربة الطعام السوري الأصيل، لضمان رحلة آمنة وممتعة تعكس التطور السياحي الذي تشهده المنطقة في عام 2026.</p>
+        <p>نحن في <strong>Kurdstan Syria Travel</strong> نوثق لكم أجمل اللحظات السياحية في قلب سوريا. من حواري دمشق القديمة إلى الطبيعة الخضراء، خبرتنا كمرشدين محليين تضع بين أيديكم دليلاً شاملاً.</p>
+        <p>نركز على إظهار الوجه الحضاري والسياحي من خلال صورنا الموثقة على خرائط جوجل، لنسهل عليكم اختيار وجهتكم القادمة بأمان ومصداقية تامة.</p>
     </div>
 
     <div class="nav-links"><a href="about.html" class="nav-btn">تعرف علينا (من نحن) ←</a></div>
@@ -93,7 +89,7 @@
         <div class="reviews-container">
             <div class="review-item">
                 <span class="stars">★★★★★</span>
-                <strong>زائر من أربيل</strong>
+                <strong>متابعين من خرائط جوجل</strong>
                 <p>تعامل راقي جداً وخبرة واسعة في الطرق والمعالم السياحية. شكراً محمد الكردي.</p>
             </div>
             <div class="review-item">
@@ -114,17 +110,17 @@
     </div>
 
     <div class="social-grid">
-        <a href="http://googleusercontent.com/maps.google.com/..." class="btn btn-maps" target="_blank">⭐ خبرة موثقة على خرائط جوجل (Level 9)</a>
+        <a href="http://googleusercontent.com/maps.google.com/..." class="btn btn-maps" target="_blank">⭐ خبرة موثقة (Level 9)</a>
         <a href="https://wa.me/9647502061184" class="btn btn-wa" target="_blank">WhatsApp</a>
         <a href="https://youtube.com/@syriatourism1980" class="btn btn-yt" target="_blank">YouTube</a>
         <a href="https://www.facebook.com/mohammad.kurdi.54" class="btn btn-fb" target="_blank">Facebook</a>
         <a href="https://www.tiktok.com/@syria.tourism" class="btn btn-tk" target="_blank">TikTok</a>
-        <a href="https://www.instagram.com/syria.tourism" class="btn btn-ig" target="_blank">Instagram</a>
     </div>
 
     <footer>
         <p>© 2026 جميع الحقوق محفوظة - Kurdstan Syria Travel</p>
         <p>بإدارة محمد الكردي - خبير سياحي معتمد</p>
+        
         <div class="footer-links">
             <a href="privacy.html">سياسة الخصوصية</a> | 
             <a href="about.html">من نحن</a> | 
