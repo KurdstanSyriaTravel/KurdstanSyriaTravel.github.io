@@ -5,30 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurdstan Syria Travel | المنصة الرسمية</title>
     
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489" crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489"
+     crossorigin="anonymous"></script>
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.7; }
 
-        /* الهيدر: تم تعديل مساحات الأعلام لتصبح مجرد حاويات نظيفة */
         .header-main { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         
-        /* حاوية العلم بالكود: تم إزالة المتدرجات والpseudo-elements القديمة لضمان نظافة الحاوية */
         .flag-css { width: 60px; height: 40px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.2); border: 1px solid #ddd; position: relative; display: flex; align-items: center; justify-content: center; background: none; }
         
-        /* إزالة الأنماط القديمة بالكامل */
-        .flag-syria, .flag-kurdistan, .flag-syria::after, .flag-kurdistan::after, .flag-syria::before, .flag-kurdistan::before {
-            background: none !important;
-            content: none !important;
-            display: none !important;
-        }
-
         .header-title { text-align: center; }
         .header-title h1 { color: #004a99; font-size: 1.4rem; }
         .header-title p { font-size: 0.85rem; color: #28a745; font-weight: bold; }
 
-        /* قسم الهيرو */
         .hero-section { position: relative; width: 100%; height: 350px; background: #000; overflow: hidden; }
         #hero-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
@@ -39,24 +30,19 @@
 
         .container { max-width: 600px; margin: auto; padding: 20px; }
 
-        /* البطاقات التعريفية */
         .info-card { background: #fff; padding: 25px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 5px solid #004a99; }
         .info-card h3 { color: #004a99; margin-bottom: 15px; font-size: 1.5rem; }
         .info-card p { font-size: 1.05rem; text-align: justify; color: #444; margin-bottom: 15px; }
         .highlight { color: #28a745; font-weight: bold; }
 
-        /* معرض الصور */
         .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
         .gallery-grid img { width: 100%; height: 150px; object-fit: cover; border-radius: 12px; transition: 0.3s; border: 1px solid #eee; }
-        .gallery-grid img:hover { transform: scale(1.03); }
 
-        /* نموذج الحجز */
         .booking-box { background: #fff; padding: 20px; border-radius: 20px; border: 1px solid #e0e0e0; margin: 30px 0; }
         .booking-box h4 { color: #28a745; margin-bottom: 15px; text-align: center; }
         .form-input { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 10px; font-size: 1rem; }
         .submit-btn { background: #25d366; color: white; border: none; width: 100%; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 1.1rem; }
 
-        /* أزرار التواصل الاجتماعي - استعادة التصميم الأصلي */
         .social-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .btn-s { display: flex; align-items: center; justify-content: center; height: 60px; color: #fff; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 0.9rem; text-align: center; }
         .yt { background: #ff0000; } .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
@@ -73,41 +59,13 @@
     <header class="header-main">
         <div class="flag-css" title="كردستان">
           <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 600 400">
-            <defs>
-              <clipPath id="center_flag_k">
-                <rect width="600" height="400" />
-              </clipPath>
-            </defs>
-            <g clip-path="url(#center_flag_k)">
-              <rect width="600" height="400" fill="#FFF" />
-              <rect width="600" height="133.333333" fill="#ED2024" />
-              <rect y="266.666667" width="600" height="133.333333" fill="#278E43" />
-              <g transform="translate(300 200)">
+            <rect width="600" height="400" fill="#FFF" />
+            <rect width="600" height="133.333333" fill="#ED2024" />
+            <rect y="266.666667" width="600" height="133.333333" fill="#278E43" />
+            <g transform="translate(300 200)">
                 <circle r="50" fill="#FEB117" />
-                <g id="k_ray">
-                  <path d="M 0 -100 L 10 -50 L -10 -50 Z" fill="#FEB117" />
-                </g>
-                <use href="#k_ray" transform="rotate(17.142857)" />
-                <use href="#k_ray" transform="rotate(34.285714)" />
-                <use href="#k_ray" transform="rotate(51.428571)" />
-                <use href="#k_ray" transform="rotate(68.571429)" />
-                <use href="#k_ray" transform="rotate(85.714286)" />
-                <use href="#k_ray" transform="rotate(102.857143)" />
-                <use href="#k_ray" transform="rotate(120.000000)" />
-                <use href="#k_ray" transform="rotate(137.142857)" />
-                <use href="#k_ray" transform="rotate(154.285714)" />
-                <use href="#k_ray" transform="rotate(171.428571)" />
-                <use href="#k_ray" transform="rotate(188.571429)" />
-                <use href="#k_ray" transform="rotate(205.714286)" />
-                <use href="#k_ray" transform="rotate(222.857143)" />
-                <use href="#k_ray" transform="rotate(240.000000)" />
-                <use href="#k_ray" transform="rotate(257.142857)" />
-                <use href="#k_ray" transform="rotate(274.285714)" />
-                <use href="#k_ray" transform="rotate(291.428571)" />
-                <use href="#k_ray" transform="rotate(308.571429)" />
-                <use href="#k_ray" transform="rotate(325.714286)" />
-                <use href="#k_ray" transform="rotate(342.857143)" />
-              </g>
+                <g id="k_ray"><path d="M 0 -100 L 10 -50 L -10 -50 Z" fill="#FEB117" /></g>
+                <use href="#k_ray" transform="rotate(17.142857)" /><use href="#k_ray" transform="rotate(34.285714)" /><use href="#k_ray" transform="rotate(51.428571)" /><use href="#k_ray" transform="rotate(68.571429)" /><use href="#k_ray" transform="rotate(85.714286)" /><use href="#k_ray" transform="rotate(102.857143)" /><use href="#k_ray" transform="rotate(120.0)" /><use href="#k_ray" transform="rotate(137.142857)" /><use href="#k_ray" transform="rotate(154.285714)" /><use href="#k_ray" transform="rotate(171.428571)" /><use href="#k_ray" transform="rotate(188.571429)" /><use href="#k_ray" transform="rotate(205.714286)" /><use href="#k_ray" transform="rotate(222.857143)" /><use href="#k_ray" transform="rotate(240.0)" /><use href="#k_ray" transform="rotate(257.142857)" /><use href="#k_ray" transform="rotate(274.285714)" /><use href="#k_ray" transform="rotate(291.428571)" /><use href="#k_ray" transform="rotate(308.571429)" /><use href="#k_ray" transform="rotate(325.714286)" /><use href="#k_ray" transform="rotate(342.857143)" />
             </g>
           </svg>
         </div>
@@ -119,22 +77,15 @@
 
         <div class="flag-css" title="سوريا">
           <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 600 400">
-            <defs>
-              <clipPath id="center_flag_s">
-                <rect width="600" height="400" />
-              </clipPath>
-            </defs>
-            <g clip-path="url(#center_flag_s)">
-              <rect width="600" height="133.333333" fill="#007a3d" />
-              <rect y="133.333333" width="600" height="133.333333" fill="#ffffff" />
-              <rect y="266.666667" width="600" height="133.333333" fill="#000000" />
-              <g id="s_star">
+            <rect width="600" height="133.333333" fill="#007a3d" />
+            <rect y="133.333333" width="600" height="133.333333" fill="#ffffff" />
+            <rect y="266.666667" width="600" height="133.333333" fill="#000000" />
+            <g id="s_star">
                 <path d="M 0,-40 l 11.756,36.18 h 38.042 l -30.778,22.36 11.756,36.18 l -30.778,-22.36 l -30.778,22.36 l 11.756,-36.18 l -30.778,-22.36 h 38.042 z" fill="#ce1126" />
-              </g>
-              <use href="#s_star" transform="translate(175 200) scale(0.6)" />
-              <use href="#s_star" transform="translate(300 200) scale(0.6)" />
-              <use href="#s_star" transform="translate(425 200) scale(0.6)" />
             </g>
+            <use href="#s_star" transform="translate(175 200) scale(0.6)" />
+            <use href="#s_star" transform="translate(300 200) scale(0.6)" />
+            <use href="#s_star" transform="translate(425 200) scale(0.6)" />
           </svg>
         </div>
     </header>
@@ -170,16 +121,11 @@
             </p>
             
             <div class="gallery-grid">
-                <img src="images/gallery1.jpg" alt="طبيعة كردستان">
-                <img src="images/gallery2.jpg" alt="قلعة أربيل">
-                <img src="images/gallery3.jpg" alt="جمال أربيل">
-                <img src="images/gallery4.jpg" alt="شلالات بيخال">
-                <img src="images/gallery5.jpg" alt="جبال كردستان">
-                <img src="images/gallery6.jpg" alt="طبيعة خلابة">
-                <img src="images/gallery7.jpg" alt="أربيل">
-                <img src="images/gallery8.jpg" alt="سوريا">
-                <img src="images/gallery9.jpg" alt="رحلاتنا">
-                <img src="images/gallery10.jpg" alt="كردستان">
+                <img src="images/gallery1.jpg" alt="1"><img src="images/gallery2.jpg" alt="2">
+                <img src="images/gallery3.jpg" alt="3"><img src="images/gallery4.jpg" alt="4">
+                <img src="images/gallery5.jpg" alt="5"><img src="images/gallery6.jpg" alt="6">
+                <img src="images/gallery7.jpg" alt="7"><img src="images/gallery8.jpg" alt="8">
+                <img src="images/gallery9.jpg" alt="9"><img src="images/gallery10.jpg" alt="10">
             </div>
         </div>
 
@@ -196,7 +142,7 @@
             <a href="https://facebook.com/kurdstansyriatravel" class="btn-s fb">Facebook</a>
             <a href="https://wa.me/9647502061184" class="btn-s wa">WhatsApp</a>
             <a href="https://tiktok.com/@kurdstansyriatravel" class="btn-s tk">TikTok</a>
-            <a href="https://maps.google.com" class="btn-s gm">⭐ تقييماتي وصوري على<br>Google Maps (Level 9)</a>
+            <a href="https://maps.google.com" class="btn-s gm">Google Maps (Level 9)</a>
         </div>
     </div>
 
@@ -205,7 +151,10 @@
     <footer>
         <p>© 2026 جميع الحقوق محفوظة لشركة Kurdstan Syria Travel</p>
         <div class="f-links">
-            <a href="index.html">الرئيسية</a> | <a href="syria-travel.html">رحلات سوريا</a> | <a href="about.html">من نحن</a>
+            <a href="index.html">الرئيسية</a> | 
+            <a href="syria-travel.html">رحلات سوريا</a> | 
+            <a href="about.html">من نحن</a> | 
+            <a href="privacy-policy.html">سياسة الخصوصية</a>
         </div>
     </footer>
 
