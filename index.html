@@ -11,18 +11,18 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.7; }
 
-        /* الهيدر مع الأعلام المصممة بالكود بدقة */
+        /* الهيدر: تم تعديل مساحات الأعلام لتصبح مجرد حاويات نظيفة */
         .header-main { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         
-        .flag-css { width: 60px; height: 40px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.2); border: 1px solid #ddd; position: relative; }
+        /* حاوية العلم بالكود: تم إزالة المتدرجات والpseudo-elements القديمة لضمان نظافة الحاوية */
+        .flag-css { width: 60px; height: 40px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.2); border: 1px solid #ddd; position: relative; display: flex; align-items: center; justify-content: center; background: none; }
         
-        /* علم سوريا (أخضر، أبيض، أسود مع 3 نجوم حمراء) */
-        .flag-syria { background: linear-gradient(to bottom, #007a3d 33.3%, #ffffff 33.3%, #ffffff 66.6%, #000000 66.6%); }
-        .flag-syria::after { content: '★ ★ ★'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #ce1126; font-size: 10px; letter-spacing: 2px; }
-
-        /* علم كردستان */
-        .flag-kurdistan { background: linear-gradient(to bottom, #ED2024 33.3%, #ffffff 33.3%, #ffffff 66.6%, #278E43 66.6%); }
-        .flag-kurdistan::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 14px; height: 14px; background: #FEB117; border-radius: 50%; }
+        /* إزالة الأنماط القديمة بالكامل */
+        .flag-syria, .flag-kurdistan, .flag-syria::after, .flag-kurdistan::after, .flag-syria::before, .flag-kurdistan::before {
+            background: none !important;
+            content: none !important;
+            display: none !important;
+        }
 
         .header-title { text-align: center; }
         .header-title h1 { color: #004a99; font-size: 1.4rem; }
@@ -71,14 +71,72 @@
 <body>
 
     <header class="header-main">
-        <div class="flag-css flag-syria" title="سوريا"></div>
+        <div class="flag-css" title="كردستان">
+          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 600 400">
+            <defs>
+              <clipPath id="center_flag_k">
+                <rect width="600" height="400" />
+              </clipPath>
+            </defs>
+            <g clip-path="url(#center_flag_k)">
+              <rect width="600" height="400" fill="#FFF" />
+              <rect width="600" height="133.333333" fill="#ED2024" />
+              <rect y="266.666667" width="600" height="133.333333" fill="#278E43" />
+              <g transform="translate(300 200)">
+                <circle r="50" fill="#FEB117" />
+                <g id="k_ray">
+                  <path d="M 0 -100 L 10 -50 L -10 -50 Z" fill="#FEB117" />
+                </g>
+                <use href="#k_ray" transform="rotate(17.142857)" />
+                <use href="#k_ray" transform="rotate(34.285714)" />
+                <use href="#k_ray" transform="rotate(51.428571)" />
+                <use href="#k_ray" transform="rotate(68.571429)" />
+                <use href="#k_ray" transform="rotate(85.714286)" />
+                <use href="#k_ray" transform="rotate(102.857143)" />
+                <use href="#k_ray" transform="rotate(120.000000)" />
+                <use href="#k_ray" transform="rotate(137.142857)" />
+                <use href="#k_ray" transform="rotate(154.285714)" />
+                <use href="#k_ray" transform="rotate(171.428571)" />
+                <use href="#k_ray" transform="rotate(188.571429)" />
+                <use href="#k_ray" transform="rotate(205.714286)" />
+                <use href="#k_ray" transform="rotate(222.857143)" />
+                <use href="#k_ray" transform="rotate(240.000000)" />
+                <use href="#k_ray" transform="rotate(257.142857)" />
+                <use href="#k_ray" transform="rotate(274.285714)" />
+                <use href="#k_ray" transform="rotate(291.428571)" />
+                <use href="#k_ray" transform="rotate(308.571429)" />
+                <use href="#k_ray" transform="rotate(325.714286)" />
+                <use href="#k_ray" transform="rotate(342.857143)" />
+              </g>
+            </g>
+          </svg>
+        </div>
         
         <div class="header-title">
-            <h1>Kurdstan Syria Travel</h1>
+            <h1>Kurdistan Syria Travel</h1>
             <p>السياحة في كردستان العراق وسوريا</p>
         </div>
 
-        <div class="flag-css flag-kurdistan" title="كردستان"></div>
+        <div class="flag-css" title="سوريا">
+          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 600 400">
+            <defs>
+              <clipPath id="center_flag_s">
+                <rect width="600" height="400" />
+              </clipPath>
+            </defs>
+            <g clip-path="url(#center_flag_s)">
+              <rect width="600" height="133.333333" fill="#007a3d" />
+              <rect y="133.333333" width="600" height="133.333333" fill="#ffffff" />
+              <rect y="266.666667" width="600" height="133.333333" fill="#000000" />
+              <g id="s_star">
+                <path d="M 0,-40 l 11.756,36.18 h 38.042 l -30.778,22.36 11.756,36.18 l -30.778,-22.36 l -30.778,22.36 l 11.756,-36.18 l -30.778,-22.36 h 38.042 z" fill="#ce1126" />
+              </g>
+              <use href="#s_star" transform="translate(175 200) scale(0.6)" />
+              <use href="#s_star" transform="translate(300 200) scale(0.6)" />
+              <use href="#s_star" transform="translate(425 200) scale(0.6)" />
+            </g>
+          </svg>
+        </div>
     </header>
 
     <section class="hero-section">
