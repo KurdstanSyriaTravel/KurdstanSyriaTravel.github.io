@@ -5,100 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>من نحن | About Us - Kurdstan Syria Travel</title>
     
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489" crossorigin="anonymous"></script>
 
     <style>
+        :root {
+            --primary: #004a99;
+            --accent: #28a745;
+            --bg: #f4f7fa;
+            --text: #2d3748;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f8f9fa; line-height: 1.8; color: #333; text-align: right; }
-        .about-header { background: #004a99; color: white; padding: 80px 20px; text-align: center; border-bottom: 5px solid #28a745; }
-        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
-        .box { background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 30px; }
-        h2 { color: #004a99; margin: 30px 0 20px; border-right: 5px solid #28a745; padding-right: 15px; font-size: 1.8rem; }
-        .profile-info { display: flex; align-items: center; gap: 20px; background: #eef5ff; padding: 25px; border-radius: 15px; border: 1px solid #d1e3ff; margin-bottom: 30px; }
-        .experience-card { background: #fff; border: 1px solid #eee; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-right: 5px solid #28a745; transition: 0.3s; }
-        .experience-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-        .badge { background: #28a745; color: white; padding: 6px 18px; border-radius: 50px; font-size: 0.9rem; font-weight: bold; display: inline-block; margin-bottom: 15px; }
-        .en-version { direction: ltr; text-align: left; margin-top: 50px; border-top: 2px dashed #ddd; padding-top: 50px; }
-        .en-version h2 { border-right: none; border-left: 5px solid #004a99; padding-left: 15px; text-align: left; }
-        .back-btn { display: inline-block; background: #004a99; color: white; text-decoration: none; padding: 15px 45px; border-radius: 50px; margin-top: 30px; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,74,153,0.3); }
-        .back-btn:hover { background: #003366; transform: scale(1.05); }
-        .highlight { color: #004a99; font-weight: bold; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); line-height: 1.8; color: var(--text); text-align: right; }
+        
+        /* هيدر سينمائي */
+        .hero-section { 
+            background: linear-gradient(135deg, var(--primary), #002d62); 
+            color: white; padding: 100px 20px; text-align: center; 
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+            margin-bottom: -50px;
+        }
+        
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; position: relative; }
+        
+        /* صندوق المحتوى الرئيسي */
+        .main-card { 
+            background: #fff; padding: 50px; border-radius: 30px; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-top: 10px solid var(--accent);
+            margin-bottom: 40px;
+        }
+
+        /* أداة الترجمة الاحترافية */
+        #google_translate_element { margin: 20px 0; text-align: center; }
+
+        h1 { font-size: 2.8rem; margin-bottom: 15px; font-weight: 900; }
+        h2 { color: var(--primary); margin: 40px 0 20px; border-right: 6px solid var(--accent); padding-right: 20px; font-size: 1.8rem; }
+        
+        /* هوية المؤسس */
+        .founder-box { 
+            display: flex; align-items: center; background: #f0f7ff; 
+            padding: 30px; border-radius: 20px; border: 1px dashed var(--primary);
+            margin: 30px 0;
+        }
+        .founder-box strong { color: var(--primary); font-size: 1.2rem; display: block; margin-bottom: 5px; }
+
+        /* كروت الخبرة */
+        .exp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
+        .exp-card { 
+            background: #fff; border: 1px solid #e2e8f0; padding: 25px; border-radius: 15px; 
+            transition: 0.4s; border-bottom: 4px solid #edf2f7;
+        }
+        .exp-card:hover { transform: translateY(-10px); border-bottom-color: var(--accent); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .exp-card h3 { color: var(--primary); font-size: 1.1rem; margin-bottom: 10px; }
+
+        /* النسخة الإنجليزية المدمجة بنظام الـ Tabs البصري */
+        .en-section { direction: ltr; text-align: left; margin-top: 80px; border-top: 2px solid #edf2f7; padding-top: 60px; }
+        .en-section h2 { border-right: none; border-left: 6px solid var(--primary); padding-left: 20px; text-align: left; }
+
+        .btn-home { 
+            display: inline-block; background: var(--primary); color: white; 
+            text-decoration: none; padding: 18px 50px; border-radius: 15px; 
+            font-weight: bold; margin-top: 40px; transition: 0.3s;
+        }
+        .btn-home:hover { background: #002d62; transform: scale(1.05); box-shadow: 0 10px 20px rgba(0,74,153,0.3); }
+
+        footer { text-align: center; padding: 50px; color: #718096; font-size: 0.9rem; border-top: 1px solid #e2e8f0; margin-top: 50px; }
     </style>
 </head>
 <body>
 
-    <header class="about-header">
+    <section class="hero-section">
         <h1>من نحن | About Us</h1>
-        <p>نافذتكم الاحترافية إلى سحر السياحة في كردستان وسوريا</p>
-    </header>
+        <p>الخبرة الفندقية تلتقي بالشغف السياحي لعام 2026</p>
+    </section>
 
     <div class="container">
         
-        <div class="box">
-            <span class="badge">خبير ضيافة معتمد</span>
-            <h2>رؤيتنا: الخبرة الفندقية في خدمة السياحة</h2>
-            <p>أهلاً بكم في <strong>Kurdstan Syria Travel</strong>، المنصة الرقمية المخصصة لاستكشاف الكنوز السياحية والثقافية في منطقتي كردستان وسوريا. انطلق هذا الموقع ليكون دليلاً شاملاً يجمع بين الشغف بالسياحة والخبرة المهنية العميقة في قطاع الضيافة العالمي، وإيماناً منا بأن هذه المنطقة تمتلك جمالاً يستحق أن يراه العالم بأسره بلمسة احترافية.</p>
+        <div class="main-card">
+            <div id="google_translate_element"></div>
 
-            <div class="profile-info">
+            <h2>رؤيتنا: السياحة بمعايير فندقية عالمية</h2>
+            <p>مرحباً بكم في <strong>Kurdstan Syria Travel</strong>. انطلقت هذه المنصة لتكون الجسر الموثوق لاستكشاف روائع كردستان وسوريا، مدمجة بخبرة تزيد عن عقدين في إدارة الفنادق العالمية (Rooms Division Management). نحن لا نقدم مجرد معلومات، بل نقدم "تجربة ضيافة" رقمية متكاملة.</p>
+
+            <div class="founder-box">
                 <div>
-                    <p class="highlight">المؤسس: محمد كردي (Mohamad Kurdi)</p>
-                    <p>مرشد محلي (Level 9) ومحترف في إدارة الغرف الفندقية من مواليد 1980، أمتلك مسيرة مهنية حافلة في أرقى المؤسسات الفندقية العالمية مثل "فورسيزونز" دمشق وفنادق روتانا أربيل، مما يضمن لزوارنا محتوى دقيقاً ومعايير جودة فائقة.</p>
+                    <strong>المؤسس: محمد الكردي (Mohamad Kurdi)</strong>
+                    <p>خبير فندقي معتمد ومرشد محلي (Level 9). مسيرة مهنية بدأت في فندق فورسيزونز دمشق واستمرت في كبرى فنادق روتانا، حاملاً معه فلسفة "الخدمة المتميزة" لكل مسافر يبحث عن الأصالة والجودة.</p>
                 </div>
             </div>
 
-            <h2>لماذا تختار Kurdstan Syria Travel؟</h2>
-            <div class="experience-card">
-                <strong>الاحترافية الفندقية (Rooms Division Expertise):</strong>
-                <p>بصفتي مديراً لقسم الغرف ومُشرفاً سابقاً، أدرك تماماً أهمية التفاصيل التي تهم السائح، من جودة الإقامة إلى مستوى الخدمة، وننقل هذه الخبرة في كل مقال ووصف ننشره.</p>
+            <h2>لماذا نحن المصدر الأكثر ثقة؟</h2>
+            <div class="exp-grid">
+                <div class="exp-card">
+                    <h3>إدارة العمليات الفندقية</h3>
+                    <p>بصفتي Rooms Division Manager، أطبق معايير الجودة العالمية في تقييم الوجهات ومستويات الإقامة للسياح.</p>
+                </div>
+                <div class="exp-card">
+                    <h3>الاعتماد والموثوقية</h3>
+                    <p>أكثر من 50 شهادة دولية في الضيافة وسلامة الغذاء تضمن لك محتوى علمياً وعملياً دقيقاً.</p>
+                </div>
+                <div class="exp-card">
+                    <h3>التوثيق الميداني الحصري</h3>
+                    <p>نحن نوثق كل زاوية بأنفسنا؛ من قلاع سوريا التاريخية إلى جبال كردستان الخلابة بلمسة المرشد المحلي الخبير.</p>
+                </div>
             </div>
 
-            <div class="experience-card">
-                <strong>المصداقية والاعتماد:</strong>
-                <p>حاصل على أكثر من 50 شهادة احترافية في مجالات الفندقة والضيافة وسلامة الغذاء، مما يجعلنا المصدر الأكثر موثوقية لتقييم المنشآت السياحية وتوجيه المسافرين.</p>
+            <div class="en-section">
+                <h2>Our Vision: Hospitality Reimagined</h2>
+                <p>Welcome to <strong>Kurdstan Syria Travel</strong>. Founded by hospitality veteran Mohamad Kurdi, our platform bridges the gap between expert hotel management and authentic local tourism in Kurdistan and Syria.</p>
+                
+                <div class="founder-box" style="border-left: 1px dashed var(--primary); border-right: none;">
+                    <p><strong>Founder: Mohamad Kurdi</strong><br>
+                    A Rooms Division Manager and Level 9 Local Guide with deep roots in luxury hospitality brands like Four Seasons and Rotana Hotels. His 5-star approach ensures premium insights for every traveler.</p>
+                </div>
+
+                <div class="exp-grid">
+                    <div class="exp-card" style="border-left: 4px solid #edf2f7; border-right: none;">
+                        <h3>Professional Expertise</h3>
+                        <p>Leveraging 20+ years in hotel operations to provide elite-level travel guidance and service quality assessments.</p>
+                    </div>
+                    <div class="exp-card" style="border-left: 4px solid #edf2f7; border-right: none;">
+                        <h3>Certified Quality</h3>
+                        <p>Holding over 50 professional certifications in hospitality and food safety to ensure reliable, expert-backed information.</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="experience-card">
-                <strong>التغطية الميدانية (Local Guides):</strong>
-                <p>نحن لا نعتمد على المعلومات المنقولة، بل نقدم محتوى حصرياً نابعاً من زيارات ميدانية وتغطيات حية لجمال الطبيعة في أربيل، دهوك، السليمانية، ومختلف المدن السورية.</p>
+            <div style="text-align: center;">
+                <a href="index.html" class="btn-home">العودة للرئيسية | Back to Home</a>
             </div>
-        </div>
-
-        <div class="box en-version">
-            <span class="badge">Professional Hospitality Expert</span>
-            <h2>Our Vision: Excellence in Every Journey</h2>
-            <p>Welcome to <strong>Kurdstan Syria Travel</strong>, the premier digital platform dedicated to exploring the touristic and cultural treasures of Kurdistan and Syria. This website combines a passion for travel with over 20 years of professional expertise in international hospitality management, ensuring that our readers receive 5-star travel insights.</p>
-            
-            <div class="profile-info" style="border-left: 4px solid #004a99; border-right: none;">
-                <p><strong>Founder: Mohamad Kurdi</strong><br>
-                A Level 9 Google Local Guide and hospitality veteran with deep roots in global hotel chains like Four Seasons and Rotana. His extensive background as a Rooms Division Manager ensures that every recommendation meets the highest standards of hospitality.</p>
-            </div>
-
-            <h2>Why Trust Us?</h2>
-            <div class="experience-card" style="border-right: none; border-left: 5px solid #004a99;">
-                <strong>Hospitality Leadership:</strong>
-                <p>Our content is curated by a Rooms Division professional who understands the fine details of lodging and service quality, providing tourists with elite-level guidance.</p>
-            </div>
-
-            <div class="experience-card" style="border-right: none; border-left: 5px solid #004a99;">
-                <strong>Certified Expertise:</strong>
-                <p>With over 50 professional certifications in hotel operations and food safety, we provide reliable, expert-backed information for safe and enjoyable travel.</p>
-            </div>
-
-            <div class="experience-card" style="border-right: none; border-left: 5px solid #004a99;">
-                <strong>Original Content:</strong>
-                <p>We provide exclusive coverage and on-ground insights into the hidden gems of the Kurdistan region and Syria, focusing on authentic experiences and cultural heritage.</p>
-            </div>
-        </div>
-
-        <div style="text-align: center;">
-            <a href="index.html" class="back-btn">العودة للرئيسية | Back to Home</a>
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 30px; color: #777; background: #fff; border-top: 1px solid #eee; margin-top: 50px;">
-        © 2026 Kurdstan Syria Travel | All Rights Reserved
+    <footer>
+        <p>© 2026 Kurdstan Syria Travel | الإشراف الفني: محمد الكردي</p>
+        <p>Email: moradlmdr@gmail.com</p>
     </footer>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'ar', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
