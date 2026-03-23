@@ -13,82 +13,90 @@
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f4f7f6; color: #333; line-height: 1.6; }
 
         /* الهيدر والأعلام الدقيقة */
-        .main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 5%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .flag-box { width: 60px; height: 40px; border: 1px solid #eee; border-radius: 4px; overflow: hidden; }
+        .main-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 5%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .flag-box { width: 65px; height: 45px; border: 1px solid #eee; border-radius: 4px; overflow: hidden; }
         .logo-area { text-align: center; }
-        .logo-area h1 { color: var(--primary); font-size: 1.1rem; }
-        .logo-area p { color: var(--accent); font-size: 0.75rem; font-weight: bold; }
-
-        /* قسم الهيرو */
-        .hero { position: relative; width: 100%; height: 350px; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        #bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; z-index: 1; }
-        .hero-text { position: relative; z-index: 2; color: #fff; text-align: center; }
+        .logo-area h1 { color: var(--primary); font-size: 1.3rem; margin-bottom: 2px; }
+        .logo-area p { color: var(--accent); font-size: 0.8rem; font-weight: bold; }
 
         /* البطاقات والصور */
         .container { max-width: 1000px; margin: 30px auto; padding: 0 15px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 5px solid var(--primary); }
-        .img-wrap { height: 200px; overflow: hidden; cursor: zoom-in; position: relative; }
-        .img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border-top: 5px solid var(--primary); transition: 0.3s; }
+        .img-wrap { height: 220px; overflow: hidden; cursor: zoom-in; position: relative; }
+        .img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
         .img-wrap:hover img { transform: scale(1.05); }
 
-        .card-body { padding: 20px; }
-        .card-body h2 { font-size: 1.3rem; margin-bottom: 10px; color: var(--primary); }
+        .card-body { padding: 25px; }
+        .card-body h2 { font-size: 1.4rem; margin-bottom: 12px; color: var(--primary); border-bottom: 2px solid #f0f0f0; padding-bottom: 8px; }
+        .btn-view { display: inline-block; margin-top: 15px; color: var(--primary); font-weight: bold; text-decoration: none; }
 
-        /* أزرار التواصل */
-        .social-area { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 30px 0; }
-        .s-btn { padding: 12px; border-radius: 8px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; font-size: 0.85rem; }
+        /* أزرار التواصل كلقطات الشاشة */
+        .social-area { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 35px 0; }
+        .s-btn { padding: 15px; border-radius: 10px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; font-size: 0.9rem; transition: 0.2s; }
         .wa { background: #25d366; grid-column: span 2; }
         .yt { background: #ff0000; } .tk { background: #000; } .ig { background: #e4405f; } .fb { background: #1877f2; }
+        .gm { background: #4285f4; grid-column: span 2; }
 
         /* نافذة التكبير */
-        .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 2000; cursor: pointer; }
-        .lightbox img { max-width: 90%; max-height: 80%; border-radius: 8px; }
+        .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.92); display: none; justify-content: center; align-items: center; z-index: 2000; cursor: pointer; }
+        .lightbox img { max-width: 92%; max-height: 85%; border-radius: 8px; box-shadow: 0 0 30px rgba(255,255,255,0.1); }
 
-        /* التذييل الرسمي */
-        footer { background: #222; color: #fff; padding: 40px 15px; text-align: center; }
-        .footer-links { margin-bottom: 20px; font-size: 0.9rem; }
-        .footer-links a { color: #fff; text-decoration: none; margin: 0 8px; opacity: 0.8; }
-        .footer-links a:hover { opacity: 1; }
+        /* التذييل الرسمي المحدث */
+        footer { background: #222; color: #fff; padding: 45px 15px; text-align: center; }
+        .f-links { margin-bottom: 25px; font-size: 0.95rem; }
+        .f-links a { color: #fff; text-decoration: none; margin: 0 10px; opacity: 0.8; }
+        .f-links a:hover { opacity: 1; border-bottom: 1px solid #fff; }
     </style>
 </head>
 <body>
 
     <header class="main-header">
-        <div class="flag-box"> <svg viewBox="0 0 600 400"><rect width="600" height="133.3" fill="#007a3d"/><rect y="133.3" width="600" height="133.3" fill="#ffffff"/><rect y="266.6" width="600" height="133.3" fill="#000000"/><g transform="scale(0.5) translate(350 330)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#ce1126"/></g><g transform="scale(0.5) translate(600 330)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#ce1126"/></g><g transform="scale(0.5) translate(850 330)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#ce1126"/></g></svg>
+        <div class="flag-box"> <svg viewBox="0 0 600 400">
+                <rect width="600" height="133.3" fill="#007a3d"/>
+                <rect y="133.3" width="600" height="133.3" fill="#ffffff"/>
+                <rect y="266.6" width="600" height="133.3" fill="#000000"/>
+                <g fill="#ce1126">
+                    <path d="M 150 200 l 12 36 h 38 l -31 22 l 12 36 l -31 -22 l -31 22 l 12 -36 l -31 -22 h 38 z" transform="translate(0, -50) scale(0.6)"/>
+                    <path d="M 300 200 l 12 36 h 38 l -31 22 l 12 36 l -31 -22 l -31 22 l 12 -36 l -31 -22 h 38 z" transform="translate(0, -50) scale(0.6)"/>
+                    <path d="M 450 200 l 12 36 h 38 l -31 22 l 12 36 l -31 -22 l -31 22 l 12 -36 l -31 -22 h 38 z" transform="translate(0, -50) scale(0.6)"/>
+                </g>
+            </svg>
         </div>
         <div class="logo-area">
             <h1>Kurdistan Syria Travel</h1>
-            <p>دليلك المهني لاستكشاف سحر الطبيعة والحضارة</p>
+            <p>السياحة في كردستان وسوريا لعام 2026</p>
         </div>
-        <div class="flag-box"> <svg viewBox="0 0 600 400"><rect width="600" height="133.3" fill="#ED2024"/><rect y="133.3" width="600" height="133.3" fill="#FFF"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/><g transform="translate(300 200)"><circle r="48" fill="#FEB117"/><g id="r21"><path id="ray" d="M 0 -95 L 8 -45 L -8 -45 Z" fill="#FEB117"/></g><script>for(let i=0;i<21;i++)document.write('<use href="#ray" transform="rotate('+(i*360/21)+')"/>');</script></g></svg>
+        <div class="flag-box"> <svg viewBox="0 0 600 400">
+                <rect width="600" height="133.3" fill="#ED2024"/><rect y="133.3" width="600" height="133.3" fill="#FFF"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/>
+                <g transform="translate(300 200)">
+                    <circle r="48" fill="#FEB117"/>
+                    <g id="sun">
+                        <path id="ray" d="M 0 -95 L 8 -45 L -8 -45 Z" fill="#FEB117"/>
+                    </g>
+                    <script>for(let i=0;i<21;i++)document.write('<use href="#ray" transform="rotate('+(i*360/21)+')"/>');</script>
+                </g>
+            </svg>
         </div>
     </header>
 
-    <section class="hero">
-        <video autoplay muted loop playsinline id="bg-video"><source src="images/hero.mp4" type="video/mp4"></video>
-        <div class="hero-text">
-            <h2 style="font-size: 1.6rem; padding: 0 20px;">استكشف آفاق الجمال في 2026</h2>
-        </div>
-    </section>
-
     <div class="container">
         <div class="grid">
-            <article class="card" style="border-top-color: var(--accent);">
-                <div class="img-wrap" onclick="show(this.children[0].src)"><img src="images/2.jpg" alt="دمشق - سوريا"></div>
+            <article class="card" style="border-top-color: #ce1126;">
+                <div class="img-wrap" onclick="openLB(this.children[0].src)"><img src="images/2.jpg" alt="سوريا"></div>
                 <div class="card-body">
                     <h2>سوريا وسحر الحضارة</h2>
-                    <p>نأخذكم في رحلة لتوثيق المعالم بلمسة احترافية. سياحة سوريا اليوم تستعيد ألقها، ونحن هنا لنكون دليلك الموثوق لاستكشاف هذه الكنوز بأسلوب عصري وحرفي مبهر.</p>
-                    <a href="syria-travel.html" style="color:var(--accent); font-weight:bold; text-decoration:none;">عرض تفاصيل سوريا ←</a>
+                    <p>نأخذكم في رحلة لتوثيق المعالم بلمسة احترافية. سياحة سوريا اليوم تستعيد ألقها، ونحن هنا لنكون دليلك الموثوق لاستكشاف هذه الكنوز لعام 2026.</p>
+                    <a href="syria-travel.html" class="btn-view">عرض تفاصيل سوريا ←</a>
                 </div>
             </article>
 
             <article class="card">
-                <div class="img-wrap" onclick="show(this.children[0].src)"><img src="images/Gallery7.jpg" alt="قلعة أربيل - كردستان"></div>
+                <div class="img-wrap" onclick="openLB(this.children[0].src)"><img src="images/gallery7.jpg" alt="قلعة أربيل"></div>
                 <div class="card-body">
                     <h2>كردستان: جنة الطبيعة</h2>
-                    <p>تُعد منطقة كردستان العراق واحدة من أجمل الوجهات الصاعدة. استمتع بشلالات بيخال وجبال كوردك والضيافة الكردية الأصيلة الموثقة بعدسة خبيرنا المحلي.</p>
-                    <a href="destinations.html" style="color:var(--primary); font-weight:bold; text-decoration:none;">عرض تفاصيل كردستان ←</a>
+                    <p>استكشفوا شلالات بيخال وجبال كوردك والضيافة الكردية الأصيلة. نوثق لكم الجمال الطبيعي بلمسة خبير لضمان أفضل تجربة سياحية فندقية.</p>
+                    <a href="destinations.html" class="btn-view">عرض تفاصيل كردستان ←</a>
                 </div>
             </article>
         </div>
@@ -96,29 +104,29 @@
         <div class="social-area">
             <a href="https://wa.me/9647502061184" class="s-btn wa">تأكيد الحجز عبر واتساب</a>
             <a href="https://youtube.com/@kurdstansyriatravel" class="s-btn yt">YouTube</a>
-            <a href="https://tiktok.com/@kurdstansyriatravel" class="s-link tk" style="background:#000; padding:12px; border-radius:8px; color:#fff; text-align:center; text-decoration:none;">TikTok</a>
+            <a href="https://tiktok.com/@kurdstansyriatravel" class="s-btn tk">TikTok</a>
             <a href="https://instagram.com/kurdstansyriatravel" class="s-btn ig">Instagram</a>
             <a href="https://facebook.com/kurdstansyriatravel" class="s-btn fb">Facebook</a>
-            <a href="#" class="s-btn fb" style="grid-column: span 2; background:#4285f4">⭐ تقييماتي وصوري على Google Maps (Level 9)</a>
+            <a href="#" class="s-btn gm">⭐ تقييماتي وصوري على Google Maps (Level 9)</a>
         </div>
     </div>
 
-    <div id="lightbox" class="lightbox" onclick="this.style.display='none'"><img id="lb-img"></div>
+    <div id="lb" class="lightbox" onclick="this.style.display='none'"><img id="lb-img"></div>
 
     <footer>
-        <div class="footer-links">
+        <div class="f-links">
             <a href="index.html">الرئيسية | Home</a> | 
             <a href="about.html">من نحن | About Us</a> | 
             <a href="privacy.html">سياسة الخصوصية | Privacy</a> | 
             <a href="terms.html">اتفاقية الاستخدام | Terms</a> | 
             <a href="contact.html">اتصل بنا | Contact</a>
         </div>
-        <p style="font-size: 0.8rem; opacity: 0.6;">© 2026 جميع الحقوق محفوظة لـ Kurdstan Syria Travel</p>
-        <p style="font-size: 0.8rem; opacity: 0.6; margin-top:5px;">بإشراف الخبير الفندقي والتوثيق الميداني: محمد كردي</p>
+        <p style="font-size: 0.85rem; opacity: 0.7;">© 2026 جميع الحقوق محفوظة لـ Kurdstan Syria Travel</p>
+        <p style="font-size: 0.85rem; opacity: 0.7; margin-top:5px;">بإشراف الخبير الفندقي والتوثيق الميداني: محمد كردي</p>
     </footer>
 
     <script>
-        function show(s){ document.getElementById('lb-img').src=s; document.getElementById('lightbox').style.display='flex'; }
+        function openLB(s){ document.getElementById('lb-img').src=s; document.getElementById('lb').style.display='flex'; }
     </script>
 </body>
 </html>
