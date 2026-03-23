@@ -1,40 +1,72 @@
-<header class="header-main">
-    <div class="flag-box">
-        <svg viewBox="0 0 600 400">
-            <rect width="600" height="133.3" fill="#ce1126"/>
-            <rect y="133.3" width="600" height="133.3" fill="#ffffff"/>
-            <rect y="266.6" width="600" height="133.3" fill="#000000"/>
-            <g transform="translate(200,200) scale(0.5)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#007a3d"/></g>
-            <g transform="translate(400,200) scale(0.5)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#007a3d"/></g>
-        </svg>
-    </div>
-    <div class="header-title">
-        <h1>Kurdstan Syria Travel</h1>
-        <p>مرشد محلي معتمد Level 9</p>
-    </div>
-    <div class="flag-box">
-        <svg viewBox="0 0 600 400">
-            <rect width="600" height="133.3" fill="#ED2024"/>
-            <rect y="133.3" width="600" height="133.3" fill="#ffffff"/>
-            <rect y="266.6" width="600" height="133.3" fill="#278E43"/>
-            <g transform="translate(300 200)">
-                <circle r="45" fill="#FEB117"/>
-                <script>
-                    for(let i=0; i<21; i++) {
-                        document.write(`<path d="M 0 -85 L 8 -45 L -8 -45 Z" fill="#FEB117" transform="rotate(${i * (360/21)})"/>`);
-                    }
-                </script>
-            </g>
-        </svg>
-    </div>
-</header>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurdstan Syria Travel | 2026</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489" crossorigin="anonymous"></script>
 
-<div class="content-section">
-    <h3>أربيل: عمارة التاريخ</h3>
-    <div class="gallery-grid">
-        <img src="images/pic1.jpg" class="gallery-item" onclick="showImg(this.src)" alt="تمثال صلاح الدين">
-        <img src="images/gallery7.jpg" class="gallery-item" onclick="showImg(this.src)" alt="قلعة أربيل">
-        <img src="images/pic2.jpg" class="gallery-item" onclick="showImg(this.src)">
-        <img src="images/gallery2.jpg" class="gallery-item" onclick="showImg(this.src)">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f9f9f9; direction: rtl; }
+
+        /* تنسيق الهيدر والأعلام */
+        .main-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: white; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 1000; }
+        .flag-svg { width: 60px; height: 40px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+        .header-text { text-align: center; flex-grow: 1; }
+        .header-text h1 { font-size: 1.4rem; color: #004a99; }
+        .header-text p { font-size: 0.85rem; color: #28a745; font-weight: bold; }
+
+        /* منطقة الفيديو (Hero) */
+        .hero-section { position: relative; width: 100%; height: 300px; background: #000; overflow: hidden; }
+        #bg-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+        .hero-content { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; width: 90%; }
+        .hero-content h2 { font-size: 1.8rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.7); }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="flag-svg">
+            <svg viewBox="0 0 600 400">
+                <rect width="600" height="133.3" fill="#CE1126"/>
+                <rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/>
+                <rect y="266.6" width="600" height="133.3" fill="#000000"/>
+                <g transform="translate(150,200) scale(0.5)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#007A3D"/></g>
+                <g transform="translate(300,200) scale(0.5)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#007A3D"/></g>
+                <g transform="translate(450,200) scale(0.5)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#007A3D"/></g>
+            </svg>
+        </div>
+
+        <div class="header-text">
+            <h1>Kurdstan Syria Travel</h1>
+            <p>مرشد محلي Level 9 | لعام 2026</p>
+        </div>
+
+        <div class="flag-svg">
+            <svg viewBox="0 0 600 400">
+                <rect width="600" height="133.3" fill="#ED2024"/>
+                <rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/>
+                <rect y="266.6" width="600" height="133.3" fill="#278E43"/>
+                <g transform="translate(300 200)">
+                    <circle r="45" fill="#FEB117"/>
+                    <script>
+                        for(let i=0; i<21; i++) {
+                            document.write(`<path d="M 0 -85 L 8 -45 L -8 -45 Z" fill="#FEB117" transform="rotate(${i * (360/21)})"/>`);
+                        }
+                    </script>
+                </g>
+            </svg>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="images/hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h2>استكشف آفاق الجمال الطبيعي</h2>
+            <p>بوابتكم لاكتشاف كنوز كردستان وسوريا</p>
+        </div>
     </div>
-</div>
