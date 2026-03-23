@@ -3,120 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurdstan Syria Travel</title>
+    <title>Kurdstan Syria Travel | المنصة الرسمية 2026</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489" crossorigin="anonymous"></script>
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f9f9f9; direction: rtl; text-align: right; }
-        
-        /* الهيدر مع الأعلام */
-        .header { display: flex; justify-content: space-between; align-items: center; padding: 15px; background: white; border-bottom: 2px solid #eee; }
-        .header img { width: 50px; height: auto; border-radius: 5px; }
-        .header h1 { font-size: 1.2rem; color: #004a99; flex-grow: 1; text-align: center; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.8; }
+
+        /* الهيدر المطور بالأعلام الدقيقة */
+        .header-main { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .flag-box { width: 50px; height: 35px; border-radius: 4px; overflow: hidden; border: 1px solid #ddd; }
+        .header-title h1 { color: #004a99; font-size: 1.3rem; text-align: center; }
+        .header-title p { font-size: 0.8rem; color: #28a745; font-weight: bold; text-align: center; }
 
         /* قسم الغلاف والفيديو */
-        .hero-container { position: relative; width: 100%; height: 280px; background: #000; overflow: hidden; }
-        #hero-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
-        /* صورة الغلاف كخلفية بديلة في حال لم يعمل الفيديو */
-        .hero-container { background-image: url('images/cover.jpg'); background-size: cover; background-position: center; }
-        
-        .hero-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; width: 90%; z-index: 2; }
-        .hero-text h2 { font-size: 1.6rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
+        .hero-container { position: relative; width: 100%; height: 320px; background: #000; overflow: hidden; }
+        #hero-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)); display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center; padding: 20px; }
+        .hero-overlay h2 { font-size: 1.8rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); margin-bottom: 10px; }
 
-        /* الأقسام المحتواة */
-        .section-box { background: white; margin: 15px; padding: 20px; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
-        .section-box h3 { color: #004a99; margin-bottom: 15px; border-right: 4px solid #28a745; padding-right: 10px; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
 
-        /* معرض الصور (باستخدام الأسماء التي ذكرتها) */
-        .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .gallery img { width: 100%; height: 130px; object-fit: cover; border-radius: 10px; border: 1px solid #eee; }
+        /* صناديق المحتوى المطول */
+        .content-section { background: #fff; padding: 25px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 5px solid #004a99; }
+        .content-section h3 { color: #004a99; margin-bottom: 15px; font-size: 1.5rem; border-right: 5px solid #28a745; padding-right: 15px; }
+        .content-section p { font-size: 1.1rem; text-align: justify; color: #444; margin-bottom: 15px; }
+        .highlight { color: #28a745; font-weight: bold; }
 
-        /* نموذج الحجز */
-        .booking-form { background: #f1f8f4; padding: 15px; border-radius: 12px; margin-top: 10px; }
-        .booking-form input { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
-        .btn-wa { background-color: #25d366; color: white; border: none; width: 100%; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1.1rem; }
+        /* معرض الصور المطور */
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+        .gallery-item { width: 100%; height: 150px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.3s; border: 1px solid #eee; }
+        .gallery-item:hover { transform: scale(1.03); }
 
-        /* شبكة الأزرار */
-        .social-links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 15px; }
-        .s-btn { display: flex; align-items: center; justify-content: center; height: 65px; color: white; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 0.9rem; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .youtube { background: #ff0000; }
-        .instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
-        .facebook { background: #1877f2; }
-        .whatsapp { background: #25d366; }
-        .tiktok { background: #000; }
-        .maps { background: #4285f4; font-size: 0.75rem; }
+        /* نافذة التكبير الذكية (Lightbox) */
+        .lightbox { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; padding: 20px; cursor: pointer; }
+        .lightbox img { max-width: 100%; max-height: 90vh; border-radius: 10px; object-fit: contain; }
 
-        /* زر واتساب العائم */
+        /* شبكة الأزرار الاجتماعية */
+        .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+        .s-btn { display: flex; align-items: center; justify-content: center; height: 60px; color: #fff; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 0.9rem; text-align: center; }
+        .yt { background: #ff0000; } .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+        .fb { background: #1877f2; } .wa { background: #25d366; } .tk { background: #000; } .gm { background: #4285f4; font-size: 0.7rem; }
+
+        .booking-box { background: #f1f8f4; padding: 20px; border-radius: 20px; margin: 30px 0; border: 1px solid #e0e0e0; }
+        .form-input { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 10px; }
+        .btn-submit { background: #25d366; color: white; border: none; width: 100%; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 1.1rem; }
+
         .floating-wa { position: fixed; bottom: 25px; left: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; }
 
-        footer { text-align: center; padding: 25px; background: white; border-top: 1px solid #eee; margin-top: 20px; }
-        .f-nav a { color: #004a99; text-decoration: none; margin: 0 8px; font-weight: bold; }
+        footer { text-align: center; padding: 30px; background: #fff; border-top: 1px solid #eee; margin-top: 40px; }
+        .f-nav a { color: #004a99; text-decoration: none; margin: 0 10px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <img src="images/syria-flag.png" alt="Syria">
-        <h1>Kurdstan Syria Travel</h1>
-        <img src="images/kurdistan-flag.png" alt="Kurdistan">
-    </div>
+    <header class="header-main">
+        <div class="flag-box">
+            <svg viewBox="0 0 600 400"><rect width="600" height="133.3" fill="#007a3d"/><rect y="133.3" width="600" height="133.3" fill="#ffffff"/><rect y="266.6" width="600" height="133.3" fill="#000000"/><g transform="translate(175,200) scale(0.6)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#ce1126"/></g><g transform="translate(300,200) scale(0.6)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#ce1126"/></g><g transform="translate(425,200) scale(0.6)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#ce1126"/></g></svg>
+        </div>
+        <div class="header-title">
+            <h1>Kurdistan Syria Travel</h1>
+            <p>مرشد محلي معتمد Level 9</p>
+        </div>
+        <div class="flag-box">
+            <svg viewBox="0 0 600 400"><rect width="600" height="400" fill="#FFF"/><rect width="600" height="133.3" fill="#ED2024"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/><g transform="translate(300 200)"><circle r="50" fill="#FEB117"/><script>for(let i=0;i<20;i++)document.write(`<path d="M 0 -100 L 10 -50 L -10 -50 Z" fill="#FEB117" transform="rotate(${i*18})"/>`);</script></g></svg>
+        </div>
+    </header>
 
     <div class="hero-container">
-        <video autoplay muted loop playsinline id="hero-video">
+        <video autoplay muted loop playsinline id="hero-video" poster="images/cover.jpg">
             <source src="images/hero.mp4" type="video/mp4">
         </video>
-        <div class="hero-text">
+        <div class="hero-overlay">
             <h2>استكشف آفاق الجمال الطبيعي</h2>
-            <p>بوابتكم لاكتشاف كنوز كردستان وسوريا لعام 2026</p>
+            <p>رحلتكم تبدأ من عراقة أربيل وصولاً إلى سحر دمشق لعام 2026</p>
         </div>
     </div>
 
-    <div class="section-box">
-        <h3>أربيل: حكاية التاريخ</h3>
-        <p style="margin-bottom: 15px;">تعتبر مدينة أربيل واحدة من أقدم المدن المأهولة في العالم.</p>
-        <div class="gallery">
-            <img src="images/pic1.jpg" alt="أربيل 1">
-            <img src="images/pic2.jpg" alt="أربيل 2">
-            <img src="images/gallery1.jpg" alt="معرض 1">
-            <img src="images/gallery2.jpg" alt="معرض 2">
+    <div class="container">
+        
+        <div class="content-section">
+            <h3>أربيل: عاصمة التاريخ والجمال</h3>
+            <p>
+                تنبض مدينة أربيل بروح الماضي العريق، حيث تتربع <span class="highlight">قلعة أربيل التاريخية</span> في قلبها كواحدة من أقدم المواقع المأهولة بالسكان في العالم. هذا الصرح الشامخ المدرج ضمن تراث اليونسكو، يحكي قصة صمود وجمال فريد.
+            </p>
+            <p>
+                تمتزج في كردستان العراق قمم الجبال المكسوة بالثلوج مع الشلالات المتدفقة مثل شلالات بيخال وجبل كورك، مما يجعلها وجهة سياحية عالمية تجمع بين عبق التاريخ ورفاهية العصر الحديث.
+            </p>
+            <div class="gallery-grid">
+                <img src="images/pic1.jpg" class="gallery-item" onclick="showImg(this.src)">
+                <img src="images/pic2.jpg" class="gallery-item" onclick="showImg(this.src)">
+                <img src="images/gallery1.jpg" class="gallery-item" onclick="showImg(this.src)">
+                <img src="images/gallery2.jpg" class="gallery-item" onclick="showImg(this.src)">
+            </div>
         </div>
+
+        <div class="content-section">
+            <h3>سوريا: مهد الحضارة والياسمين</h3>
+            <p>
+                لا يمكن وصف جمال سوريا دون الحديث عن <span class="highlight">دمشق الشام</span>، أقدم عاصمة مأهولة في التاريخ. هنا، يمتزج عبق التاريخ برائحة الياسمين الدمشقي في كل حارة من حاراتها القديمة.
+            </p>
+            <p>
+                بصفتي مرشد محلي Level 9، أوثق لكم جمال الساحل السوري وغابات الصنوبر التي تعانق مياه المتوسط، بالإضافة إلى القلاع التاريخية التي تقف شاهدة على عظمة هذا البلد الذي يجمع بين سحر الطبيعة وعمق الحضارة.
+            </p>
+            <div class="gallery-grid">
+                <img src="images/1.jpg" class="gallery-item" onclick="showImg(this.src)">
+                <img src="images/2.jpg" class="gallery-item" onclick="showImg(this.src)">
+                <img src="images/7.jpg" class="gallery-item" onclick="showImg(this.src)">
+                <img src="images/10.jpg" class="gallery-item" onclick="showImg(this.src)">
+            </div>
+        </div>
+
+        <div class="booking-box">
+            <h4 style="margin-bottom:15px; text-align:center; color:#004a99;">خطط لرحلتك القادمة</h4>
+            <input type="text" id="nameInput" class="form-input" placeholder="الاسم الكامل">
+            <input type="number" id="countInput" class="form-input" value="1" min="1">
+            <button class="btn-submit" onclick="sendWA()">تأكيد الحجز عبر واتساب</button>
+        </div>
+
+        <div class="social-grid">
+            <a href="https://youtube.com/@kurdstansyriatravel" class="s-btn yt">YouTube</a>
+            <a href="https://instagram.com/kurdstansyriatravel" class="s-btn ig">Instagram</a>
+            <a href="https://facebook.com/kurdstansyriatravel" class="s-btn fb">Facebook</a>
+            <a href="https://wa.me/9647502061184" class="s-btn wa">WhatsApp</a>
+            <a href="https://tiktok.com/@kurdstansyriatravel" class="s-btn tk">TikTok</a>
+            <a href="https://maps.google.com" class="s-btn gm">⭐ صور وتقييمات مرشد محلي<br>Google Maps (Level 9)</a>
+        </div>
+
     </div>
 
-    <div class="section-box">
-        <h3>احجز رحلتك الآن</h3>
-        <div class="booking-form">
-            <input type="text" id="custName" placeholder="الاسم الكامل">
-            <input type="number" id="custCount" value="1" min="1">
-            <button class="btn-wa" onclick="goToWA()">تأكيد الحجز عبر واتساب</button>
-        </div>
-    </div>
-
-    <div class="social-links">
-        <a href="https://youtube.com/@kurdstansyriatravel" class="s-btn youtube">YouTube</a>
-        <a href="https://instagram.com/kurdstansyriatravel" class="s-btn instagram">Instagram</a>
-        <a href="https://facebook.com/kurdstansyriatravel" class="s-btn facebook">Facebook</a>
-        <a href="https://wa.me/9647502061184" class="s-btn whatsapp">WhatsApp</a>
-        <a href="https://tiktok.com/@kurdstansyriatravel" class="s-btn tiktok">TikTok</a>
-        <a href="https://maps.google.com" class="s-btn maps">⭐ تقييماتي وصوري على<br>Google Maps (Level 9)</a>
+    <div id="lb" class="lightbox" onclick="this.style.display='none'">
+        <img id="lb-img" src="">
     </div>
 
     <a href="https://wa.me/9647502061184" class="floating-wa">💬</a>
 
     <footer>
-        <p>© 2026 جميع الحقوق محفوظة - Kurdstan Syria Travel</p>
+        <p>© 2026 جميع الحقوق محفوظة لشركة Kurdstan Syria Travel</p>
         <div class="f-nav">
-            <a href="index.html">الرئيسية</a> | <a href="syria-travel.html">رحلات سوريا</a> | <a href="about.html">من نحن</a> | <a href="privacy.html">الخصوصية</a>
+            <a href="index.html">الرئيسية</a> | 
+            <a href="syria-travel.html">رحلات سوريا</a> | 
+            <a href="about.html">من نحن</a> | 
+            <a href="privacy.html">سياسة الخصوصية</a>
         </div>
     </footer>
 
     <script>
-        function goToWA() {
-            const name = document.getElementById('custName').value;
-            const count = document.getElementById('custCount').value;
-            const msg = encodeURIComponent(`طلب حجز جديد من الموقع:\nالاسم: ${name}\nالعدد: ${count}`);
-            window.open(`https://wa.me/9647502061184?text=${msg}`, '_blank');
+        function showImg(src) {
+            document.getElementById('lb').style.display = 'flex';
+            document.getElementById('lb-img').src = src;
+        }
+        function sendWA() {
+            const name = document.getElementById('nameInput').value;
+            const count = document.getElementById('countInput').value;
+            window.open(`https://wa.me/9647502061184?text=طلب حجز:\nالاسم: ${name}\nالعدد: ${count}`, '_blank');
         }
     </script>
 </body>
