@@ -3,49 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurdstan Syria Travel | 2026</title>
+    <title>Kurdstan Syria Travel | الخبير السياحي محمد كردي</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489" crossorigin="anonymous"></script>
 
     <style>
-        :root { --primary: #004a99; --accent: #28a745; --white: #ffffff; }
+        :root { --primary: #004a99; --accent: #28a745; --gold: #feb117; --white: #ffffff; --bg: #f8f9fa; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f0f2f5; color: #333; line-height: 1.8; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); color: #333; line-height: 1.8; }
 
-        /* الهيدر والأعلام الاحترافية */
+        /* الهيدر والأعلام الدقيقة (SVG) */
         .main-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 5%; background: #fff; box-shadow: 0 2px 15px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .flag-box { width: 65px; height: 40px; border-radius: 4px; overflow: hidden; border: 1px solid #ddd; display: flex; }
-        .header-center { text-align: center; }
-        .header-center h1 { color: var(--primary); font-size: 1.3rem; margin-bottom: 2px; }
-        .header-center p { color: var(--accent); font-size: 0.8rem; font-weight: bold; }
+        .flag-box { width: 65px; height: 42px; border-radius: 4px; overflow: hidden; border: 1px solid #ddd; }
+        .logo-area { text-align: center; }
+        .logo-area h1 { color: var(--primary); font-size: 1.3rem; margin-bottom: 2px; }
+        .logo-area span { color: var(--accent); font-size: 0.8rem; font-weight: bold; }
 
-        /* الفيديو الخلفي المتحرك */
-        .hero { position: relative; width: 100%; height: 400px; background: #000; overflow: hidden; }
-        #bg-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; z-index: 1; }
-        .hero-text { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center; padding: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.7); }
+        /* قسم الهيرو (الفيديو الخلفي المتحرك مع صندوق البحث) */
+        .hero { position: relative; width: 100%; height: 500px; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        #hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; z-index: 1; }
+        .hero-overlay { position: relative; z-index: 2; text-align: center; color: #fff; width: 90%; max-width: 700px; }
+        .hero-overlay h2 { font-size: 2.2rem; margin-bottom: 20px; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); }
 
-        /* شبكة الوجهات (احترافية غير طولية) */
-        .main-grid { max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
-        .travel-card { background: #fff; border-radius: 25px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: 0.3s; display: flex; flex-direction: column; }
-        .travel-card:hover { transform: translateY(-8px); }
-        .card-img-box { width: 100%; height: 220px; overflow: hidden; }
-        .card-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-body h2 { color: var(--primary); margin-bottom: 15px; font-size: 1.5rem; border-right: 5px solid var(--accent); padding-right: 12px; }
-        .btn-action { margin-top: auto; display: block; padding: 14px; background: var(--primary); color: #fff; text-decoration: none; border-radius: 12px; text-align: center; font-weight: bold; }
+        /* صندوق البحث المطور */
+        .search-container { position: relative; display: flex; align-items: center; }
+        .search-input { width: 100%; padding: 18px 30px; border-radius: 50px; border: none; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3); outline: none; }
+        .search-btn { position: absolute; left: 10px; background: var(--primary); color: #fff; border: none; padding: 10px 20px; border-radius: 40px; cursor: pointer; }
 
-        /* السوشيال ميديا (تصميم المربعات الملونة) */
+        /* شبكة المحتوى (فصل سوريا عن كردستان) */
+        .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
+        .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; }
+        
+        .card { background: #fff; border-radius: 25px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: 0.3s; border-bottom: 6px solid var(--primary); display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-10px); }
+        
+        /* معرض الصور المصغر مع ميزة التكبير */
+        .card-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; height: 240px; }
+        .card-gallery img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; transition: 0.4s; }
+        .card-gallery img:hover { filter: brightness(0.8); }
+
+        .card-body { padding: 30px; flex-grow: 1; }
+        .card-body h2 { color: var(--primary); margin-bottom: 15px; font-size: 1.6rem; border-right: 5px solid var(--gold); padding-right: 12px; }
+        .experience-tag { background: #eef4ff; color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px; display: inline-block; }
+
+        /* السوشيال ميديا والحجز */
         .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 30px 0; }
-        .s-box { padding: 18px; border-radius: 15px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; font-size: 0.95rem; }
-        .yt { background: #ff0000; } .tk { background: #000; } .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); } .wa { background: #25d366; } .fb { background: #1877f2; } .gm { background: #4285f4; }
-        .reserve-btn { grid-column: span 2; background: var(--accent); padding: 18px; border-radius: 15px; color: #fff; text-align: center; text-decoration: none; font-weight: bold; margin-bottom: 5px; }
+        .s-box { padding: 15px; border-radius: 12px; color: #fff; text-decoration: none; text-align: center; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+        .yt { background: #ff0000; } .tk { background: #000; } .ig { background: #e4405f; } .wa { background: #25d366; } .fb { background: #1877f2; }
+        .reserve-btn { grid-column: span 2; background: var(--accent); padding: 18px; border-radius: 12px; color: #fff; text-align: center; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
 
-        /* سياسة الخصوصية (تعديل المحتوى) */
-        .privacy-box { background: #fff; padding: 35px; border-radius: 25px; margin-top: 40px; border: 1px solid #eee; }
-        .privacy-box h2 { color: var(--accent); margin-bottom: 15px; border-bottom: 2px solid #f0f2f5; padding-bottom: 10px; }
+        /* نافذة تكبير الصور (Lightbox) */
+        .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.95); display: none; justify-content: center; align-items: center; z-index: 2000; cursor: zoom-out; }
+        .lightbox img { max-width: 90%; max-height: 90%; border-radius: 10px; box-shadow: 0 0 30px rgba(0,0,0,0.5); }
+
+        .privacy-box { background: #fff; padding: 30px; border-radius: 20px; margin-top: 40px; border: 1px dashed #ccc; }
 
         footer { background: #1a1a1a; color: #fff; padding: 50px 20px; text-align: center; margin-top: 60px; }
-        .footer-nav a { color: #aaa; text-decoration: none; margin: 0 10px; font-size: 0.85rem; }
     </style>
 </head>
 <body>
@@ -54,7 +67,12 @@
         <div class="flag-box">
             <svg viewBox="0 0 600 400"><rect width="600" height="133.3" fill="#007a3d"/><rect y="133.3" width="600" height="133.3" fill="#ffffff"/><rect y="266.6" width="600" height="133.3" fill="#000000"/><g id="s_star" transform="scale(0.6)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#ce1126"/></g><use href="#s_star" transform="translate(175 200)"/><use href="#s_star" transform="translate(300 200)"/><use href="#s_star" transform="translate(425 200)"/></svg>
         </div>
-        <div class="header-center"><h1>Kurdistan Syria Travel</h1><p>السياحة في كردستان العراق وسوريا لعام 2026</p></div>
+        
+        <div class="logo-area">
+            <h1>Kurdistan Syria Travel</h1>
+            <span>بإشراف الخبير السياحي محمد كردي</span>
+        </div>
+
         <div class="flag-box">
             <svg viewBox="0 0 600 400"><rect width="600" height="133.3" fill="#ED2024"/><rect y="133.3" width="600" height="133.3" fill="#FFF"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/><g transform="translate(300 200)"><circle r="48" fill="#FEB117"/><g id="sun_ray"><path d="M 0 -95 L 8 -45 L -8 -45 Z" fill="#FEB117"/></g>
             <script>for(let i=0;i<21;i++)document.write(`<use href="#sun_ray" transform="rotate(${i*(360/21)})"/>`);</script></g></svg>
@@ -62,66 +80,75 @@
     </header>
 
     <section class="hero">
-        <video autoplay muted loop playsinline id="bg-video" poster="images/cover.jpg">
+        <video autoplay muted loop playsinline id="hero-video" poster="images/cover.jpg">
             <source src="images/hero.mp4" type="video/mp4">
         </video>
-        <div class="hero-text">
-            <h2 style="font-size: 2.2rem;">استكشف آفاق الجمال الطبيعي</h2>
-            <p>توثيق سياحي ميداني بلمسة احترافية فندقية لعام 2026</p>
+        <div class="hero-overlay">
+            <h2>اكتشف سحر الحضارة لعام 2026</h2>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="ابحث عن: معلولة، قلعة جعبر، أربيل...">
+                <button class="search-btn">بحث</button>
+            </div>
         </div>
     </section>
 
-    <main class="main-grid">
-        <article class="travel-card">
-            <div class="card-img-box"><img src="images/01.jpg" alt="Kurdstan Nature"></div>
-            <div class="card-body">
-                <h2>كردستان: جنة الطبيعة</h2>
-                <p>تُعد منطقة كردستان العراق واحدة من أجمل الوجهات الصاعدة. استمتع بشلالات بيخال وجبل كورك والضيافة الكردية الأصيلة الموثقة بعدسة خبيرنا المحلي.</p>
-                <a href="destinations.html" class="btn-action">عرض تفاصيل كردستان</a>
-            </div>
-        </article>
+    <div class="container">
+        <div class="content-grid">
+            
+            <article class="card" style="border-bottom-color: var(--accent);">
+                <div class="card-gallery">
+                    <img src="images/10.jpg" onclick="showImg(this.src)" alt="القدموس">
+                    <img src="images/maaloula.jpg" onclick="showImg(this.src)" alt="معلولة">
+                </div>
+                <div class="card-body">
+                    <span class="experience-tag">خبرة 5 سنوات في وزارة السياحة</span>
+                    <h2>سوريا: عبق التاريخ</h2>
+                    <p>من واقع عملي الميداني في وزارة السياحة، نوثق لكم كنوز سوريا. من **معلولة** التي تنطق بالتاريخ، إلى **قلعة جعبر** في الرقة حيث ساهمت في برامج التطوع لحماية الآثار. نحن نقدم لك تجربة سياحية مبنية على خبرة حقيقية ومعرفة عميقة بالمعالم الميدانية لعام 2026.</p>
+                    <a href="syria-travel.html" class="reserve-btn" style="display:block; margin-top:15px; font-size:0.9rem;">عرض مقالات سوريا</a>
+                </div>
+            </article>
 
-        <article class="travel-card" style="border-bottom: 6px solid var(--accent);">
-            <div class="card-img-box"><img src="images/10.jpg" alt="Syria Qadmus"></div>
-            <div class="card-body">
-                <h2>سوريا وسحر الحضارة</h2>
-                <p>من ضباب القدموس الجبلي إلى عبق التاريخ في دمشق وحلب، نأخذكم في رحلة لتوثيق المعالم بأسلوب عصري وحرفي مبهر لا ينسى.</p>
-                <a href="syria-travel.html" class="btn-action" style="background: var(--accent);">عرض تفاصيل سوريا</a>
-            </div>
-        </article>
-    </main>
+            <article class="card">
+                <div class="card-gallery">
+                    <img src="images/01.jpg" onclick="showImg(this.src)" alt="أربيل">
+                    <img src="images/gallery2.jpg" onclick="showImg(this.src)" alt="طبيعة كردستان">
+                </div>
+                <div class="card-body">
+                    <span class="experience-tag">Rooms Division Manager | Level 9</span>
+                    <h2>كردستان: جنة الطبيعة</h2>
+                    <p>بصفتي مديراً لقسم الغرف (Rooms Division Manager)، أقدم لك في **أربيل** وكردستان دليلاً يجمع بين الفخامة والجمال الطبيعي. استكشف قلعة أربيل وشلالات بيخال بلمسة احترافية تضمن لك أفضل الخدمات الفندقية والسياحية، موثقة بعدسة مرشد محلي من المستوى التاسع.</p>
+                    <a href="destinations.html" class="reserve-btn" style="background:var(--primary); display:block; margin-top:15px; font-size:0.9rem;">عرض مقالات كردستان</a>
+                </div>
+            </article>
 
-    <div style="max-width: 1100px; margin: auto; padding: 0 20px;">
+        </div>
+
         <div class="social-grid">
-            <a href="https://wa.me/9647502061184" class="reserve-btn">تأكيد الحجز عبر واتساب</a>
+            <a href="https://wa.me/9647502061184" class="reserve-btn">تأكيد الحجز والاستشارة السياحية (واتساب)</a>
             <a href="https://youtube.com/@kurdstansyriatravel" class="s-box yt">YouTube</a>
             <a href="https://tiktok.com/@kurdstansyriatravel" class="s-box tk">TikTok</a>
             <a href="https://instagram.com/kurdstansyriatravel" class="s-box ig">Instagram</a>
             <a href="https://facebook.com/kurdstansyriatravel" class="s-box fb">Facebook</a>
-            <a href="https://www.google.com/maps" class="s-box gm" style="grid-column: span 2;">⭐ تقييماتي وصوري على Google Maps (Level 9)</a>
         </div>
 
         <div class="privacy-box">
-            <h2>سياسة الخصوصية | Privacy Policy</h2>
-            <p>في <strong>Kurdistan Syria Travel</strong>، نولي أهمية قصوى لخصوصية زوارنا. نستخدم ملفات تعريف الارتباط لتحسين تجربة المستخدم وتحليل حركة المرور.</p>
-            <p>شركاء الإعلانات لدينا قد يستخدمون تقنيات لتقديم إعلانات مخصصة بناءً على زياراتكم المتكررة لموقعنا لضمان تقديم محتوى يهمكم. باستخدامك للموقع، فإنك توافق على هذه الشروط.</p>
+            <h2 style="color:var(--accent); margin-bottom:15px;">سياسة الخصوصية | Privacy Policy</h2>
+            <p>نحن في **Kurdistan Syria Travel** نلتزم بحماية خصوصية زوارنا. نستخدم ملفات تعريف الارتباط لتحسين تجربة التصفح. شركاء الإعلانات لدينا قد يعرضون إعلانات مخصصة بناءً على زياراتكم المتكررة، وباستخدامك للموقع فإنك توافق على هذه الشروط.</p>
         </div>
     </div>
 
+    <div id="lb" class="lightbox" onclick="this.style.display='none'"><img id="lb-img" src=""></div>
+
     <footer>
-        <div class="footer-nav">
-            <a href="index.html">الرئيسية</a> | <a href="about.html">من نحن</a> | <a href="privacy.html">الخصوصية</a> | <a href="contact.html">اتصل بنا</a>
-        </div>
-        <p style="margin-top: 25px;">دليلكم المهني لاستكشاف سحر الطبيعة والحضارة</p>
-        <p style="font-size: 0.8rem; color: #777;">© 2026 جميع الحقوق محفوظة لـ Kurdstan Syria Travel - إشراف محمد كردي</p>
+        <p>دليلك المهني الموثوق من قلب وزارة السياحة والخبرة الفندقية</p>
+        <p style="font-size: 0.8rem; color: #888; margin-top: 15px;">© 2026 Kurdstan Syria Travel - محمد كردي</p>
     </footer>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'ar', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    <script>
+        function showImg(src) {
+            document.getElementById('lb-img').src = src;
+            document.getElementById('lb').style.display = 'flex';
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 </body>
 </html>
