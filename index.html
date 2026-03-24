@@ -5,117 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurdistan Syria Travel | محمد الكردي</title>
     <style>
-        :root { --primary: #004a99; --accent: #28a745; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f0f2f5; color: #333; overflow-x: hidden; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f7f6; color: #333; }
 
-        /* الهيدر بالأعلام */
-        .main-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: relative; z-index: 10; }
-        .flag-box { width: 65px; height: 42px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
-        .header-text { text-align: center; }
-        .header-text h1 { font-size: 1.4rem; color: var(--primary); margin-bottom: 2px; }
-        .header-text p { font-size: 0.85rem; color: var(--accent); font-weight: bold; }
+        /* الهيدر والأعلام */
+        .main-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: white; border-bottom: 1px solid #eee; }
+        .header-title h1 { color: #004a99; font-size: 1.4rem; text-align: center; }
+        .header-title p { color: #28a745; font-weight: bold; font-size: 0.85rem; text-align: center; }
 
-        /* الفيديو المتحرك الكبير (Background Hero) */
-        .hero-section { position: relative; width: 100%; height: 400px; background: #000; overflow: hidden; }
-        #bg-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+        /* تصميم علم كوردستان بالـ CSS الذي أحضرته مع ضبط 21 شعاعاً */
+        .flag-css { width: 65px; height: 42px; position: relative; border: 0.5px solid #ddd; overflow: hidden; }
+        .stripe { height: 33.33%; width: 100%; }
+        .red { background: #e70013; }
+        .white { background: #fff; }
+        .green { background: #009639; }
+        .sun-css { 
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+            width: 14px; height: 14px; background: #fcd116; border-radius: 50%; z-index: 2;
+        }
+        .ray-css { 
+            position: absolute; top: 50%; left: 50%; width: 22px; height: 1.5px; 
+            background: #fcd116; transform-origin: center; z-index: 1;
+        }
 
-        /* منطقة الأزرار (البحث والترجمة) تحت الفيديو مباشرة */
-        .action-bar { display: flex; justify-content: center; align-items: center; gap: 20px; padding: 15px; background: var(--white); border-bottom: 3px solid #eee; flex-wrap: wrap; }
-        .search-container { display: flex; align-items: center; background: #f1f3f4; padding: 8px 18px; border-radius: 30px; border: 1px solid #dfe1e5; width: 280px; }
-        .search-container input { border: none; background: none; outline: none; flex: 1; font-size: 0.95rem; }
-        #google_translate_element { padding: 5px; }
+        /* علم الثورة السورية */
+        .syria-flag { width: 65px; height: 42px; display: flex; flex-direction: column; border: 0.5px solid #ddd; }
+        .sy-s { height: 33.33%; width: 100%; position: relative; }
+        .stars-row { position: absolute; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; gap: 2px; }
+        .star { color: red; font-size: 8px; }
 
-        /* الحاوية الرئيسية والمحتوى */
-        .container { width: 92%; max-width: 1100px; margin: 30px auto; background: var(--white); padding: 40px 25px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .content-body { margin-bottom: 40px; }
-        .content-body h2 { color: var(--primary); border-right: 6px solid var(--accent); padding-right: 15px; margin-bottom: 20px; font-size: 1.8rem; }
-        .content-body p { text-align: justify; line-height: 1.9; font-size: 1.1rem; margin-bottom: 20px; color: #444; }
+        /* الفيديو المتحرك (Hero) */
+        .hero-video { width: 100%; height: 320px; background: #000; overflow: hidden; position: relative; }
+        .hero-video video { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
 
-        /* فيديو اليوتيوب القصير */
-        .shorts-container { width: 100%; max-width: 380px; margin: 30px auto; aspect-ratio: 9/16; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.2); border: 5px solid #fff; }
+        /* أزرار البحث والترجمة تحت الفيديو */
+        .tools-bar { display: flex; justify-content: center; align-items: center; gap: 15px; padding: 15px; background: white; border-bottom: 2px solid #eee; flex-wrap: wrap; }
+        .search-box { background: #f1f1f1; border: 1px solid #ccc; padding: 6px 15px; border-radius: 20px; display: flex; align-items: center; }
+        .search-box input { border: none; background: none; outline: none; font-size: 0.9rem; width: 160px; }
 
-        /* معرض الصور (عرضي متجاوب) */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 30px; }
-        .gallery-img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.3s ease; }
-        .gallery-img:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+        /* المحتوى */
+        .container { width: 92%; max-width: 1000px; margin: 25px auto; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .content-h2 { color: #004a99; border-right: 5px solid #28a745; padding-right: 12px; margin-bottom: 15px; }
+        .description { text-align: justify; line-height: 1.8; margin-bottom: 25px; padding: 0 10px; }
 
-        /* نافذة التكبير */
-        .lightbox { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); justify-content: center; align-items: center; }
-        .lightbox img { max-width: 90%; max-height: 85%; border-radius: 10px; border: 4px solid #fff; }
+        /* معرض الصور العرضي */
+        .gallery { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .gallery img { width: calc(33.33% - 10px); height: 130px; object-fit: cover; border-radius: 10px; cursor: pointer; transition: 0.3s; }
+        .gallery img:hover { transform: scale(1.05); }
 
-        @media (max-width: 768px) { .hero-section { height: 280px; } .container { padding: 20px 15px; } .content-body h2 { font-size: 1.4rem; } }
+        @media (max-width: 600px) { .gallery img { width: calc(50% - 10px); } .hero-video { height: 220px; } }
     </style>
 </head>
 <body>
 
     <header class="main-header">
-        <div class="flag-box">
-            <svg viewBox="0 0 600 400">
-                <rect width="600" height="133.3" fill="#007A3D"/><rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/><rect y="266.6" width="600" height="133.3" fill="#000000"/>
-                <g transform="translate(150,200) scale(0.55)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#CE1126"/></g>
-                <g transform="translate(300,200) scale(0.55)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#CE1126"/></g>
-                <g transform="translate(450,200) scale(0.55)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#CE1126"/></g>
-            </svg>
+        <div class="syria-flag">
+            <div class="sy-s" style="background:#007A3D"></div>
+            <div class="sy-s" style="background:#fff">
+                <div class="stars-row">
+                    <span class="star">★</span><span class="star">★</span><span class="star">★</span>
+                </div>
+            </div>
+            <div class="sy-s" style="background:#000"></div>
         </div>
-        <div class="header-text">
+
+        <div class="header-title">
             <h1>Kurdistan Syria Travel</h1>
             <p>مرشد محلي معتمد Level 9</p>
         </div>
-        <div class="flag-box">
-            <svg viewBox="0 0 600 400">
-                <rect width="600" height="133.3" fill="#ED2024"/><rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/>
-                <g transform="translate(300 200)"><circle r="48" fill="#FEB117"/>
-                    <script>
-                        for(let i=0; i<21; i++) {
-                            document.write(`<path d="M 0 -95 L 9 -48 L -9 -48 Z" fill="#FEB117" transform="rotate(${i * (360/21)})"/>`);
-                        }
-                    </script>
-                </g>
-            </svg>
+
+        <div class="flag-css">
+            <div class="stripe red"></div>
+            <div class="stripe white"></div>
+            <div class="stripe green"></div>
+            <div class="sun-css"></div>
+            <script>
+                // توليد 21 شعاعاً بدقة بناءً على فكرتك
+                for (let i = 0; i < 21; i++) {
+                    document.write(`<div class="ray-css" style="transform: translate(-50%, -50%) rotate(${i * (360 / 21)}deg)"></div>`);
+                }
+            </script>
         </div>
     </header>
 
-    <section class="hero-section">
-        <video autoplay muted loop playsinline id="bg-video">
-            <source src="images/hero.mp4" type="video/mp4">
-        </video>
-    </section>
+    <div class="hero-video">
+        <video autoplay muted loop playsinline><source src="images/hero.mp4" type="video/mp4"></video>
+    </div>
 
-    <div class="action-bar">
+    <div class="tools-bar">
         <div id="google_translate_element"></div>
-        <div class="search-container">
-            <input type="text" placeholder="ابحث عن وجهتك القادمة...">
+        <div class="search-box">
+            <input type="text" placeholder="ابحث في الموقع...">
             <span>🔍</span>
         </div>
     </div>
 
     <div class="container">
-        <div class="content-body">
-            <h2>أربيل: مهد التاريخ وجمال كوردستان</h2>
-            <p>
-                بصفتي مرشداً محلياً من المستوى التاسع (Level 9)، يسعدني أن أصحبكم في رحلة عبر الزمن في مدينة أربيل. هنا، تروي القلعة حكايات آلاف السنين، بينما تعانق الجبال والشلالات آفاق المستقبل لعام 2026. نحن نمزج بين أصالة الضيافة الكوردية والاحترافية السياحية لنقدم لكم تجربة لا تُنسى.
-            </p>
-
-            <div class="shorts-container">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/lHQw0tYPXh4" frameborder="0" allowfullscreen></iframe>
-            </div>
+        <h2 class="content-h2">أربيل: حكاية التاريخ</h2>
+        <div class="description">
+            بصفتي مرشداً محلياً (Level 9)، أدعوكم لاكتشاف سحر كوردستان لعام 2026. من قلعة أربيل التاريخية إلى الطبيعة الجبلية الخلابة، نحن هنا لنقدم لكم تجربة سياحية لا تُنسى تجمع بين الأصالة والحداثة.
         </div>
 
-        <div class="gallery-grid">
+        <div class="gallery">
             <script>
                 for(let i=1; i<=12; i++) {
-                    document.write(`<img src="images/gallery${i}.jpg" class="gallery-img" onclick="openFull(this.src)" alt="Kurdistan Gallery">`);
+                    document.write(`<img src="images/gallery${i}.jpg" onclick="alert('سيتم تكبير الصورة قريباً')">`);
                 }
             </script>
         </div>
     </div>
 
-    <div id="lb" class="lightbox" onclick="this.style.display='none'"><img id="lb-img"></div>
-
-    <script>
-        function openFull(s) { document.getElementById('lb').style.display='flex'; document.getElementById('lb-img').src=s; }
-        function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element'); }
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
+        }
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
