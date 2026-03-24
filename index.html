@@ -1,68 +1,72 @@
-<style>
-    /* تنسيق الهيدر المطور */
-    .premium-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 4%;
-        background: #1a1a1a; /* خلفية داكنة فخمة */
-        border-bottom: 2px solid #c1a16e;
-    }
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurdistan Syria Travel | الفخامة 2026</title>
+    <style>
+        :root { --gold: #c1a16e; --dark-bg: #121212; --card-bg: #1e1e1e; --text: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--dark-bg); color: var(--text); }
 
-    /* تنسيق النصوص في المنتصف */
-    .header-center {
-        text-align: center;
-        flex: 1;
-    }
-    .header-center h1 {
-        font-size: 1.6rem;
-        color: #fff;
-        margin-bottom: 5px;
-        letter-spacing: 1px;
-    }
-    .header-center p {
-        color: #28a745;
-        font-weight: bold;
-        font-size: 0.9rem;
-    }
+        /* الهيدر الفاخر 4K */
+        .header-premium {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: #1a1a1a;
+            border-bottom: 2px solid var(--gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .header-center { text-align: center; flex: 1; }
+        .header-center h1 { font-size: 1.5rem; color: var(--gold); margin-bottom: 4px; }
+        .header-center p { font-size: 0.85rem; color: #28a745; font-weight: bold; }
+        .flag-box { width: 75px; height: 50px; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4)); }
 
-    /* حاوية الأعلام بدقة عالية */
-    .flag-hd {
-        width: 80px;
-        height: 55px;
-        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5)); /* تأثير 3D */
-    }
-</style>
+        /* منطقة الفيديو والأدوات */
+        .hero { width: 100%; height: 350px; background: #000; position: relative; overflow: hidden; }
+        .hero video { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+        .tools-bar { 
+            display: flex; justify-content: center; align-items: center; gap: 20px; 
+            padding: 15px; background: #151515; border-bottom: 1px solid #333; flex-wrap: wrap;
+        }
+        .search-input { 
+            background: #252525; border: 1px solid #444; border-radius: 25px; 
+            padding: 8px 18px; color: #fff; width: 250px; outline: none;
+        }
 
-<header class="premium-header">
-    <div class="flag-hd">
+        /* الحاوية والمحتوى */
+        .container { width: 92%; max-width: 1000px; margin: 30px auto; }
+        .card { background: var(--card-bg); padding: 30px; border-radius: 15px; border-right: 5px solid var(--gold); margin-bottom: 30px; }
+        .card h2 { color: var(--gold); margin-bottom: 15px; }
+        .card p { text-align: justify; line-height: 1.8; color: #ddd; }
+
+        /* معرض الصور العرضي */
+        .gallery-hd { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .gallery-hd img { 
+            width: 100%; height: 160px; object-fit: cover; border-radius: 12px; 
+            border: 2px solid #333; transition: 0.3s; cursor: pointer;
+        }
+        .gallery-hd img:hover { border-color: var(--gold); transform: scale(1.03); }
+
+        /* نافذة التكبير */
+        .modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+        .modal img { max-width: 90%; max-height: 80%; border: 3px solid var(--gold); border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+<header class="header-premium">
+    <div class="flag-box">
         <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
-            <rect width="600" height="133.3" fill="#ED2024"/>
-            <rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/>
-            <rect y="266.6" width="600" height="133.3" fill="#278E43"/>
-            <g transform="translate(300 200)">
-                <circle r="45" fill="#FEB117"/>
-                <path id="ray" d="M 0 -92 L 10 -45 L -10 -45 Z" fill="#FEB117"/>
-                <use href="#ray" transform="rotate(17.14)"/>
-                <use href="#ray" transform="rotate(34.28)"/>
-                <use href="#ray" transform="rotate(51.42)"/>
-                <use href="#ray" transform="rotate(68.57)"/>
-                <use href="#ray" transform="rotate(85.71)"/>
-                <use href="#ray" transform="rotate(102.85)"/>
-                <use href="#ray" transform="rotate(119.99)"/>
-                <use href="#ray" transform="rotate(137.14)"/>
-                <use href="#ray" transform="rotate(154.28)"/>
-                <use href="#ray" transform="rotate(171.42)"/>
-                <use href="#ray" transform="rotate(188.56)"/>
-                <use href="#ray" transform="rotate(205.7)"/>
-                <use href="#ray" transform="rotate(222.85)"/>
-                <use href="#ray" transform="rotate(239.99)"/>
-                <use href="#ray" transform="rotate(257.13)"/>
-                <use href="#ray" transform="rotate(274.28)"/>
-                <use href="#ray" transform="rotate(291.42)"/>
-                <use href="#ray" transform="rotate(308.56)"/>
-                <use href="#ray" transform="rotate(325.7)"/>
-                <use href="#ray" transform="rotate(342.85)"/>
+            <rect width="600" height="133.3" fill="#ED2024"/><rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/>
+            <g transform="translate(300 200)"><circle r="45" fill="#FEB117"/>
+                <script>
+                    for(let i=0; i<21; i++) {
+                        document.write(`<path d="M 0 -92 L 10 -45 L -10 -45 Z" fill="#FEB117" transform="rotate(${i * (360/21)})"/>`);
+                    }
+                </script>
             </g>
         </svg>
     </div>
@@ -72,16 +76,51 @@
         <p>مرشد محلي معتمد Level 9</p>
     </div>
 
-    <div class="flag-hd">
+    <div class="flag-box">
         <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
-            <rect width="600" height="133.3" fill="#007A3D"/>
-            <rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/>
-            <rect y="266.6" width="600" height="133.3" fill="#000000"/>
-            <g fill="#CE1126">
-                <path id="sy-star" d="M 150 200 l 15 45 h 48 l -39 28 l 15 45 l -39 -28 l -39 28 l 15 -45 l -39 -28 h 48 z" transform="translate(-150 -240) scale(0.6)"/>
-                <path d="M 300 200 l 15 45 h 48 l -39 28 l 15 45 l -39 -28 l -39 28 l 15 -45 l -39 -28 h 48 z" transform="translate(-300 -240) scale(0.6)"/>
-                <path d="M 450 200 l 15 45 h 48 l -39 28 l 15 45 l -39 -28 l -39 28 l 15 -45 l -39 -28 h 48 z" transform="translate(-450 -240) scale(0.6)"/>
+            <rect width="600" height="133.3" fill="#007A3D"/><rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/><rect y="266.6" width="600" height="133.3" fill="#000000"/>
+            <g fill="#CE1126" transform="translate(0, -35)">
+                <path d="M 150 240 l 12 35 h 38 l -30 22 l 12 35 l -30 -22 l -30 22 l 12 -35 l -30 -22 h 38 z"/>
+                <path d="M 300 240 l 12 35 h 38 l -30 22 l 12 35 l -30 -22 l -30 22 l 12 -35 l -30 -22 h 38 z"/>
+                <path d="M 450 240 l 12 35 h 38 l -30 22 l 12 35 l -30 -22 l -30 22 l 12 -35 l -30 -22 h 38 z"/>
             </g>
         </svg>
     </div>
 </header>
+
+<div class="hero">
+    <video autoplay muted loop playsinline><source src="images/hero.mp4" type="video/mp4"></video>
+</div>
+
+<div class="tools-bar">
+    <div id="google_translate_element"></div>
+    <input type="text" class="search-input" placeholder="ابحث عن وجهتك...">
+</div>
+
+<div class="container">
+    <div class="card">
+        <h2>أربيل: حكاية التاريخ وعمق الحضارة</h2>
+        <p>
+            بصفتي مرشداً محلياً معتمداً من المستوى التاسع (Level 9)، أدعوكم لاكتشاف جمال مدينة أربيل. من قلعة أربيل التاريخية التي تتوسط المدينة كشاهد على آلاف السنين، إلى الطبيعة الخلابة في شلالات بيخال وجبال كورك. نحن هنا لنقدم لكم تجربة سياحية فريدة لعام 2026 تمزج بين التاريخ والمغامرة.
+        </p>
+    </div>
+
+    <div class="gallery-hd">
+        <script>
+            for(let i=1; i<=12; i++) {
+                document.write(`<img src="images/gallery${i}.jpg" onclick="showImg(this.src)" alt="Kurdistan Travel">`);
+            }
+        </script>
+    </div>
+</div>
+
+<div id="imgModal" class="modal" onclick="this.style.display='none'"><img id="fullImg"></div>
+
+<script>
+    function showImg(src) { document.getElementById('imgModal').style.display='flex'; document.getElementById('fullImg').src = src; }
+    function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element'); }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
