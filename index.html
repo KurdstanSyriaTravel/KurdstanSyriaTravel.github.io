@@ -8,136 +8,111 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489" crossorigin="anonymous"></script>
 
     <style>
-        :root { --gold: #d4af37; --dark-blue: #002147; --bg: #f4f7f6; --white: #ffffff; }
+        :root { --gold: #d4af37; --dark-blue: #002147; --bg: #f9f9f9; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: #333; }
 
-        /* الهيدر الأبيض الفاخر */
+        /* هيدر ملكي أبيض */
         .master-header {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 5%; background: var(--white);
-            border-bottom: 4px solid var(--gold);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            position: sticky; top: 0; z-index: 1000;
+            padding: 15px 5%; background: var(--white); border-bottom: 4px solid var(--gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;
         }
         .header-center { text-align: center; flex: 2; }
-        .header-center h1 { font-size: 1.7rem; color: var(--dark-blue); font-weight: 800; }
-        .header-center p { font-size: 0.95rem; color: #28a745; font-weight: bold; }
+        .header-center h1 { font-size: 1.6rem; color: var(--dark-blue); }
+        .flag-box { width: 85px; height: 55px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); }
 
-        .flag-box { width: 90px; height: 60px; filter: drop-shadow(0 3px 5px rgba(0,0,0,0.1)); }
-
-        /* التنقل */
+        /* شريط التنقل */
         .nav-bar { background: var(--dark-blue); padding: 12px 0; text-align: center; }
-        .nav-bar a { color: var(--white); text-decoration: none; margin: 0 15px; font-weight: 600; }
+        .nav-bar a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: 600; transition: 0.3s; }
         .nav-bar a:hover { color: var(--gold); }
 
-        /* الفيديو */
-        .hero { width: 100%; height: 400px; background: #000; overflow: hidden; position: relative; }
-        .hero video { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+        /* المحتوى الرئيسي */
+        .container { width: 92%; max-width: 1200px; margin: 30px auto; }
+        .section-card { background: #fff; padding: 30px; border-radius: 15px; border-top: 5px solid var(--gold); box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 25px; }
+        .section-card h2 { color: var(--dark-blue); margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .section-card p { line-height: 1.8; text-align: justify; margin-bottom: 10px; }
 
-        /* المحتوى المزدوج */
-        .container { width: 92%; max-width: 1200px; margin: 40px auto; }
-        .article-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 50px; }
-        .paper-card { background: var(--white); padding: 35px; border-radius: 15px; border-top: 5px solid var(--gold); box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .paper-card h2 { color: var(--dark-blue); margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .paper-card p { line-height: 1.9; text-align: justify; font-size: 1.05rem; }
+        /* معرض الصور */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 30px 0; }
+        .gallery-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; border: 1px solid #ddd; transition: 0.4s; }
+        .gallery-grid img:hover { transform: translateY(-5px); border-color: var(--gold); }
 
-        /* معرض الصور العرضي الاحترافي */
-        .gallery-title { text-align: center; margin-bottom: 30px; color: var(--dark-blue); font-size: 1.8rem; }
-        .gallery-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
-        .gallery-wrap img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; border: 1px solid #ddd; transition: 0.4s; cursor: pointer; }
-        .gallery-wrap img:hover { transform: scale(1.03); border-color: var(--gold); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-
-        /* الفوتر */
-        .main-footer { background: var(--dark-blue); color: #fff; text-align: center; padding: 45px 20px; margin-top: 60px; }
-        .social-links { display: flex; justify-content: center; gap: 20px; margin: 20px 0; }
-        .social-links a { width: 45px; height: 45px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-        .social-links svg { width: 24px; height: 24px; fill: var(--dark-blue); }
+        /* الفوتر وأزرار التواصل الاجتماعي الملونة */
+        .footer-pro { background: var(--dark-blue); color: #fff; text-align: center; padding: 40px 20px; }
+        .social-buttons { display: flex; justify-content: center; gap: 15px; margin: 20px 0; flex-wrap: wrap; }
+        .btn-social { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 30px; color: #fff; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .whatsapp { background-color: #25D366; }
+        .youtube { background-color: #FF0000; }
+        .tiktok { background-color: #000000; }
+        .btn-social:hover { transform: scale(1.05); filter: brightness(1.1); }
 
         [dir="ltr"] { font-family: 'Georgia', serif; }
     </style>
 </head>
 <body>
 
-    <header class="master-header">
-        <div class="flag-box">
-            <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
-                <rect width="600" height="133.3" fill="#ED2024"/><rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/>
-                <g transform="translate(300 200)">
-                    <circle r="46" fill="#FEB117"/>
-                    <path id="kray" d="M 0 -95 L 11 -46 L -11 -46 Z" fill="#FEB117"/>
-                    <script>
-                        for(let i=1; i<21; i++) {
-                            document.write(`<use href="#kray" transform="rotate(${i * (360/21)})"/>`);
-                        }
-                    </script>
-                </g>
-            </svg>
-        </div>
-
-        <div class="header-center">
-            <h1>Kurdistan Syria Travel</h1>
-            <p>مرشد محلي معتمد Level 9</p>
-        </div>
-
-        <div class="flag-box">
-            <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
-                <rect width="600" height="133.3" fill="#007A3D"/><rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/><rect y="266.6" width="600" height="133.3" fill="#000000"/>
-                <g fill="#CE1126">
-                    <path d="M 150 200 l 12 38 h 40 l -32 24 l 12 38 l -32 -24 l -32 24 l 12 -38 l -32 -24 h 40 z" transform="translate(-150 -245) scale(0.65)"/>
-                    <path d="M 300 200 l 12 38 h 40 l -32 24 l 12 38 l -32 -24 l -32 24 l 12 -38 l -32 -24 h 40 z" transform="translate(-300 -245) scale(0.65)"/>
-                    <path d="M 450 200 l 12 38 h 40 l -32 24 l 12 38 l -32 -24 l -32 24 l 12 -38 l -32 -24 h 40 z" transform="translate(-450 -245) scale(0.65)"/>
-                </g>
-            </svg>
-        </div>
-    </header>
-
-    <nav class="nav-bar">
-        <a href="index.html">الرئيسية</a>
-        <a href="about.html">من نحن</a>
-        <a href="privacy.html">سياسة الخصوصية</a>
-    </nav>
-
-    <div class="hero">
-        <video autoplay muted loop playsinline><source src="images/hero.mp4" type="video/mp4"></video>
+<header class="master-header">
+    <div class="flag-box">
+        <svg viewBox="0 0 600 400">
+            <rect width="600" height="133.3" fill="#ED2024"/><rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/>
+            <g transform="translate(300 200)"><circle r="46" fill="#FEB117"/>
+                <path id="ray" d="M 0 -95 L 11 -46 L -11 -46 Z" fill="#FEB117"/>
+                <script>
+                    for(let i=1; i<21; i++) { document.write(`<use href="#ray" transform="rotate(${i * (360/21)})"/>`); }
+                </script>
+            </g>
+        </svg>
     </div>
 
-    <div class="container">
-        <div class="article-grid">
-            <div class="paper-card">
-                <h2>كوردستان: جنة الشرق</h2>
-                <p>بصفتي مرشداً محلياً معتمداً من المستوى التاسع، أدعوكم لزيارة أربيل، قلب كوردستان النابض. استمتعوا بمشاهدة قلعة أربيل الشامخة، والتنزه في جبال كورك الخلابة، وتذوق الضيافة الكوردية الأصيلة. نحن هنا لنجعل من رحلتكم في عام 2026 تجربة ملكية لا تُنسى.</p>
-            </div>
-            <div class="paper-card" dir="ltr">
-                <h2>Kurdistan: Paradise of the East</h2>
-                <p>As a Level 9 certified guide, I invite you to visit Erbil, the beating heart of Kurdistan. Enjoy the majestic Erbil Citadel, hike the stunning Korek Mountains, and taste authentic Kurdish hospitality. We are here to make your 2026 trip a truly royal and unforgettable experience.</p>
-            </div>
-        </div>
-
-        <h2 class="gallery-title">معرض الصور السياحية 📸</h2>
-        <div class="gallery-wrap">
-            <script>
-                for(let i=1; i<=12; i++) {
-                    document.write(`<img src="images/gallery${i}.jpg" alt="Kurdistan Beauty ${i}">`);
-                }
-            </script>
-        </div>
+    <div class="header-center">
+        <h1>Kurdistan Syria Travel</h1>
+        <p>مرشد محلي معتمد Level 9</p>
     </div>
 
-    <footer class="main-footer">
-        <h3>تابعنا وتواصل معنا</h3>
-        <div class="social-links">
-            <a href="#" title="YouTube"><svg viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg></a>
-            <a href="#" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91.04.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.12-3.44-3.17-3.8-5.46-.4-2.46.4-5.06 2.15-6.84 1.7-1.69 4.14-2.5 6.5-2.22h.11v4.06c-1.11-.13-2.26.06-3.21.65-1.13.73-1.85 2.01-1.85 3.36-.01 1.05.47 2.08 1.32 2.68.97.68 2.27.86 3.39.46 1.48-.52 2.45-1.95 2.45-3.53V.02z"/></svg></a>
-        </div>
-        <p>&copy; 2026 Kurdistan Syria Travel - All Rights Reserved</p>
-    </footer>
+    <div class="flag-box">
+        <svg viewBox="0 0 600 400">
+            <rect width="600" height="133.3" fill="#007A3D"/><rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/><rect y="266.6" width="600" height="133.3" fill="#000000"/>
+            <g fill="#CE1126">
+                <path id="s-star" d="M 0 -35 L 9 -11 H 34 L 14 5 L 21 30 L 0 15 L -21 30 L -14 5 L -34 -11 H -9 Z" transform="translate(150 200) scale(0.8)"/>
+                <use href="#s-star" transform="translate(150 0)"/><use href="#s-star" transform="translate(300 0)"/>
+            </g>
+        </svg>
+    </div>
+</header>
 
-    <div id="google_translate_element" style="text-align:center; padding: 20px;"></div>
-    <script>
-        function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element'); }
-    </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<nav class="nav-bar">
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">من نحن</a>
+    <a href="privacy.html">سياسة الخصوصية</a>
+</nav>
+
+<div class="container">
+    <div class="section-card">
+        <h2>اكتشف كوردستان وسوريا 2026</h2>
+        <p>نحن هنا لنقدم لكم أجمل الرحلات السياحية في أربيل وعموم كوردستان وصولاً إلى المناطق السياحية السورية. بصفتي مرشداً محلياً، نضمن لكم الأمان، المتعة، والاحترافية.</p>
+        <p dir="ltr">We provide the best tours in Erbil, Kurdistan, and Syria. As a certified guide, we guarantee safety, fun, and professionalism for your 2026 trip.</p>
+    </div>
+
+    <div class="gallery-grid">
+        <script>
+            for(let i=1; i<=12; i++) { document.write(`<img src="images/gallery${i}.jpg" alt="Travel">`); }
+        </script>
+    </div>
+
+    <div id="integrated-content">
+        </div>
+</div>
+
+<footer class="footer-pro">
+    <h3>تواصل معنا مباشرة</h3>
+    <div class="social-buttons">
+        <a href="https://wa.me/YOURNUMBER" class="btn-social whatsapp">واتساب WhatsApp</a>
+        <a href="https://youtube.com/@YOURCHANNEL" class="btn-social youtube">يوتيوب YouTube</a>
+        <a href="https://tiktok.com/@YOURACCOUNT" class="btn-social tiktok">تيك توك TikTok</a>
+    </div>
+    <p>&copy; 2026 Kurdistan Syria Travel - All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
