@@ -14,7 +14,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--gray-bg); color: #333; line-height: 1.7; }
 
-        /* 1. الهيدر وتوسيط العنوان */
+        /* الهيدر وتوسيط العنوان بين العلمين */
         .main-header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 10px 4%; background: var(--white); border-bottom: 2px solid var(--gold);
@@ -25,7 +25,7 @@
         .header-center p { font-size: 0.8rem; color: #28a745; font-weight: bold; }
         .flag-box { width: 80px; height: 50px; }
 
-        /* 2. شريط البحث والترجمة تحت الأعلام */
+        /* شريط البحث والترجمة */
         .top-tools {
             background: #fff; padding: 15px; display: flex; justify-content: center; 
             align-items: center; gap: 20px; flex-wrap: wrap; border-bottom: 1px solid #eee;
@@ -34,49 +34,90 @@
         .search-input { padding: 8px 15px; border: 1px solid #ddd; border-radius: 20px; width: 180px; }
         .search-btn { background: var(--dark-blue); color: #fff; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; }
 
-        /* الفيديو والصور الثلاثة */
+        /* الفيديو والصور الثلاثة المضافة */
         .hero-video { width: 100%; height: 350px; background: #000; }
         .hero-video video { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
         .pic-intro-grid { 
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 15px 5%; background: #fff;
         }
-        .pic-intro-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gold); }
+        /* إضافة مؤشر الماوس للتكبير */
+        .pic-intro-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gold); cursor: pointer; }
 
-        /* الأقسام التفصيلية */
+        /* تنسيق المقالات والجاليري */
         .content-section { padding: 40px 5%; max-width: 1200px; margin: auto; }
         .article-card { background: #fff; padding: 30px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .lang-flex { display: flex; gap: 30px; flex-wrap: wrap; margin-bottom: 20px; }
+        .lang-flex { display: flex; gap: 30px; flex-wrap: wrap; }
         .lang-box { flex: 1; min-width: 300px; text-align: justify; }
-        
-        /* الجاليري */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-top: 20px; }
-        .gallery-grid img { width: 100%; height: 130px; object-fit: cover; border-radius: 5px; transition: 0.3s; }
-        .gallery-grid img:hover { transform: scale(1.05); }
+        /* إضافة مؤشر الماوس للتكبير */
+        .gallery-grid img { width: 100%; height: 130px; object-fit: cover; border-radius: 5px; transition: 0.3s; cursor: pointer; }
+        .gallery-grid img:hover { transform: scale(1.03); }
 
-        /* 6. وسائل التواصل (مثل صورة الموقع الحكومي) */
+        /* وسائل التواصل الاجتماعي - تصميم احترافي دائرية */
         .social-section { background: #2c2c2c; color: #fff; padding: 40px 5%; text-align: center; }
-        .social-title { margin-bottom: 20px; font-size: 1.2rem; border-bottom: 1px solid #444; display: inline-block; padding-bottom: 5px; }
+        .social-title { margin-bottom: 25px; font-size: 1.2rem; position: relative; display: inline-block; padding-bottom: 10px; }
+        .social-title::after { content: ''; width: 50%; height: 2px; background: var(--gold); position: absolute; bottom: 0; left: 25%; }
         .social-icons-flex { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .s-icon { 
-            width: 45px; height: 45px; background: #444; border-radius: 50%; 
+            width: 50px; height: 50px; background: #444; border-radius: 50%; 
             display: flex; align-items: center; justify-content: center; 
-            text-decoration: none; color: #ccc; transition: 0.3s; font-size: 1.2rem;
+            text-decoration: none; color: #fff; transition: 0.3s; font-size: 1.3rem;
+            border: 1px solid #555;
         }
-        .s-icon:hover { background: var(--gold); color: #fff; }
+        .s-icon:hover { transform: translateY(-5px); background: var(--gold); box-shadow: 0 5px 15px rgba(212,175,55,0.4); color: #fff; }
 
-        /* 5. الفوتر وروابط الصفحات */
+        /* الفوتر والروابط القانونية لأدسنس */
         footer { background: var(--footer-dark); color: #aaa; padding: 40px 5%; text-align: center; }
-        .footer-nav { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
-        .footer-nav a { color: #fff; text-decoration: none; font-size: 0.9rem; border-bottom: 1px solid transparent; transition: 0.3s; }
-        .footer-nav a:hover { border-color: var(--gold); color: var(--gold); }
+        .footer-nav { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 25px; }
+        .footer-nav a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-nav a:hover { color: var(--gold); }
+        .contact-info { margin-top: 20px; font-size: 0.9rem; border-top: 1px solid #333; padding-top: 20px; }
+        .contact-info a { color: var(--gold); text-decoration: none; }
+
+        /* --- 2. CSS لميزة تكبير الصور (Modal) --- */
+        .modal-zoom {
+            display: none; /* مخفية افتراضياً */
+            position: fixed; z-index: 9999;
+            padding-top: 50px; left: 0; top: 0;
+            width: 100%; height: 100%; overflow: auto;
+            background-color: rgba(0,0,0,0.9); /* خلفية سوداء شفافة */
+        }
+        .modal-content-zoom {
+            margin: auto; display: block;
+            max-width: 90%; max-height: 80vh;
+            border-radius: 10px; border: 3px solid var(--gold);
+            animation: zoomAnimation 0.3s; /* أنيميشن الظهور */
+        }
+        #caption-zoom {
+            margin: auto; display: block;
+            width: 80%; text-align: center;
+            color: #ccc; padding: 10px 0; font-size: 1.1rem;
+        }
+        .close-zoom {
+            position: absolute; top: 15px; right: 35px;
+            color: #f1f1f1; font-size: 40px; font-weight: bold;
+            transition: 0.3s; cursor: pointer;
+        }
+        .close-zoom:hover, .close-zoom:focus { color: var(--gold); text-decoration: none; cursor: pointer; }
+
+        @keyframes zoomAnimation {
+            from {transform:scale(0)} to {transform:scale(1)}
+        }
+        /* تعديل للموبايل */
+        @media only screen and (max-width: 700px){
+            .modal-content-zoom { max-width: 95%; padding-top: 20px; }
+            .close-zoom { right: 20px; top: 10px; font-size: 35px; }
+        }
     </style>
 </head>
 <body>
 
     <header class="main-header">
         <div class="flag-box">
-            <svg viewBox="0 0 600 400"><rect width="600" height="133.3" fill="#ED2024"/><rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/>
-                <g transform="translate(300 200)"><circle r="46" fill="#FEB117"/>
+            <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                <rect width="600" height="133.3" fill="#ED2024"/><rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/>
+                <g transform="translate(300 200)">
+                    <circle r="46" fill="#FEB117"/>
                     <g fill="#FEB117"><path d="M0-95L11-46H-11z"/><path d="M0-95L11-46H-11z" transform="rotate(17.14)"/><path d="M0-95L11-46H-11z" transform="rotate(34.28)"/><path d="M0-95L11-46H-11z" transform="rotate(51.42)"/><path d="M0-95L11-46H-11z" transform="rotate(68.57)"/><path d="M0-95L11-46H-11z" transform="rotate(85.71)"/><path d="M0-95L11-46H-11z" transform="rotate(102.85)"/><path d="M0-95L11-46H-11z" transform="rotate(119.99)"/><path d="M0-95L11-46H-11z" transform="rotate(137.14)"/><path d="M0-95L11-46H-11z" transform="rotate(154.28)"/><path d="M0-95L11-46H-11z" transform="rotate(171.42)"/><path d="M0-95L11-46H-11z" transform="rotate(188.56)"/><path d="M0-95L11-46H-11z" transform="rotate(205.7)"/><path d="M0-95L11-46H-11z" transform="rotate(222.85)"/><path d="M0-95L11-46H-11z" transform="rotate(239.99)"/><path d="M0-95L11-46H-11z" transform="rotate(257.13)"/><path d="M0-95L11-46H-11z" transform="rotate(274.28)"/><path d="M0-95L11-46H-11z" transform="rotate(291.42)"/><path d="M0-95L11-46H-11z" transform="rotate(308.56)"/><path d="M0-95L11-46H-11z" transform="rotate(325.7)"/><path d="M0-95L11-46H-11z" transform="rotate(342.85)"/></g>
                 </g>
             </svg>
@@ -86,7 +127,8 @@
             <p>مرشد محلي معتمد Level 9</p>
         </div>
         <div class="flag-box">
-            <svg viewBox="0 0 600 400"><rect width="600" height="133.3" fill="#007A3D"/><rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/><rect y="266.6" width="600" height="133.3" fill="#000000"/>
+            <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                <rect width="600" height="133.3" fill="#007A3D"/><rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/><rect y="266.6" width="600" height="133.3" fill="#000000"/>
                 <g fill="#CE1126"><path id="s" d="M0-35L9-11H34L14 5L21 30L0 15L-21 30L-14 5L-34-11H-9Z" transform="translate(150 200) scale(0.7)"/><use href="#s" transform="translate(150 0)"/><use href="#s" transform="translate(300 0)"/></g>
             </svg>
         </div>
@@ -103,47 +145,46 @@
     <div class="hero-video">
         <video autoplay muted loop playsinline><source src="images/hero.mp4" type="video/mp4"></video>
     </div>
+    
     <div class="pic-intro-grid">
-        <img src="images/pic1.jpg" alt="Travel 1">
-        <img src="images/pic2.jpg" alt="Travel 2">
-        <img src="images/pic3.jpg" alt="Travel 3">
+        <img src="images/pic1.jpg" alt="View 1">
+        <img src="images/pic2.jpg" alt="View 2">
+        <img src="images/pic3.jpg" alt="View 3">
     </div>
 
     <div class="content-section">
         <div class="article-card">
             <div class="lang-flex">
                 <div class="lang-box">
-                    <h2 style="color: var(--dark-blue); margin-bottom: 10px;">العراق وإقليم كوردستان: مهد الحضارات</h2>
-                    <p>يعتبر العراق واحداً من أغنى دول العالم تاريخياً، حيث بدأت منه أولى الأبجديات والقوانين. أما إقليم كوردستان في شمال العراق، فيمثل وجهة سياحية فريدة تجمع بين الأمن والجمال الطبيعي الأخاذ. تتميز العاصمة أربيل بقلعتها التاريخية التي تعد من أقدم المستوطنات المأهولة في العالم. كما يضم الإقليم تضاريس متنوعة من جبال حصاروست الشاهقة إلى شلالات بيخال وكلي علي بك. السياحة هنا لا تقتصر على المناظر الطبيعية فحسب، بل تمتد لتشمل الضيافة الكوردية الأصيلة والمرافق الحديثة التي تجعل من زيارتكم تجربة لا تُنسى لعام 2026.</p>
+                    <h2>العراق وإقليم كوردستان</h2>
+                    <p>يعد العراق مهد الحضارات الإنسانية، ويبرز إقليم كوردستان كوجهة سياحية رائدة تجمع بين عبق التاريخ وسحر الطبيعة الجبلية. استكشف قلعة أربيل المسجلة في اليونسكو، واستمتع بشلالات بيخال وأجواء الجبال الساحرة في دهوك والسليمانية.</p>
                 </div>
                 <div class="lang-box" dir="ltr">
-                    <h2 style="color: var(--dark-blue); margin-bottom: 10px;">Iraq & Kurdistan Region: The Cradle of Civilization</h2>
-                    <p>Iraq is historically one of the world's richest countries, where the first alphabets and laws originated. The Kurdistan Region in northern Iraq represents a unique tourist destination that blends security with breathtaking natural beauty. The capital, Erbil, is famous for its historic Citadel, one of the oldest continuously inhabited settlements in the world. The region features diverse terrains, from the towering Hasarost Mountains to the Bekhal and Gali Ali Bag waterfalls. Tourism here is not just about landscapes; it extends to authentic Kurdish hospitality and modern facilities that make your 2026 visit unforgettable.</p>
+                    <h2>Iraq & Kurdistan Region</h2>
+                    <p>Iraq is the cradle of civilizations, and the Kurdistan Region stands out as a leading tourist destination that combines history with mountain charm. Explore the UNESCO-listed Erbil Citadel and enjoy the breathtaking waterfalls.</p>
                 </div>
             </div>
             <div class="gallery-grid">
-                <script>
-                    const kImgs = [1, 9, 2, 3, 4, 6, 7, 8]; // توزيع عشوائي لصور كوردستان
-                    kImgs.forEach(n => document.write(`<img src="images/gallery${n}.jpg" alt="Kurdistan ${n}">`));
-                </script>
+                <img src="images/gallery1.jpg" alt="G1">
+                <img src="images/gallery9.jpg" alt="G9">
             </div>
         </div>
 
         <div class="article-card">
             <div class="lang-flex">
                 <div class="lang-box">
-                    <h2 style="color: var(--dark-blue); margin-bottom: 10px;">سوريا ودمشق: عبق التاريخ</h2>
-                    <p>سوريا هي قلب الشرق الأوسط النابض بالتاريخ. دمشق، "مدينة الياسمين"، هي أقدم عاصمة مأهولة في التاريخ، حيث يمتزج فيها عبق الماضي بالحياة اليومية. الجامع الأموي الكبير بجماله المعماري، وأسواقها القديمة كالحميدية، تحكي قصص آلاف السنين. سوريا تقدم تنوعاً مذهلاً بين الآثار الرومانية في تدمر، والقلاع الصليبية، وشواطئ اللاذقية. دمشق ليست مجرد مدينة، بل هي ذاكرة الإنسانية، حيث تجد في كل زاوية من حاراتها القديمة حكاية حضارة مرت من هنا ووضعت بصمتها الأبدية.</p>
+                    <h2>سوريا ودمشق الياسمين</h2>
+                    <p>سوريا، حيث تلتقي الحضارات. دمشق أقدم عاصمة في التاريخ، تأخذك في رحلة عبر الزمن في أسواقها القديمة وجامعها الأموي. من دمشق إلى حلب واللاذقية، تقدم سوريا تنوعاً ثقافياً وجغرافياً لا يقدر بثمن.</p>
                 </div>
                 <div class="lang-box" dir="ltr">
-                    <h2 style="color: var(--dark-blue); margin-bottom: 10px;">Syria & Damascus: The Scent of History</h2>
-                    <p>Syria is the beating heart of Middle Eastern history. Damascus, the "City of Jasmine," is the oldest continuously inhabited capital in history, where the fragrance of the past blends with daily life. The Great Umayyad Mosque with its architectural beauty and ancient markets like Al-Hamidiyah tell stories of thousands of years. Syria offers amazing diversity between the Roman ruins in Palmyra, Crusader castles, and the beaches of Lattakia. Damascus is not just a city; it is the memory of humanity, where every corner of its old alleys holds a tale of a civilization that passed through.</p>
+                    <h2>Syria & Damascus</h2>
+                    <p>Syria, where civilizations meet. Damascus, the oldest capital in history, takes you on a journey through time. From Damascus to Aleppo and Lattakia, Syria offers invaluable cultural diversity.</p>
                 </div>
             </div>
             <div class="gallery-grid">
                 <script>
-                    const sImgs = [5, 12, 7, 16, 9, 10, 14, 15, 6, 8, 11, 13]; // توزيع عشوائي لصور سوريا
-                    sImgs.forEach(n => document.write(`<img src="images/gallery${n}.jpg" alt="Syria ${n}">`));
+                    // --- 3. تعديل اسم الصور لأحرف صغيرة في حلقة التكرار (syria) ---
+                    for(let i=5; i<=16; i++) { document.write(`<img src="images/syria${i}.jpg" alt="syria ${i}">`); }
                 </script>
             </div>
         </div>
@@ -152,26 +193,70 @@
     <div class="social-section">
         <h3 class="social-title">وسائل التواصل الإجتماعي</h3>
         <div class="social-icons-flex">
-            <a href="#" class="s-icon">f</a> <a href="#" class="s-icon">𝕏</a> <a href="#" class="s-icon">📸</a> <a href="#" class="s-icon">▶</a> <a href="#" class="s-icon">♪</a> <a href="#" class="s-icon">📍</a> <a href="https://wa.me/رقمك" class="s-icon">💬</a> </div>
+            <a href="https://www.facebook.com/share/18KAS7cXh4/?mibextid=wwXIfr" class="s-icon" target="_blank">f</a>
+            <a href="https://wa.me/9647502061184" class="s-icon" target="_blank">💬</a>
+            <a href="https://instagram.com/tourism_video?igshid=OGQ5ZDc2ODk2ZA==" class="s-icon" target="_blank">📸</a>
+            <a href="https://youtube.com/@syriatourism1980?si=EYfWS1nS0INLX7QU" class="s-icon" target="_blank">▶</a>
+            <a href="https://www.tiktok.com/@moradalamdar1239" class="s-icon" target="_blank">♪</a>
+            <a href="#" class="s-icon">📍</a>
+        </div>
     </div>
 
     <footer>
         <div class="footer-nav">
             <a href="index.html">الرئيسية</a>
             <a href="about.html">من نحن</a>
-            <a href="destinations.html">الوجهات السياحية</a>
-            <a href="syria-travel.html">السياحة في سوريا</a>
-            <a href="al-qadmus.html">القدموس</a>
-            <a href="contact.html">اتصل بنا</a>
             <a href="privacy.html">سياسة الخصوصية</a>
             <a href="terms.html">الشروط والأحكام</a>
+            <a href="contact.html">اتصل بنا</a>
         </div>
-        <p>&copy; 2026 Kurdistan Syria Travel - جميع الحقوق محفوظة لـ محمد عثمان كردي</p>
+        <div class="contact-info">
+            <p>البريد الإلكتروني: <a href="mailto:moradlmdr@gmail.com">moradlmdr@gmail.com</a></p>
+            <p>هاتف: +9647502061184</p>
+            <p style="margin-top:15px;">&copy; 2026 Kurdistan Syria Travel - محمد عثمان كردي</p>
+        </div>
     </footer>
 
+    <div id="myModalZoom" class="modal-zoom">
+      <span class="close-zoom">&times;</span>
+      <img class="modal-content-zoom" id="img01Zoom">
+      <div id="caption-zoom"></div>
+    </div>
+
     <script type="text/javascript">
+        // كود الترجمة
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
+        }
+
+        // --- 2. JavaScript لميزة تكبير الصور ---
+        var modal = document.getElementById("myModalZoom");
+        var modalImg = document.getElementById("img01Zoom");
+        var captionText = document.getElementById("caption-zoom");
+        var span = document.getElementsByClassName("close-zoom")[0];
+
+        // احصل على كل الصور في الجاليري والقسم التعريفي
+        var images = document.querySelectorAll('.gallery-grid img, .pic-intro-grid img');
+        
+        // أضف حدث الضغط لكل صورة
+        for (var i = 0; i < images.length; i++) {
+            images[i].onclick = function(){
+              modal.style.display = "block";
+              modalImg.src = this.src;
+              captionText.innerHTML = this.alt;
+            }
+        }
+
+        // عند الضغط على (x)، اغلق النافذة
+        span.onclick = function() { 
+          modal.style.display = "none";
+        }
+        
+        // عند الضغط خارج الصورة في المساحة السوداء، اغلق النافذة
+        modal.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
         }
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
