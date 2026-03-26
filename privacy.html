@@ -3,70 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية المعتمدة | Privacy Policy - 2026</title>
+    <title>Kurdistan Syria Travel | Official 2026</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489" crossorigin="anonymous"></script>
 
     <style>
+        :root { 
+            --gold: #d4af37; --dark-blue: #002147; --white: #ffffff; --gray-bg: #f8f9fa; --footer-dark: #1a1a1a;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f9fbfd; padding: 50px 20px; line-height: 1.8; color: #2c3e50; text-align: right; }
-        .box { max-width: 900px; margin: auto; background: #fff; padding: 50px; border-radius: 25px; box-shadow: 0 15px 45px rgba(0,0,0,0.07); border-top: 8px solid #004a99; }
-        h1 { color: #004a99; font-size: 2.5rem; margin-bottom: 30px; text-align: center; font-weight: 800; }
-        h2 { color: #28a745; margin: 35px 0 15px; font-size: 1.5rem; display: flex; align-items: center; }
-        h2::before { content: ""; display: inline-block; width: 10px; height: 25px; background: #28a745; margin-left: 15px; border-radius: 5px; }
-        p { margin-bottom: 20px; font-size: 1.1rem; color: #4a5568; text-align: justify; }
-        ul { margin-right: 25px; margin-bottom: 25px; }
-        li { margin-bottom: 12px; color: #4a5568; list-style-type: circle; }
-        .highlight { color: #004a99; font-weight: bold; }
-        
-        .en-section { direction: ltr; text-align: left; margin-top: 60px; border-top: 2px solid #edf2f7; padding-top: 50px; }
-        .en-section h1 { color: #004a99; border-left: 8px solid #004a99; padding-left: 20px; text-align: left; }
-        .en-section h2::before { margin-left: 0; margin-right: 15px; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--gray-bg); color: #333; line-height: 1.7; }
 
-        .btn-home { display: inline-block; margin-top: 40px; padding: 15px 50px; background: #004a99; color: white; text-decoration: none; border-radius: 12px; font-weight: bold; transition: 0.3s; }
-        .btn-home:hover { background: #003366; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,74,153,0.2); }
+        /* 1. الهيدر وتوسيط العنوان */
+        .main-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 4%; background: var(--white); border-bottom: 2px solid var(--gold);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000;
+        }
+        .header-center { text-align: center; flex: 2; }
+        .header-center h1 { font-size: 1.5rem; color: var(--dark-blue); font-weight: 900; }
+        .header-center p { font-size: 0.8rem; color: #28a745; font-weight: bold; }
+        .flag-box { width: 80px; height: 50px; }
+
+        /* 2. شريط البحث والترجمة تحت الأعلام */
+        .top-tools {
+            background: #fff; padding: 15px; display: flex; justify-content: center; 
+            align-items: center; gap: 20px; flex-wrap: wrap; border-bottom: 1px solid #eee;
+        }
+        .search-container { display: flex; gap: 5px; }
+        .search-input { padding: 8px 15px; border: 1px solid #ddd; border-radius: 20px; width: 180px; }
+        .search-btn { background: var(--dark-blue); color: #fff; border: none; padding: 8px 20px; border-radius: 20px; cursor: pointer; }
+
+        /* الفيديو والصور الثلاثة */
+        .hero-video { width: 100%; height: 350px; background: #000; }
+        .hero-video video { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+        .pic-intro-grid { 
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 15px 5%; background: #fff;
+        }
+        .pic-intro-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; border: 2px solid var(--gold); }
+
+        /* الأقسام التفصيلية */
+        .content-section { padding: 40px 5%; max-width: 1200px; margin: auto; }
+        .article-card { background: #fff; padding: 30px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .lang-flex { display: flex; gap: 30px; flex-wrap: wrap; margin-bottom: 20px; }
+        .lang-box { flex: 1; min-width: 300px; text-align: justify; }
         
-        footer { text-align: center; margin-top: 50px; color: #a0aec0; font-size: 0.95rem; }
+        /* الجاليري */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-top: 20px; }
+        .gallery-grid img { width: 100%; height: 130px; object-fit: cover; border-radius: 5px; transition: 0.3s; }
+        .gallery-grid img:hover { transform: scale(1.05); }
+
+        /* 6. وسائل التواصل (مثل صورة الموقع الحكومي) */
+        .social-section { background: #2c2c2c; color: #fff; padding: 40px 5%; text-align: center; }
+        .social-title { margin-bottom: 20px; font-size: 1.2rem; border-bottom: 1px solid #444; display: inline-block; padding-bottom: 5px; }
+        .social-icons-flex { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .s-icon { 
+            width: 45px; height: 45px; background: #444; border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            text-decoration: none; color: #ccc; transition: 0.3s; font-size: 1.2rem;
+        }
+        .s-icon:hover { background: var(--gold); color: #fff; }
+
+        /* 5. الفوتر وروابط الصفحات */
+        footer { background: var(--footer-dark); color: #aaa; padding: 40px 5%; text-align: center; }
+        .footer-nav { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px; }
+        .footer-nav a { color: #fff; text-decoration: none; font-size: 0.9rem; border-bottom: 1px solid transparent; transition: 0.3s; }
+        .footer-nav a:hover { border-color: var(--gold); color: var(--gold); }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1>سياسة الخصوصية</h1>
-        <p>تعتبر خصوصية الزائر من أهم أولوياتنا في منصة <span class="highlight">Kurdstan Syria Travel</span>. توضح هذه السياسة طبيعة البيانات التي يتم التعامل معها وكيفية حمايتها وفق المعايير الدولية المعترف بها.</p>
-        
-        <h2>جمع وتحليل البيانات</h2>
-        <p>نلتزم بجمع الحد الأدنى من البيانات التقنية اللازمة لتحسين تجربة المستخدم، مثل نوع المتصفح والمنطقة الجغرافية التقريبية، وذلك لأغراض إحصائية بحتة تساعدنا في تقديم محتوى سياحي أفضل وتطوير خدماتنا بما يتناسب مع احتياجات الزوار.</p>
 
-        <h2>ملفات تعريف الارتباط (Cookies)</h2>
-        <p>يستخدم الموقع ملفات تعريف الارتباط لتخصيص المحتوى وتحسين سرعة التصفح. كما نود التنويه إلى أن شركاء الإعلانات (مثل جوجل) قد يستخدمون ملفات تعريف الارتباط الخاصة بهم لعرض إعلانات ملائمة لاهتماماتكم بناءً على زياراتكم السابقة.</p>
-
-        <h2>حقوق المستخدم والطرف الثالث</h2>
-        <p>نؤكد التزامنا بعدم بيع أو مشاركة بيانات زوارنا الشخصية مع أي جهات خارجية غير مخولة. يحق للمستخدم دائماً التحكم في خيارات التتبع عبر إعدادات المتصفح الخاص به، مع العلم أن منصتنا تتبع أرقى بروتوكولات الأمان العالمية.</p>
-
-        <h2>الموافقة الصريحة</h2>
-        <p>باستخدامك لمنصتنا وتصفح محتواها، فإنك تقر بالموافقة على بنود سياسة الخصوصية المذكورة أعلاه وشروط الاستخدام المعتمدة لدينا.</p>
-
-        <div class="en-section">
-            <h1>Privacy Policy</h1>
-            <p>At <span class="highlight">Kurdstan Syria Travel</span>, your privacy is our core commitment. This policy outlines how we handle and safeguard your information in accordance with international data protection standards.</p>
-            
-            <h2>Data Collection & Analysis</h2>
-            <p>We process standard technical information to analyze trends and enhance our tourism-focused content. This includes non-identifiable data used solely for improving user navigation and site performance.</p>
-
-            <h2>Third-Party Advertising</h2>
-            <p>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites. We do not have access to or control over these cookies used by third-party advertisers.</p>
-
-            <h2>Consent</h2>
-            <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms and conditions for a secure and professional browsing experience.</p>
+    <header class="main-header">
+        <div class="flag-box">
+            <svg viewBox="0 0 600 400"><rect width="600" height="133.3" fill="#ED2024"/><rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/>
+                <g transform="translate(300 200)"><circle r="46" fill="#FEB117"/>
+                    <g fill="#FEB117"><path d="M0-95L11-46H-11z"/><path d="M0-95L11-46H-11z" transform="rotate(17.14)"/><path d="M0-95L11-46H-11z" transform="rotate(34.28)"/><path d="M0-95L11-46H-11z" transform="rotate(51.42)"/><path d="M0-95L11-46H-11z" transform="rotate(68.57)"/><path d="M0-95L11-46H-11z" transform="rotate(85.71)"/><path d="M0-95L11-46H-11z" transform="rotate(102.85)"/><path d="M0-95L11-46H-11z" transform="rotate(119.99)"/><path d="M0-95L11-46H-11z" transform="rotate(137.14)"/><path d="M0-95L11-46H-11z" transform="rotate(154.28)"/><path d="M0-95L11-46H-11z" transform="rotate(171.42)"/><path d="M0-95L11-46H-11z" transform="rotate(188.56)"/><path d="M0-95L11-46H-11z" transform="rotate(205.7)"/><path d="M0-95L11-46H-11z" transform="rotate(222.85)"/><path d="M0-95L11-46H-11z" transform="rotate(239.99)"/><path d="M0-95L11-46H-11z" transform="rotate(257.13)"/><path d="M0-95L11-46H-11z" transform="rotate(274.28)"/><path d="M0-95L11-46H-11z" transform="rotate(291.42)"/><path d="M0-95L11-46H-11z" transform="rotate(308.56)"/><path d="M0-95L11-46H-11z" transform="rotate(325.7)"/><path d="M0-95L11-46H-11z" transform="rotate(342.85)"/></g>
+                </g>
+            </svg>
         </div>
-        
-        <div style="text-align: center;">
-            <a href="index.html" class="btn-home">العودة للرئيسية | Back to Home</a>
+        <div class="header-center">
+            <h1>Kurdistan Syria Travel</h1>
+            <p>مرشد محلي معتمد Level 9</p>
+        </div>
+        <div class="flag-box">
+            <svg viewBox="0 0 600 400"><rect width="600" height="133.3" fill="#007A3D"/><rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/><rect y="266.6" width="600" height="133.3" fill="#000000"/>
+                <g fill="#CE1126"><path id="s" d="M0-35L9-11H34L14 5L21 30L0 15L-21 30L-14 5L-34-11H-9Z" transform="translate(150 200) scale(0.7)"/><use href="#s" transform="translate(150 0)"/><use href="#s" transform="translate(300 0)"/></g>
+            </svg>
+        </div>
+    </header>
+
+    <div class="top-tools">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="ابحث هنا...">
+            <button class="search-btn">بحث</button>
+        </div>
+        <div id="google_translate_element"></div>
+    </div>
+
+    <div class="hero-video">
+        <video autoplay muted loop playsinline><source src="images/hero.mp4" type="video/mp4"></video>
+    </div>
+    <div class="pic-intro-grid">
+        <img src="images/pic1.jpg" alt="Travel 1">
+        <img src="images/pic2.jpg" alt="Travel 2">
+        <img src="images/pic3.jpg" alt="Travel 3">
+    </div>
+
+    <div class="content-section">
+        <div class="article-card">
+            <div class="lang-flex">
+                <div class="lang-box">
+                    <h2 style="color: var(--dark-blue); margin-bottom: 10px;">العراق وإقليم كوردستان: مهد الحضارات</h2>
+                    <p>يعتبر العراق واحداً من أغنى دول العالم تاريخياً، حيث بدأت منه أولى الأبجديات والقوانين. أما إقليم كوردستان في شمال العراق، فيمثل وجهة سياحية فريدة تجمع بين الأمن والجمال الطبيعي الأخاذ. تتميز العاصمة أربيل بقلعتها التاريخية التي تعد من أقدم المستوطنات المأهولة في العالم. كما يضم الإقليم تضاريس متنوعة من جبال حصاروست الشاهقة إلى شلالات بيخال وكلي علي بك. السياحة هنا لا تقتصر على المناظر الطبيعية فحسب، بل تمتد لتشمل الضيافة الكوردية الأصيلة والمرافق الحديثة التي تجعل من زيارتكم تجربة لا تُنسى لعام 2026.</p>
+                </div>
+                <div class="lang-box" dir="ltr">
+                    <h2 style="color: var(--dark-blue); margin-bottom: 10px;">Iraq & Kurdistan Region: The Cradle of Civilization</h2>
+                    <p>Iraq is historically one of the world's richest countries, where the first alphabets and laws originated. The Kurdistan Region in northern Iraq represents a unique tourist destination that blends security with breathtaking natural beauty. The capital, Erbil, is famous for its historic Citadel, one of the oldest continuously inhabited settlements in the world. The region features diverse terrains, from the towering Hasarost Mountains to the Bekhal and Gali Ali Bag waterfalls. Tourism here is not just about landscapes; it extends to authentic Kurdish hospitality and modern facilities that make your 2026 visit unforgettable.</p>
+                </div>
+            </div>
+            <div class="gallery-grid">
+                <script>
+                    const kImgs = [1, 9, 2, 3, 4, 6, 7, 8]; // توزيع عشوائي لصور كوردستان
+                    kImgs.forEach(n => document.write(`<img src="images/gallery${n}.jpg" alt="Kurdistan ${n}">`));
+                </script>
+            </div>
+        </div>
+
+        <div class="article-card">
+            <div class="lang-flex">
+                <div class="lang-box">
+                    <h2 style="color: var(--dark-blue); margin-bottom: 10px;">سوريا ودمشق: عبق التاريخ</h2>
+                    <p>سوريا هي قلب الشرق الأوسط النابض بالتاريخ. دمشق، "مدينة الياسمين"، هي أقدم عاصمة مأهولة في التاريخ، حيث يمتزج فيها عبق الماضي بالحياة اليومية. الجامع الأموي الكبير بجماله المعماري، وأسواقها القديمة كالحميدية، تحكي قصص آلاف السنين. سوريا تقدم تنوعاً مذهلاً بين الآثار الرومانية في تدمر، والقلاع الصليبية، وشواطئ اللاذقية. دمشق ليست مجرد مدينة، بل هي ذاكرة الإنسانية، حيث تجد في كل زاوية من حاراتها القديمة حكاية حضارة مرت من هنا ووضعت بصمتها الأبدية.</p>
+                </div>
+                <div class="lang-box" dir="ltr">
+                    <h2 style="color: var(--dark-blue); margin-bottom: 10px;">Syria & Damascus: The Scent of History</h2>
+                    <p>Syria is the beating heart of Middle Eastern history. Damascus, the "City of Jasmine," is the oldest continuously inhabited capital in history, where the fragrance of the past blends with daily life. The Great Umayyad Mosque with its architectural beauty and ancient markets like Al-Hamidiyah tell stories of thousands of years. Syria offers amazing diversity between the Roman ruins in Palmyra, Crusader castles, and the beaches of Lattakia. Damascus is not just a city; it is the memory of humanity, where every corner of its old alleys holds a tale of a civilization that passed through.</p>
+                </div>
+            </div>
+            <div class="gallery-grid">
+                <script>
+                    const sImgs = [5, 12, 7, 16, 9, 10, 14, 15, 6, 8, 11, 13]; // توزيع عشوائي لصور سوريا
+                    sImgs.forEach(n => document.write(`<img src="images/gallery${n}.jpg" alt="Syria ${n}">`));
+                </script>
+            </div>
         </div>
     </div>
 
+    <div class="social-section">
+        <h3 class="social-title">وسائل التواصل الإجتماعي</h3>
+        <div class="social-icons-flex">
+            <a href="#" class="s-icon">f</a> <a href="#" class="s-icon">𝕏</a> <a href="#" class="s-icon">📸</a> <a href="#" class="s-icon">▶</a> <a href="#" class="s-icon">♪</a> <a href="#" class="s-icon">📍</a> <a href="https://wa.me/رقمك" class="s-icon">💬</a> </div>
+    </div>
+
     <footer>
-        © 2026 Kurdstan Syria Travel | All Rights Reserved
+        <div class="footer-nav">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="destinations.html">الوجهات السياحية</a>
+            <a href="syria-travel.html">السياحة في سوريا</a>
+            <a href="al-qadmus.html">القدموس</a>
+            <a href="contact.html">اتصل بنا</a>
+            <a href="privacy.html">سياسة الخصوصية</a>
+            <a href="terms.html">الشروط والأحكام</a>
+        </div>
+        <p>&copy; 2026 Kurdistan Syria Travel - جميع الحقوق محفوظة لـ محمد عثمان كردي</p>
     </footer>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
