@@ -15,9 +15,7 @@
             --white: #ffffff;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg-light); color: #333; }
-
-        /* الهيدر الأبيض الفاخر */
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg-light); color:
         .ultra-header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 15px 5%; background: var(--white);
@@ -30,7 +28,8 @@
         .header-center p { font-size: 0.9rem; color: #28a745; font-weight: bold; }
         
 <header class="header-king">
-    <div class="flag-container">
+ 
+              <div class="flag-container">
         <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
             <rect width="600" height="133.3" fill="#ED2024"/> <rect y="133.3" width="600" height="133.3" fill="#FFFFFF"/> <rect y="266.6" width="600" height="133.3" fill="#278E43"/> <g transform="translate(300 200)">
                 <circle r="46" fill="#FEB117"/>
@@ -44,9 +43,10 @@
         </svg>
     </div>
 
-        .flag-ultra { width: 90px; height: 60px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
+   
+                        .flag-ultra { width: 90px; height: 60px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
 
-        /* شريط التنقل */
+                        
         .nav-link-bar { background: var(--dark-blue); padding: 12px 0; text-align: center; }
         .nav-link-bar a { color: var(--white); text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 1.05rem; }
         .nav-link-bar a:hover { color: var(--gold); }
@@ -89,7 +89,21 @@
                 </g>
             </svg>
         </div>
+    <nav class="nav-link-bar">
+        <a href="index.html">الرئيسية</a>
+            <div id="google_translate_element" style="text-align:center; padding: 20px;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element'); }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+        <a href="about.html">من نحن</a>
+        <a href="privacy.html">سياسة الخصوصية</a>
+    </nav>
+
+    <div class="hero-banner">
+        <video autoplay muted loop playsinline><source src="images/hero.mp4" type="video/mp4"></video>
+    </div>
         <div class="header-center">
             <h1>Kurdistan Syria Travel</h1>
             <p>مرشد محلي معتمد Level 9</p>
@@ -107,15 +121,7 @@
         </div>
     </header>
 
-    <nav class="nav-link-bar">
-        <a href="index.html">الرئيسية</a>
-        <a href="about.html">من نحن</a>
-        <a href="privacy.html">سياسة الخصوصية</a>
-    </nav>
 
-    <div class="hero-banner">
-        <video autoplay muted loop playsinline><source src="images/hero.mp4" type="video/mp4"></video>
-    </div>
 
     <div class="content-section">
         <div class="card-pro">
@@ -148,11 +154,6 @@
         <p>&copy; 2026 Kurdistan Syria Travel - All Rights Reserved</p>
     </footer>
 
-    <div id="google_translate_element" style="text-align:center; padding: 20px;"></div>
-    <script type="text/javascript">
-        function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element'); }
-    </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
