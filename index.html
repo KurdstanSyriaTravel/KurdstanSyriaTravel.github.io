@@ -1,404 +1,143 @@
-<!DOCTYPE html>
+<!DOCTYPE html>القديم
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurdistan Syria Travel | محمد عثمان كردي</title>
+    <title>Kurdstan Syria Travel | المنصة الرسمية</title>
     
-    <!-- كود AdSense للتحقق من الملكية -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489" crossorigin="anonymous"></script>
-    <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
 
-    <!-- روابط مكتبة Lightbox2 (لتكبير الصور) -->
-    <link rel="stylesheet" href="css/lightbox.min.css">
-    
     <style>
-        :root { --gold: #d4af37; --blue: #002147; --white: #ffffff; --light-gray: #f0f2f5; --dark-text: #333; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: var(--light-gray); color: var(--dark-text); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.7; }
 
-        /* الهيدر مع الأعلام والترجمة */
-        header { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 15px 5%; background: var(--white); border-bottom: 3px solid var(--gold);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            flex-wrap: wrap; /* للسماح بالتفاف العناصر في الشاشات الصغيرة */
-        }
-        .header-left, .header-right { display: flex; align-items: center; gap: 15px; }
-        .header-title { text-align: center; flex-grow: 1; margin: 0 15px; /* هامش لضمان عدم التصاق الترجمة */ }
-        .header-title h1 { color: var(--blue); font-size: 1.8rem; margin-bottom: 5px;}
-        .header-title p { color: #28a745; font-weight: bold; font-size: 0.95rem; }
+        .header-main { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+        .flag-css { width: 60px; height: 40px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.2); border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; }
+        .header-title { text-align: center; }
+        .header-title h1 { color: #004a99; font-size: 1.4rem; }
+        .header-title p { font-size: 0.85rem; color: #28a745; font-weight: bold; }
 
-        .flag { width: 55px; height: 40px; border-radius: 4px; object-fit: cover; border: 1px solid #ddd; }
-        
-        /* تنسيق عنصر الترجمة */
-        #google_translate_element { margin-top: 5px; }
-        #google_translate_element select { padding: 6px 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 0.8rem; }
-        
-        /* قسم الفيديو الرئيسي */
-        .hero-video-section {
-            position: relative;
-            width: 100%;
-            height: 60vh; /* ارتفاع مناسب للفيديو */
-            overflow: hidden;
-            background-color: var(--blue); /* خلفية في حال لم يتم تحميل الفيديو */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero-video-section video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: 1;
-            transform: translate(-50%, -50%);
-            opacity: 0.7; /* تعتيم قليل للفيديو */
-        }
-        .hero-overlay {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--white);
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-        }
-        .hero-overlay h2 { font-size: 2.5rem; margin-bottom: 10px; }
-        .hero-overlay p { font-size: 1.2rem; font-weight: 300; }
+        .hero-section { position: relative; width: 100%; height: 350px; background: #000; overflow: hidden; }
+        #hero-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)); display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center; padding: 20px; z-index: 2; }
 
-        /* أقسام المحتوى الرئيسية */
-        .content-section { padding: 40px 5%; max-width: 1200px; margin: 40px auto; background: var(--white); border-radius: 20px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); }
-        .card { margin-bottom: 30px; padding: 25px; } /* تم جعل الكارد هو المحتوى الرئيسي */
-        .description-box { margin-bottom: 25px; line-height: 1.7; border-right: 5px solid var(--gold); padding-right: 20px; border-radius: 0 5px 5px 0; }
-        .description-box h2 { margin-bottom: 12px; font-size: 1.6rem; color: var(--blue); }
-        .description-box p { font-size: 1rem; margin-bottom: 15px; }
-        
-        /* شبكة الصور */
-        .photo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .photo-item { position: relative; border-radius: 12px; overflow: hidden; border: 4px solid var(--gold); /* إطار ذهبي */ height: 220px; /* ارتفاع موحد للصور */ box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .photo-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease-in-out; cursor: pointer; }
-        .photo-item:hover img { transform: scale(1.1); }
-        .photo-label { position: absolute; bottom: 15px; left: 15px; background: rgba(0,0,0,0.75); color: white; padding: 5px 12px; font-size: 0.8rem; border-radius: 6px; z-index: 10; font-weight: bold; }
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+        .info-card { background: #fff; padding: 25px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 5px solid #004a99; }
+        .info-card h3 { color: #004a99; margin-bottom: 15px; font-size: 1.5rem; }
+        .info-card p { font-size: 1.05rem; text-align: justify; color: #444; margin-bottom: 15px; }
+        .highlight { color: #28a745; font-weight: bold; }
 
-        /* تنسيق أيقونات التواصل الاجتماعي */
-        .ios-folder-wrapper { padding: 50px 5%; text-align: center; background: linear-gradient(to bottom, #e0eafc, #cfdef3); }
-        .ios-folder-title { margin-bottom: 20px; font-weight: bold; color: #444; font-size: 1.3rem; }
-        .iphone-folder {
-            display: inline-grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 18px;
-            background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-            padding: 25px; border-radius: 40px; border: 1px solid rgba(255,255,255,0.6);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.15); max-width: 500px; margin: auto;
-        }
-        .app-link { text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 6px; }
-        .app-icon { 
-            width: 65px; height: 65px; border-radius: 18px; display: flex; align-items: center; 
-            justify-content: center; color: white; font-size: 1.8rem; box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
-        }
-        .app-link:hover .app-icon { transform: translateY(-5px); } /* تأثير بسيط عند المرور */
-        .app-name { font-size: 0.75rem; color: #333; font-weight: 550; margin-top: 2px; }
-        .bg-fb { background: #1877F2; } .bg-wa { background: #25D366; } .bg-ig { background: linear-gradient(45deg, #f09433, #e1306c, #c13584, #833ab4, #5851db); } /* تدرج أفضل للانستغرام */
-        .bg-yt { background: #FF0000; } .bg-tk { background: #000; } .bg-map { background: #EA4335; } /* لون خرائط جوجل */
-        .bg-mail { background: #f6f9fc; color: #333; border: 1px solid #ddd; font-size: 1.6rem;} /* أيقونة البريد */
+        /* معرض الصور مع خاصية النقر */
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+        .gallery-grid img { width: 100%; height: 150px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.3s; border: 1px solid #eee; }
+        .gallery-grid img:hover { transform: scale(1.02); filter: brightness(0.9); }
 
-        /* الفوتر المحدث */
-        footer { background: var(--blue); color: #fff; padding: 50px 5%; text-align: center; }
-        .footer-nav { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
-        .footer-nav a { color: var(--gold); text-decoration: none; font-size: 0.9rem; border: 1px solid #444; padding: 10px 18px; border-radius: 8px; transition: 0.4s ease; font-weight: bold; }
-        .footer-nav a:hover { background: var(--gold); color: var(--blue); border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 5px 10px rgba(212, 175, 55, 0.3); }
-        .contact-info { margin-bottom: 25px; font-size: 1rem; }
-        .contact-info p { margin-bottom: 10px; }
-        .copy-text { font-size: 0.8rem; opacity: 0.7; }
+        /* نافذة تكبير الصور (Modal) */
+        .modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); align-items: center; justify-content: center; cursor: pointer; }
+        .modal-content { max-width: 90%; max-height: 80%; border-radius: 10px; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+
+        .booking-box { background: #fff; padding: 20px; border-radius: 20px; border: 1px solid #e0e0e0; margin: 30px 0; }
+        .form-input { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 10px; }
+        .submit-btn { background: #25d366; color: white; border: none; width: 100%; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; }
+
+        .social-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .btn-s { display: flex; align-items: center; justify-content: center; height: 60px; color: #fff; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 0.9rem; }
+        .yt { background: #ff0000; } .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+        .fb { background: #1877f2; } .wa { background: #25d366; } .tk { background: #000; } .gm { background: #4285f4; font-size: 0.7rem; text-align: center; }
+
+        .floating-wa { position: fixed; bottom: 30px; left: 20px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; text-decoration: none; z-index: 1000; }
+
+        footer { text-align: center; padding: 30px; background: #fff; border-top: 1px solid #eee; margin-top: 40px; }
+        .f-links a { color: #004a99; text-decoration: none; margin: 0 10px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <!-- قسم الفيديو الرئيسي -->
-    <section class="hero-video-section">
-        <video autoplay loop muted playsinline>
-            <source src="images/hero.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div class="hero-overlay">
-            <h1>Kurdistan Syria Travel</h1>
-            <p>اكتشف جمال وروعة المنطقة مع مرشدك المحلي المعتمد</p>
+    <header class="header-main">
+        <div class="flag-css">
+          <svg width="60" height="40" viewBox="0 0 600 400"><rect width="600" height="400" fill="#FFF"/><rect width="600" height="133.3" fill="#ED2024"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/><g transform="translate(300 200)"><circle r="50" fill="#FEB117"/><g id="k_ray"><path d="M 0 -100 L 10 -50 L -10 -50 Z" fill="#FEB117"/></g><script>for(let i=0;i<20;i++)document.write(`<use href="#k_ray" transform="rotate(${i*18})"/>`);</script></g></svg>
         </div>
-    </section>
-
-    <header>
-        <div class="header-left">
-            <!-- علم سوريا -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Flag_of_Syria.svg" class="flag" alt="علم سوريا">
-            <!-- علم كردستان -->
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Flag_of_Kurdistan.svg" class="flag" alt="علم كردستان">
-        </div>
-        
-        <div class="header-title">
-            <h2>Kurdistan Syria Travel</h2>
-            <p>مرشد محلي معتمد Level 9</p>
-            <!-- عنصر الترجمة -->
-            <div id="google_translate_element"></div>
-        </div>
-
-        <div class="header-right">
-            <!-- يمكن إضافة زر بحث هنا إذا أردت -->
+        <div class="header-title"><h1>Kurdistan Syria Travel</h1><p>السياحة في كردستان العراق وسوريا</p></div>
+        <div class="flag-css">
+          <svg width="60" height="40" viewBox="0 0 600 400"><rect width="600" height="133.3" fill="#007a3d"/><rect y="133.3" width="600" height="133.3" fill="#ffffff"/><rect y="266.6" width="600" height="133.3" fill="#000000"/><g id="s_star" transform="scale(0.6)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#ce1126"/></g><use href="#s_star" transform="translate(175 200)"/><use href="#s_star" transform="translate(300 200)"/><use href="#s_star" transform="translate(425 200)"/></svg>
         </div>
     </header>
 
-    <!-- قسم عن العراق وكردستان -->
-    <section class="content-section" id="iraq-kurdistan-section">
-        <div class="card">
-            <div class="description-box">
-                <h2>اكتشف العراق وكردستان</h2>
-                <p>
-                    العراق، أرض الرافدين، مهد الحضارات العريقة، يحتضن تاريخاً غنياً يمتد لآلاف السنين. من بابل وآشور إلى بغداد المزدهرة، تقدم مدنه القديمة والحديثة مزيجاً فريداً من الثقافة والتاريخ.
-                </p>
-                <p>
-                    وفي شماله، تبرز منطقة كردستان العراق كجوهرة طبيعية وثقافية. تتميز كردستان بجمالها الطبيعي الخلاب، من جبال زاغروس الشاهقة إلى وديانها الخضراء وبحيراتها الصافية. تتمتع المنطقة بثقافة كردية غنية، ولغة مميزة، وتقاليد نابضة بالحياة. مدن مثل أربيل، السليمانية، ودهوك، تقدم تجربة سياحية متنوعة تجمع بين المواقع التاريخية، الأسواق التقليدية، والمناطق الطبيعية الساحرة. يشتهر شعب كردستان بكرم ضيافته وشغفه بالحفاظ على هويته الثقافية.
-                </p>
-                <p>
-                    Iraq, the land of the two rivers, the cradle of ancient civilizations, holds a rich history spanning thousands of years. From Babylon and Assyria to the flourishing Baghdad, its ancient and modern cities offer a unique blend of culture and history.
-                </p>
-                <p>
-                    In its north, the Kurdistan Region of Iraq stands out as a natural and cultural gem. Kurdistan is characterized by its stunning natural beauty, from the towering Zagros Mountains to its green valleys and clear lakes. The region boasts a rich Kurdish culture, a distinct language, and vibrant traditions. Cities like Erbil, Sulaymaniyah, and Duhok offer a diverse tourist experience, combining historical sites, traditional markets, and charming natural landscapes. The people of Kurdistan are known for their hospitality and their passion for preserving their cultural identity.
-                </p>
-            </div>
-            <div class="photo-grid">
-                <!-- صور العراق وكردستان -->
-                <div class="photo-item">
-                    <a href="images/gallery10.jpg" data-lightbox="gallery-iraq" data-title="مناظر طبيعية في كردستان">
-                        <img src="images/gallery10.jpg" alt="Iraq Gallery 10">
-                    </a>
-                    <span class="photo-label">KRG Nature</span>
-                </div>
-                <div class="photo-item">
-                    <a href="images/gallery09.jpg" data-lightbox="gallery-iraq" data-title="قلعة أربيل">
-                        <img src="images/gallery09.jpg" alt="Iraq Gallery 09">
-                    </a>
-                    <span class="photo-label">Erbil Citadel</span>
-                </div>
-                <div class="photo-item">
-                    <a href="images/gallery08.jpg" data-lightbox="gallery-iraq" data-title="أسواق السليمانية">
-                        <img src="images/gallery08.jpg" alt="Iraq Gallery 08">
-                    </a>
-                    <span class="photo-label">Sulaymaniyah Market</span>
-                </div>
-                <div class="photo-item">
-                    <a href="images/gallery07.jpg" data-lightbox="gallery-iraq" data-title="جبال كردستان">
-                        <img src="images/gallery07.jpg" alt="Iraq Gallery 07">
-                    </a>
-                    <span class="photo-label">Kurdish Mountains</span>
-                </div>
-                 <div class="photo-item">
-                    <a href="images/gallery06.jpg" data-lightbox="gallery-iraq" data-title="احتفالات كردية">
-                        <img src="images/gallery06.jpg" alt="Iraq Gallery 06">
-                    </a>
-                    <span class="photo-label">Kurdish Celebrations</span>
-                </div>
-                 <div class="photo-item">
-                    <a href="images/gallery05.jpg" data-lightbox="gallery-iraq" data-title="بحيرة في كردستان">
-                        <img src="images/gallery05.jpg" alt="Iraq Gallery 05">
-                    </a>
-                    <span class="photo-label">Kurdish Lake</span>
-                </div>
-                <div class="photo-item">
-                    <a href="images/gallery04.jpg" data-lightbox="gallery-iraq" data-title="حياة ريفية">
-                        <img src="images/gallery04.jpg" alt="Iraq Gallery 04">
-                    </a>
-                    <span class="photo-label">Rural Life</span>
-                </div>
-            </div>
-        </div>
+    <section class="hero-section">
+        <video autoplay muted loop playsinline id="hero-video" poster="images/gallery1.jpg"><source src="images/hero.mp4" type="video/mp4"></video>
+        <div class="hero-overlay"><h2>استكشف آفاق الجمال الطبيعي</h2><p>رحلتك تبدأ من قلب التاريخ في أربيل وصولاً إلى سحر سوريا</p></div>
     </section>
 
-    <!-- قسم عن سوريا ودمشق -->
-    <section class="content-section" id="syria-section">
-        <div class="card">
-            <div class="description-box">
-                <h2>استكشف سحر سوريا</h2>
-                <p>
-                    سوريا، قلب الشام النابض، هي أرض التاريخ العريق والجمال المتنوع. من أزقة دمشق القديمة التي تروي حكايات ألف ليلة وليلة، إلى سواحل اللاذقية الممتدة، مروراً بقلعة الحصن الشامخة وعظمة تدمر، تقدم سوريا رحلة عبر الزمن والثقافة.
-                </p>
-                <p>
-                    دمشق، العاصمة التاريخية، هي واحدة من أقدم المدن المأهولة في العالم. شوارعها المليئة بالأساطير، أسواقها التقليدية الصاخبة، وجامعها الأموي المهيب، كلها تشهد على ماضيها العظيم. استمتع بعبق التاريخ في حاراتها القديمة، تذوق أشهى المأكولات الشامية الأصيلة، واكتشف الفسيفساء المذهلة التي تزين جدرانها.
-                </p>
-                <p>
-                    Syria, the beating heart of the Levant, is a land of ancient history and diverse beauty. From the alleyways of Old Damascus narrating tales of Arabian Nights, to the stretching coasts of Latakia, passing by the majestic Krak des Chevaliers and the grandeur of Palmyra, Syria offers a journey through time and culture.
-                </p>
-                <p>
-                    Damascus, the historic capital, is one of the oldest continuously inhabited cities in the world. Its streets full of legends, its bustling traditional souks, and its magnificent Umayyad Mosque all bear witness to its glorious past. Immerse yourself in the historical ambiance of its old quarters, savor the most delicious authentic Levantine cuisine, and discover the stunning mosaics adorning its walls.
-                </p>
-            </div>
-            <div class="photo-grid">
-                <!-- الصور من 3.jpg إلى 9.jpg مع إطار ذهبي وتكبير -->
-                <div class="photo-item">
-                    <a href="images/3.jpg" data-lightbox="syria-gallery" data-title="دمشق القديمة">
-                        <img src="images/3.jpg" alt="Syria 03">
-                    </a>
-                    <span class="photo-label">Old Damascus</span>
-                </div>
-                <div class="photo-item">
-                    <a href="images/4.jpg" data-lightbox="syria-gallery" data-title="جامع بني أمية الكبير">
-                        <img src="images/4.jpg" alt="Syria 04">
-                    </a>
-                    <span class="photo-label">Umayyad Mosque</span>
-                </div>
-                <div class="photo-item">
-                    <a href="images/5.jpg" data-lightbox="syria-gallery" data-title="أسواق دمشق">
-                        <img src="images/5.jpg" alt="Syria 05">
-                    </a>
-                    <span class="photo-label">Damascus Souks</span>
-                </div>
-                <div class="photo-item">
-                    <a href="images/6.jpg" data-lightbox="syria-gallery" data-title="قلعة الحصن">
-                        <img src="images/6.jpg" alt="Syria 06">
-                    </a>
-                    <span class="photo-label">Krak des Chevaliers</span>
-                </div>
-                <div class="photo-item">
-                    <a href="images/7.jpg" data-lightbox="syria-gallery" data-title="تدمر">
-                        <img src="images/7.jpg" alt="Syria 07">
-                    </a>
-                    <span class="photo-label">Palmyra</span>
-                </div>
-                <div class="photo-item">
-                    <a href="images/8.jpg" data-lightbox="syria-gallery" data-title="ساحل اللاذقية">
-                        <img src="images/8.jpg" alt="Syria 08">
-                    </a>
-                    <span class="photo-label">Latakia Coast</span>
-                </div>
-                <div class="photo-item">
-                    <a href="images/9.jpg" data-lightbox="syria-gallery" data-title="طبيعة سورية">
-                        <img src="images/9.jpg" alt="Syria 09">
-                    </a>
-                    <span class="photo-label">Syrian Nature</span>
-                </div>
+    <div class="container">
+        <div class="info-card">
+            <h3>كردستان: جنة الطبيعة البكر</h3>
+            <p>تُعد منطقة <span class="highlight">كردستان العراق</span> واحدة من أجمل الوجهات السياحية الصاعدة في الشرق الأوسط، حيث تمتزج قمم الجبال المكسوة بالثلوج مع الشلالات المتدفقة والوديان الخضراء الشاسعة.</p>
+            <p>تتمتع المنطقة بمناخ معتدل يجعلها ملاذاً مثالياً للهروب من حرارة الصيف، وتضم معالم طبيعية خلابة مثل شلالات بيخال وجبل كورك، بالإضافة إلى حسن الضيافة الكردية الأصيلة التي تجعل الزائر يشعر وكأنه في منزله.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>أربيل: عاصمة التاريخ والجمال</h3>
+            <p>تنبض مدينة أربيل بروح الماضي العريق، حيث تتربع **قلعة أربيل التاريخية** في قلبها كواحدة من أقدم المواقع المأهولة بالسكان في العالم.</p>
+            <p>هذا الصرح الشامخ المدرج ضمن تراث اليونسكو، يحكي قصة صمود وجمال فريد يمتزج اليوم مع حداثة المدينة وتطورها السياحي والخدمي المذهل، لتصبح وجهة تجمع بين عبق التاريخ ورفاهية العصر.</p>
+            
+            <div class="gallery-grid">
+                <img src="images/gallery1.jpg" onclick="openModal(this.src)"><img src="images/gallery2.jpg" onclick="openModal(this.src)">
+                <img src="images/gallery3.jpg" onclick="openModal(this.src)"><img src="images/gallery4.jpg" onclick="openModal(this.src)">
+                <img src="images/gallery5.jpg" onclick="openModal(this.src)"><img src="images/gallery6.jpg" onclick="openModal(this.src)">
+                <img src="images/gallery7.jpg" onclick="openModal(this.src)"><img src="images/gallery8.jpg" onclick="openModal(this.src)">
+                <img src="images/gallery9.jpg" onclick="openModal(this.src)"><img src="images/gallery10.jpg" onclick="openModal(this.src)">
             </div>
         </div>
-    </section>
 
-    <!-- قسم صور إضافية (إذا لم يكن لديك فيديو، يمكن استخدام هذه الصور) -->
-    <!-- تم إزالة هذا القسم مؤقتاً، إذا أردت إضافته، فك التعليق عنه -->
-    <!--
-    <section class="content-section">
-        <div class="card">
-            <div class="description-box">
-                <h2 style="color:var(--blue);">صور مميزة</h2>
-            </div>
-            <div class="photo-grid">
-                <div class="photo-item">
-                    <a href="images/cover.jpg" data-lightbox="additional-photos" data-title="صورة الغلاف">
-                        <img src="images/cover.jpg" alt="Cover Image">
-                    </a>
-                    <span class="photo-label">Cover</span>
-                </div>
-                <div class="photo-item">
-                    <a href="images/2.jpg" data-lightbox="additional-photos" data-title="صورة أخرى">
-                        <img src="images/2.jpg" alt="Image 02">
-                    </a>
-                    <span class="photo-label">Image 2</span>
-                </div>
-                <div class="photo-item">
-                    <a href="images/pic3.jpg" data-lightbox="additional-photos" data-title="صورة ثالثة">
-                        <img src="images/pic3.jpg" alt="Image Pic3">
-                    </a>
-                    <span class="photo-label">Pic 3</span>
-                </div>
-                <div class="photo-item">
-                    <a href="images/pic2.jpg" data-lightbox="additional-photos" data-title="صورة رابعة">
-                        <img src="images/pic2.jpg" alt="Image Pic2">
-                    </a>
-                    <span class="photo-label">Pic 2</span>
-                </div>
-                <div class="photo-item">
-                    <a href="images/pic1.jpg" data-lightbox="additional-photos" data-title="صورة خامسة">
-                        <img src="images/pic1.jpg" alt="Image Pic1">
-                    </a>
-                    <span class="photo-label">Pic 1</span>
-                </div>
-            </div>
+        <div id="myModal" class="modal" onclick="this.style.display='none'">
+            <img class="modal-content" id="img01">
         </div>
-    </section>
-    -->
 
-    <!-- قسم أيقونات التواصل الاجتماعي -->
-    <section class="ios-folder-wrapper">
-        <h3 class="ios-folder-title">تواصل معنا</h3>
-        <div class="iphone-folder">
-            <!-- فيسبوك -->
-            <a href="https://www.facebook.com/share/18KAS7cXh4/?mibextid=wwXIfr" target="_blank" class="app-link"> 
-                <div class="app-icon bg-fb">f</div><span class="app-name">Facebook</span>
-            </a>
-            <!-- واتساب -->
-            <a href="https://wa.me/9647502061184" target="_blank" class="app-link"> 
-                <div class="app-icon bg-wa">💬</div><span class="app-name">WhatsApp</span>
-            </a>
-            <!-- انستغرام -->
-            <a href="https://instagram.com/tourism_vide?igshid=OGQ5ZDc2ODk2ZA==" target="_blank" class="app-link"> 
-                <div class="app-icon bg-ig">📸</div><span class="app-name">Instagram</span>
-            </a>
-            <!-- يوتيوب -->
-            <a href="https://youtube.com/@syriatourism1980?si=EYfWS1nS0INLX7QU" target="_blank" class="app-link"> 
-                <div class="app-icon bg-yt">▶</div><span class="app-name">YouTube</span>
-            </a>
-            <!-- تيك توك -->
-            <a href="https://www.tiktok.com/@moradalamdar1239?is_from_webapp=1&sender_device=pc" target="_blank" class="app-link"> 
-                <div class="app-icon bg-tk">♪</div><span class="app-name">TikTok</span>
-            </a>
-             <!-- البريد الإلكتروني -->
-            <a href="mailto:moradlmdr@gmail.com" class="app-link"> 
-                <div class="app-icon bg-mail">✉️</div><span class="app-name">Email</span>
-            </a>
-            <!-- خرائط جوجل -->
-            <a href="https://maps.app.goo.gl/B91tL4Ld5291gE8b9" target="_blank" class="app-link"> <!-- تم استخدام رابط خرائط جوجل -->
-                <div class="app-icon bg-map">📍</div><span class="app-name">Maps L9</span>
-            </a>
+        <div class="booking-box">
+            <h4>خطط لرحلتك القادمة</h4>
+            <input type="text" id="uName" class="form-input" placeholder="الاسم الكامل">
+            <input type="number" id="uCount" class="form-input" value="1" min="1">
+            <button class="submit-btn" onclick="sendToWhatsApp()">تأكيد الحجز عبر واتساب</button>
         </div>
-    </section>
 
-    <footer>
-        <div class="footer-nav">
-            <a href="index.html">الرئيسية</a>
-            <a href="about.html">من نحن</a>
-            <a href="destinations.html">الوجهات</a>
-            <a href="syria-travel.html">سياحة سوريا</a>
-            <a href="al-qadmus.html">القدموس</a>
-            <a href="privacy.html">سياسة الخصوصية</a>
-            <a href="terms.html">الشروط والأحكام</a>
-            <a href="contact.html">اتصل بنا</a>
+        <div class="social-buttons">
+            <a href="https://youtube.com/@kurdstansyriatravel" class="btn-s yt">YouTube</a>
+            <a href="https://instagram.com/kurdstansyriatravel" class="btn-s ig">Instagram</a>
+            <a href="https://facebook.com/kurdstansyriatravel" class="btn-s fb">Facebook</a>
+            <a href="https://wa.me/9647502061184" class="btn-s wa">WhatsApp</a>
+            <a href="https://tiktok.com/@kurdstansyriatravel" class="btn-s tk">TikTok</a>
+            <a href="https://www.google.com/maps" class="btn-s gm">⭐ تقييماتي وصوري على<br>Google Maps (Level 9)</a>
+        </div>
+    </div>
+
+    <a href="https://wa.me/9647502061184" class="floating-wa">💬</a>
+
+    <footer style="background: #333; color: white; padding: 40px 20px; text-align: center; margin-top: 50px;">
+        <div style="margin-bottom: 20px;">
+            <h3 style="color: #28a745; margin-bottom: 15px;">Kurdstan Syria Travel</h3>
+            <p>دليلك المهني لاستكشاف سحر الطبيعة والحضارة في كردستان وسوريا</p>
         </div>
         
-        <div class="contact-info">
-            <p>البريد: moradlmdr@gmail.com</p>
-            <p>هاتف: +9647502061184</p>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; border-top: 1px solid #555; padding-top: 20px;">
+            <a href="index.html" style="color: white; text-decoration: none; font-weight: bold;">الرئيسية | Home</a>
+            <a href="about.html" style="color: white; text-decoration: none; font-weight: bold;">من نحن | About Us</a>
+            <a href="privacy.html" style="color: white; text-decoration: none; font-weight: bold;">سياسة الخصوصية | Privacy</a>
+            <a href="terms.html" style="color: white; text-decoration: none; font-weight: bold;">اتفاقية الاستخدام | Terms</a>
+            <a href="contact.html" style="color: white; text-decoration: none; font-weight: bold;">اتصل بنا | Contact</a>
         </div>
 
-        <p class="copy-text">© 2026 Kurdistan Syria Travel - إشراف محمد عثمان كردي</p>
+        <p style="margin-top: 20px; font-size: 0.9rem; color: #aaa;">© 2026 جميع الحقوق محفوظة لـ Kurdstan Syria Travel</p>
     </footer>
 
-    <!-- كود Google Translate -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() { 
-            new google.translate.TranslateElement({
-                pageLanguage: 'ar', 
-                layout: google.translate.TranslateLayout.HORIZONTAL, 
-                autoDisplay: false 
-            }, 'google_translate_element'); 
+    <script>
+        function openModal(src) {
+            document.getElementById("myModal").style.display = "flex";
+            document.getElementById("img01").src = src;
+        }
+        function sendToWhatsApp() {
+            const n = document.getElementById('uName').value;
+            const c = document.getElementById('uCount').value;
+            window.open(`https://wa.me/9647502061184?text=الاسم:${n}%20العدد:${c}`, '_blank');
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <!-- روابط مكتبة Lightbox2 (ملفات JS) -->
-    <script src="js/lightbox-plus-jquery.min.js"></script>
-    <script>
-        lightbox.option({
-            'wrapAround': true,
-            'alwaysShowNavOnTouchDevices': true,
-            'fadeDuration': 500,
-            'disableScrolling': true
-        });
-    </script>
 </body>
-</html>
