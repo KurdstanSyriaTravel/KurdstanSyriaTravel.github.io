@@ -1,510 +1,169 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl"> <!-- lang="ar" و dir="rtl" للعربية -->
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>موقعك - استكشف سوريا وكردستان</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurdstan Syria Travel | المنصة السياحية الرسمية - محمد كردي</title>
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489" crossorigin="anonymous"></script>
 
-  <!-- ========== CSS المضمن (للتوضيح فقط - يفضل ملف خارجي style.css) ========== -->
-  <style>
-    /* أنماط أساسية عامة */
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      direction: rtl; /* لليمين لليسار */
-      text-align: right; /* محاذاة النص لليمين */
-      scroll-behavior: smooth; /* للتمرير السلس */
-    }
-    h1, h2, h3 {
-      color: #333;
-    }
-    p {
-      line-height: 1.8;
-      color: #555;
-      text-align: justify;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-    a {
-      text-decoration: none;
-      color: inherit; /* وراثة اللون */
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+    <style>
+        :root { --primary: #004a99; --accent: #28a745; --bg: #f4f7f6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--bg); color: #333; line-height: 1.7; }
 
-    /* ========== 1. تصميم الأعلام ========== */
-    .flags-container {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-      margin-left: auto; /* لدفعها لليمين */
-    }
-    .flag {
-      width: 80px;
-      height: 50px;
-      border: 1px solid #ccc; /* خط رفيع حول العلم */
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    /* علم سوريا */
-    .syrian-flag {
-      display: grid;
-      grid-template-rows: repeat(3, 1fr);
-      grid-template-columns: 1fr;
-    }
-    .syrian-flag div { /* الشرائط */
-      width: 100%;
-      height: 100%;
-    }
-    .syrian-flag .red { background-color: #ce2b37; }
-    .syrian-flag .white { background-color: #ffffff; position: relative; }
-    .syrian-flag .black { background-color: #000000; }
-    .syrian-flag .white::before, .syrian-flag .white::after {
-      content: '★'; /* نجمة */
-      font-size: 18px;
-      color: #228b22;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .syrian-flag .white::before { left: 30%; }
-    .syrian-flag .white::after { right: 30%; }
+        /* الهيدر والأعلام */
+        .header-main { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 15px 25px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            position: sticky; top: 0; z-index: 1000; 
+        }
+        .flag-svg { width: 55px; height: 35px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .header-title h1 { color: var(--primary); font-size: 1.3rem; text-align: center; }
 
-    /* علم كردستان */
-    .kurdish-flag {
-      display: grid;
-      grid-template-rows: repeat(3, 1fr);
-      grid-template-columns: 1fr;
-      position: relative;
-    }
-    .kurdish-flag div { /* الشرائط */
-      width: 100%;
-      height: 100%;
-    }
-    .kurdish-flag .red { background-color: #e10000; }
-    .kurdish-flag .white { background-color: #ffffff; }
-    .kurdish-flag .blue { background-color: #003087; }
-    .kurdish-flag .sun {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 30px;
-      height: 30px;
-      background-color: #ffcc00;
-      border-radius: 50%;
-    }
+        /* أداة الترجمة */
+        #google_translate_element { text-align: center; background: #eee; padding: 5px; }
 
-    /* ========== 2. شريط البحث واللغات ========== */
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      background-color: #f8f8f8;
-      border-bottom: 1px solid #eee;
-      position: sticky; /* لتثبيت الشريط عند التمرير */
-      top: 0;
-      z-index: 100;
-    }
-    .search-translate-container {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .search-bar input {
-      padding: 8px 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      min-width: 200px;
-    }
-    .search-bar button {
-      padding: 8px 15px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .language-selector select {
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
+        /* قسم الهيرو (الفيديو) */
+        .hero-section { position: relative; width: 100%; height: 450px; background: #000; overflow: hidden; }
+        #hero-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+        .hero-overlay { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8)); 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            color: #fff; text-align: center; padding: 20px; 
+        }
 
-    /* ========== 3. قسم Hero (فيديو وصور) ========== */
-    .hero-section {
-      position: relative;
-      width: 100%;
-      height: 70vh; /* ارتفاع مناسب */
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white; /* لون النص فوق الفيديو */
-    }
-    #hero-video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      z-index: 1;
-    }
-    .hero-content {
-      position: relative; /* لجعله فوق الفيديو */
-      z-index: 2;
-      background: rgba(0, 0, 0, 0.4); /* خلفية شبه شفافة */
-      padding: 20px;
-      border-radius: 8px;
-    }
-    .hero-content h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      color: white;
-    }
-    .hero-content p {
-      font-size: 1.2em;
-      color: white;
-    }
+        /* صندوق البحث المبتكر */
+        .search-area { position: relative; top: -35px; max-width: 550px; margin: 0 auto; z-index: 10; padding: 0 15px; }
+        .search-box { 
+            width: 100%; padding: 15px 50px 15px 25px; border-radius: 50px; 
+            border: 3px solid var(--primary); background: #fff; font-size: 1.1rem; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); outline: none;
+        }
 
-    .cover-images-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-      padding: 20px;
-      background-color: #fff; /* خلفية بيضاء للصور */
-      position: relative; /* لجعله بارزاً */
-      z-index: 3; /* فوق الفيديو */
-      margin-top: -200px; /* لسحبه لأعلى قليلاً فوق الفيديو */
-      justify-items: center; /* توسيط الصور في خلايا الشبكة */
-    }
-    .cover-images-gallery img {
-      width: 150px; /* حجم ثابت للصور الصغيرة */
-      height: 100px;
-      object-fit: cover;
-      border-radius: 5px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .cover-images-gallery img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-    }
+        /* المحتوى المزدوج (عربي/إنجليزي) */
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .content-card { 
+            background: #fff; padding: 40px; border-radius: 25px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 40px; 
+            border-top: 10px solid var(--primary);
+        }
+        .section-title { color: var(--primary); font-size: 2rem; margin-bottom: 25px; border-right: 8px solid var(--accent); padding-right: 15px; }
+        
+        .bilingual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .lang-ar { direction: rtl; text-align: justify; }
+        .lang-en { direction: ltr; text-align: left; border-left: 2px solid #eee; padding-left: 20px; color: #555; }
 
-    /* ========== 4 & 5. أقسام المحتوى (العراق، سوريا، إلخ) ========== */
-    .content-section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-    .content-section h2 {
-      font-size: 2.5em;
-      margin-bottom: 40px;
-    }
-    .content-block {
-      display: flex;
-      flex-direction: column; /* لترتيب النص والصورة عمودياً */
-      align-items: center;
-      gap: 25px;
-      margin-bottom: 50px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .content-block img {
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .content-block img.golden-border {
-      border: 5px solid gold;
-      padding: 5px;
-      background-color: #f0e68c;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
-    }
-    .content-block img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-    }
-    .content-block p {
-      text-align: justify;
-      color: #555;
-    }
-    .content-block h3 {
-      font-size: 1.8em;
-      color: #444;
-    }
+        /* معرض الصور */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 30px 0; }
+        .gallery img { width: 100%; height: 150px; object-fit: cover; border-radius: 15px; cursor: pointer; transition: 0.3s; }
+        .gallery img:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 
-    /* ========== 7. مكان إعلانات AdSense ========== */
-    .ad-slot {
-      width: 100%;
-      text-align: center;
-      margin: 30px 0;
-      padding: 20px 0;
-      background-color: #f0f0f0; /* لون خلفية بسيط للإعلان */
-    }
+        /* السوشيال ميديا */
+        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 30px; }
+        .social-btn { display: flex; align-items: center; justify-content: center; height: 55px; color: #fff; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 0.85rem; transition: 0.3s; }
+        .yt { background: #ff0000; } .tk { background: #000; } .ig { background: #e4405f; } .wa { background: #25d366; } .fb { background: #1877f2; } .gm { background: #4285f4; }
 
-    /* ========== 6. أيقونات وروابط التواصل الاجتماعي (في الـ Footer) ========== */
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .social-links p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-    }
-    .social-icons-group {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap; /* للسماح بالالتفاف على الشاشات الصغيرة */
-    }
-    .social-icon {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%; /* لجعلها دائرية */
-      transition: transform 0.3s ease, background-color 0.3s ease;
-      cursor: pointer;
-    }
-    .social-icon:hover {
-      transform: scale(1.15);
-      background-color: #555; /* تغيير الخلفية عند المرور */
-    }
-    .copyright {
-      margin-top: 30px;
-      font-size: 0.9em;
-      opacity: 0.7;
-    }
-
-    /* ========== تأثير تكبير الصور (يتطلب JavaScript) ========== */
-    .zoomed-image-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none; /* مخفية افتراضياً */
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-      cursor: pointer; /* لإغلاقها */
-    }
-    .zoomed-image-overlay img {
-      max-width: 90%;
-      max-height: 90%;
-      object-fit: contain;
-      border: 5px solid gold; /* لصور سوريا */
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.9);
-    }
-
-  </style>
-  <!-- ========== نهاية CSS المضمن ========== -->
-
+        footer { background: #111; color: #ccc; padding: 50px 20px; text-align: center; margin-top: 60px; }
+        .footer-links a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        .footer-links a:hover { color: var(--accent); }
+    </style>
 </head>
 <body>
 
-  <!-- ========== 2. شريط البحث واللغات ========== -->
-  <header class="top-bar">
-    <div class="flags-container">
-      <!-- علم سوريا -->
-      <div class="flag syrian-flag">
-        <div class="red"></div>
-        <div class="white"></div>
-        <div class="black"></div>
-      </div>
-      <!-- علم كردستان -->
-      <div class="flag kurdish-flag">
-        <div class="red"></div>
-        <div class="white"></div>
-        <div class="blue"></div>
-        <div class="sun"></div>
-      </div>
-    </div>
+    <header class="header-main">
+        <div class="flag-svg">
+            <svg viewBox="0 0 600 400"><rect width="600" height="400" fill="#FFF"/><rect width="600" height="133.3" fill="#ED2024"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/><g transform="translate(300 200)"><circle r="50" fill="#FEB117"/><g id="k_ray"><path d="M 0 -100 L 10 -50 L -10 -50 Z" fill="#FEB117"/></g><script>for(let i=0;i<20;i++)document.write(`<use href="#k_ray" transform="rotate(${i*18})"/>`);</script></g></svg>
+        </div>
+        <div class="header-title"><h1>Kurdistan Syria Travel</h1><p>بإشراف الخبير محمد كردي</p></div>
+        <div class="flag-svg">
+            <svg viewBox="0 0 600 400"><rect width="600" height="133.3" fill="#007a3d"/><rect y = "133.3" width="600" height="133.3" fill="#ffffff"/><rect y="266.6" width="600" height="133.3" fill="#000000"/><g id="star" transform="scale(0.6)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#ce1126"/></g><use href="#star" transform="translate(175 200)"/><use href="#star" transform="translate(300 200)"/><use href="#star" transform="translate(425 200)"/></svg>
 
-    <div class="search-translate-container">
-      <div class="search-bar">
-        <input type="text" placeholder="ابحث...">
-        <button>بحث</button>
-      </div>
-      <div class="language-selector">
-        <select>
-          <option value="ar">العربية</option>
-          <option value="en">English</option>
-          <option value="ku">Kurdish</option>
-          <!-- أضف لغات أخرى -->
-        </select>
-      </div>
-    </div>
-  </header>
 
-  <!-- ========== 3. قسم Hero (فيديو وصور) ========== -->
-  <section class="hero-section">
-    <video autoplay muted loop id="hero-video">
-      <source src="hero.mp4" type="video/mp4">
-      متصفحك لا يدعم الفيديو.
-    </video>
-    <div class="hero-content">
-      <h1>أهلاً بكم في موقعنا</h1>
-      <p>استكشفوا جمال العراق وسوريا وكردستان</p>
-    </div>
-  </section>
 
-  <!-- صور Cover تحت الفيديو -->
-  <div class="cover-images-gallery">
-    <img src="images/cover.jpg" alt="صورة الغلاف 1">
-    <img src="images/2.jpg" alt="صورة 2">
-    <img src="images/pic3.jpg" alt="صورة 3">
-    <img src="images/pic2.jpg" alt="صورة 4">
-    <img src="images/pic1.jpg" alt="صورة 5">
-  </div>
+        </div>
+    </header>
 
-  <!-- ========== 4 & 5. أقسام المحتوى ========== -->
-  <main class="container">
+    <div id="google_translate_element"></div>
 
-    <!-- قسم العراق وكردستان -->
-    <section id="iraq-kurdistan-section" class="content-section">
-      <h2>العراق وكردستان</h2>
-      <div class="content-block">
-        <h3>عن العراق</h3>
-        <img src="images/gallery10.jpg" alt="صورة العراق" data-full-src="images/gallery10.jpg" class="content-image">
-        <p>
-          العراق بلد ذو تاريخ عريق وحضارة تمتد لآلاف السنين، ويعتبر مهداً للحضارات القديمة مثل السومريين والبابليين والآشوريين. يقع في غرب آسيا، ويتشارك الحدود مع ست دول: تركيا من الشمال، إيران من الشرق، الكويت من الجنوب الشرقي، المملكة العربية السعودية من الجنوب، الأردن من الغرب، وسوريا من الشمال الغربي. يتميز العراق بتنوع جغرافي يشمل جبال شاهقة في الشمال، وصحاري واسعة في الغرب والجنوب، وسهول خصبة بين نهري دجلة والفرات، اللذين شكلا شريان الحياة عبر التاريخ. العاصمة بغداد مدينة تاريخية وثقافية بارزة. يعكس النسيج الاجتماعي للعراق تنوعاً عرقياً ودينياً، يشمل العرب، الأكراد، التركمان، الآشوريين، وغيرهم، مع وجود ديانات مختلفة كالإسلام والمسيحية واليزيدية. لقد مر العراق بمراحل تاريخية صعبة، لكنه يظل بلداً غنياً بثقافته وتراثه وطموحات شعبه نحو مستقبل أفضل.
-        </p>
-      </div>
-      <div class="content-block">
-        <h3>عن كردستان</h3>
-        <img src="images/gallery4.jpg" alt="صورة كردستان" data-full-src="images/gallery4.jpg" class="content-image">
-        <p>
-          كردستان هي منطقة جغرافية وثقافية في غرب آسيا، تسكنها غالبية كردية. لا تشكل كردستان دولة مستقلة رسمياً، بل هي موزعة عبر أجزاء من أربع دول: جنوب شرق تركيا (كردستان التركية)، شمال العراق (كردستان العراق)، شمال غرب إيران (كردستان الإيرانية)، وشمال شرق سوريا (روجافا). تتميز كردستان بجمال طبيعي خلاب، من سلاسل جبال زاغروس وطوروس العالية، إلى الوديان الخضراء والبحيرات الصافية. إقليم كردستان في العراق يتمتع بحكم ذاتي منذ عام 1992، وله حكومته وبرلمانه وعلم خاص به، ويُعرف بعاصمته أربيل ومدينة السليمانية. اللغة الكردية هي اللغة الرسمية في الإقليم، ولها لهجات متعددة. يتسم الشعب الكردي بثقافته الغنية وتقاليده العريقة، وفنونهم وموسيقاهم المميزة. على الرغم من التحديات السياسية، تسعى المجتمعات الكردية للحفاظ على هويتها الثقافية والدفاع عن حقوقها.
-        </p>
-      </div>
+    <section class="hero-section">
+        <video autoplay muted loop playsinline id="hero-video" poster="images/cover.jpg">
+            <source src="images/hero.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay">
+            <h2 style="font-size: 2.5rem;">استكشف آفاق الجمال في 2026</h2>
+            <p>دليلك المهني من أربيل إلى سحر القدموس وسوريا</p>
+        </div>
     </section>
 
-    <!-- ========== 7. كود AdSense ========== -->
-    <section class="ad-slot">
-      <!-- ضع كود AdSense هنا -->
-      <ins class="adsbygoogle"
-           style="display:block; text-align:center;"
-           data-ad-client="ca-pub-YOUR_PUBLISHER_ID" <!-- استبدل هذا -->
-           data-ad-slot="YOUR_AD_SLOT_ID" <!-- استبدل هذا -->
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>
-           (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-    </section>
+    <div class="search-area">
+        <input type="text" class="search-box" placeholder="ابحث عن: القدموس، قلعة أربيل، نصائح فندقية...">
+    </div>
 
-    <!-- قسم سوريا ودمشق -->
-    <section id="syria-damascus-section" class="content-section">
-      <h2>سوريا ودمشق</h2>
-      <div class="content-block">
-        <h3>عن سوريا</h3>
-        <img src="images/3.jpg" alt="صورة سوريا" data-full-src="images/3.jpg" class="content-image golden-border">
-        <p>
-          سوريا، جمهورية عربية تقع في غرب آسيا، على الساحل الشرقي للبحر الأبيض المتوسط. تتميز بتاريخها الغني والمتنوع الذي يمتد لآلاف السنين، حيث كانت موطناً للحضارات القديمة ومركزاً للعديد من الإمبراطوريات. عاصمتها دمشق، وهي واحدة من أقدم المدن المأهولة بشكل مستمر في العالم، وتشتهر بتاريخها العريق ومعالمها الأثرية. تتمتع سوريا بتنوع جغرافي يشمل السواحل والسهول والجبال والصحاري. لقد مرت سوريا بفترات من الازدهار والتحديات، وشهدت مؤخراً أحداثاً أثرت بعمق على حاضرها ومستقبلها، لكنها تظل بلداً ذا ثقافة غنية وشعب صامد.
-        </p>
-      </div>
-      <div class="content-block">
-        <h3>دمشق: قلب التاريخ النابض</h3>
-        <img src="images/4.jpg" alt="صورة دمشق" data-full-src="images/4.jpg" class="content-image golden-border">
-        <p>
-          دمشق، قلب سوريا النابض، هي مدينة تتنفس التاريخ. شوارعها الضيقة وأسواقها القديمة، والمساجد والكنائس العتيقة، تحكي قصصاً من عصور مختلفة. الجامع الأموي الكبير، بجماله المعماري وروعة زخارفه، يعد من أبرز المعالم الإسلامية في العالم. القلعة، والمسجد الأقصى، وسوق الحميدية، كلها مواقع تجذب الزوار من كل حدب وصوب. دمشق ليست مجرد مدينة تاريخية، بل هي مركز ثقافي واقتصادي، ورمز لصمود الشعب السوري. جمال دمشق يكمن في مزيجها الفريد بين القديم والحديث، حيث تتعايش روح التاريخ مع حيوية الحياة المعاصرة.
-        </p>
-      </div>
-      <!-- باقي صور دمشق -->
-      <div class="content-block">
-        <img src="images/5.jpg" alt="صورة دمشق 2" data-full-src="images/5.jpg" class="content-image golden-border">
-        <img src="images/6.jpg" alt="صورة دمشق 3" data-full-src="images/6.jpg" class="content-image golden-border">
-        <img src="images/7.jpg" alt="صورة دمشق 4" data-full-src="images/7.jpg" class="content-image golden-border">
-        <img src="images/8.jpg" alt="صورة دمشق 5" data-full-src="images/8.jpg" class="content-image golden-border">
-        <img src="images/9.jpg" alt="صورة دمشق 6" data-full-src="images/9.jpg" class="content-image golden-border">
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ========== 6. الـ Footer وروابط التواصل ========== -->
-  <footer>
     <div class="container">
-      <p>تواصل معنا:</p>
-      <div class="social-icons-group">
-        <a href="mailto:moradlmdr@gmail.com" target="_blank" title="راسلنا عبر البريد الإلكتروني">
-          <img src="icons/email_icon.png" alt="أيقونة البريد" class="social-icon"> <!-- تأكد من مسار الصورة -->
-        </a>
-        <a href="https://wa.me/9647502061184" target="_blank" title="راسلنا عبر واتساب">
-          <img src="icons/whatsapp_icon.png" alt="أيقونة واتساب" class="social-icon"> <!-- تأكد من مسار الصورة -->
-        </a>
-        <!-- روابط لوسائل تواصل أخرى -->
-        <a href="#" target="_blank" title="فيسبوك">
-          <img src="icons/facebook_icon.png" alt="أيقونة فيسبوك" class="social-icon">
-        </a>
-        <a href="#" target="_blank" title="تويتر">
-          <img src="icons/twitter_icon.png" alt="أيقونة تويتر" class="social-icon">
-        </a>
-        <!-- أضف المزيد هنا -->
-      </div>
-      <div class="copyright">
-        &copy; 2023 اسم موقعك. جميع الحقوق محفوظة.
-      </div>
+        
+        <div class="content-card">
+            <h2 class="section-title">كردستان: بوابة الطبيعة والحداثة</h2>
+            <div class="bilingual-grid">
+                <div class="lang-ar">
+                    <p>تُعد منطقة <strong>كردستان العراق</strong> اليوم أيقونة السياحة في الشرق الأوسط. مدينة <strong>أربيل</strong>، عاصمتها العريقة، ليست مجرد مدينة، بل هي لوحة فنية تجمع بين قلعتها التاريخية (UNESCO) وبين أرقى المنتجعات العالمية. بصفتي مديراً لخدمات الغرف (Rooms Division Manager)، أؤكد لكم أن معايير الضيافة هنا تضاهي الفنادق الأوروبية.</p>
+                    <p>يمكنكم الاستمتاع بشلالات "بيخال" المنعشة، أو الصعود بتلفريك جبل "كورك" لتجربة مشهد بانورامي لا يُنسى. نحن نوفر لكم توثيقاً ميدانياً نابعاً من خبرة "مرشد محلي Level 9" لضمان أفضل إقامة وأمتع رحلة.</p>
+                </div>
+                <div class="lang-en">
+                    <p>The <strong>Kurdistan Region of Iraq</strong> has become a tourism icon. <strong>Erbil</strong>, its ancient capital, is a masterpiece blending its historic Citadel with luxury global resorts. As a Rooms Division professional, I guarantee that hospitality standards here rival European excellence.</p>
+                    <p>Enjoy the refreshing Bekhal waterfalls or take the Korek Mountain teleferic for an unforgettable panoramic view. We provide on-ground documentation based on "Local Guide Level 9" expertise to ensure your stay is perfect.</p>
+                </div>
+            </div>
+            <div class="gallery">
+                <img src="images/gallery1.jpg"><img src="images/gallery2.jpg"><img src="images/gallery3.jpg"><img src="images/gallery4.jpg">
+            </div>
+        </div>
+
+        <div class="content-card" style="border-top-color: var(--accent);">
+            <h2 class="section-title">سوريا وسحر القدموس</h2>
+            <div class="bilingual-grid">
+                <div class="lang-ar">
+                    <p>تعتبر <strong>سوريا</strong> مهد الحضارات، وفي قلب جبالها الساحلية تبرز <strong>منطقة القدموس</strong> كجوهرة مخفية. القدموس هي مدينة الضباب والجمال، حيث تعانق الغيوم قلعتها التاريخية الشامخة. تتميز هذه المنطقة بهوائها العليل وغاباتها الكثيفة التي تجعلها مقصداً للسياح الباحثين عن الهدوء والأصالة السورية.</p>
+                    <p>من ساحل طرطوس وصولاً إلى قمم القدموس، نأخذكم في رحلة لتوثيق المعالم السياحية بلمسة احترافية. سياحة سوريا اليوم تستعيد ألقها، ونحن هنا لنكون دليلك الموثوق لاستكشاف هذه الكنوز بأسلوب عصري وحرفي مبهر لعام 2026.</p>
+                </div>
+                <div class="lang-en">
+                    <p><strong>Syria</strong> is the cradle of civilizations, and within its coastal mountains, <strong>Al-Qadmus</strong> shines as a hidden gem. It is the city of fog and beauty, where clouds embrace its majestic historic citadel. This region is famous for its fresh air and dense forests, making it a sanctuary for peace seekers.</p>
+                    <p>From the coast of Tartus to the peaks of Qadmus, we take you on a professional journey. Syrian tourism is regaining its glory, and we are here to be your reliable guide in exploring these treasures with a modern 2026 professional touch.</p>
+                </div>
+            </div>
+            <div class="gallery">
+                <img src="images/gallery5.jpg"><img src="images/gallery6.jpg"><img src="images/gallery7.jpg"><img src="images/gallery8.jpg">
+            </div>
+        </div>
+
+        <div class="social-grid">
+            <a href="https://youtube.com/@kurdstansyriatravel" class="social-btn yt">YouTube Channel</a>
+            <a href="https://tiktok.com/@kurdstansyriatravel" class="social-btn tk">TikTok Page</a>
+            <a href="https://instagram.com/kurdstansyriatravel" class="social-btn ig">Instagram</a>
+            <a href="https://wa.me/9647502061184" class="social-btn wa">WhatsApp Contact</a>
+            <a href="https://www.google.com/maps" class="social-btn gm">Google Maps Level 9</a>
+            <a href="https://facebook.com/kurdstansyriatravel" class="social-btn fb">Facebook Page</a>
+        </div>
     </div>
-  </footer>
 
-  <!-- ========== نافذة تكبير الصور (JavaScript) ========== -->
-  <div class="zoomed-image-overlay" id="imageOverlay">
-    <img id="zoomedImage" src="" alt="صورة مكبرة">
-  </div>
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="privacy.html">سياسة الخصوصية</a>
+            <a href="contact.html">اتصل بنا</a>
+        </div>
+        <p style="margin-top: 30px;">© 2026 جميع الحقوق محفوظة لـ Kurdstan Syria Travel</p>
+        <p style="color: #777; font-size: 0.8rem;">بإشراف: محمد كردي | خبير فندقي ومرشد سياحي</p>
+    </footer>
 
-  <!-- ========== JavaScript (يفضل وضعه في ملف script.js منفصل) ========== -->
-  <script>
-    // ========== 3. تكبير صور الـ Hero ==========
-    const heroImages = document.querySelectorAll('.cover-images-gallery img');
-    const imageOverlay = document.getElementById('imageOverlay');
-    const zoomedImage = document.getElementById('zoomedImage');
-
-    heroImages.forEach(img => {
-      img.addEventListener('click', () => {
-        zoomedImage.src = img.src;
-        imageOverlay.style.display = 'flex';
-      });
-    });
-
-    // ========== 4 & 5. تكبير صور المحتوى ==========
-    const contentImages = document.querySelectorAll('.content-block img');
-    contentImages.forEach(img => {
-      img.addEventListener('click', () => {
-        // استخدم src الصورة نفسها أو data-full-src إذا كان لديك صور بدقة أعلى
-        zoomedImage.src = img.getAttribute('data-full-src') || img.src;
-        imageOverlay.style.display = 'flex';
-        // تطبيق الإطار الذهبي على الصورة المكبرة إذا كانت الصورة الأصلية ذات إطار ذهبي
-        if (img.classList.contains('golden-border')) {
-            zoomedImage.classList.add('golden-border');
-        } else {
-            zoomedImage.classList.remove('golden-border');
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'ar', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
         }
-      });
-    });
-
-    // إغلاق نافذة تكبير الصور عند الضغط عليها
-    imageOverlay.addEventListener('click', () => {
-      imageOverlay.style.display = 'none';
-      zoomedImage.src = ''; // إزالة مصدر الصورة
-    });
-
-    // ========== 2. تثبيت الشريط العلوي (اختياري) ==========
-    // يمكن إضافة JavaScript هنا لجعل الـ header يلتصق بالشاشة عند التمرير إذا لم تعمل خاصية position: sticky بشكل كامل
-  </script>
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
