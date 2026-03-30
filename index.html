@@ -14,7 +14,7 @@
 
         .header-main { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         
-        .flag-css { width: 60px; height: 40px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.2); border: 1px solid #ddd; position: relative; display: flex; align-items: center; justify-content: center; background: none; }
+        .flag-css { width: 60px; height: 40px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.2); border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; }
         
         .header-title { text-align: center; }
         .header-title h1 { color: #004a99; font-size: 1.4rem; }
@@ -35,8 +35,10 @@
         .info-card p { font-size: 1.05rem; text-align: justify; color: #444; margin-bottom: 15px; }
         .highlight { color: #28a745; font-weight: bold; }
 
+        /* تنسيق معرض الصور */
         .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
         .gallery-grid img { width: 100%; height: 150px; object-fit: cover; border-radius: 12px; transition: 0.3s; border: 1px solid #eee; }
+        .gallery-grid img:hover { transform: scale(1.05); }
 
         .booking-box { background: #fff; padding: 20px; border-radius: 20px; border: 1px solid #e0e0e0; margin: 30px 0; }
         .booking-box h4 { color: #28a745; margin-bottom: 15px; text-align: center; }
@@ -51,21 +53,22 @@
         .floating-wa { position: fixed; bottom: 30px; left: 20px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; }
 
         footer { text-align: center; padding: 30px; background: #fff; border-top: 1px solid #eee; margin-top: 40px; }
-        .f-links a { color: #004a99; text-decoration: none; margin: 0 10px; font-weight: bold; }
+        .f-links { margin-top: 15px; }
+        .f-links a { color: #004a99; text-decoration: none; margin: 0 10px; font-weight: bold; font-size: 0.85rem; }
     </style>
 </head>
 <body>
 
     <header class="header-main">
-        <div class="flag-css" title="كردستان">
+        <div class="flag-css">
           <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 600 400">
             <rect width="600" height="400" fill="#FFF" />
-            <rect width="600" height="133.333333" fill="#ED2024" />
-            <rect y="266.666667" width="600" height="133.333333" fill="#278E43" />
+            <rect width="600" height="133.33" fill="#ED2024" />
+            <rect y="266.66" width="600" height="133.33" fill="#278E43" />
             <g transform="translate(300 200)">
                 <circle r="50" fill="#FEB117" />
                 <g id="k_ray"><path d="M 0 -100 L 10 -50 L -10 -50 Z" fill="#FEB117" /></g>
-                <use href="#k_ray" transform="rotate(17.142857)" /><use href="#k_ray" transform="rotate(34.285714)" /><use href="#k_ray" transform="rotate(51.428571)" /><use href="#k_ray" transform="rotate(68.571429)" /><use href="#k_ray" transform="rotate(85.714286)" /><use href="#k_ray" transform="rotate(102.857143)" /><use href="#k_ray" transform="rotate(120.0)" /><use href="#k_ray" transform="rotate(137.142857)" /><use href="#k_ray" transform="rotate(154.285714)" /><use href="#k_ray" transform="rotate(171.428571)" /><use href="#k_ray" transform="rotate(188.571429)" /><use href="#k_ray" transform="rotate(205.714286)" /><use href="#k_ray" transform="rotate(222.857143)" /><use href="#k_ray" transform="rotate(240.0)" /><use href="#k_ray" transform="rotate(257.142857)" /><use href="#k_ray" transform="rotate(274.285714)" /><use href="#k_ray" transform="rotate(291.428571)" /><use href="#k_ray" transform="rotate(308.571429)" /><use href="#k_ray" transform="rotate(325.714286)" /><use href="#k_ray" transform="rotate(342.857143)" />
+                <use href="#k_ray" transform="rotate(17.14)" /><use href="#k_ray" transform="rotate(34.28)" /><use href="#k_ray" transform="rotate(51.42)" /><use href="#k_ray" transform="rotate(68.57)" /><use href="#k_ray" transform="rotate(85.71)" /><use href="#k_ray" transform="rotate(102.85)" /><use href="#k_ray" transform="rotate(120.0)" /><use href="#k_ray" transform="rotate(137.14)" /><use href="#k_ray" transform="rotate(154.28)" /><use href="#k_ray" transform="rotate(171.42)" /><use href="#k_ray" transform="rotate(188.57)" /><use href="#k_ray" transform="rotate(205.71)" /><use href="#k_ray" transform="rotate(222.85)" /><use href="#k_ray" transform="rotate(240.0)" /><use href="#k_ray" transform="rotate(257.14)" /><use href="#k_ray" transform="rotate(274.28)" /><use href="#k_ray" transform="rotate(291.42)" /><use href="#k_ray" transform="rotate(308.57)" /><use href="#k_ray" transform="rotate(325.71)" /><use href="#k_ray" transform="rotate(342.85)" />
             </g>
           </svg>
         </div>
@@ -75,23 +78,22 @@
             <p>السياحة في كردستان العراق وسوريا</p>
         </div>
 
-        <div class="flag-css" title="سوريا">
+        <div class="flag-css">
           <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 600 400">
-            <rect width="600" height="133.333333" fill="#007a3d" />
-            <rect y="133.333333" width="600" height="133.333333" fill="#ffffff" />
-            <rect y="266.666667" width="600" height="133.333333" fill="#000000" />
-            <g id="s_star">
-                <path d="M 0,-40 l 11.756,36.18 h 38.042 l -30.778,22.36 11.756,36.18 l -30.778,-22.36 l -30.778,22.36 l 11.756,-36.18 l -30.778,-22.36 h 38.042 z" fill="#ce1126" />
+            <rect width="600" height="133.33" fill="#007a3d" />
+            <rect y="133.33" width="600" height="133.33" fill="#ffffff" />
+            <rect y="266.66" width="600" height="133.33" fill="#000000" />
+            <g id="s_star" transform="translate(175 200) scale(0.6)">
+                <path d="M 0,-40 l 11.75,36.18 h 38.04 l -30.77,22.36 11.75,36.18 l -30.77,-22.36 l -30.77,22.36 l 11.75,-36.18 l -30.77,-22.36 h 38.04 z" fill="#ce1126" />
             </g>
-            <use href="#s_star" transform="translate(175 200) scale(0.6)" />
-            <use href="#s_star" transform="translate(300 200) scale(0.6)" />
-            <use href="#s_star" transform="translate(425 200) scale(0.6)" />
+            <use href="#s_star" transform="translate(125 0)" />
+            <use href="#s_star" transform="translate(250 0)" />
           </svg>
         </div>
     </header>
 
     <section class="hero-section">
-        <video autoplay muted loop playsinline id="hero-video" poster="images/gallery1.jpg">
+        <video autoplay muted loop playsinline id="hero-video" poster="images/cover.jpg">
             <source src="images/hero.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay">
@@ -103,29 +105,20 @@
     <div class="container">
         <div class="info-card">
             <h3>كردستان: جنة الطبيعة البكر</h3>
-            <p>
-                تُعد منطقة <span class="highlight">كردستان العراق</span> واحدة من أجمل الوجهات السياحية الصاعدة في الشرق الأوسط، حيث تمتزج قمم الجبال المكسوة بالثلوج مع الشلالات المتدفقة والوديان الخضراء الشاسعة.
-            </p>
-            <p>
-                تتمتع المنطقة بمناخ معتدل يجعلها ملاذاً مثالياً للهروب من حرارة الصيف، وتضم معالم طبيعية خلابة مثل شلالات بيخال وجبل كورك، بالإضافة إلى حسن الضيافة الكردية الأصيلة التي تجعل الزائر يشعر وكأنه في منزله.
-            </p>
+            <p>تُعد <span class="highlight">كردستان العراق</span> واحدة من أجمل الوجهات السياحية، حيث تمتزج قمم الجبال المكسوة بالثلوج مع الشلالات المتدفقة والوديان الخضراء.</p>
         </div>
 
         <div class="info-card">
             <h3>أربيل: عاصمة التاريخ والجمال</h3>
-            <p>
-                تنبض مدينة أربيل بروح الماضي العريق، حيث تتربع قلعة أربيل التاريخية في قلبها كواحدة من أقدم المواقع المأهولة بالسكان في العالم. 
-            </p>
-            <p>
-                هذا الصرح الشامخ المدرج ضمن تراث اليونسكو، يحكي قصة صمود وجمال فريد يمتزج اليوم مع حداثة المدينة وتطورها السياحي والخدمي المذهل، لتصبح وجهة تجمع بين عبق التاريخ ورفاهية العصر.
-            </p>
+            <p>تنبض مدينة أربيل بروح الماضي العريق، حيث تتربع قلعة أربيل التاريخية في قلبها كواحدة من أقدم المواقع المأهولة بالسكان في العالم.</p>
             
             <div class="gallery-grid">
-                <img src="images/gallery1.jpg" alt="1"><img src="images/gallery2.jpg" alt="2">
-                <img src="images/gallery3.jpg" alt="3"><img src="images/gallery4.jpg" alt="4">
-                <img src="images/gallery5.jpg" alt="5"><img src="images/gallery6.jpg" alt="6">
-                <img src="images/gallery7.jpg" alt="7"><img src="images/gallery8.jpg" alt="8">
-                <img src="images/gallery9.jpg" alt="9"><img src="images/gallery10.jpg" alt="10">
+                <img src="images/gallery1.jpg" alt="Gallery 1">
+                <img src="images/gallery2.jpg" alt="Gallery 2">
+                <img src="images/gallery3.jpg" alt="Gallery 3">
+                <img src="images/gallery4.jpg" alt="Gallery 4">
+                <img src="images/gallery5.jpg" alt="Gallery 5">
+                <img src="images/gallery6.jpg" alt="Gallery 6">
             </div>
         </div>
 
@@ -133,7 +126,7 @@
             <h4>خطط لرحلتك القادمة</h4>
             <input type="text" id="uName" class="form-input" placeholder="الاسم الكامل">
             <input type="number" id="uCount" class="form-input" value="1" min="1">
-            <button class="submit-btn" onclick="sendToWhatsApp()">تأكيد الحجز عبر واتساب</button>
+            <button class="submit-btn" onclick="sendToWhatsApp()">تأكيد الاستفسار عبر واتساب</button>
         </div>
 
         <div class="social-buttons">
@@ -146,16 +139,15 @@
         </div>
     </div>
 
-    <a href="https://wa.me/9647502061184" class="floating-wa">💬</a>
+    <a href="https://wa.me/9647502061184" class="floating-wa" target="_blank">💬</a>
 
     <footer>
         <p>© 2026 جميع الحقوق محفوظة لشركة Kurdstan Syria Travel</p>
         <div class="f-links">
             <a href="index.html">الرئيسية</a> | 
-            <a href="al-qadmus.html">سياحة القدموس</a> | 
-            <a href="syria-travel.html">رحلات سوريا</a> | 
+            <a href="al-qadmus.html">القدموس</a> | 
             <a href="about.html">من نحن</a> | 
-            <a href="privacy.html">سياسة الخصوصية</a>
+            <a href="privacy.html">الخصوصية</a>
         </div>
     </footer>
 
