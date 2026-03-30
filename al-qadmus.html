@@ -10,38 +10,57 @@
     
     <style>
         :root {
-            --primary-color: #1a237e; /* الأزرق الداكن الاحترافي */
-            --accent-color: #d32f2f; /* الأحمر الجذاب للأكشن */
-            --gold: #ffc107; /* اللون الذهبي لإضفاء لمسة فخامة */
-            --bg-light: #fafafa;
+            --primary-color: #1a237e; 
+            --accent-color: #d32f2f; 
+            --gold: #ffc107; 
+            --bg-light: #f4f7f6;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
             margin: 0; background: var(--bg-light); color: #333; line-height: 1.8;
         }
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://your-image-url.jpg'); /* استبدل برابط صورتك */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/cover.jpg'); 
             background-size: cover; background-position: center;
             color: white; padding: 100px 20px; text-align: center;
         }
-        .container { max-width: 1000px; margin: -50px auto 40px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .container { max-width: 1000px; margin: -60px auto 40px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .lang-section { display: flex; gap: 40px; flex-wrap: wrap; margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
         .lang-box { flex: 1; min-width: 300px; }
-        .en-text { direction: ltr; text-align: left; font-family: 'Verdana', sans-serif; border-left: 4px solid var(--primary-color); padding-left: 15px; }
+        .en-text { direction: ltr; text-align: left; border-left: 4px solid var(--primary-color); padding-left: 15px; }
         .ar-text { direction: rtl; text-align: right; border-right: 4px solid var(--accent-color); padding-right: 15px; }
-        h2 { color: var(--primary-color); margin-top: 0; }
+        
+        /* معرض الصور المحدث بأسماء image1, image2... */
+        .qadmus-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 15px; 
+            margin: 30px 0; 
+        }
+        .qadmus-grid img { 
+            width: 100%; height: 220px; object-fit: cover; 
+            border-radius: 12px; transition: 0.3s; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .qadmus-grid img:hover { transform: scale(1.03); }
+
         .highlight-box { background: #e8eaf6; padding: 25px; border-radius: 10px; margin: 30px 0; border-left: 10px solid var(--primary-color); }
         .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; margin: 20px 0; }
         .price-item { display: flex; justify-content: space-between; padding: 12px; border: 1px solid #eee; border-radius: 5px; background: #fff; }
         .price-item strong { color: var(--accent-color); }
+        
         .location-link { display: block; text-align: center; background: var(--primary-color); color: white; padding: 18px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 30px; transition: 0.3s; font-size: 1.2rem; }
         .location-link:hover { background: var(--accent-color); transform: translateY(-3px); }
+        
         footer { text-align: center; padding: 40px; background: #212121; color: white; margin-top: 50px; }
+        .nav-back { text-align: center; margin-bottom: 20px; }
+        .nav-back a { color: var(--gold); text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <header>
+    <div class="nav-back"><a href="index.html">← العودة للرئيسية | Back Home</a></div>
     <h1>القدموس - Al-Qadmus</h1>
     <p>وجهة السياحة والمغامرة العالمية في سوريا | Global Adventure Destination in Syria</p>
 </header>
@@ -51,65 +70,56 @@
     <div class="lang-section">
         <div class="lang-box ar-text">
             <h2>حول مدينة القدموس العريقة</h2>
-            <p>تُعد <strong>القدموس</strong> واحدة من أجمل المدن السورية وأكثرها تميزاً، حيث تقع في محافظة طرطوس الساحلية، وتتربع فوق قمم الجبال العالية بارتفاع يصل إلى أكثر من 1000 متر فوق مستوى سطح البحر، مما يمنحها هواءً عليلاً وإطلالات مهيبة تأسر القلوب، حتى أن سحب الشتاء غالباً ما تعانق قمم جبالها. القداموس ليست مجرد وجهة سياحية عابرة، بل هي مدينة تاريخية عريقة تعكس عمق الثقافة السورية وجمالها الطبيعي، وهي مقصد سياحي عالمي يستقطب الزوار من داخل سوريا وخارجها، الباحثين عن الهدوء والجمال والتاريخ العريق.</p>
+            <p>تُعد <strong>القدموس</strong> واحدة من أجمل المدن السورية وأكثرها تميزاً، تتربع فوق قمم الجبال العالية بارتفاع يصل إلى أكثر من 1000 متر فوق مستوى سطح البحر.</p>
         </div>
         <div class="lang-box en-text">
             <h2>About Historic Al-Qadmus City</h2>
-            <p><strong>Al-Qadmus</strong> stands as one of Syria's most beautiful and distinct cities, located in the coastal province of Tartous. It is proudly perched on high mountain peaks at altitudes exceeding 1,000 meters above sea level, providing fresh air and majestic, captivating panoramic views where winter clouds often embrace the mountain peaks. Al-Qadmus is not just a fleeting tourist destination; it is a historic city reflecting Syria's cultural depth and natural beauty, serving as a global tourist destination attracting visitors from across Syria and abroad who seek tranquility, splendor, and ancient heritage.</p>
+            <p><strong>Al-Qadmus</strong> is proudly perched on high mountain peaks at altitudes exceeding 1,000 meters above sea level.</p>
         </div>
+    </div>
+
+    <div class="qadmus-grid">
+        <img src="images/Syria/image1.jpg" alt="Al-Qadmus Image 1">
+        <img src="images/Syria/image2.jpg" alt="Al-Qadmus Image 2">
+        <img src="images/Syria/image3.jpg" alt="Al-Qadmus Image 3">
+        <img src="images/Syria/image4.jpg" alt="Al-Qadmus Image 4">
+        <img src="images/Syria/image5.jpg" alt="Al-Qadmus Image 5">
+        <img src="images/Syria/image6.jpg" alt="Al-Qadmus Image 6">
     </div>
 
     <div class="highlight-box">
         <div class="lang-section" style="border:none; margin:0;">
             <div class="lang-box ar-text">
-                <h2>زيب لاين الأطلال (السميحيقة) - تجربة المغامرة الفريدة</h2>
+                <h2>زيب لاين الأطلال (السميحيقة)</h2>
                 <ul>
-                    <li><strong>سكاي بايك:</strong> أطول وأعلى دراجات معلقة في العالم لتجربة لا تُنسى من الإثارة والتشويق.</li>
-                    <li><strong>الجسر المعلق:</strong> أطول جسر معلق يربط بين قمتين جبليتين، مما يوفر تجربة سير مثيرة ومناظر خلابة.</li>
-                    <li><strong>المقلاع البشري:</strong> تجربة أدرينالين فريدة لمحبي المغامرات الجريئة، المقلاع البشري الأقوى في سوريا.</li>
+                    <li><strong>سكاي بايك:</strong> أطول وأعلى دراجات معلقة في العالم.</li>
+                    <li><strong>الجسر المعلق:</strong> يربط بين قمتين جبليتين.</li>
                 </ul>
             </div>
             <div class="lang-box en-text">
-                <h2>Al-Atlal Zip Line (Al-Semaihiqa) - Unique Adventure Experience</h2>
+                <h2>Al-Atlal Zip Line (Al-Semaihiqa)</h2>
                 <ul>
-                    <li><strong>Sky Bike:</strong> The world's longest and highest suspended bicycles for an unforgettable thrill and excitement experience.</li>
-                    <li><strong>Suspended Bridge:</strong> The longest suspended bridge connecting two mountain peaks, offering an exciting walking experience and breathtaking views.</li>
-                    <li><strong>Human Slingshot:</strong> A unique high-adrenaline experience for bold adventurers, the most powerful human slingshot in Syria.</li>
+                    <li><strong>Sky Bike:</strong> The world's longest and highest suspended bicycles.</li>
+                    <li><strong>Suspended Bridge:</strong> Connecting two mountain peaks.</li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="lang-section">
-        <div class="lang-box ar-text">
-            <h2>تجربة الضيافة الفاخرة والسكن المتميز</h2>
-            <p>بصفتي خبيراً في إدارة الغرف والضيافة، أؤكد لكم أن "زيب لاين الأطلال" يقدم مفهوماً جديداً للسياحة البيئية والضيافة المتميزة. تتوفر أكواخ خشبية فاخرة وسويتات "المغارة" الطبيعية التي تجمع بين سحر الطبيعة ورفاهية الفنادق العالمية، مجهزة بأعلى المعايير (تدفئة، كهرباء 24/7، مياه ساخنة)، مما يجعلها وجهة مثالية للعائلات والسياح والباحثين عن التميز.</p>
-        </div>
-        <div class="lang-box en-text">
-            <h2>Luxury Hospitality and Unique Stays Experience</h2>
-            <p>As an expert in room management and hospitality, I assure you that "Al-Atlal Zip Line" introduces a new concept of eco-tourism and distinguished hospitality. Luxury wooden cabins and natural "Cave Suites" are available, blending the charm of nature with international hotel luxury, equipped to the highest standards (Heating, 24/7 Power, Hot Water), making it a perfect destination for families, tourists, and premium travelers.</p>
-        </div>
-    </div>
-
-    <h2 style="display:block; text-align:center; margin-bottom:20px;">قائمة الخدمات والأسعار | Service & Price List (2026)</h2>
+    <h2 style="text-align:center; margin-bottom:20px;">قائمة الخدمات والأسعار | Price List</h2>
     <div class="price-grid">
         <div class="price-item"><span>Wooden Cabin / كوخ خشبي فاخر</span> <strong>500,000 SP</strong></div>
         <div class="price-item"><span>Cave Suite / سويت مغارة طبيعية</span> <strong>700,000 SP</strong></div>
-        <div class="price-item"><span>Zip Line / زيب لاين</span> <strong>40,000 SP</strong></div>
-        <div class="price-item"><span>Sky Bike / سكاي بايك</span> <strong>40,000 SP</strong></div>
-        <div class="price-item"><span>ATV Tour / جولة دبابات</span> <strong>50,000 SP</strong></div>
-        <div class="price-item"><span>Human Slingshot / المقلاع</span> <strong>50,000 SP</strong></div>
+        <div class="price-item"><span>Activities / الأنشطة</span> <strong>40,000 SP</strong></div>
     </div>
 
-    <a href="https://maps.google.com" class="location-link" target="_blank">📍 عرض الموقع بالقدموس | View Location in Al-Qadmus</a>
+    <a href="https://wa.me/9647502061184" class="location-link">💬 احجز مغامرتك الآن عبر واتساب</a>
 
 </div>
 
 <footer>
     <p>© 2026 Kurdistan Syria Travel | جميع الحقوق محفوظة</p>
-    <p>بوابة السياحة والجمال في ريف طرطوس الساحر</p>
 </footer>
 
 </body>
 </html>
-
