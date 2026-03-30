@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurdstan Syria Travel | المنصة الرسمية</title>
+    <title>قناة السياحة في كردستان وسوريا | Kurdistan and Syria Tourism</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489"
      crossorigin="anonymous"></script>
@@ -12,56 +12,60 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.8; }
 
-        /* الهيدر والأعلام */
+        /* الهيدر */
         .header-main { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         .flag-css { width: 55px; height: 35px; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border: 1px solid #eee; }
-        .header-title h1 { color: #004a99; font-size: 1.2rem; }
-        .header-title p { font-size: 0.75rem; color: #28a745; font-weight: bold; }
+        .header-title { text-align: center; flex: 1; }
+        .header-title h1 { color: #004a99; font-size: 1.1rem; margin-bottom: 2px; }
+        .header-title p { font-size: 0.7rem; color: #28a745; font-weight: bold; }
 
         /* شريط البحث واللغة */
-        .nav-actions { display: flex; justify-content: center; align-items: center; gap: 10px; padding: 10px; background: #fdfdfd; border-bottom: 1px solid #eee; }
-        .search-box { display: flex; border: 1px solid #ddd; border-radius: 20px; padding: 5px 15px; background: #fff; width: 60%; }
-        .search-box input { border: none; outline: none; font-size: 0.9rem; width: 100%; }
-        .lang-btn { background: #004a99; color: #fff; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; text-decoration: none; display: flex; align-items: center; gap: 5px; }
+        .nav-actions { display: flex; justify-content: center; align-items: center; gap: 10px; padding: 10px; background: #fff; border-bottom: 1px solid #eee; }
+        .search-box { display: flex; border: 1px solid #ddd; border-radius: 20px; padding: 5px 15px; background: #f9f9f9; width: 65%; }
+        .search-box input { border: none; outline: none; background: none; font-size: 0.9rem; width: 100%; }
+        .lang-btn { background: #004a99; color: #fff; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; text-decoration: none; }
 
-        /* الفيديو والصور الفرعية */
+        /* الفيديو والصور */
         .hero-section { position: relative; width: 100%; height: 300px; background: #000; overflow: hidden; }
         #hero-video { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center; z-index: 2; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center; }
         
         .sub-hero-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 10px; max-width: 600px; margin: auto; }
-        .sub-hero-gallery img { width: 100%; height: 80px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .sub-hero-gallery img { width: 100%; height: 90px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 
         .container { max-width: 600px; margin: auto; padding: 20px; }
 
-        /* البطاقات التعريفية */
+        /* البطاقات */
         .info-card { background: #fff; padding: 25px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 25px; border-top: 5px solid #004a99; }
-        .info-card h3 { color: #004a99; margin-bottom: 15px; font-size: 1.4rem; border-bottom: 2px solid #f9f9f9; padding-bottom: 8px; }
+        .info-card h3 { color: #004a99; margin-bottom: 15px; font-size: 1.4rem; }
         .info-card p { font-size: 1rem; text-align: justify; color: #444; margin-bottom: 15px; }
         .highlight { color: #28a745; font-weight: bold; }
         
-        .english-text { dir: ltr; text-align: left; font-style: italic; color: #666; border-top: 1px dashed #eee; padding-top: 15px; margin-top: 15px; font-size: 0.95rem; }
+        .english-version { dir: ltr; text-align: left; font-style: italic; color: #666; border-top: 1px dashed #eee; padding-top: 15px; margin-top: 15px; font-size: 0.9rem; }
 
-        /* معرض الصور 01-08 */
+        /* قسم القدموس المدمج */
+        .qadmus-promo { background: linear-gradient(135deg, #1a237e, #004a99); color: white; padding: 30px; border-radius: 20px; text-align: center; margin: 30px 0; box-shadow: 0 10px 20px rgba(0,74,153,0.3); }
+        .qadmus-promo h2 { font-size: 1.6rem; margin-bottom: 10px; }
+        .qadmus-promo p { font-size: 0.95rem; margin-bottom: 20px; opacity: 0.9; }
+        .qadmus-btn { background: #ffc107; color: #111; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; }
+        .qadmus-btn:hover { background: #fff; transform: scale(1.05); }
+
         .gallery-main { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
-        .gallery-main img { width: 100%; height: 140px; object-fit: cover; border-radius: 12px; border: 1px solid #eee; }
+        .gallery-main img { width: 100%; height: 140px; object-fit: cover; border-radius: 12px; }
 
-        /* زر القدموس */
-        .qadmus-link-box { text-align: center; margin: 20px 0; }
-        .qadmus-btn { background: #004a99; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block; transition: 0.3s; }
-        .qadmus-btn:hover { background: #28a745; }
+        .booking-box { background: #fff; padding: 20px; border-radius: 20px; border: 1px solid #e0e0e0; margin: 30px 0; }
+        .form-input { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 10px; }
+        .submit-btn { background: #25d366; color: white; border: none; width: 100%; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; }
 
-        /* الأزرار الاجتماعية */
-        .social-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-        .btn-s { display: flex; align-items: center; justify-content: center; height: 50px; color: #fff; text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 0.85rem; }
-        .yt { background: #ff0000; } .ig { background: #e4405f; } .fb { background: #1877f2; } .wa { background: #25d366; } .tk { background: #000; } .gm { background: #d44638; }
+        .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .social-item { display: flex; align-items: center; justify-content: center; height: 50px; color: #fff; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 0.8rem; }
 
         /* فوتر أسود */
         footer { background: #000; color: #fff; padding: 40px 20px; text-align: center; margin-top: 40px; border-top: 4px solid #28a745; }
-        footer a { color: #28a745; text-decoration: none; font-weight: bold; margin: 0 10px; }
-        .footer-bottom { margin-top: 20px; font-size: 0.8rem; color: #888; }
+        footer a { color: #28a745; text-decoration: none; margin: 0 10px; }
+        .footer-brand { font-size: 1.2rem; margin-bottom: 10px; display: block; }
         
-        .floating-wa { position: fixed; bottom: 20px; left: 20px; background: #25d366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 25px; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; }
+        .floating-wa { position: fixed; bottom: 20px; left: 20px; background: #25d366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 25px; text-decoration: none; z-index: 1000; }
     </style>
 </head>
 <body>
@@ -71,16 +75,14 @@
             <svg viewBox="0 0 600 400"><rect width="600" height="400" fill="#FFF"/><rect width="600" height="133.3" fill="#ED2024"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/><g transform="translate(300 200)"><circle r="50" fill="#FEB117"/><path id="r" d="M0-100L10-50h-20z" fill="#FEB117"/><use href="#r" transform="rotate(18)"/><use href="#r" transform="rotate(36)"/><use href="#r" transform="rotate(54)"/><use href="#r" transform="rotate(72)"/><use href="#r" transform="rotate(90)"/><use href="#r" transform="rotate(108)"/><use href="#r" transform="rotate(126)"/><use href="#r" transform="rotate(144)"/><use href="#r" transform="rotate(162)"/><use href="#r" transform="rotate(180)"/><use href="#r" transform="rotate(198)"/><use href="#r" transform="rotate(216)"/><use href="#r" transform="rotate(234)"/><use href="#r" transform="rotate(252)"/><use href="#r" transform="rotate(270)"/><use href="#r" transform="rotate(288)"/><use href="#r" transform="rotate(306)"/><use href="#r" transform="rotate(324)"/><use href="#r" transform="rotate(342)"/></g></svg>
         </div>
         <div class="header-title">
-            <h1>Kurdistan Syria Travel</h1>
-            <p>مكتب القدموس للسياحة والسفر</p>
+            <h1>قناة السياحة في كردستان وسوريا</h1>
+            <p>Kurdistan and Syria Tourism Official Site</p>
         </div>
         <div class="flag-css">
             <svg viewBox="0 0 600 400">
-                <rect width="600" height="133.3" fill="#007a3d"/>
-                <rect y="133.3" width="600" height="133.3" fill="#fff"/>
-                <rect y="266.6" width="600" height="133.3" fill="#000"/>
+                <rect width="600" height="133.3" fill="#007a3d"/><rect y="133.3" width="600" height="133.3" fill="#fff"/><rect y="266.6" width="600" height="133.3" fill="#000"/>
                 <g fill="#ce1126">
-                    <path id="s" d="M0-30l8 22h24l-19 14 7 22-19-14-19 14 7-22-19-14h24z" transform="translate(150 200) scale(0.6)"/>
+                    <path d="M0-30l8 22h24l-19 14 7 22-19-14-19 14 7-22-19-14h24z" transform="translate(150 200) scale(0.6)"/>
                     <path d="M0-30l8 22h24l-19 14 7 22-19-14-19 14 7-22-19-14h24z" transform="translate(300 200) scale(0.6)"/>
                     <path d="M0-30l8 22h24l-19 14 7 22-19-14-19 14 7-22-19-14h24z" transform="translate(450 200) scale(0.6)"/>
                 </g>
@@ -89,10 +91,8 @@
     </header>
 
     <div class="nav-actions">
-        <div class="search-box">
-            <input type="text" placeholder="ابحث عن رحلتك...">
-        </div>
-        <a href="#" class="lang-btn">🌐 English</a>
+        <div class="search-box"><input type="text" placeholder="بحث عن وجهة..."></div>
+        <a href="#" class="lang-btn">🌐 EN / AR</a>
     </div>
 
     <section class="hero-section">
@@ -100,97 +100,82 @@
             <source src="images/hero.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay">
-            <h2>اكتشف سحر الشرق</h2>
-            <p>من جبال كردستان إلى ياسمين الشام</p>
+            <h2>بوابة الجمال والمغامرة</h2>
+            <p>رحلات استثنائية بين الطبيعة والتاريخ</p>
         </div>
     </section>
 
     <div class="sub-hero-gallery">
-        <img src="images/pic1.jpg" alt="طبيعة 1">
-        <img src="images/pic2.jpg" alt="طبيعة 2">
-        <img src="images/pic3.jpg" alt="طبيعة 3">
+        <img src="images/pic1.jpg" alt="1"><img src="images/pic2.jpg" alt="2"><img src="images/pic3.jpg" alt="3">
     </div>
 
     <div class="container">
         
         <div class="info-card">
-            <h3>كردستان: حكاية الأرض والجبل</h3>
-            <p>تعتبر منطقة <span class="highlight">كردستان العراق</span> ملجأً لعشاق الطبيعة البكر، حيث تتلاقى سلاسل الجبال الشاهقة مع الشلالات المنحدرة مثل شلال "بيخال" و"كلي علي بك". إنها أرض الثقافة العريقة وحسن الضيافة الأسطوري.</p>
-            <div class="english-text">
-                <strong>Kurdistan: A Tale of Mountains</strong><br>
-                Kurdistan Iraq is a sanctuary for nature lovers, where towering mountain ranges meet breathtaking waterfalls like Bekhal and Gali Ali Bag. It is a land of ancient culture and legendary hospitality.
+            <h3>كردستان وأربيل: عراقة الجبال</h3>
+            <p>تعتبر <span class="highlight">أربيل</span> من أقدم المدن المأهولة في العالم، وتتميز بقلعتها الشامخة التي تتوسط المدينة. منطقة كردستان العراق هي جنة خضراء تفيض بالشلالات والجبال التي تأسر الألباب.</p>
+            <div class="english-version">
+                <strong>Erbil & Kurdistan: The Peak of Heritage</strong><br>
+                Erbil is one of the world's oldest continuously inhabited cities, featuring its historic citadel. Kurdistan offers breathtaking landscapes and mountains.
             </div>
         </div>
 
         <div class="info-card">
-            <h3>أربيل: منارة التاريخ الحي</h3>
-            <p>تتربع <span class="highlight">قلعة أربيل</span> في قلب المدينة كشاهد حي على أكثر من 6000 عام من التاريخ البشري المتواصل. تجمع أربيل اليوم بين عراقة الماضي وحداثة المستقبل، مما يجعلها وجهة سياحية رائدة في الشرق الأوسط.</p>
-            <div class="english-text">
-                <strong>Erbil: The Lighthouse of History</strong><br>
-                Erbil Citadel stands in the heart of the city as a living witness to over 6,000 years of continuous human history. Today, Erbil blends ancient heritage with modern progress.
+            <h3>سوريا: مهد الحضارة والياسمين</h3>
+            <p>من عبق دمشق القديمة إلى قلعة حلب، ومن نواعير حماة إلى شواطئ اللاذقية وطرطوس الساحرة، تقدم سوريا تنوعاً لا يضاهى لكل زائر وباحث عن الجمال.</p>
+            <div class="english-version">
+                <strong>Syria: Cradle of Civilizations</strong><br>
+                From the jasmine-scented streets of Damascus to the shores of Lattakia, Syria is a masterpiece of history and nature combined.
             </div>
-        </div>
-
-        <div class="qadmus-link-box">
-            <a href="sub-container/al-qadmus.html" class="qadmus-btn">استكشف خدمات شركة القدموس ➔</a>
-        </div>
-
-        <div class="info-card">
-            <h3>سوريا: الحضارة التي لا تغيب</h3>
-            <p>ليست سوريا مجرد وجهة سياحية، بل هي رحلة عبر الزمن. <strong>دمشق</strong>، أقدم عاصمة في التاريخ، تأسر القلوب بأسواقها القديمة والجامع الأموي الكبير. أما <strong>حلب</strong>، فهي مدينة التجارة والفن بقلعتها المهيبة.</p>
-            <p>في الوسط، تدهشنا <strong>حماة</strong> بنواعيرها التاريخية، بينما يطل الساحل السوري في <strong>اللاذقية وطرطوس</strong> بجمال فريد يجمع بين الجبال الخضراء ومياه المتوسط الزرقاء.</p>
-            <div class="english-text">
-                <strong>Syria: The Unfading Civilization</strong><br>
-                Syria is a journey through time. From Damascus, the world's oldest capital, to the majestic Citadel of Aleppo. Enjoy the historic waterwheels of Hama and the stunning Mediterranean coast in Lattakia and Tartus.
-            </div>
-            
             <div class="gallery-main">
                 <img src="images/01.jpg" alt="S1"><img src="images/02.jpg" alt="S2">
                 <img src="images/03.jpg" alt="S3"><img src="images/04.jpg" alt="S4">
-                <img src="images/05.jpg" alt="S5"><img src="images/06.jpg" alt="S6">
-                <img src="images/07.jpg" alt="S7"><img src="images/08.jpg" alt="S8">
             </div>
         </div>
 
-        <div class="booking-box">
-            <h4>احجز رحلتك الآن</h4>
-            <input type="text" id="uName" class="form-input" placeholder="الاسم الكامل">
-            <input type="number" id="uCount" class="form-input" value="1">
-            <button class="submit-btn" onclick="sendToWhatsApp()">تأكيد عبر واتساب</button>
+        <div class="qadmus-promo">
+            <h2>مغامرة زيب لاين القدموس</h2>
+            <p>هل أنت مستعد لأطول "سكاي بايك" وجسر معلق في سوريا؟ استكشف سحر مدينة القدموس وتجربة السكن في الأكواخ الخشبية.</p>
+            <a href="al-qadmus.html" class="qadmus-btn">تفاصيل مغامرة القدموس ➔</a>
         </div>
 
-        <div class="social-buttons">
-            <a href="https://youtube.com/@kurdstansyriatravel" target="_blank" class="btn-s yt">YouTube</a>
-            <a href="https://instagram.com/kurdstansyriatravel" target="_blank" class="btn-s ig">Instagram</a>
-            <a href="https://facebook.com/kurdstansyriatravel" target="_blank" class="btn-s fb">Facebook</a>
-            <a href="https://wa.me/9647502061184" target="_blank" class="btn-s wa">WhatsApp</a>
-            <a href="https://tiktok.com/@kurdstansyriatravel" target="_blank" class="btn-s tk">TikTok</a>
-            <a href="mailto:moradlmdr@gmail.com" class="btn-s gm">Email</a>
+        <div class="gallery-main" style="margin-bottom: 25px;">
+            <img src="images/05.jpg" alt="S5"><img src="images/06.jpg" alt="S6">
+            <img src="images/07.jpg" alt="S7"><img src="images/08.jpg" alt="S8">
+        </div>
+
+        <div class="booking-box">
+            <h4>خطط لرحلتك القادمة</h4>
+            <input type="text" id="uName" class="form-input" placeholder="الاسم الكامل">
+            <button class="submit-btn" onclick="sendToWhatsApp()">تأكيد الحجز عبر واتساب</button>
+        </div>
+
+        <div class="social-grid">
+            <a href="#" class="social-item" style="background:#ff0000">YouTube</a>
+            <a href="#" class="social-item" style="background:#1877f2">Facebook</a>
+            <a href="#" class="social-item" style="background:#25d366">WhatsApp</a>
+            <a href="#" class="social-item" style="background:#000">TikTok</a>
         </div>
     </div>
 
     <a href="https://wa.me/9647502061184" class="floating-wa">💬</a>
 
     <footer>
-        <h3>Kurdstan Syria Travel</h3>
+        <strong class="footer-brand">قناة السياحة في كردستان وسوريا</strong>
         <p>مكتب القدموس للسياحة والسفر الدولي</p>
-        <p>دمشق - أربيل - كافة المحافظات</p>
-        <div class="f-links">
-            <a href="index.html">الرئيسية</a> | <a href="about.html">من نحن</a> | <a href="privacy.html">سياسة الخصوصية</a>
+        <div style="margin: 15px 0;">
+            <a href="index.html">الرئيسية</a> | <a href="about.html">من نحن</a> | <a href="privacy.html">الخصوصية</a>
         </div>
-        <p style="color: #28a745; margin-top: 15px;">Email: moradlmdr@gmail.com | Tel: +9647502061184</p>
-        <div class="footer-bottom">
-            © 2026 جميع الحقوق محفوظة لشركة القدموس | تصميم وتطوير Kurdstan Syria Travel
-        </div>
+        <p style="font-size: 0.8rem; color: #888; margin-top: 20px;">
+            © 2026 جميع الحقوق محفوظة | تصميم Kurdistan Syria Travel
+        </p>
     </footer>
 
     <script>
         function sendToWhatsApp() {
             const name = document.getElementById('uName').value;
-            const count = document.getElementById('uCount').value;
-            if(!name) { alert("يرجى كتابة الاسم"); return; }
-            const msg = encodeURIComponent(`مرحباً مكتب القدموس، أود الاستفسار عن رحلة باسم: ${name}\nالعدد: ${count}`);
-            window.open(`https://wa.me/9647502061184?text=${msg}`, '_blank');
+            if(!name) { alert("يرجى إدخال الاسم"); return; }
+            window.open(`https://wa.me/9647502061184?text=${encodeURIComponent('مرحباً، أود الحجز باسم: ' + name)}`, '_blank');
         }
     </script>
 </body>
