@@ -10,11 +10,11 @@
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.7; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.8; }
 
         .header-main { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         
-        .flag-css { width: 60px; height: 40px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.2); border: 1px solid #ddd; position: relative; display: flex; align-items: center; justify-content: center; background: none; }
+        .flag-css { width: 60px; height: 40px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.2); border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; }
         
         .header-title { text-align: center; }
         .header-title h1 { color: #004a99; font-size: 1.4rem; }
@@ -28,17 +28,22 @@
                         color: #fff; text-align: center; padding: 20px; z-index: 2; }
         .hero-overlay h2 { font-size: 1.8rem; margin-bottom: 10px; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); }
 
+        /* تنسيق الصور الثلاث تحت الفيديو */
+        .sub-hero-pics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 15px; max-width: 600px; margin: auto; }
+        .sub-hero-pics img { width: 100%; height: 100px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+
         .container { max-width: 600px; margin: auto; padding: 20px; }
 
         .info-card { background: #fff; padding: 25px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 5px solid #004a99; }
-        .info-card h3 { color: #004a99; margin-bottom: 15px; font-size: 1.5rem; }
+        .info-card h3 { color: #004a99; margin-bottom: 15px; font-size: 1.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
         .info-card p { font-size: 1.05rem; text-align: justify; color: #444; margin-bottom: 15px; }
         .highlight { color: #28a745; font-weight: bold; }
         
-        .lang-switch { margin-top: 20px; padding-top: 20px; border-top: 1px dashed #ddd; font-style: italic; color: #666; }
+        .lang-switch { margin-top: 20px; padding-top: 20px; border-top: 1px dashed #ddd; color: #555; font-size: 0.95rem; }
 
         .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
-        .gallery-grid img { width: 100%; height: 150px; object-fit: cover; border-radius: 12px; transition: 0.3s; border: 1px solid #eee; }
+        .gallery-grid img { width: 100%; height: 150px; object-fit: cover; border-radius: 12px; transition: 0.4s; border: 1px solid #eee; }
+        .gallery-grid img:hover { transform: scale(1.03); }
 
         .booking-box { background: #fff; padding: 20px; border-radius: 20px; border: 1px solid #e0e0e0; margin: 30px 0; }
         .booking-box h4 { color: #28a745; margin-bottom: 15px; text-align: center; }
@@ -52,8 +57,13 @@
 
         .floating-wa { position: fixed; bottom: 30px; left: 20px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1000; }
 
-        footer { text-align: center; padding: 30px; background: #fff; border-top: 1px solid #eee; margin-top: 40px; }
-        .f-links a { color: #004a99; text-decoration: none; margin: 0 10px; font-weight: bold; }
+        /* التنسيق الجديد للتذييل باللون الأسود */
+        footer { text-align: center; padding: 40px 20px; background: #111; color: #ccc; border-top: 3px solid #28a745; margin-top: 40px; }
+        .footer-brand { color: #fff; font-size: 1.2rem; margin-bottom: 10px; font-weight: bold; }
+        .f-links { margin: 15px 0; }
+        .f-links a { color: #28a745; text-decoration: none; margin: 0 10px; font-weight: bold; transition: 0.3s; }
+        .f-links a:hover { color: #fff; }
+        .qadmus-text { color: #888; font-size: 0.9rem; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -62,12 +72,21 @@
         <div class="flag-css" title="كردستان">
           <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 600 400">
             <rect width="600" height="400" fill="#FFF" />
-            <rect width="600" height="133.333333" fill="#ED2024" />
-            <rect y="266.666667" width="600" height="133.333333" fill="#278E43" />
+            <rect width="600" height="133.33" fill="#ED2024" />
+            <rect y="266.66" width="600" height="133.33" fill="#278E43" />
             <g transform="translate(300 200)">
                 <circle r="50" fill="#FEB117" />
                 <g id="k_ray"><path d="M 0 -100 L 10 -50 L -10 -50 Z" fill="#FEB117" /></g>
-                <use href="#k_ray" transform="rotate(17.142857)" /><use href="#k_ray" transform="rotate(34.285714)" /><use href="#k_ray" transform="rotate(51.428571)" /><use href="#k_ray" transform="rotate(68.571429)" /><use href="#k_ray" transform="rotate(85.714286)" /><use href="#k_ray" transform="rotate(102.857143)" /><use href="#k_ray" transform="rotate(120.0)" /><use href="#k_ray" transform="rotate(137.142857)" /><use href="#k_ray" transform="rotate(154.285714)" /><use href="#k_ray" transform="rotate(171.428571)" /><use href="#k_ray" transform="rotate(188.571429)" /><use href="#k_ray" transform="rotate(205.714286)" /><use href="#k_ray" transform="rotate(222.857143)" /><use href="#k_ray" transform="rotate(240.0)" /><use href="#k_ray" transform="rotate(257.142857)" /><use href="#k_ray" transform="rotate(274.285714)" /><use href="#k_ray" transform="rotate(291.428571)" /><use href="#k_ray" transform="rotate(308.571429)" /><use href="#k_ray" transform="rotate(325.714286)" /><use href="#k_ray" transform="rotate(342.857143)" />
+                <use href="#k_ray" transform="rotate(18)" /><use href="#k_ray" transform="rotate(36)" />
+                <use href="#k_ray" transform="rotate(54)" /><use href="#k_ray" transform="rotate(72)" />
+                <use href="#k_ray" transform="rotate(90)" /><use href="#k_ray" transform="rotate(108)" />
+                <use href="#k_ray" transform="rotate(126)" /><use href="#k_ray" transform="rotate(144)" />
+                <use href="#k_ray" transform="rotate(162)" /><use href="#k_ray" transform="rotate(180)" />
+                <use href="#k_ray" transform="rotate(198)" /><use href="#k_ray" transform="rotate(216)" />
+                <use href="#k_ray" transform="rotate(234)" /><use href="#k_ray" transform="rotate(252)" />
+                <use href="#k_ray" transform="rotate(270)" /><use href="#k_ray" transform="rotate(288)" />
+                <use href="#k_ray" transform="rotate(306)" /><use href="#k_ray" transform="rotate(324)" />
+                <use href="#k_ray" transform="rotate(342)" />
             </g>
           </svg>
         </div>
@@ -79,15 +98,15 @@
 
         <div class="flag-css" title="سوريا">
           <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 600 400">
-            <rect width="600" height="133.333333" fill="#007a3d" />
-            <rect y="133.333333" width="600" height="133.333333" fill="#ffffff" />
-            <rect y="266.666667" width="600" height="133.333333" fill="#000000" />
-            <g id="s_star">
-                <path d="M 0,-40 l 11.756,36.18 h 38.042 l -30.778,22.36 11.756,36.18 l -30.778,-22.36 l -30.778,22.36 l 11.756,-36.18 l -30.778,-22.36 h 38.042 z" fill="#ce1126" />
+            <rect width="600" height="133.3" fill="#007a3d" />
+            <rect y="133.3" width="600" height="133.3" fill="#ffffff" />
+            <rect y="266.6" width="600" height="133.3" fill="#000000" />
+            <g id="s_star_new" fill="#ce1126">
+                <path d="M 0,-35 l 9,27 h 29 l -23,17 l 9,27 l -23,-17 l -23,17 l 9,-27 l -23,-17 h 29 z" />
             </g>
-            <use href="#s_star" transform="translate(175 200) scale(0.6)" />
-            <use href="#s_star" transform="translate(300 200) scale(0.6)" />
-            <use href="#s_star" transform="translate(425 200) scale(0.6)" />
+            <use href="#s_star_new" transform="translate(150 200) scale(0.6)" />
+            <use href="#s_star_new" transform="translate(300 200) scale(0.6)" />
+            <use href="#s_star_new" transform="translate(450 200) scale(0.6)" />
           </svg>
         </div>
     </header>
@@ -102,52 +121,55 @@
         </div>
     </section>
 
+    <div class="sub-hero-pics">
+        <img src="images/pic1.jpg" alt="سحر الطبيعة 1">
+        <img src="images/pic2.jpg" alt="سحر الطبيعة 2">
+        <img src="images/pic3.jpg" alt="سحر الطبيعة 3">
+    </div>
+
     <div class="container">
         <div class="info-card">
-            <h3>كردستان: جنة الطبيعة البكر</h3>
+            <h3>كردستان: عبق الجبال وكرم الضيافة</h3>
             <p>
-                تُعد منطقة <span class="highlight">كردستان العراق</span> واحدة من أجمل الوجهات السياحية الصاعدة في الشرق الأوسط، حيث تمتزج قمم الجبال المكسوة بالثلوج مع الشلالات المتدفقة والوديان الخضراء الشاسعة.
-            </p>
-            <p>
-                تتمتع المنطقة بمناخ معتدل يجعلها ملاذاً مثالياً للهروب من حرارة الصيف، وتضم معالم طبيعية خلابة مثل شلالات بيخال وجبل كورك، بالإضافة إلى حسن الضيافة الكردية الأصيلة التي تجعل الزائر يشعر وكأنه في منزله.
+                تُعتبر <span class="highlight">كردستان العراق</span> أيقونة السياحة الجبلية في المنطقة، حيث تلتقي قمم جبال "زاغروس" الشامخة بالوديان الخضراء الممتدة. تتميز أربيل بقلعتها التاريخية التي شهدت آلاف السنين من الحضارة، بجانب التطور العمراني الحديث الذي يجعلها وجهة عالمية.
             </p>
         </div>
 
         <div class="info-card">
-            <h3>سوريا: مهد الحضارات وجمال الروح</h3>
+            <h3>سوريا: مهبط الأبجدية وملتقى الأرواح</h3>
             <p>
-                تعتبر <span class="highlight">سوريا</span> كنزاً تاريخياً حياً، فهي ملتقى الحضارات القديمة ومركز التجارة العالمي عبر العصور. من شواطئ المتوسط إلى بادية الشام، تقدم سوريا تنوعاً جغرافياً وثقافياً لا يضاهى.
+                حين نتحدث عن <span class="highlight">سوريا</span>، فنحن لا نتحدث عن بلد فحسب، بل عن متحف مفتوح يمتد لآلاف السنين. هنا على هذه الأرض، كتبت أول أبجدية في التاريخ (أوغاريت)، ومن هنا انطلقت قوافل الحرير لتربط الشرق بالغرب.
             </p>
             <p>
-                <strong>دمشق:</strong> أقدم عاصمة مأهولة في التاريخ، حيث يفوح عبق الياسمين في حاراتها القديمة، وتشمخ فيها القلعة والجامع الأموي كرموز للصمود والجمال. دمشق ليست مجرد مدينة، بل هي حكاية لا تنتهي من الفن والعمارة والأسواق العريقة مثل سوق الحميدية.
+                <strong>دمشق الفيحاء:</strong> هي قلب العروبة النابض، وأقدم مدينة مأهولة في العالم بلا انقطاع. تمتاز ببيوتها الدمشقية القديمة التي تحضن بداخلها بحرات الماء وشجر النارنج والياسمين. الجامع الأموي في قلبها ليس مجرد بناء، بل هو تحفة معمارية تروي قصة الفن الإسلامي في أبهى صوره.
             </p>
             <p>
-                <strong>المحافظات السورية:</strong> تتميز <strong>حلب</strong> بقلعتها الشهيرة وأسواقها التي كانت شريان طريق الحرير، بينما تسحركم <strong>حمص</strong> بنواعير حماة القريبة وجمال ريفها. وفي الساحل، تتألق <strong>اللاذقية وطرطوس</strong> بجبالهما الخضراء المطلة على البحر، وصولاً إلى <strong>السويداء</strong> بآثارها الرومانية السوداء الفريدة.
+                <strong>المحافظات السورية - تنوع مذهل:</strong> من شمالها في <strong>حلب</strong> الشهباء بقلعتها الصامدة وأسواقها التي تعد أطول الأسواق المسقوفة في العالم، إلى وسطها حيث نواعير <strong>حماة</strong> التي لم تتوقف عن الدوران عبر العصور. أما الساحل السوري في <strong>اللاذقية وطرطوس</strong>، فهو لوحة فنية حيث تعانق الجبال الخضراء زبد البحر المتوسط، بينما تحتفظ <strong>تدمر</strong> في قلب البادية بأسرار الملكة زنوبيا.
             </p>
 
             <div class="lang-switch" dir="ltr">
-                <p><strong>Syria: The Cradle of Civilizations</strong></p>
-                <p>Syria is a living historical treasure, a crossroads of ancient civilizations. From the Mediterranean coast to the Syrian Desert, it offers unparalleled geographical and cultural diversity.</p>
-                <p><strong>Damascus:</strong> The oldest continuously inhabited capital in history, where the scent of jasmine fills its ancient alleys. <strong>Syrian Provinces:</strong> Aleppo shines with its citadel, Homs with its central beauty, and the coastal cities of Lattakia and Tartus offer stunning green mountains meeting the sea.</p>
+                <p><strong>Syria: The Timeless Gateway of History</strong></p>
+                <p>Syria is not merely a destination; it is a living chronicle of human civilization. From the invention of the first alphabet in Ugarit to the majestic Silk Road trade hubs.</p>
+                <p><strong>Damascus:</strong> The world's oldest continuously inhabited capital, famous for its Jasmine-scented alleys and the magnificent Umayyad Mosque. <strong>The Provinces:</strong> Whether it's the legendary Citadel of Aleppo, the ancient waterwheels of Hama, or the turquoise shores of Lattakia, Syria offers a soul-stirring journey through time.</p>
             </div>
             
             <div class="gallery-grid">
-                <img src="images/01.jpg" alt="سوريا 1">
-                <img src="images/02.jpg" alt="سوريا 2">
-                <img src="images/03.jpg" alt="سوريا 3">
-                <img src="images/04.jpg" alt="سوريا 4">
-                <img src="images/05.jpg" alt="سوريا 5">
-                <img src="images/06.jpg" alt="سوريا 6">
-                <img src="images/07.jpg" alt="سوريا 7">
-                <img src="images/08.jpg" alt="سوريا 8">
+                <img src="images/01.jpg" alt="معالم سوريا 1">
+                <img src="images/02.jpg" alt="معالم سوريا 2">
+                <img src="images/03.jpg" alt="معالم سوريا 3">
+                <img src="images/04.jpg" alt="معالم سوريا 4">
+                <img src="images/05.jpg" alt="معالم سوريا 5">
+                <img src="images/06.jpg" alt="معالم سوريا 6">
+                <img src="images/07.jpg" alt="معالم سوريا 7">
+                <img src="images/08.jpg" alt="معالم سوريا 8">
             </div>
         </div>
 
         <div class="booking-box">
-            <h4>خطط لرحلتك القادمة</h4>
-            <input type="text" id="uName" class="form-input" placeholder="الاسم الكامل">
+            <h4>ابدأ رحلتك الاستثنائية اليوم</h4>
+            <input type="text" id="uName" class="form-input" placeholder="الاسم بالكامل">
             <input type="number" id="uCount" class="form-input" value="1" min="1">
-            <button class="submit-btn" onclick="sendToWhatsApp()">تأكيد الحجز عبر واتساب</button>
+            <button class="submit-btn" onclick="sendToWhatsApp()">تواصل معنا عبر واتساب</button>
         </div>
 
         <div class="social-buttons">
@@ -163,7 +185,8 @@
     <a href="https://wa.me/9647502061184" class="floating-wa">💬</a>
 
     <footer>
-        <p>© 2026 جميع الحقوق محفوظة لشركة Kurdstan Syria Travel</p>
+        <div class="footer-brand">Kurdstan Syria Travel</div>
+        <p>مكتب القدموس للسياحة والسفر - Al-Qadmus Office</p>
         <p>Email: moradlmdr@gmail.com | Tel: +964 750 206 1184</p>
         <div class="f-links">
             <a href="index.html">الرئيسية</a> | 
@@ -171,13 +194,15 @@
             <a href="about.html">من نحن</a> | 
             <a href="privacy-policy.html">سياسة الخصوصية</a>
         </div>
+        <p class="qadmus-text">© 2026 جميع الحقوق محفوظة لشركة القدموس Kurdstan Syria Travel</p>
     </footer>
 
     <script>
         function sendToWhatsApp() {
             const n = document.getElementById('uName').value;
             const c = document.getElementById('uCount').value;
-            const text = encodeURIComponent(`مرحباً Kurdstan Syria Travel، أود الاستفسار عن حجز:\nالاسم: ${n}\nالعدد: ${c}`);
+            if(!n) { alert("يرجى كتابة الاسم"); return; }
+            const text = encodeURIComponent(`مرحباً Kurdstan Syria Travel (مكتب القدموس)، أود الاستفسار عن حجز:\nالاسم: ${n}\nالعدد: ${c}`);
             window.open(`https://wa.me/9647502061184?text=${text}`, '_blank');
         }
     </script>
