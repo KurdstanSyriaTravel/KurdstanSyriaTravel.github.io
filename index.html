@@ -5,136 +5,173 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurdstan Syria Travel | المنصة الرسمية</title>
     
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489" crossorigin="anonymous"></script>
-
     <style>
-        :root { --gold: #d4af37; --dark: #1a1a1a; --green: #28a745; --blue: #004a99; }
+        :root { --gold: #d4af37; --dark: #1a1a1a; --blue: #004a99; --green: #28a745; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.7; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; }
 
-        /* الهيدر المطور: الأعلام بجانب بعضها */
-        .header-main { background: #fff; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; text-align: center; }
-        .header-top { display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: auto; margin-bottom: 10px; }
-        
-        .flag-css { width: 55px; height: 35px; border-radius: 4px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.2); border: 1px solid #ddd; flex-shrink: 0; }
-        .header-title h1 { color: var(--blue); font-size: 1.3rem; margin: 0 10px; flex-grow: 1; }
+        /* تنسيق الهيدر والأعلام بجانب بعضها */
+        .header-main { 
+            background: #fff; 
+            padding: 10px 15px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: auto;
+            gap: 10px;
+        }
+        .flag-css { 
+            width: 50px; 
+            height: 35px; 
+            border-radius: 4px; 
+            overflow: hidden; 
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2); 
+            border: 1px solid #eee;
+            flex-shrink: 0;
+        }
+        .header-title h1 { 
+            color: var(--blue); 
+            font-size: 1.1rem; 
+            text-align: center;
+            white-space: nowrap;
+        }
 
-        .header-tools { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 5px; }
-        .search-box { padding: 6px 12px; border: 1px solid #ddd; border-radius: 20px; outline: none; width: 160px; font-size: 0.9rem; }
-        
+        /* أدوات الترجمة والبحث */
+        .header-tools {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-bottom: 1px solid #eee;
+        }
+        .search-box { padding: 5px 15px; border-radius: 20px; border: 1px solid #ddd; outline: none; width: 140px; }
+
         /* الشريط المتحرك */
-        .ticker { background: var(--green); color: white; padding: 8px 0; font-weight: bold; overflow: hidden; font-size: 0.85rem; border-bottom: 2px solid var(--gold); }
+        .ticker { background: var(--green); color: white; padding: 6px 0; font-weight: bold; font-size: 0.85rem; text-align: center; }
 
-        /* المحتوى */
-        .container { max-width: 800px; margin: auto; padding: 20px; }
-        .info-card { background: #fff; padding: 25px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 5px solid var(--blue); }
-        .info-card h3 { color: var(--blue); margin-bottom: 15px; font-size: 1.4rem; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        /* معرض الصور المنظم */
+        .container { max-width: 800px; margin: auto; padding: 15px; }
+        .info-card { background: #fff; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 25px; border-top: 4px solid var(--blue); }
         
-        /* ضبط أحجام معرض الصور */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; margin: 15px 0; }
-        .gallery-grid img { width: 100%; height: 110px; object-fit: cover; border-radius: 10px; cursor: pointer; transition: 0.3s; border: 1px solid #eee; }
-        .gallery-grid img:hover { transform: scale(1.05); }
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); 
+            gap: 10px; 
+            margin-top: 15px; 
+        }
+        .gallery-grid img { 
+            width: 100%; 
+            height: 100px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            border: 1px solid #f0f0f0;
+        }
+        .gallery-grid img:hover { transform: scale(1.05); border-color: var(--gold); }
 
-        /* أيقونات التواصل */
-        .social-grid-new { display: flex; justify-content: center; gap: 12px; padding: 15px; flex-wrap: wrap; }
-        .icon-circle { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; box-shadow: 0 3px 8px rgba(0,0,0,0.2); text-decoration: none; }
+        /* أيقونات التواصل الدائرية */
+        .social-grid { display: flex; justify-content: center; gap: 15px; padding: 20px; flex-wrap: wrap; }
+        .icon-circle { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; box-shadow: 0 3px 8px rgba(0,0,0,0.15); }
         .icon-circle:hover { transform: translateY(-5px); }
         .icon-circle svg { fill: white; width: 22px; height: 22px; }
         
         .bg-ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
-        .bg-fb { background: #1877F2; } .bg-wa { background: #25D366; }
-        .bg-yt { background: #FF0000; } .bg-tk { background: #000; } .bg-gm { background: #4285F4; }
+        .bg-fb { background: #1877F2; }
+        .bg-yt { background: #FF0000; }
+        .bg-wa { background: #25D366; }
+        .bg-tk { background: #000; }
 
-        /* النافذة والفوتر */
-        .modal { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
-        .modal-img { max-width: 90%; max-height: 80%; border: 3px solid var(--gold); }
-        footer { background: var(--dark); color: #fff; padding: 30px; text-align: center; border-top: 3px solid var(--gold); margin-top: 40px; }
+        /* الفوتر */
+        footer { background: var(--dark); color: #fff; padding: 30px; text-align: center; border-top: 3px solid var(--gold); margin-top: 30px; }
         footer a { color: var(--gold); text-decoration: none; margin: 0 10px; font-weight: bold; }
-        .floating-wa { position: fixed; bottom: 25px; left: 20px; background: #25d366; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; }
+
+        /* النافذة المنبثقة */
+        .modal { display: none; position: fixed; z-index: 2000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
+        .modal-img { max-width: 90%; max-height: 80%; border: 2px solid var(--gold); }
     </style>
 </head>
 <body>
 
     <header class="header-main">
-        <div class="header-top">
+        <div class="header-content">
             <div class="flag-css">
-                <svg width="60" height="40" viewBox="0 0 600 400">
+                <svg viewBox="0 0 600 400">
                     <rect width="600" height="133.3" fill="#ED2024"/><rect y="133.3" width="600" height="133.3" fill="#FFF"/><rect y="266.6" width="600" height="133.3" fill="#278E43"/>
                     <g transform="translate(300 200)"><circle r="45" fill="#FEB117"/><g id="k_ray"><path d="M 0 -95 L 12 -45 L -12 -45 Z" fill="#FEB117"/></g>
                     <script>for(let i=0;i<21;i++)document.write(`<use href="#k_ray" transform="rotate(${i*(360/21)})"/>`);</script></g>
                 </svg>
             </div>
-            
+
             <div class="header-title"><h1>Kurdistan Syria Travel</h1></div>
 
             <div class="flag-css">
-                <svg width="60" height="40" viewBox="0 0 600 400">
+                <svg viewBox="0 0 600 400">
                     <rect width="600" height="133.3" fill="#007a3d"/><rect y="133.3" width="600" height="133.3" fill="#ffffff"/><rect y="266.6" width="600" height="133.3" fill="#000000"/>
                     <g id="s_star" transform="scale(0.6)"><path d="M 0,-40 l 11.7,36.1 h 38 l -30.7,22.3 11.7,36.1 l -30.7,-22.3 l -30.7,22.3 l 11.7,-36.1 l -30.7,-22.3 h 38 z" fill="#ce1126"/></g>
                     <use href="#s_star" transform="translate(175 200)"/><use href="#s_star" transform="translate(300 200)"/><use href="#s_star" transform="translate(425 200)"/>
                 </svg>
             </div>
         </div>
-
-        <div class="header-tools">
-            <input type="text" class="search-box" placeholder="بحث...">
-            <div id="google_translate_element"></div>
-        </div>
     </header>
 
+    <div class="header-tools">
+        <input type="text" class="search-box" placeholder="بحث...">
+        <div id="google_translate_element"></div>
+    </div>
+
     <div class="ticker">
-        <marquee behavior="scroll" direction="right" id="dynamic-ticker">جاري التحديث...</marquee>
+        <marquee behavior="scroll" direction="right" id="live-ticker">جاري تحميل التاريخ والوقت...</marquee>
     </div>
 
     <div class="container">
-        
         <div class="info-card">
-            <h3>السياحة في سوريا 🇸🇾 | Tourism in Syria</h3>
-            <p>سوريا هي مهد الحضارات، تتميز بتنوعها السياحي المذهل بين الساحل والجبال والبادية.</p>
-            <p><strong>دمشق:</strong> أقدم عاصمة مأهولة، تشتهر بدمشق القديمة والجامع الأموي والأسواق التي تفوح برائحة التاريخ والياسمين.</p>
+            <h3>السياحة في سوريا 🇸🇾</h3>
+            <p>استكشف عبق التاريخ وجمال الطبيعة من دمشق إلى اللاذقية.</p>
             <div class="gallery-grid">
                 <script>
-                    for(let i=1; i<=10; i++){
-                        let n = i < 10 ? '0' + i : i;
-                        document.write(`<img src="images/${n}.jpg" onclick="zoomImg(this.src)" alt="Syria ${i}">`);
+                    // هنا التعديل لطلب الصور من 1.jpg إلى 10.jpg مباشرة
+                    for(let i=1; i<=10; i++) {
+                        document.write(`<img src="images/${i}.jpg" onclick="zoomImg(this.src)" alt="Syria ${i}">`);
                     }
                 </script>
             </div>
         </div>
 
         <div class="info-card">
-            <h3>كردستان وأربيل: جنة الشرق</h3>
-            <p>تعتبر منطقة <strong>كردستان العراق</strong> وجهة سياحية عالمية بفضل جبالها الخضراء وشلالاتها المتدفقة ومناخها المعتدل صيفاً.</p>
-            <p><strong>أربيل:</strong> عاصمة السياحة العربية سابقاً، تضم <strong>قلعة أربيل</strong> التاريخية المسجلة في اليونسكو، والتي تعد من أقدم المواقع المأهولة في العالم.</p>
+            <h3>كردستان وأربيل ☀️</h3>
+            <p>جمال الجبال وشلالات بيخال وقلعة أربيل الشامخة.</p>
             <div class="gallery-grid">
                 <script>
-                    for(let i=1; i<=10; i++){
-                        document.write(`<img src="images/gallery${i}.jpg" onclick="zoomImg(this.src)" alt="Kurd ${i}">`);
+                    for(let i=1; i<=4; i++) {
+                        document.write(`<img src="images/gallery${i}.jpg" onclick="zoomImg(this.src)" alt="Kurdistan ${i}">`);
                     }
                 </script>
             </div>
         </div>
 
-        <div class="social-grid-new">
+        <div class="social-grid">
             <a href="https://instagram.com/kurdstansyriatravel" class="icon-circle bg-ig"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
             <a href="https://facebook.com/kurdstansyriatravel" class="icon-circle bg-fb"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
             <a href="https://youtube.com/@kurdstansyriatravel" class="icon-circle bg-yt"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
             <a href="https://tiktok.com/@kurdstansyriatravel" class="icon-circle bg-tk"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31 0 2.591.214 3.794.614l-.066 3.823a6.83 6.83 0 0 0-2.72-.564c-.459 0-.903.046-1.332.133v7.352c0 3.225-2.614 5.839-5.839 5.839s-5.839-2.614-5.839-5.839c0-3.225 2.614-5.839 5.839-5.839.46 0 .902.053 1.325.153V1.65a11.39 11.39 0 0 1 4.838-1.63z"/></svg></a>
-            <a href="http://googleusercontent.com/maps.google.com/4" class="icon-circle bg-gm"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></a>
         </div>
     </div>
 
-    <div id="imgModal" class="modal" onclick="this.style.display='none'"><img class="modal-img" id="fullImg"></div>
-
     <footer>
-        <div>
-            <a href="index.html">الرئيسية</a> | <a href="al-qadmus.html">القدموس</a> | <a href="about.html">من نحن</a> | <a href="privacy.html">الخصوصية</a>
-        </div>
-        <p style="color: var(--gold); margin-top: 10px;">Kurdstan Syria Travel</p>
-        <p>© 2026 جميع الحقوق محفوظة - محمد عثمان كردي</p>
+        <p>Kurdstan Syria Travel</p>
+        <p>© 2026 جميع الحقوق محفوظة - تصميم محمد عثمان كردي</p>
     </footer>
 
-    <a href="https://wa.me/9647502061184" class="floating-wa">💬</a>
+    <div id="imgModal" class="modal" onclick="this.style.display='none'"><img class="modal-img" id="fullImg"></div>
 
     <script type="text/javascript">
         function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element'); }
@@ -143,15 +180,14 @@
 
     <script>
         function zoomImg(src) { document.getElementById('imgModal').style.display = 'flex'; document.getElementById('fullImg').src = src; }
-        
+
         function updateTicker() {
             const now = new Date();
             const days = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
             const dayName = days[now.getDay()];
             const dateStr = now.toLocaleDateString('ar-EG');
             const timeStr = now.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit' });
-            document.getElementById('dynamic-ticker').innerText = 
-                `اليوم: ${dayName} | التاريخ: ${dateStr} | الوقت: ${timeStr} | السياحة في سوريا وكردستان 2026 @ حقوق الملكية والنشر محفوظة`;
+            document.getElementById('live-ticker').innerText = `اليوم: ${dayName} | التاريخ: ${dateStr} | الوقت: ${timeStr} | السياحة في سوريا وكردستان 2026`;
         }
         setInterval(updateTicker, 1000); updateTicker();
     </script>
