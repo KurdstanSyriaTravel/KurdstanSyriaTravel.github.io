@@ -11,37 +11,39 @@
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; }
 
         /* تنسيق الهيدر والأعلام بجانب بعضها */
-        .header-main { 
-            background: #fff; 
-            padding: 10px 15px; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-        }
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1000px;
-            margin: auto;
-            gap: 10px;
-        }
-        .flag-css { 
-            width: 50px; 
-            height: 35px; 
-            border-radius: 4px; 
-            overflow: hidden; 
-            box-shadow: 0 1px 4px rgba(0,0,0,0.2); 
-            border: 1px solid #eee;
-            flex-shrink: 0;
-        }
-        .header-title h1 { 
-            color: var(--blue); 
-            font-size: 1.1rem; 
-            text-align: center;
-            white-space: nowrap;
-        }
+     <style>
+    .kurdish-flag-container {
+        width: 60px;
+        height: 40px;
+        border-radius: 4px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        border: 1px solid #ddd;
+        background: #fff;
+    }
+</style>
+
+<div class="kurdish-flag-container">
+    <svg width="60" height="40" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="133.3" fill="#ED2024"/>
+        <rect y="133.3" width="600" height="133.3" fill="#FFF"/>
+        <rect y="266.6" width="600" height="133.3" fill="#278E43"/>
+        
+        <g transform="translate(300, 200)">
+            <circle r="48" fill="#FEB117"/> <g id="ray">
+                <path d="M 0 -92 L 12 -45 L -12 -45 Z" fill="#FEB117"/>
+            </g>
+            <script>
+                for (let i = 0; i < 21; i++) {
+                    document.write(`<use href="#ray" transform="rotate(${i * (360 / 21)})"/>`);
+                }
+            </script>
+        </g>
+    </svg>
+</div>
 
         /* أدوات الترجمة والبحث */
         .header-tools {
