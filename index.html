@@ -1,4 +1,4 @@
-<!DOCTYPE html> تجربة في ٣/٣القديم
+<!DOCTYPE html
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,21 @@
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.7; }
 
         .header-main { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .flag-css { width: 60px; height: 40px; border-radius: 5px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.2); border: 1px solid #ddd; display: flex; align-items: center; justify-content: center; }
+        . <div class="flag-css">
+  <svg width="60" height="40" viewBox="0 0 600 400">
+    <rect width="600" height="400" fill="#FFF"/>
+    <rect width="600" height="133.3" fill="#ED2024"/>
+    <rect y="266.6" width="600" height="133.3" fill="#278E43"/>
+    <g transform="translate(300 200)">
+      <circle r="50" fill="#FEB117"/>
+      <g id="k_ray">
+        <path d="M 0 -100 L 10 -50 L -10 -50 Z" fill="#FEB117"/>
+      </g>
+      <script>for(let i=0;i<20;i++)document.write(`<use href="#k_ray" transform="rotate(${i*18})"/>`);</script>
+    </g>
+  </svg>
+</div>
+
         .header-title { text-align: center; }
         .header-title h1 { color: #004a99; font-size: 1.4rem; }
         .header-title p { font-size: 0.85rem; color: #28a745; font-weight: bold; }
