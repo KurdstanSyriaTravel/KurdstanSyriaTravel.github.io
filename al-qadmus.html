@@ -139,17 +139,46 @@
             new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
         }
 
-        // البحث الصوتي
+        // كود البحث الصوتي المطور لصفحة القدموس
         const voiceBtn = document.getElementById('voice-btn');
         const searchInput = document.getElementById('search-input');
+
         if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
             const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
             const recognition = new Recognition();
-            recognition.lang = 'ar-SA'; 
-            voiceBtn.onclick = () => { recognition.start(); voiceBtn.innerHTML = "🛑"; };
-            recognition.onresult = (e) => { searchInput.value = e.results[0][0].transcript; voiceBtn.innerHTML = "🎤"; };
-            recognition.onspeechend = () => { recognition.stop(); voiceBtn.innerHTML = "🎤"; };
+            recognition.lang = 'ar-SA';
+            recognition.interimResults = false;
+
+            voiceBtn.onclick = () => {
+                recognition.start();
+                voiceBtn.innerHTML = "🔴"; 
+                searchInput.placeholder = "جاري الاستماع...";
+            };
+
+            recognition.onresult = (e) => {
+                const transcript = e.results[0][0].transcript;
+                searchInput.value = transcript;
+                voiceBtn.innerHTML = "🎤";
+                
+                // تنفيذ البحث فوراً في جوجل لنتائج دقيقة
+                setTimeout(() => {
+                    if (transcript.trim() !== "") {
+                        window.open(`https://www.google.com/search?q=${encodeURIComponent(transcript)}`, '_blank');
+                    }
+                }, 500);
+            };
+
+            recognition.onspeechend = () => {
+                recognition.stop();
+                voiceBtn.innerHTML = "🎤";
+                searchInput.placeholder = "بحث...";
+            };
+
+            recognition.onerror = () => {
+                voiceBtn.innerHTML = "🎤";
+            };
         }
+
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
