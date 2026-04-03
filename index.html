@@ -334,9 +334,21 @@
         }
         setInterval(updateTicker, 1000);
         updateTicker();
-                // كود تشغيل البحث الصوتي
+                // كود تشغيل البحث الصوتي المطور للرئيسية
         const voiceBtn = document.getElementById('voice-btn');
         const searchInput = document.getElementById('search-input');
+
+        // دالة تنفيذ البحث الفعلي
+        function performSearch(query) {
+            if (query.trim() !== "") {
+                window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+            }
+        }
+
+        // البحث عند الضغط على Enter
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') performSearch(searchInput.value);
+        });
 
         if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
             const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -345,17 +357,30 @@
 
             voiceBtn.onclick = () => {
                 recognition.start();
-                voiceBtn.innerHTML = "🛑"; 
+                voiceBtn.innerHTML = "🔴"; 
+                searchInput.placeholder = "جاري الاستماع...";
             };
 
             recognition.onresult = (event) => {
-                searchInput.value = event.results[0][0].transcript;
+                const transcript = event.results[0][0].transcript;
+                searchInput.value = transcript;
                 voiceBtn.innerHTML = "🎤";
+                
+                // إضافة أمر فتح البحث تلقائياً بعد نصف ثانية
+                setTimeout(() => {
+                    performSearch(transcript);
+                }, 500);
             };
 
             recognition.onspeechend = () => {
                 recognition.stop();
                 voiceBtn.innerHTML = "🎤";
+                searchInput.placeholder = "بحث";
+            };
+            
+            recognition.onerror = () => {
+                voiceBtn.innerHTML = "🎤";
+                searchInput.placeholder = "بحث";
             };
         }
 
