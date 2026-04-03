@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>القدموس: مغامرة زيب لاين الأطلال | Kurdstan Syria Travel</title>
-    <meta name="author" content="Mohamad Othman Kurdi - CEO">
+    <title>القدموس برؤية مرشد محلي | Kurdistan Syria Travel</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489" crossorigin="anonymous"></script>
     
@@ -17,42 +16,45 @@
         }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; background: var(--bg-light); color: #333; line-height: 1.8; }
 
-        /* شريط الأدوات */
+        /* شريط الأدوات العلوي الموحد */
         .tools-bar { background: #f8f9fa; padding: 15px; display: flex; flex-direction: column; align-items: center; gap: 10px; border-bottom: 1px solid #eee; }
         .search-container { display: flex; align-items: center; background: white; border-radius: 30px; padding: 5px 15px; border: 1px solid #dfe1e5; box-shadow: 0 1px 6px rgba(0,0,0,0.1); width: 300px; }
-        .search-box { border: none; outline: none; padding: 8px; width: 100%; font-size: 1rem; }
+        .search-box { border: none; outline: none; padding: 8px; width: 100%; font-size: 1rem; background: transparent; }
 
+        /* صورة الهيرو (Header) */
         header {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('images/Syria/Qadmos .01.jpg'); 
-            background-size: cover; background-position: center; color: white; padding: 120px 20px; text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/Syria/Qadmos .01.jpg'); 
+            background-size: cover; background-position: center; color: white; padding: 130px 20px; text-align: center;
         }
-        header h1 { font-size: 3.5rem; color: var(--gold); text-shadow: 2px 2px 10px rgba(0,0,0,0.8); margin: 0; }
-        .ceo-badge { background: var(--gold); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; display: inline-block; margin-top: 10px; }
+        header h1 { font-size: 3rem; color: var(--gold); text-shadow: 2px 2px 8px rgba(0,0,0,0.7); margin: 0; }
+        .guide-badge { background: #34a853; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; display: inline-block; margin-top: 10px; border: 1px solid #fff; }
 
-        .container { max-width: 1100px; margin: -50px auto 40px; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        .container { max-width: 1000px; margin: -50px auto 40px; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
         
-        .article-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-        .content-box { text-align: justify; padding: 20px; border-radius: 15px; }
-        .ar-content { direction: rtl; border-right: 5px solid var(--accent-color); background: #fffcfc; }
-        .en-content { direction: ltr; border-left: 5px solid var(--primary-color); background: #fcfdff; }
+        /* القسم التعبيري */
+        .article-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0; }
+        .content-box { text-align: justify; padding: 20px; border-radius: 15px; font-size: 1.05rem; }
+        .ar-content { direction: rtl; border-right: 5px solid #34a853; background: #f9fff9; }
+        .en-content { direction: ltr; border-left: 5px solid var(--primary-color); background: #f9fbff; }
         
+        /* معرض الصور */
         .qadmus-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
         .qadmus-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.3s; border: 2px solid transparent; }
         .qadmus-grid img:hover { transform: scale(1.05); border-color: var(--gold); }
 
         /* نافذة تكبير الصور */
-        .modal { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
-        .modal-content { max-width: 90%; max-height: 80%; border-radius: 10px; box-shadow: 0 0 20px var(--gold); }
-        .close-modal { position: absolute; top: 30px; right: 30px; color: white; font-size: 40px; cursor: pointer; font-weight: bold; }
+        .modal { display: none; position: fixed; z-index: 10000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+        .modal-content { max-width: 90%; max-height: 80%; border-radius: 10px; }
+        .close-modal { position: absolute; top: 30px; right: 30px; color: white; font-size: 50px; cursor: pointer; line-height: 1; }
 
-        .btn-main { display: block; text-align: center; background: var(--primary-color); color: white; padding: 20px; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 1.2rem; transition: 0.3s; margin: 20px 0; }
-        .btn-main:hover { background: var(--accent-color); }
+        .btn-main { display: block; text-align: center; background: var(--primary-color); color: white; padding: 18px; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 1.2rem; transition: 0.3s; margin: 30px 0; }
+        .btn-main:hover { background: var(--accent-color); transform: translateY(-3px); }
 
-        footer { text-align: center; padding: 50px 20px; background: #121212; color: #888; }
-        .home-link { color: var(--gold); text-decoration: none; border: 2px solid var(--gold); padding: 10px 30px; border-radius: 25px; transition: 0.3s; }
+        footer { text-align: center; padding: 40px 20px; background: #1a1a1a; color: #fff; }
+        .home-link { color: var(--gold); text-decoration: none; border: 1px solid var(--gold); padding: 8px 25px; border-radius: 25px; transition: 0.3s; }
         .home-link:hover { background: var(--gold); color: #000; }
 
-        @media (max-width: 768px) { .article-section { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .article-section { grid-template-columns: 1fr; } header h1 { font-size: 2rem; } }
     </style>
 </head>
 <body>
@@ -66,43 +68,39 @@
     </div>
 
     <header>
-        <h1>القدموس - Al-Qadmus</h1>
-        <p>بإشراف الخبير السياحي محمد عثمان كردي</p>
-        <span class="ceo-badge">CEO & Local Guide</span>
+        <h1>القدموس بعيون أهلها</h1>
+        <p>محمد عثمان كردي - مرشد محلي من الدرجة الأولى</p>
+        <span class="guide-badge">Local Guide ★★★★★</span>
     </header>
 
     <div class="container">
-        <img src="images/Syria/Qadmos .02.jpg" style="width: 100%; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);" alt="القدموس - زيب لاين الأطلال">
+        <img src="images/Syria/Qadmos .02.jpg" style="width: 100%; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);" alt="القدموس - زيب لاين الأطلال">
 
         <div class="article-section">
             <div class="content-box ar-content">
-                <h3>القدموس: لوحة الخالق على الأرض</h3>
-                <p>تعتبر مدينة القدموس في محافظة طرطوس واحدة من أبهى اللوحات الطبيعية في سوريا، حيث تعانق الجبال الساحلية الغيوم في مشهد مهيب. بصفتي <strong>CEO</strong> لمنصة Kurdstan Syria Travel، أرى أن القدموس ليست مجرد وجهة سياحية، بل هي تجربة روحية تجمع بين عبق التاريخ المتمثل في قلعتها العريقة، وبين روح المغامرة الحديثة.</p>
-                <p>ما يميز القدموس هو "زيب لاين الأطلال"، أطول زيب لاين في المنطقة، الذي يمنحك شعور الصقر وهو يحلق فوق الوديان السحيقة. إن مناخها الضبابي المنعش في الصيف يجعلها الملاذ الأول للعائلات والشباب الباحثين عن الهدوء والإثارة في آن واحد. نحن هنا لنؤمن لكم أفضل تجربة وصول وإقامة واستكشاف لهذه الجنة المنسية.</p>
-                <p>تنتشر في القدموس الغابات الكثيفة والينابيع العذبة، وتتميز بصخورها البازلتية التي تعطي للمكان طابعاً فريداً. ندعوكم لاستكشاف المسارات الجبلية وتذوق الطعام القروي الأصيل الذي يفيض بكرم أهل الجبل السوري.</p>
+                <h3>الشفافية في الوصف.. الجمال في الواقع</h3>
+                <p>أهلاً بكم في مدينتي، القدموس. أنا لست مجرد صاحب موقع، بل أنا شخص يعيش هنا، يتنفس ضباب هذه الجبال ويعشق تفاصيلها. بصفتي مرشداً محلياً معتمداً في خرائط جوجل، التزم بتقديم صورة حقيقية وشفافة عن كل زاوية في هذه المنطقة الساحرة.</p>
+                <p>القدموس هي "عروس الضباب"، حيث تجتمع الغابات الكثيفة مع الصخور البازلتية الشامخة. هنا تجدون "زيب لاين الأطلال" الذي يمثل قمة الأدرينالين، وقلعة القدموس التي تحكي قصص الحضارات. هدفي هو مساعدتكم على اكتشاف الأماكن المخفية التي لا يعرفها إلا أبناء المدينة، بعيداً عن الصور التجارية، لنضمن لكم تجربة سياحية أصيلة تلامس الروح.</p>
             </div>
-
             <div class="content-box en-content">
-                <h3>Al-Qadmus: Nature's Masterpiece</h3>
-                <p>Al-Qadmus, located in Tartus Governorate, is one of the most stunning natural landscapes in Syria, where coastal mountains embrace the clouds in a majestic scene. As the <strong>CEO</strong> of Kurdstan Syria Travel, I believe Al-Qadmus is not just a tourist destination, but a spiritual experience that combines ancient history with modern adventure.</p>
-                <p>The highlight of Al-Qadmus is the "Al-Atlal Zip Line," the longest in the region, offering the sensation of a hawk soaring over deep valleys. Its misty, refreshing climate in summer makes it the top choice for families and adventurers seeking both peace and excitement. We are here to ensure you have the best travel and exploration experience in this hidden paradise.</p>
-                <p>The area is famous for its dense forests, fresh springs, and unique basaltic rocks that give the place a distinctive character. We invite you to explore mountain trails and enjoy authentic village food that reflects the legendary hospitality of the Syrian mountain people.</p>
+                <h3>Transparency in Words, Beauty in Reality</h3>
+                <p>Welcome to my hometown, Al-Qadmus. I am not just a website owner; I am someone who lives here, breathes the mist of these mountains, and loves every detail. As a top-tier Google Maps Local Guide, I am committed to providing a true and transparent image of every corner of this charming region.</p>
+                <p>Al-Qadmus is the "Bride of Mist," where dense forests meet majestic basalt rocks. Here you find the "Al-Atlal Zip Line" for ultimate adrenaline, and Al-Qadmus Castle telling stories of civilizations. My goal is to help you discover hidden gems known only to locals, ensuring an authentic travel experience that touches the soul.</p>
             </div>
         </div>
 
-        <h3 style="text-align: center; color: var(--primary-color);">معرض الصور - Photo Gallery</h3>
         <div class="qadmus-grid">
-            <img src="images/Syria/Qadmos .01.jpg" onclick="zoomImg(this)" alt="View 1">
-            <img src="images/Syria/Qadmos .02.jpg" onclick="zoomImg(this)" alt="View 2">
-            <img src="images/Syria/image1.jpg" onclick="zoomImg(this)" alt="View 3">
-            <img src="images/Syria/image2.jpg" onclick="zoomImg(this)" alt="View 4">
-            <img src="images/Syria/image3.jpg" onclick="zoomImg(this)" alt="View 5">
-            <img src="images/Syria/image4.jpg" onclick="zoomImg(this)" alt="View 6">
-            <img src="images/Syria/image5.jpg" onclick="zoomImg(this)" alt="View 7">
-            <img src="images/Syria/image6.jpg" onclick="zoomImg(this)" alt="View 8">
+            <img src="images/Syria/Qadmos .01.jpg" onclick="zoomImg(this)" alt="منظر 1">
+            <img src="images/Syria/Qadmos .02.jpg" onclick="zoomImg(this)" alt="منظر 2">
+            <img src="images/Syria/image1.jpg" onclick="zoomImg(this)" alt="منظر 3">
+            <img src="images/Syria/image2.jpg" onclick="zoomImg(this)" alt="منظر 4">
+            <img src="images/Syria/image3.jpg" onclick="zoomImg(this)" alt="منظر 5">
+            <img src="images/Syria/image4.jpg" onclick="zoomImg(this)" alt="منظر 6">
+            <img src="images/Syria/image5.jpg" onclick="zoomImg(this)" alt="منظر 7">
+            <img src="images/Syria/image6.jpg" onclick="zoomImg(this)" alt="منظر 8">
         </div>
 
-        <a href="https://wa.me/9647502061184" class="btn-main">💬 احجز مغامرتك الآن عبر واتساب</a>
+        <a href="https://wa.me/9647502061184" class="btn-main">💬 تواصل معي مباشرة للاستفسار أو الحجز</a>
     </div>
 
     <div id="imgModal" class="modal">
@@ -111,74 +109,44 @@
     </div>
 
     <footer>
-        <a href="index.html" class="home-link">🏠 العودة إلى الصفحة الرئيسية</a>
-        <p style="margin-top: 30px;">© 2026 Kurdstan Syria Travel | بإدارة محمد عثمان كردي</p>
+        <div style="margin-bottom: 25px;">
+            <a href="index.html" class="home-link">🏠 الرجوع للرئيسية</a>
+        </div>
+        <p>© 2026 Kurdistan Syria Travel | تجربة سياحية حقيقية</p>
     </footer>
 
     <script>
-        // وظائف معرض الصور
+        // نظام تكبير الصور
         function zoomImg(img) {
             const modal = document.getElementById("imgModal");
             const modalImg = document.getElementById("zoomedImg");
             modal.style.display = "flex";
             modalImg.src = img.src;
         }
+        function closeModal() { document.getElementById("imgModal").style.display = "none"; }
+        window.onclick = function(e) { if(e.target.id == "imgModal") closeModal(); }
 
-        function closeModal() {
-            document.getElementById("imgModal").style.display = "none";
-        }
-
-        // إغلاق النافذة عند الضغط خارج الصورة
-        window.onclick = function(event) {
-            const modal = document.getElementById("imgModal");
-            if (event.target == modal) { closeModal(); }
-        }
-
-        // ترجمة جوجل
+        // الترجمة
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
         }
 
-        // كود البحث الصوتي المطور لصفحة القدموس
+        // البحث الصوتي المطور
         const voiceBtn = document.getElementById('voice-btn');
         const searchInput = document.getElementById('search-input');
-
         if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
             const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
             const recognition = new Recognition();
             recognition.lang = 'ar-SA';
-            recognition.interimResults = false;
-
-            voiceBtn.onclick = () => {
-                recognition.start();
-                voiceBtn.innerHTML = "🔴"; 
-                searchInput.placeholder = "جاري الاستماع...";
-            };
-
+            voiceBtn.onclick = () => { recognition.start(); voiceBtn.innerHTML = "🔴"; };
             recognition.onresult = (e) => {
-                const transcript = e.results[0][0].transcript;
-                searchInput.value = transcript;
+                const text = e.results[0][0].transcript;
+                searchInput.value = text;
                 voiceBtn.innerHTML = "🎤";
-                
-                // تنفيذ البحث فوراً في جوجل لنتائج دقيقة
-                setTimeout(() => {
-                    if (transcript.trim() !== "") {
-                        window.open(`https://www.google.com/search?q=${encodeURIComponent(transcript)}`, '_blank');
-                    }
-                }, 500);
+                setTimeout(() => { if(text!="") window.open(`https://www.google.com/search?q=${encodeURIComponent(text)}`, '_blank'); }, 500);
             };
-
-            recognition.onspeechend = () => {
-                recognition.stop();
-                voiceBtn.innerHTML = "🎤";
-                searchInput.placeholder = "بحث...";
-            };
-
-            recognition.onerror = () => {
-                voiceBtn.innerHTML = "🎤";
-            };
+            recognition.onspeechend = () => { recognition.stop(); voiceBtn.innerHTML = "🎤"; };
         }
-
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
