@@ -19,19 +19,32 @@
             font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
             margin: 0; background: var(--bg-light); color: #333; line-height: 1.8;
         }
-        /* شريط الأدوات العلوي */
+        /* شريط الأدوات العلوي الموحد */
         .tools-bar {
-            background: #fff;
-            padding: 15px;
+            background: #f8f9fa;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid #ddd;
+            gap: 15px;
+            border-bottom: 1px solid #eee;
         }
+        .search-container {
+            display: flex; 
+            align-items: center; 
+            background: white; 
+            border-radius: 24px; 
+            padding: 0 15px; 
+            border: 1px solid #dfe1e5; 
+            box-shadow: 0 1px 6px rgba(32,33,36,0.1);
+        }
+        .search-box {
+            border: none; outline: none; padding: 10px; width: 180px; font-size: 1rem;
+        }
+        
         /* واجهة الصفحة */
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/Syria/image1.jpg'); 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/Syria/Qadmos .01.jpg'); 
             background-size: cover; background-position: center;
             color: white; padding: 100px 20px; text-align: center;
         }
@@ -82,6 +95,10 @@
 <body>
 
     <div class="tools-bar">
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-box" placeholder="بحث...">
+            <button id="voice-btn" type="button" style="background:none; border:none; cursor:pointer; font-size: 20px;" title="بحث صوتي">🎤</button>
+        </div>
         <div id="google_translate_element"></div>
     </div>
 
@@ -103,6 +120,7 @@
         </div>
 
         <div class="qadmus-grid">
+            <img src="images/Syria/Qadmos .01.jpg" alt="Al-Qadmus New View">
             <img src="images/Syria/image1.jpg" alt="Al-Qadmus 1">
             <img src="images/Syria/image2.jpg" alt="Al-Qadmus 2">
             <img src="images/Syria/image3.jpg" alt="Al-Qadmus 3">
@@ -111,7 +129,6 @@
             <img src="images/Syria/image6.jpg" alt="Al-Qadmus 6">
             <img src="images/Syria/image7.jpg" alt="Al-Qadmus 7">
             <img src="images/Syria/image8.jpg" alt="Al-Qadmus 8">
-            <img src="images/Syria/image9.jpg" alt="Al-Qadmus 9">
         </div>
 
         <a href="https://wa.me/9647502061184" class="location-link">💬 تواصل معنا للحجز والاستفسار</a>
@@ -126,10 +143,19 @@
 
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'ar', 
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
+            new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
+        }
+
+        // كود البحث الصوتي
+        const voiceBtn = document.getElementById('voice-btn');
+        const searchInput = document.getElementById('search-input');
+        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+            const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const recognition = new Recognition();
+            recognition.lang = 'ar-SA'; 
+            voiceBtn.onclick = () => { recognition.start(); voiceBtn.innerHTML = "🛑"; };
+            recognition.onresult = (e) => { searchInput.value = e.results[0][0].transcript; voiceBtn.innerHTML = "🎤"; };
+            recognition.onspeechend = () => { recognition.stop(); voiceBtn.innerHTML = "🎤"; };
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
