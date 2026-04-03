@@ -21,23 +21,23 @@
         .search-container { display: flex; align-items: center; background: white; border-radius: 30px; padding: 5px 15px; border: 1px solid #dfe1e5; box-shadow: 0 1px 6px rgba(0,0,0,0.1); width: 300px; }
         .search-box { border: none; outline: none; padding: 8px; width: 100%; font-size: 1rem; background: transparent; }
 
-        /* صورة الهيرو (Header) */
+        /* صورة الهيرو (Header) - تم تعديلها لتكون نظيفة */
         header {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('images/Syria/Qadmos .02.jpg'); 
-            background-size: cover; background-position: center; color: white; padding: 130px 20px; text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3)), url('images/Syria/Qadmos .01.jpg'); 
+            background-size: cover; background-position: center; color: white; padding: 150px 20px; text-align: center;
         }
-        header h1 { font-size: 3rem; color: var(--gold); text-shadow: 2px 2px 8px rgba(0,0,0,0.7); margin: 0; }
-        .guide-badge { background: #34a853; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; display: inline-block; margin-top: 10px; border: 1px solid #fff; }
 
         .container { max-width: 1000px; margin: -50px auto 40px; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
         
-        /* القسم التعبيري */
-        .article-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0; }
-        .content-box { text-align: justify; padding: 20px; border-radius: 15px; font-size: 1.05rem; }
-        .ar-content { direction: rtl; border-right: 5px solid #34a853; background: #f9fff9; }
-        .en-content { direction: ltr; border-left: 5px solid var(--primary-color); background: #f9fbff; }
+        /* القسم التعبيري الصادق */
+        .article-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 30px 0; text-align: justify; }
+        .ar-content { direction: rtl; border-right: 5px solid #34a853; padding-right: 20px; background: #f9fff9; border-radius: 10px; }
+        .en-content { direction: ltr; border-left: 5px solid var(--primary-color); padding-left: 20px; background: #f9fbff; border-radius: 10px; }
         
-        /* معرض الصور */
+        /* وسام المرشد المحلي */
+        .guide-badge { background: #34a853; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; display: inline-block; margin-top: 10px; border: 1px solid #fff; }
+
+        /* معرض الصور مع التكبير */
         .qadmus-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
         .qadmus-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.3s; border: 2px solid transparent; }
         .qadmus-grid img:hover { transform: scale(1.05); border-color: var(--gold); }
@@ -54,7 +54,7 @@
         .home-link { color: var(--gold); text-decoration: none; border: 1px solid var(--gold); padding: 8px 25px; border-radius: 25px; transition: 0.3s; }
         .home-link:hover { background: var(--gold); color: #000; }
 
-        @media (max-width: 768px) { .article-section { grid-template-columns: 1fr; } header h1 { font-size: 2rem; } }
+        @media (max-width: 768px) { .article-section { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -67,22 +67,23 @@
         <div id="google_translate_element"></div>
     </div>
 
-    <header>
-        <h1>القدموس بعيون أهلها</h1>
-        <p>محمد عثمان كردي - مرشد محلي من الدرجة الأولى</p>
-        <span class="guide-badge">Local Guide ★★★★★</span>
-    </header>
+    <header></header>
 
     <div class="container">
-        <img src="images/Syria/Qadmos .02.jpg" style="width: 100%; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);" alt="القدموس - زيب لاين الأطلال">
+        <img src="images/Syria/Qadmos .02.jpg" style="width: 98%; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.15);" alt="القدموس - زيب لاين الأطلال">
+        
+        <div style="text-align: center; margin-top: 20px;">
+            <p style="font-size: 1.1rem; color: #555;">محمد كردي - مرشد محلي من الدرجة الأولى</p>
+            <span class="guide-badge">Local Guide ★★★★★</span>
+        </div>
 
         <div class="article-section">
-            <div class="content-box ar-content">
+            <div class="ar-content content-box">
                 <h3>الشفافية في الوصف.. الجمال في الواقع</h3>
                 <p>أهلاً بكم في مدينتي، القدموس. أنا لست مجرد صاحب موقع، بل أنا شخص يعيش هنا، يتنفس ضباب هذه الجبال ويعشق تفاصيلها. بصفتي مرشداً محلياً معتمداً في خرائط جوجل، التزم بتقديم صورة حقيقية وشفافة عن كل زاوية في هذه المنطقة الساحرة.</p>
                 <p>القدموس هي "عروس الضباب"، حيث تجتمع الغابات الكثيفة مع الصخور البازلتية الشامخة. هنا تجدون "زيب لاين الأطلال" الذي يمثل قمة الأدرينالين، وقلعة القدموس التي تحكي قصص الحضارات. هدفي هو مساعدتكم على اكتشاف الأماكن المخفية التي لا يعرفها إلا أبناء المدينة، بعيداً عن الصور التجارية، لنضمن لكم تجربة سياحية أصيلة تلامس الروح.</p>
             </div>
-            <div class="content-box en-content">
+            <div class="en-content content-box">
                 <h3>Transparency in Words, Beauty in Reality</h3>
                 <p>Welcome to my hometown, Al-Qadmus. I am not just a website owner; I am someone who lives here, breathes the mist of these mountains, and loves every detail. As a top-tier Google Maps Local Guide, I am committed to providing a true and transparent image of every corner of this charming region.</p>
                 <p>Al-Qadmus is the "Bride of Mist," where dense forests meet majestic basalt rocks. Here you find the "Al-Atlal Zip Line" for ultimate adrenaline, and Al-Qadmus Castle telling stories of civilizations. My goal is to help you discover hidden gems known only to locals, ensuring an authentic travel experience that touches the soul.</p>
@@ -131,21 +132,46 @@
             new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
         }
 
-        // البحث الصوتي المطور
+        // كود البحث المطور (صوتي + كتابي) لصفحة القدموس
         const voiceBtn = document.getElementById('voice-btn');
         const searchInput = document.getElementById('search-input');
+
+        function performSearch(query) {
+            if (query.trim() !== "") {
+                window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+            }
+        }
+
+        // البحث عند الضغط على Enter
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') performSearch(searchInput.value);
+        });
+
         if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
             const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
             const recognition = new Recognition();
             recognition.lang = 'ar-SA';
-            voiceBtn.onclick = () => { recognition.start(); voiceBtn.innerHTML = "🔴"; };
+            voiceBtn.onclick = () => {
+                recognition.start();
+                voiceBtn.innerHTML = "🔴"; 
+                searchInput.placeholder = "جاري الاستماع...";
+            };
             recognition.onresult = (e) => {
                 const text = e.results[0][0].transcript;
                 searchInput.value = text;
                 voiceBtn.innerHTML = "🎤";
-                setTimeout(() => { if(text!="") window.open(`https://www.google.com/search?q=${encodeURIComponent(text)}`, '_blank'); }, 500);
+                // تنفيذ البحث تلقائياً بعد نصف ثانية
+                setTimeout(() => { if(text!="") performSearch(text); }, 500);
             };
-            recognition.onspeechend = () => { recognition.stop(); voiceBtn.innerHTML = "🎤"; };
+            recognition.onspeechend = () => {
+                recognition.stop();
+                voiceBtn.innerHTML = "🎤";
+                searchInput.placeholder = "بحث";
+            };
+            recognition.onerror = () => {
+                voiceBtn.innerHTML = "🎤";
+                searchInput.placeholder = "بحث";
+            };
         }
     </script>
     <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
