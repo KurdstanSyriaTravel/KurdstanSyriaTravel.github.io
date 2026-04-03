@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>القدموس: مغامرة زيب لاين الأطلال |</title>
+    <title>القدموس: مغامرة زيب لاين الأطلال | Kurdstan Syria Travel</title>
+    <meta name="author" content="Mohamad Othman Kurdi - CEO">
     
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7931800633354489" crossorigin="anonymous"></script>
     
     <style>
         :root {
@@ -15,81 +15,44 @@
             --gold: #ffc107; 
             --bg-light: #f4f7f6;
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
-            margin: 0; background: var(--bg-light); color: #333; line-height: 1.8;
-        }
-        /* شريط الأدوات العلوي الموحد */
-        .tools-bar {
-            background: #f8f9fa;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            border-bottom: 1px solid #eee;
-        }
-        .search-container {
-            display: flex; 
-            align-items: center; 
-            background: white; 
-            border-radius: 24px; 
-            padding: 0 15px; 
-            border: 1px solid #dfe1e5; 
-            box-shadow: 0 1px 6px rgba(32,33,36,0.1);
-        }
-        .search-box {
-            border: none; outline: none; padding: 10px; width: 180px; font-size: 1rem;
-        }
-        
-        /* واجهة الصفحة */
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; background: var(--bg-light); color: #333; line-height: 1.8; }
+
+        /* شريط الأدوات */
+        .tools-bar { background: #f8f9fa; padding: 15px; display: flex; flex-direction: column; align-items: center; gap: 10px; border-bottom: 1px solid #eee; }
+        .search-container { display: flex; align-items: center; background: white; border-radius: 30px; padding: 5px 15px; border: 1px solid #dfe1e5; box-shadow: 0 1px 6px rgba(0,0,0,0.1); width: 300px; }
+        .search-box { border: none; outline: none; padding: 8px; width: 100%; font-size: 1rem; }
+
         header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/Syria/Qadmos .01.jpg'); 
-            background-size: cover; background-position: center;
-            color: white; padding: 100px 20px; text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('images/Syria/Qadmos .01.jpg'); 
+            background-size: cover; background-position: center; color: white; padding: 120px 20px; text-align: center;
         }
-        header h1 {
-            font-size: 3rem;
-            color: var(--gold);
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-            margin: 0;
-        }
-        header p { font-size: 1.2rem; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
+        header h1 { font-size: 3.5rem; color: var(--gold); text-shadow: 2px 2px 10px rgba(0,0,0,0.8); margin: 0; }
+        .ceo-badge { background: var(--gold); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; display: inline-block; margin-top: 10px; }
 
-        .container { max-width: 1000px; margin: -40px auto 40px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .container { max-width: 1100px; margin: -50px auto 40px; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
         
-        .lang-section { display: flex; gap: 40px; flex-wrap: wrap; margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 20px; }
-        .lang-box { flex: 1; min-width: 300px; }
-        .en-text { direction: ltr; text-align: left; border-left: 4px solid var(--primary-color); padding-left: 15px; }
-        .ar-text { direction: rtl; text-align: right; border-right: 4px solid var(--accent-color); padding-right: 15px; }
+        .article-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+        .content-box { text-align: justify; padding: 20px; border-radius: 15px; }
+        .ar-content { direction: rtl; border-right: 5px solid var(--accent-color); background: #fffcfc; }
+        .en-content { direction: ltr; border-left: 5px solid var(--primary-color); background: #fcfdff; }
         
-        .qadmus-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 15px; margin: 30px 0; 
-        }
-        .qadmus-grid img { 
-            width: 100%; height: 220px; object-fit: cover; 
-            border-radius: 12px; transition: 0.3s; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .qadmus-grid img:hover { transform: scale(1.03); }
+        .qadmus-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; margin-top: 30px; }
+        .qadmus-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; cursor: pointer; transition: 0.3s; border: 2px solid transparent; }
+        .qadmus-grid img:hover { transform: scale(1.05); border-color: var(--gold); }
 
-        .location-link { display: block; text-align: center; background: var(--primary-color); color: white; padding: 18px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 30px; transition: 0.3s; font-size: 1.2rem; }
-        .location-link:hover { background: var(--accent-color); transform: translateY(-3px); }
-        
-        footer { text-align: center; padding: 40px; background: #212121; color: white; margin-top: 50px; }
-        .nav-back-footer { margin-bottom: 20px; }
-        .nav-back-footer a { 
-            color: var(--gold); 
-            text-decoration: none; 
-            font-weight: bold; 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 10px; 
-            border: 1px solid var(--gold);
-            padding: 8px 20px;
-            border-radius: 20px;
-        }
+        /* نافذة تكبير الصور */
+        .modal { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; }
+        .modal-content { max-width: 90%; max-height: 80%; border-radius: 10px; box-shadow: 0 0 20px var(--gold); }
+        .close-modal { position: absolute; top: 30px; right: 30px; color: white; font-size: 40px; cursor: pointer; font-weight: bold; }
+
+        .btn-main { display: block; text-align: center; background: var(--primary-color); color: white; padding: 20px; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 1.2rem; transition: 0.3s; margin: 20px 0; }
+        .btn-main:hover { background: var(--accent-color); }
+
+        footer { text-align: center; padding: 50px 20px; background: #121212; color: #888; }
+        .home-link { color: var(--gold); text-decoration: none; border: 2px solid var(--gold); padding: 10px 30px; border-radius: 25px; transition: 0.3s; }
+        .home-link:hover { background: var(--gold); color: #000; }
+
+        @media (max-width: 768px) { .article-section { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -97,56 +60,86 @@
     <div class="tools-bar">
         <div class="search-container">
             <input type="text" id="search-input" class="search-box" placeholder="بحث...">
-            <button id="voice-btn" type="button" style="background:none; border:none; cursor:pointer; font-size: 20px;" title="بحث صوتي">🎤</button>
+            <button id="voice-btn" type="button" style="background:none; border:none; cursor:pointer; font-size: 20px;">🎤</button>
         </div>
         <div id="google_translate_element"></div>
     </div>
 
     <header>
         <h1>القدموس - Al-Qadmus</h1>
-        <p>وجهة السياحة والمغامرة العالمية في سوريا</p>
+        <p>بإشراف الخبير السياحي محمد عثمان كردي</p>
+        <span class="ceo-badge">CEO & Local Guide</span>
     </header>
 
     <div class="container">
-        <div class="lang-section">
-            <div class="lang-box ar-text">
-                <h2>استكشف سحر القدموس</h2>
-                <p>بصفتي مرشداً محلياً، أدعوكم لزيارة مدينة الضباب والجمال، حيث الطبيعة الجبلية الساحرة وتجارب المغامرة الفريدة في زيب لاين الأطلال.</p>
+        <img src="images/Syria/Qadmos .02.jpg" style="width: 100%; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);" alt="القدموس - زيب لاين الأطلال">
+
+        <div class="article-section">
+            <div class="content-box ar-content">
+                <h3>القدموس: لوحة الخالق على الأرض</h3>
+                <p>تعتبر مدينة القدموس في محافظة طرطوس واحدة من أبهى اللوحات الطبيعية في سوريا، حيث تعانق الجبال الساحلية الغيوم في مشهد مهيب. بصفتي <strong>CEO</strong> لمنصة Kurdstan Syria Travel، أرى أن القدموس ليست مجرد وجهة سياحية، بل هي تجربة روحية تجمع بين عبق التاريخ المتمثل في قلعتها العريقة، وبين روح المغامرة الحديثة.</p>
+                <p>ما يميز القدموس هو "زيب لاين الأطلال"، أطول زيب لاين في المنطقة، الذي يمنحك شعور الصقر وهو يحلق فوق الوديان السحيقة. إن مناخها الضبابي المنعش في الصيف يجعلها الملاذ الأول للعائلات والشباب الباحثين عن الهدوء والإثارة في آن واحد. نحن هنا لنؤمن لكم أفضل تجربة وصول وإقامة واستكشاف لهذه الجنة المنسية.</p>
+                <p>تنتشر في القدموس الغابات الكثيفة والينابيع العذبة، وتتميز بصخورها البازلتية التي تعطي للمكان طابعاً فريداً. ندعوكم لاستكشاف المسارات الجبلية وتذوق الطعام القروي الأصيل الذي يفيض بكرم أهل الجبل السوري.</p>
             </div>
-            <div class="lang-box en-text">
-                <h2>Explore Al-Qadmus Magic</h2>
-                <p>As a local guide, I invite you to visit the city of fog and beauty, where charming mountain nature and unique adventure experiences await at Al-Atlal Zip Line.</p>
+
+            <div class="content-box en-content">
+                <h3>Al-Qadmus: Nature's Masterpiece</h3>
+                <p>Al-Qadmus, located in Tartus Governorate, is one of the most stunning natural landscapes in Syria, where coastal mountains embrace the clouds in a majestic scene. As the <strong>CEO</strong> of Kurdstan Syria Travel, I believe Al-Qadmus is not just a tourist destination, but a spiritual experience that combines ancient history with modern adventure.</p>
+                <p>The highlight of Al-Qadmus is the "Al-Atlal Zip Line," the longest in the region, offering the sensation of a hawk soaring over deep valleys. Its misty, refreshing climate in summer makes it the top choice for families and adventurers seeking both peace and excitement. We are here to ensure you have the best travel and exploration experience in this hidden paradise.</p>
+                <p>The area is famous for its dense forests, fresh springs, and unique basaltic rocks that give the place a distinctive character. We invite you to explore mountain trails and enjoy authentic village food that reflects the legendary hospitality of the Syrian mountain people.</p>
             </div>
         </div>
 
+        <h3 style="text-align: center; color: var(--primary-color);">معرض الصور - Photo Gallery</h3>
         <div class="qadmus-grid">
-            <img src="images/Syria/Qadmos .01.jpg" alt="Al-Qadmus New View">
-            <img src="images/Syria/image1.jpg" alt="Al-Qadmus 1">
-            <img src="images/Syria/image2.jpg" alt="Al-Qadmus 2">
-            <img src="images/Syria/image3.jpg" alt="Al-Qadmus 3">
-            <img src="images/Syria/image4.jpg" alt="Al-Qadmus 4">
-            <img src="images/Syria/image5.jpg" alt="Al-Qadmus 5">
-            <img src="images/Syria/image6.jpg" alt="Al-Qadmus 6">
-            <img src="images/Syria/image7.jpg" alt="Al-Qadmus 7">
-            <img src="images/Syria/image8.jpg" alt="Al-Qadmus 8">
+            <img src="images/Syria/Qadmos .01.jpg" onclick="zoomImg(this)" alt="View 1">
+            <img src="images/Syria/Qadmos .02.jpg" onclick="zoomImg(this)" alt="View 2">
+            <img src="images/Syria/image1.jpg" onclick="zoomImg(this)" alt="View 3">
+            <img src="images/Syria/image2.jpg" onclick="zoomImg(this)" alt="View 4">
+            <img src="images/Syria/image3.jpg" onclick="zoomImg(this)" alt="View 5">
+            <img src="images/Syria/image4.jpg" onclick="zoomImg(this)" alt="View 6">
+            <img src="images/Syria/image5.jpg" onclick="zoomImg(this)" alt="View 7">
+            <img src="images/Syria/image6.jpg" onclick="zoomImg(this)" alt="View 8">
         </div>
 
-        <a href="https://wa.me/9647502061184" class="location-link">💬 تواصل معنا للحجز والاستفسار</a>
+        <a href="https://wa.me/9647502061184" class="btn-main">💬 احجز مغامرتك الآن عبر واتساب</a>
+    </div>
+
+    <div id="imgModal" class="modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="zoomedImg">
     </div>
 
     <footer>
-        <div class="nav-back-footer">
-            <a href="index.html">العودة للرئيسية 🏠</a>
-        </div>
-        <p>© 2026 Kurdistan Syria Travel | جميع الحقوق محفوظة</p>
+        <a href="index.html" class="home-link">🏠 العودة إلى الصفحة الرئيسية</a>
+        <p style="margin-top: 30px;">© 2026 Kurdstan Syria Travel | بإدارة محمد عثمان كردي</p>
     </footer>
 
-    <script type="text/javascript">
+    <script>
+        // وظائف معرض الصور
+        function zoomImg(img) {
+            const modal = document.getElementById("imgModal");
+            const modalImg = document.getElementById("zoomedImg");
+            modal.style.display = "flex";
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            document.getElementById("imgModal").style.display = "none";
+        }
+
+        // إغلاق النافذة عند الضغط خارج الصورة
+        window.onclick = function(event) {
+            const modal = document.getElementById("imgModal");
+            if (event.target == modal) { closeModal(); }
+        }
+
+        // ترجمة جوجل
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
         }
 
-        // كود البحث الصوتي
+        // البحث الصوتي
         const voiceBtn = document.getElementById('voice-btn');
         const searchInput = document.getElementById('search-input');
         if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
@@ -158,7 +151,6 @@
             recognition.onspeechend = () => { recognition.stop(); voiceBtn.innerHTML = "🎤"; };
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
